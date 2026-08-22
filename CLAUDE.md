@@ -58,6 +58,17 @@ ou les fichiers sont ranges et ce qu'ils contiennent.
 **Plusieurs hypotheses, toutes testees.** Ne retiens ni n'ecarte une technique
 sur intuition. Voir METHODOLOGIE.md section 11.
 
+## Entretien du projet — c'est ta responsabilite
+
+Vincent ne peut pas juger quand la documentation ou le code ont besoin d'etre
+reorganises : c'est a toi de le reperer et de le proposer. Il a explicitement
+demande qu'on prenne regulierement du recul pour nettoyer avant d'avancer.
+
+Point de vigilance en cours : `METHODOLOGIE.md` grossit par ajouts successifs
+(571 lignes au 23 aout 2026). Vers 700-800 lignes, il faudra le restructurer
+par theme plutot que par date, en gardant le journal de methode a part.
+Proposer la reorganisation, ne pas la faire sans accord.
+
 ## Contraintes fermes
 
 - **Budget zero euro.** Aucune source payante, aucun abonnement, aucune API

@@ -8,6 +8,20 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[V]` **Mettre le projet sur GitHub.** Le depot local existe deja, le
+      premier commit est fait. Il reste a creer un depot **prive** sur
+      github.com/new (ne pas cocher "Add a README"), coller l'URL a Claude,
+      qui fera le raccordement et l'envoi. Vincent veut changer de compte
+      GitHub d'abord.
+- [ ] `[V]` **Verifier si l'affiliation UCD est encore active.** Adresse
+      ucdconnect.ie reperee dans la configuration git ; Vincent pense qu'elle
+      ne l'est plus, a confirmer. Enjeu : la Meta Content Library (la vraie
+      reponse pour Instagram) et l'API de recherche TikTok sont gratuites mais
+      reservees aux chercheurs affilies. Une affiliation universitaire, meme
+      via un tiers qui co-signe, debloquerait la plateforme la plus difficile
+      du projet sans depenser un euro. Potentiellement le point le plus
+      rentable de toute la liste.
+
 - [ ] `[C]` **LE test a faire en premier : les cas connus.** Inoxtag a fait une
       Tomme de Savoie avec le Cniel, Squeezie a fait une video Cniel qu'il a
       publiquement regrettee. Ce sont deux collaborations laitieres certaines,
