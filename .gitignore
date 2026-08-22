@@ -1,0 +1,18 @@
+# Donnees sources telechargees : volumineuses, et surtout perissables.
+# Voir METHODOLOGIE.md 8.1 : ce sont des instantanes de travail, jamais une
+# dependance de l'outil. Elles se retelechargent, donc elles ne se versionnent
+# pas. Les EXTRAITS qu'on en tire, eux, sont suivis (ils sont petits et ils
+# documentent ce qu'on a conclu).
+donnees/sources/**/*.zip
+donnees/sources/**/Vues_Separees/
+donnees/sources/**/*.pdf
+donnees/sources/**/*.xlsx
+
+# Exception explicite : on garde les extraits.
+!donnees/sources/**/extraits/
+
+# Fichiers techniques Windows et Python
+Thumbs.db
+desktop.ini
+__pycache__/
+*.pyc
