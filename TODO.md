@@ -17,10 +17,17 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
       ucdconnect.ie reperee dans la configuration git ; Vincent pense qu'elle
       ne l'est plus, a confirmer. Enjeu : la Meta Content Library (la vraie
       reponse pour Instagram) et l'API de recherche TikTok sont gratuites mais
-      reservees aux chercheurs affilies. Une affiliation universitaire, meme
-      via un tiers qui co-signe, debloquerait la plateforme la plus difficile
-      du projet sans depenser un euro. Potentiellement le point le plus
-      rentable de toute la liste.
+      reservees aux chercheurs affilies. Une affiliation universitaire
+      debloquerait la plateforme la plus difficile du projet sans depenser un
+      euro. Potentiellement le point le plus rentable de toute la liste.
+- [ ] `[V]` **Solliciter un ami universitaire, si l'affiliation UCD est morte.**
+      Vincent a indique pouvoir demander a une connaissance affiliee a une
+      universite. C'est une voie tout aussi valable : ces programmes demandent
+      un chercheur responsable, pas necessairement le porteur du projet.
+      A cadrer avant de demander : ce que la personne accepte de signer, a quoi
+      elle s'engage vis-a-vis de la plateforme, et ce qu'elle attend en retour
+      (co-signature d'une publication, acces aux donnees, simple coup de main).
+      Ne pas approcher quelqu'un sans avoir clarifie ces trois points.
 
 - [ ] `[C]` **LE test a faire en premier : les cas connus.** Inoxtag a fait une
       Tomme de Savoie avec le Cniel, Squeezie a fait une video Cniel qu'il a
