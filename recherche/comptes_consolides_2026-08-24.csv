@@ -1,0 +1,606 @@
+plateforme,identifiant,url,nom_affiche,personne,role,audience,unite_audience,audience_relevee_le,lien_avec_la_filiere,entites_liees,priorite,congruence,commentaire_vincent,sources,vu_le
+instagram,lebouseuh,,,,"GENERALISTE GAMING. Live Minecraft sur l'elevage porcin, best-of sur sa chaine YouTube. Decrit par INAPORC.",2400000,abonnes Instagram,2026-08-24,arbitre par Vincent,INAPORC,priorite haute,,"2,4M followers! Généraliste",PSEUDOS_A_ARBITRER.xlsx,
+instagram,lacuisinedemercotte,,,,Jury du Meilleur Patissier (M6). Notice biographique publiee par INAPORC.,580000,abonnes Instagram,2026-08-24,arbitre par Vincent,INAPORC,priorite haute,,"580k followers, alais @lacuisinedemercotte (je n'ai pas pu le rentrer car excel me dit 'formule interdite')",PSEUDOS_A_ARBITRER.xlsx,
+instagram,gastronogeek,,Thibaud Villanova,,"GENERALISTE. Live Twitch avec une eleveuse, produit avec Webedia, best-of sur sa chaine YouTube. Decrit par INAPORC.",364000,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC,priorite haute,,"364k followers, culinaire",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,Menthe_banane,,,,"Jeremy, dieteticien. Notice biographique publiee par INAPORC. 5 recettes.",208000,abonnes Instagram,2026-08-24,arbitre par Vincent,INAPORC,priorite haute,,"~208k followers, diététicien. Je mets haute priorité car d'un point de vue du plaidoyer, un diététicien n'a pas besoin de recevoir de l'argent du lobby de la viande et c'est même très problématique! C'est exactement le genre de trucs qu'on veut comprendre en cherchant manuellement",PSEUDOS_A_ARBITRER.xlsx,
+instagram,onestpret,,,,Pas une personne : hashtag de la campagne climat #OnEstPrets. Faux positif.,194000,abonnes Instagram,2026-08-24,arbitre par Vincent,CNIEL,priorite haute,,"194k followers, ""Mouvement de mobilisation pour le climat et la justice sociale"" >> ce serait incroyable qu'ils soient payés par le lobby de la viande!!",PSEUDOS_A_ARBITRER.xlsx,
+instagram,minireyve,,,,"NON VERIFIE. Une seule mention, contexte non lu.",193000,abonnes Instagram,2026-08-24,arbitre par Vincent,CNIEL,priorite haute,,"193k followers, généraliste",PSEUDOS_A_ARBITRER.xlsx,
+instagram,mummyfast,,,,Createur cuisine. 12 recettes creditees.,83000,abonnes Instagram,2026-08-24,arbitre par Vincent,INAPORC,priorite haute,,"~83k followers, généraliste",PSEUDOS_A_ARBITRER.xlsx,
+instagram,chateau.leg0,,Héloïse Lego,,Createur cuisine. Recette creditee (creme de carottes au quinoa).,80000,abonnes Instagram,2026-08-24,suivi par une vitrine,ANVOL | INAPORC,priorite haute,,"~80k followers, gnéraliste",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,juliamaufay,,Julia Maufay,,Createur cuisine. 13 recettes creditees.,12000,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC,priorite haute,,"~12k followers, généraliste",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,florianonair,,Florian OnAir,,"Florian, chaine YouTube cuisine depuis 2016. Notice publiee par INAPORC.",,,,suivi par une vitrine,INAPORC | INTERBEV,priorite haute,,"~231k, généraliste (""food, travel & good vibes"") - je me rends compte que ce n'est aussi pas évident de dire qui est 'généraliste' et qui est 'culinaire'",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,julienduboue,,Julien Duboué,,"Julien Duboue, chef et restaurateur. 3 recettes creditees.",300000,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC | INTERBEV,priorite basse,,"~300k followers, culinaire. J'hésite à le mettre en priorité haute vue le nombre de followers. C'est maintenant que je me rends compte que c'est pas évident de décider qui est 'in-scope' et qui ne l'est pas en fonction de l'usage qu'on veut faire des données, car les réponses sur l'usage est 'ça dép",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pepites2noisette,,Celine Rivier,,Createur cuisine. 32 recettes creditees a son nom sur le site du lobby.,25000,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC,priorite basse,,"~25k followers sur insta, mais créatrice culinaire",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,olivier.moulin,,Papa en Cuisine,,Createur cuisine. 19 recettes creditees.,13000,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC | INTERBEV,priorite basse,,"~13k followers sur insta, culinaire",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,agatheduchesne_,,Agathe Duchesne,,"Agathe Duchesne, stylisme culinaire. Notice biographique publiee par INAPORC.",6316,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC,priorite basse,,"6316 followers, culinaire",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,agriskippy,,Antoine Thibault,,"Antoine Thibault, ELEVEUR. Cite dans un article editorial, pas un partenariat.",5667,abonnes Instagram,2026-08-24,suivi par une vitrine,CNIEL,ecarter,,"5667 followers, agriculteur",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lamourboeuf,,,,"NON VERIFIE. Une seule mention, contexte non lu.",3708,abonnes Instagram,2026-08-24,arbitre par Vincent,INTERBEV,priorite basse,,3708 followers. Ça ressemble vachement à un truc de lobby. Linktree: https://linktr.ee/LAmourBoeuf,PSEUDOS_A_ARBITRER.xlsx,
+instagram,sophiecuisine,,Sophie François-Mülhens,,"Sophie, creatrice cuisine. Notice biographique publiee par INAPORC. 4 recettes.",1892,abonnes Instagram,2026-08-24,suivi par une vitrine,INAPORC,priorite basse,,"1892 followers, culinaire",PSEUDOS_A_ARBITRER.xlsx | comptes_suivis_2026-08-24.csv,2026-08-24
+indeterminee,agriskippy,https://www.produits-laitiers.com/eleveurs-connectes-ils-partagent-leur-quotidien-sur-les-reseaux-sociaux/,,,,,,,publie par le site du lobby,CNIEL,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,cetepimepate,,,,compte vitrine du lobby,,,,est le lobby,FNPSMS,,,,cartographie_filiere.xlsx,
+indeterminee,chateau.leg0,https://www.leporc.com/viandes-et-charcuteries,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,florianonair,https://www.leporc.com/recettes/champignons-farcis-aux-rillettes-florianonair,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,gastronogeek,https://www.leporc.com/le-porc-en-france/le-metier-d-eleveur-de-porcs-mis-en-lumiere-sur-twitch,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,interbev_fr,https://www.interbev.fr/communication/nous-suivre/,,,,,,,publie par le site du lobby,INTERBEV,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,jetable.com,https://www.leporc.com/reglement-jeu-concours-inaporc-campagne-pouvoir-d-achat-2026,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,jetable.net,https://www.leporc.com/reglement-jeu-concours-inaporc-campagne-pouvoir-d-achat-2026,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,jetable.org,https://www.leporc.com/reglement-jeu-concours-inaporc-campagne-pouvoir-d-achat-2026,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,juliamaufay,https://www.leporc.com/faq,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,julienduboue,https://www.leporc.com/recettes,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,lamourboeuf,https://www.interbev.fr/le-boeuf-francais-fait-son-grand-retour-en-tv/,,,,,,,publie par le site du lobby,INTERBEV,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,laviande.fr,https://www.interbev.fr/communication/nous-suivre/,,,compte vitrine du lobby,,,,publie par le site du lobby,INTERBEV,,,,cartographie_filiere.xlsx | sites_lobbies_2026-08-24_1722.csv,
+indeterminee,laviandetv,https://www.interbev.fr/communication/nous-suivre/,,,,,,,publie par le site du lobby,INTERBEV,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,lebouseuh,https://www.leporc.com/le-porc-en-france/le-metier-d-eleveur-de-porcs-mis-en-lumiere-sur-twitch,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,lescereales,,,,compte vitrine du lobby,,,,est le lobby,Intercereales,,,,cartographie_filiere.xlsx,
+indeterminee,lesproduitslaitiers,,,,compte vitrine du lobby,,,,est le lobby,CNIEL,,,,cartographie_filiere.xlsx,
+indeterminee,lesprolaitiers,https://www.produits-laitiers.com/que-faire-avec-des-cereales-de-petit-dejeuner/,,,,,,,publie par le site du lobby,CNIEL,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,menthe_banane,https://www.leporc.com/faq/pourquoi-certaines-charcuteries-contiennent-encore-des-additifs-comme-les-nitrites,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,minireyve,https://www.produits-laitiers.com/rythme-de-vie-des-enfants/,,,,,,,publie par le site du lobby,CNIEL,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,mummyfast,https://www.leporc.com/faq,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,olivier.moulin,https://www.leporc.com/contact,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,onestpret,https://www.produits-laitiers.com/eleveurs-connectes-ils-partagent-leur-quotidien-sur-les-reseaux-sociaux/,,,,,,,publie par le site du lobby,CNIEL,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,pepites2noisette,https://www.leporc.com,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,sophiecuisine,https://www.leporc.com/recettes/bao-bburger-revisite,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,spambox.us,https://www.leporc.com/reglement-jeu-concours-inaporc-campagne-pouvoir-d-achat-2026,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,valentinwerther,https://www.produits-laitiers.com/eleveurs-connectes-ils-partagent-leur-quotidien-sur-les-reseaux-sociaux/,,,,,,,publie par le site du lobby,CNIEL,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,woodmoodfood,https://www.leporc.com/recettes/boulettes-de-porc-au-gingembre-woodmoodfood,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+indeterminee,yopmail.com,https://www.leporc.com/reglement-jeu-concours-inaporc-campagne-pouvoir-d-achat-2026,,,,,,,publie par le site du lobby,INAPORC,,,,sites_lobbies_2026-08-24_1722.csv,
+instagram,1jour1nuit1agri,,Agriculteur le jour et la nuit,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,750g,,,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,750grammes,,,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,90pour100healthy,,Marie-Ange 🌸,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,9gag,,9GAG: Go Fun The World,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,_julien_martineau_,,Julien-Intensity,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,_lebendo,,Le Bendo,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,a_la_belle_viande,,A LA BELLE VIANDE,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,academiedelaviande,,L’Académie de la Viande,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,acoteparis,,À Côté,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,aculinarychef,,❤ Chef ❤,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,adocomrp,,Adocom-RP,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,adrianhstl,,Adrian,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,adrien.maume,,Adrien Maume,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,adriendinh,,Adrien Dinh,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,adry_sdt,,Adrien Sadat,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,agencebio,,Agence BIO,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,alexandre_gigow,,Alexandre GIGOW,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,alexcook.in,,Alexandre De Oliveira,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,alexiaduchene,,Alexia Duchêne,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,alexis_braconnier,,Alexis Braconnier,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,allyouneediswine.fr,,Allyouneediswine,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,alt.1886,,ALT.1886 | VIANDES DU MASSIF,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,amandinecooking,,Amandine Bernardi,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,aneva_all,,Aneva,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,angel.i.x,,Angelix Ra,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,angele_vl,,Angèle,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,anisrhali,,Anis Rhali,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,annejacopin,,Anne Jac,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,anneso_revillion,,Anne-So,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,anthonybodivit,,Anthony Bodivit,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,arkunirzeno,,Arkunir,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,arnopartissimo,,ARNO PARTISSIMO,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,artistic_smoke_,,American BBQ fanatic 🔥,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,askel_reseaulesaint,,Askel - Réseau Le Saint,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,asp_saucisse_puree_officiel_,,Amicale de la Saucisse Purée,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,assiettesgourmandes,,Chantal Descazeaux,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,audreycuisine,,Audrey Bourdin,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,aufaimgourmand,,au faim gourmand,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,aufilduperigord,,Au Fil du Perigord 🌳 ღ,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,axecfd,,AXE CFD,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,barbaramoreloff,,Barbara Morel,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,barbecueandco,,Barbecue & Co,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,barbecueweber,,Barbecue Weber,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,beatrizgonzalezchef,,Beatriz Gonzalez,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,beefpassion,,Beef Passion,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,benoitgavaland,,Benoît Gavaland,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bentimes10,,BenTimes10,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bgl_avigros,,Bgl Avigros,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bienmangeraveclydie,,Lydie | de créatrice food à mentor food 🍽️,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bigard_tradition,,Bigard,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bistrotek,,Bistrotek,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,blakhat.co,,BLAKHAT,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bleublanccoeur,,Bleu-Blanc-Coeur,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bmsjoel,,Joel Digbeu,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bocusedor,,Bocuse d'Or,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bonnepitance,,Alexandre Czech,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bouche_magazine,,Bouche Magazine,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bouchere_rocknroll_,,Véronique Langlais,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie.a,,Boucherie Charcuterie A.mareau,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_arnoux,,Cédric Arnoux,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_claude_et_henri,,Boucherie Claude & Henri,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_dandelion,,Boucherie bio Dandelion,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_du_centre92320,,LJF GALLOU boucherie du centre,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_fagoo,,Boucherie FAGOO,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_jojo_paris,,Boucherie Jojo Paris,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_l_ecorcheur,,,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_us,,La Grande Boucherie,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherie_yves_lorenzoni,,Yves Lorenzoni,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriebello,,Boucherie Bello,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriebernardon,,Boucherie Bernardon 🔪,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriechayma_paris,,Boucherie Charcuterie Rôtisserie Halal,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriechristophe,,Boucherie Christophe,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriecoudray,,,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriecourtinat,,Boucherie Courtinat Viverols,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriedupalais,,"Boucherie Du Palais, Carouge",,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherieduperche,,Bertrand Doin,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriegrinder,,Boucherie Grinder,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherielesfistons,,Boucherie Les Fistons,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriemoderne,,Boucherie Moderne,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherienouvelle,,Boucherie Nouvelle,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriepaupiette,,PAUPIETTE | Lyon 3,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheries_raux,,Boucheries-Raux,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucheriesnivernaises,,Boucheries Nivernaises,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,boucherietrottoir,,Boucherie Trottoir,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,bretons_et_engages,,BRETONS ET ENGAGES,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,c_a_vous,,C à Vous,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,camillelellouche,,Camille LELLOUCHE,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cantine_collective,,Cantine Collective,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,carolellewellyn,,Carole Juge-Llewellyn,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,carredeboeuf,,𝐂𝐀𝐑𝐑É 𝐃𝐄 𝐁𝐎𝐄𝐔𝐅,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,caves.petrissans,,Caves Pétrissans | Cave & Restaurant,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cedricchaumard,,Cedric Chaumard,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cedricdoumbe,,The Best🥇 أستغفر الله,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,celinedesousa_chef,,Celine De Sousa,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cella_co,,"Cella, 100% petits producteurs",,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cerisesetgourmandises,,Marie,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cestmeilleurquandcestbon,,C'est meilleur quand c'est bon,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chachou.russo,,Charlotte Russo-Valentini,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,championnatfrancebarbecue,,Championnat France de Barbecue,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chanelofficial,,CHANEL,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,charcuteriedeshalles,,Charcuterie des Halles,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,checkcheckcheck,,Check,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cheeseyourlife,,Fabien Degoulet,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cheez_nan,,Cheez_Nan,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chef_autrement_by_veronique_s,,Chef Autrement by Veronique S.,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chef_romain_dufresne,,Chef Romain Dufresne,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chef_theo_lignani,,Theo Lignani,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chef_vincent_vidal,,Vincent Vidal,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chefclubtv,,Chefclub,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chester_foodies,,Julien Chabane,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,chicandier,,Jason Chicandier,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cilounette81,,Ccil,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ciryl_gane,,Real.C “BON GAMIN”,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cleliaandlexie,,,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clemalauxdiet,,Clemence alaux - Diet’ & maman 💕,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clemencegommy,,Clémence Gommy,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clement_fvu,,𝐶𝑙𝑒𝑚𝑒𝑛𝑡,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clemfoodie,,Clémentine Vaccon,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clic_clac,,,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clic_clac_agence,,,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,clotilderoux,,Clotilde Roux,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,club.cochon.paris,,Club Cochon 🐽,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,combophoto,,stephen mcmennamy,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cookingbycoco,,Homemade Food 💫,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cookingout,,Cookingout,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cookinut,,COOKINUT,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,creapills,,Creapills,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,croustipate_france,,Croustipate,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cuisineaz,,CuisineAZ,,,,,,suivi par une vitrine,ANVOL | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cuisineculinaire,,Cuisine Culinaire,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cuisinepinup,,𝕃𝕒 ℂ𝕦𝕚𝕤𝕚𝕟𝕖 𝔻’𝕦𝕟𝕖 ℙ𝕚𝕟-𝕦𝕡 🌸🌸,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cuisinerlapintade,,Cuisiner la pintade,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cuisinertoutsimplement,,✨Nathalie B.✨,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cuisinonsencouleurs,,✨Salma El Fallah✨,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cyril_mntg,,Cyril Montégu,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cyrilkrieg,,Cyril Krieg,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,cyrillignac,,Cyril Lignac,,,,,,suivi par une vitrine,CNIEL | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,dadbutcher,,Damien Pinot,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,damienmescudi,,Damien Mescudi,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,danieljslee,,Daniel Lee,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,daunat_officiel,,Daunat 🥪,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,david_toutain,,David Toutain,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,demotivateurfood_fr,,Demotivateur Food,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,denitsaofficiel,,Denitsa,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,dephaseur,,DéphaseuR,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,diegoalary,,Diego,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,directviande,,Direct Viande,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,djaysonkaravane,,Diego Sarthou,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,djilsi,,Djilsi,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,dobbyelfe_,,DobbyElfe,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,doc_jazy,,Doc,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,doigby,,Doigby,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,domidecenival,,Domitille De Cenival,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,doriancuisine.com.leblog,,,,,,,,suivi par une vitrine,ANVOL | INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,drinkxeat,,ALICE. 🍉🌿,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,duanidrac,,Hibou du Québec,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,dubruitdanslacuisine_fr,,Du Bruit dans la Cuisine,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,eddiecudi,,Eddie MENSAH,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,edouard.schoukroun,,Edouard.sch,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,elema.agency,,Elema Agency,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,elenasamama.photography,,Food Photography,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,elevageducharrault,,Elevage du Charrault 🐂,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,elise.fntn,,Elise Fontaine,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,elleatable,,ELLE à table,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,emeline_en_cuisine_,,Emeline,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,emmanuelmacron,,Emmanuel Macron,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,encuisineaugustine,,Laurène Simone Augustine,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,enilea_campus_poligny,,Enilea Campus Poligny,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,enrangdoignons,,Raphaële Marchal,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,envie.apero.leblog,,👸🏼 de l'apéro 🍸🍹,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,epicsefy,,不明 ＳＥＦＹ,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,equipe_smile,,Équipe Smile,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,estellesabathier,,ESTELLE SAB.,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,eurotoquesfrance,,Euro-Toques France,,,,,,suivi par une vitrine,ANVOL | INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,evarobineau,,,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,exception_ailes,,Maria Rodrigues,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fabien_patanchon,,Fabien Patanchon,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fahd.el,,Fahd EL,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fatoukaba,,Fatou Guinea Kaba,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fdsea_72,,FDSEA72,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fermeaharzaina,,Berrogain Peio,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fermiers_de_loue,,Fermiers de Loué,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fermiers_du_bocage,,Les Fermiers du Bocage,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ferrandiparis,,FERRANDI Paris,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ffaperitif,,Fédération Française de l'Apéritif,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ffaperitif_boulogne,,Fédération 🇫🇷 de l’Apéritif - Boulogne-Billancourt,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fiona.arp,,Fiona,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fitclaire,,Travel & Food | CLAIRE,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fitspau,,Pauline ☀️,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fleurymichon,,Fleury Michon,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,follow_dianaperillachica,,,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,foodandwine,,Food & Wine,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,foodforlove,,Réjane Candela,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,foooodiiizz,,Eva,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,francois.guiot.94,,Francois Guiot,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,francois_all_about_cheese,,François All About Cheese,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,freddygladieux,,Freddy Gladieux,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,french_butcher,,French butcher 👌🔪,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,frenchgirlcuisine,,une French girl cuisine,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fromaville,,Fromaville - Yaourterie artisanale,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fuga_family,,FUGA,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,fukay1070,,Fukay1070,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gartin.591,,Théo Phulpin,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gastroart,,Gastro Art,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gastronome_professionnels,,Gastronome Professionnels,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gaultetmillaufr,,Gault&Millau France,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gazettegourmande,,La Gazette Gourmande,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,geography_addicted_,,Maps Graphs Trivia,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,geraldine_lapalus,,Géraldine Lapalus,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gerard_holtz,,Gérard Holtz,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gino_catena,,Gino Catena,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gmarcalo,,Guillaume Marcalo,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,golozer91,,Golozer & Ritchie Le R 🦜,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gourmetartistry,,World’s Finest Food Plating,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gouters_et_diners,,,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,grandseigneurofficial,,Le magazine du plaisir a table,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,grimkujow,,Grimkujow,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,grootlatourte,,GROOT LA TOURTE,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gruttofr,,Grutto France,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gueuleton,,GUEULETON,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,guiguiguipop,,Guigui Pop,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,gwen_lvl_mof,,Laville Gwenaël,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,haileybieber,,Hailey Rhode Bieber,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,healthyfood_creation,,Lucie 😊 recettes de plats sains,,,,,,suivi par une vitrine,ANVOL | INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,helenedarroze,,Hélène Darroze,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,helenemao,,𝐻𝑒́𝑙𝑒̀𝑛𝑒📍PARIS FOOD GUIDE & TRAVEL📍,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,herta_france,,Herta,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,idkbutimleila,,leïlo☆🌻,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,iliasse_photography,,Iliasse Photography | Photographe Pro™,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ina.fr,,INA.fr,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,iness.255,,,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,inn_ovin,,Inn ovin,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,inoxtag,,Inoxtag,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,institutlyfe_,,Institut Lyfe - Ex Institut Paul Bocuse,,,,,,suivi par une vitrine,ANVOL | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,interbev_fr,,,,Compte d'INTERBEV lui-meme. A ecarter.,,,,arbitre par Vincent,INTERBEV,ecarter,,N'existe pas sur insta,PSEUDOS_A_ARBITRER.xlsx,
+instagram,interbev_occitanie,,INTERBEV Occitanie,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,interbevcentre,,Interbev Centre,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,interbevgrandest,,InterbevGrandEst,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,interbevidf,,InterbevIDF,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,isladelice,,Isla Délice,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jadorelagneau,,J’adore l’agneau,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jaimeladinde,,La Dinde,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jeanfrancoispiege,,Jean François Piège,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jeanlucvianey,,Jean-luc Vianey,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jemangequoicesoir,,Emeline Bernard,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jenybsg,,Jenybsg,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jeremiecrauser,,Maison Crauser/Bello,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jeremnadeau,,Jeremy Nadeau,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jeunes_deter,,#JeunesDeter,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jimmy_la_loutre,,Jimmy la loutre,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jirayatv_,,JirayaTV,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jonathancohens,,,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jonathanlacanal,,Jonathan Lacanal,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,juanarbelaezchef,,Juan Arbelaez,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,jules_thieb,,Jules Thiebaut,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,juliedosreisbuquet,,Julie,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,juliethomasse1,,Julie.,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,juliezwing,,Julie Zwingelstein,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,juniortv,,JuniorTV,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,justezoe,,Zoé Tondut 🫐,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,justinbridou_fr,,Justin Bridou,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,justunfrenchie,,Justin Merle 🌞,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,k.mbappe,,Kylian Mbappé,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,kametolol,,Kameto,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,konbini.food,,Konbini.food,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,kronomuzik,,KronoMuzik,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,la_cuisine_de_mel,,Mélissa Ferreira | Diététicienne Nutritionniste | Lozère,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,la_viande_fr,,,,compte vitrine du lobby,,,,est le lobby,INTERBEV,,,,comptes_suivis_2026-08-24.csv,
+instagram,label_rouge_quality,,Label Rouge,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,laboucheriecreative,,RK Laboucheriecreative,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,labrigadeft,,La Brigade,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lacerisesurlemaillot,,Stéphanie · Nutrition & recettes,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lacharcuteriedesalpilles,,La Charcuterie des Alpilles,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lacnct,,Confédération Nationale des Charcutiers-Traiteurs et Traiteurs,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lafemmeduboucher,,La Femme du Boucher,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lafureurdesvivres,,Jc,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lagrande_bouffe,,Sandy Ramier,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lainkk,,Thomas,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,laitflix,,Laitflix,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lakitchenette_de_nanette,,"Stéphanie, photographe",,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lamaisondesviandes,,La Maison des viandes,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lameulerie,,La Meulerie,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lampionjerome,,Jérôme Lampion,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lamssee,,Lams👀,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lapannyyy,,Fanny,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,laperriereangusboeuf,,LaPerrièreAngusBoeuf,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lapin_remarquable,,Lapin Remarquable | Cuisine facile autour de la viande de lapin,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,latabledesbouchers,,La Table des Bouchers,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,latoquebretonne,,⚠️ Fermé définitivement ⚠️ La Toque Bretonne Quimperlé,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,latriquetsimon,,Adrien Simon,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,laubergedelarose_anet,,Yoann et Ludivine,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,laura_dalce,,Laura - Maman de Livia & Ivana 🐞,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,laviandetv,,,,Compte d'INTERBEV lui-meme. A ecarter.,,,,arbitre par Vincent,INTERBEV,ecarter,,N'existe pas sur insta,PSEUDOS_A_ARBITRER.xlsx,
+instagram,le_vince94,,,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lechefmagazine,,Le Chef magazine,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lecordierbrigitte,,Brigitte Lecordier,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lefooding,,Le Fooding,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,legaulois_professionnel,,Le Gaulois Professionnel,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,legeekgourmand,,Julien Reynaud | Épicurien,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,legrosmiam,,Le Gros Miam I Pour le goût 😋,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lekemar,,Kemar,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lemancelrestaurant,,Le Mancel Restaurant,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,leparisdalexis,,Alexis Thiebaut,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,leporcfrancais,,,,compte vitrine du lobby,,,,est le lobby,INAPORC,,,,comptes_suivis_2026-08-24.csv,
+instagram,lepoulaillerdaugustin,,Le Poulailler D'Augustin,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,les_diners_singuliers,,Les Diners Singuliers,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,les_fils_senac,,Les Fils Sénac 🐓🇫🇷,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,les_vins_du_capitaine,,Laurent le conteur du vin 🍷🔞🍷,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesbraserades_officiel,,Les Brasérades,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lescharcuteries,,LesCharcuteries,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,leseleveursdeporcsbretons,,Les éleveurs de porcs bretons,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesfillesacotelettes,,Les filles à côtelettes,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesfruitsetlegumesfrais,,Les fruits et légumes frais,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lespassionsdelaurie,,LAURIE | ♡,,,,,,suivi par une vitrine,ANVOL | INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesprincesdelarue,,Les Princes De La Rue,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesproduitslaitiers,,Les Produits Laitiers,,compte vitrine du lobby,,,,est le lobby,CNIEL | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesprolaitiers,,,,"NON VERIFIE. Une seule mention, contexte non lu.",,,,arbitre par Vincent,CNIEL,priorite basse,,N'existe pas. Confondu avec @lesproduitslaitiers,PSEUDOS_A_ARBITRER.xlsx,
+instagram,lestreamfr,,LeStreamFR,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lestudiodanielle,,Studio Danielle,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lesverts.faf,,Équipe d'Algérie de football,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,letstalkabouteupork_fr,,Let’s talk about EU pork,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,levraibouseuh,,Romain G - LeBouseuh,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lhotellerie.restauration,,L'Hôtellerie Restauration,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,li_bo_pr,,Lise Boyer,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,livestory_agency,,Livestory,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,livionna02,,Olivia Préseau,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lola.burbail,,lola burbail,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,loris.giuliano,,Loris Giuliano,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,louloukitchen_,,Lou Elsener,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,louuvideau,,"Lou Videau | Mode, Beauté et Lifestyle Marseillais",,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,luanabelmondo.officiel,,Luana Belmondo,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,lucas_atns,,,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,luckydelices,,Lucky délices,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,madamelamoureuse,,Noémie Schlachter•Orléans 📌,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,madrangefrance,,Madrange France,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maison_louis_ospital_,,Maison Louis ospital,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maison_reverdel,,Boucherie Reverdel,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maison_verot,,Maison Verot,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maisonbach,,Maison Robert Bach,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maisonlesellier.viard,,Maison Lesellier Viard,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maisonprunier,,Maison Prunier,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maisonterrasson,,Maison Terrasson,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maitrecoq_officiel,,Maître CoQ,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maitresrestaurateurs,,AFMR - Maîtres Restaurateurs,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,malik_bmz,,Malik,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,marchederungis,,,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,margotetaymeric,,On mange quoi ce soir?,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,marie.maman.babyboy,,Marie,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,marina.sight,,Marina,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,markyymax,,Ti Joe,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,marmiton_org,,Marmiton,,,,,,suivi par une vitrine,ANVOL | INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,martin_simolka,,Martin Simolka,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,matthiasjacquin,,Matthias Jacquin,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,matthieuotto,,Matthieu Otto,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maurocolagreco,,Mauro Colagreco,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maxallix13,,Maximilien Allix,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,maximechao,,Maxime Chao,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,meatstock,,Meatstock,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,medine_officiel,,Médine,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mehdimouse,,Mehdi Maïzi,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mehdisgard,,Mehdi Sgard,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,melih38870,,Melih Kunt ★,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,memessanssulfites,,Memes sans sulfites,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,miamissime,,Gaëlle Sacarabany🍍,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,michou,,Migwelito ✨,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,miditrente_food,,MIDITRENTE FOOD,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,miimosa_fr,,MiiMOSA,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mikula_flora,,Mikula Flora,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mimabycami,,Camélia EB ☀️,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,min_agriculture,,Ministère de l'Agriculture et de la Souveraineté alimentaire,,,,,,suivi par une vitrine,ANVOL | CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,miraysway,,Miray | recettes sans prise de tête,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mister_vrdr,,Nicolas Verdier,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,morgan.niquet,,Morgan VS,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,morning.lou,,Julie,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mumandchef,,Océane MS,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,mxeparis,,Maxence Paris,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,myriamanhattan,,Myriamanhattan,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,nath24_8,,Nath,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,naturellementflexitariens,,Naturellement Flexitariens,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,neo.mediafr,,neo raconte la France,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,netflixfr,,Netflix France,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,nico_la,,Nico-là 🤡,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,nicolasbreneliere,,Nicolas Breneliere,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,nicolasfagoo,,Nicolas Fagoo,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,normangenius,,Norman Chatrier,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,notabenemovies,,Nota Bene,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,novoviande,,NOVOVIANDE,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,nytcooking,,NYT Cooking,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,o.bon.fromage,,O'Bon Fromage by Nader Baraia,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,o_delice100,,ô delice,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,oeufsmatines,,Matines,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,okadran,,Okadran. fr,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,onsenfouwallah,,Onsenfouwallah,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ophelymezinooff,,Ophély Mézino,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,os.normande,,Les éleveurs de Normande,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,osanchaise,,SANCHEZ GUILLAUME,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pa.domingo,,Domingo,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,panier_de_saison,,Anne Reverdy,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,papa.en.cuisine,,Thierry Morin,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,papapoule.rotisserie,,PAPAPOULE RÔTISSERIE,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,papilles,,Anne . Papilles et Pupilles,,,,,,suivi par une vitrine,ANVOL | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,parfaimdaromes,,Chloé | 𝑷𝒂𝒓 𝒇𝒂𝒊𝒎 𝒅'𝒂𝒓𝒐̂𝒎𝒆𝒔,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,parisianjim,,Jim Han,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,passioncuisinart,,Bertrand,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pate_croute_france,,Pâté en croûte France,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,paulbocuse_officiel,,Paul Bocuse,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pazapah,,Aure et Killian,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,perepasparfaitetalors,,Nicolas -Créateur de contenu,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pidi_meg,,Pidi 🤍,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pieceduboucher,,Pièce Du Boucher - Paris,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pierre_sang,,Pierre Sang BOYER,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pierrechomet,,Pierre Chomet,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pierredelahousse,,Pierre Delahousse,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,plancha_barbecue,,cuisine au jardin,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pointboucherie,,Boucherie Point,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,poissonnerielethiec,,Poissonnerie Le Thiec,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,poule_et_toque,,Poule et Toque 🐓,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pouletdejanze,,Les Fermes de Janzé,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,pounsitime,,,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,primebbq,,PRIME Barbecue,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,primetimefut,,PRIME,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,primevideofr,,Prime Video France,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,produitstripiers,,Les produits tripiers,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,professioneleveur,,Profession Éleveur,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,rafagomeschef,,Rafa Gomes,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,rebeudeter,,BILLY 🧡🍂,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,redboyfr,,Red Boy,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,reddit,,Reddit,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,redha.jr,,Redha Jr,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,redouanebougheraba,,Redouane Bougheraba,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,reghalal,,"Réghalal, Halal & Engagés",,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,repas_du_quotidien,,Ornella,,,,,,suivi par une vitrine,ANVOL | INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,reseaulesaint,,Réseau Le Saint 🍃,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,restaurantlelautrecalbi,,Restaurant Le Lautrec,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,reussirpatre,,Patre,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,riviera_fuga,,Riviera Fuga,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,rob_defreitas,,Rob De Freitas,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,rodolpheanimations,,Rodolphe Animations,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,romain.leboeuf,,Romain Leboeuf,,,,,,suivi par une vitrine,INAPORC | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,romualdfassenet,,Romuald Fassenet,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,roro_cuistot,,Roro 👩🏼‍🍳,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,royal_bernard,,ROYAL BERNARD DAUPHINE,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,rufusteaguebbq,,Rufus Teague,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,salade_toto_oignon,,Salade Toto Oignon,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,salondelagriculture,,Salon International de l'Agriculture,,,,,,suivi par une vitrine,ANVOL | INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,saucegribiche,,Aitor Alfonso,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,saveurmag,,SAVEUR,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sculpdit,,Sculpd,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sdetarle,,Sophie de Tarlé,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,seb_ochoa,,Sébastien Ochoa,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,seblafrite,,SEB,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,semainedugout,,La Semaine du Goût,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sergezaka,,Serge Zaka,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,shades,,SHADES,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sinoussemions_martineau,,Julien Martineau,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sirha_lyon,,Sirha Lyon,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,solaldfg,,,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sophieturbigo,,Sophie Seïté 🍀 Food blogger 💕 Life Lover,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,spatulefoodcontent,,Spatule Food Content,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,spatulesetfouets,,Phanie Fouarge,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,specialmeats,,Specialmeats,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,steak4yourdoors,,,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,steph_moq,,Stephanie Moquet,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,stsevervolailler,,St SEVER Volailler,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sualain40,,Gardeils Alain,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,sullyhss,,Sullivan Hss,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,superbon,,Superbon,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,syndicat.de.la.volaille.rungis,,Syndicat Volaille,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,tabledeseleveurs,,e-Boucherie normande,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,takethepower_july,,Julie Tournier,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,taniadutel,,Tania Dutel,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,taste_of_paris_official,,Taste of Paris,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,tastefrancemagazine,,Taste France Magazine,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,tatianaa_tv,,Tatiana ✧,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,teamfrancebocusedor,,Team France Bocuse d'Or,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,teammacadamscowboys,,Team Macadam's Cowboys,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,tendances.restauration,,Tendances Restauration,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,teo_thiodat,,Téo Thiodat,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,terroirmonamour,,Terroir Mon Amour,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,terrycrews,,Terry Crews,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,the_cow_diary,,Cow Lovers Of The World,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,thefrenchsmile,,Léa Sapin 🌞 E-RYT 500 Yoga teacher ®,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,theojuice_,,Théo Juice,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,theoruslerouge,,Théo.,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,therock,,Dwayne Johnson,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,thewebergrill,,Weber Grill Restaurant + Cooking School,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,thewingzer,,The Wingzer (Yanis),,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,thierrymarx,,Thierry Marx,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,tnla_2020_melle,,Tnla 2020 Jacques Bujault 🐮,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,tonton_etchebest_,,Tonton Etchebest,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,top_paris_restaurants,,🇫🇷 Paris's Top Restaurants,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,topchefm6,,Top Chef,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,totocuistot_,,Tom Fauconnet,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ttbontv,,Très Très Bon,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,ulyces.co,,Ulyces,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,undejeunerdesoleil,,Edda Onorato. Photographe culinaire,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,urbanlepharaon,,Urban 𒉭,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vaimalama,,V🧄,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,valentinwerther,,,,Lyceen et futur ELEVEUR. Cite dans le meme article.,,,,arbitre par Vincent,CNIEL,ecarter,,pas trouvé,PSEUDOS_A_ARBITRER.xlsx,
+instagram,valouzz_,,Valouzz,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vgculinaire,,Vendée Globe Culinaire,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,viandeetchef,,Viande & Chef,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,viandesdici,,Viandes d'Ici,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,viandredi,,VIANDREDI,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vice,,VICE,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,victorunesco,,Victor à l’Unesco,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vincentdufrasne,,vincent dufrasne,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vincentscalera,,Vincent Scalera,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vinsdebordeaux,,Vins de Bordeaux,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vinsdebourgogne,,Vins de Bourgogne,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vinsdeprovence_fr,,Vins de Provence,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vinsdulanguedoc,,Vins du Languedoc,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,vmiam,,V_MiaM,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,volaille_info,,Volaille Info,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,volailledebresseaop,,Volaille de Bresse AOP,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,volaillefrancaise,,,,compte vitrine du lobby,,,,est le lobby,ANVOL,,,,comptes_suivis_2026-08-24.csv,
+instagram,volailles.oeufs.label.rouge,,,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,volaillesdelanoe,,Volailles Delanoë,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,volaillesfermieresauvergne,,Volailles Fermières d’Auvergne,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,volailleslandes,,Volailles Fermières des Landes,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,webarbecue,,#WeBarbecue,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,welowcook,,Welowcook,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,whoogys,,WHOOGY’S,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,woodmoodfood,,,,"Marina, creatrice cuisine. Notice biographique publiee par INAPORC. 3 recettes.",,,,arbitre par Vincent,INAPORC,ecarter,,pas sur Insta,PSEUDOS_A_ARBITRER.xlsx,
+instagram,wynonagueraini,,W 🦋,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,xavier_pincemin,,Xavier Pincemin,,,,,,suivi par une vitrine,INAPORC,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,xsqueezie,,,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,yanissaxoxo,,Yanissa 💖,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,yannoujr,,Yannou D. JR🥶,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,yassencore,,Yass,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,youcookcuisine,,YouCookCuisine 🥘🍱🌮,,,,,,suivi par une vitrine,INTERBEV,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,zack_nani,,Zack,,,,,,suivi par une vitrine,CNIEL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,zeprosresto,,Zepros Resto,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+instagram,zeprossnack,,Zepros Snack,,,,,,suivi par une vitrine,ANVOL,,,,comptes_suivis_2026-08-24.csv,2026-08-24
+youtube,UC-bQgl7oy_rEk05rNWYXafA,https://www.youtube.com/channel/UC-bQgl7oy_rEk05rNWYXafA,Kameto,Kameto,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UC18icQd3KC04WsnXrx5UnkA,https://www.youtube.com/channel/UC18icQd3KC04WsnXrx5UnkA,Domingo Officiel,Domingo,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UC7_THngP20pzk5VRHNKDvtg,https://www.youtube.com/channel/UC7_THngP20pzk5VRHNKDvtg,Squeezie - Rediffusions,Squeezie,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UC8IPcF4sxZt1TCs7la4EYtw,https://www.youtube.com/channel/UC8IPcF4sxZt1TCs7la4EYtw,Domingo Gomes,Domingo,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UC8Q0SLrZLiTj5s4qc9aad-w,https://www.youtube.com/channel/UC8Q0SLrZLiTj5s4qc9aad-w,Mister V,Mister V,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCApFlJbRodUtO-iE-mzRsOw,https://www.youtube.com/channel/UCApFlJbRodUtO-iE-mzRsOw,MichouRediff,Michou,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCDPK_MTu3uTUFJXRVcTJcEw,https://www.youtube.com/channel/UCDPK_MTu3uTUFJXRVcTJcEw,Mcfly et Carlito,Mcfly et Carlito,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCGbkLk615v-fh5Qgc6b-TVQ,https://www.youtube.com/channel/UCGbkLk615v-fh5Qgc6b-TVQ,Mister V Music,Mister V,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCL9aTJb0ur4sovxcppAopEw,https://www.youtube.com/channel/UCL9aTJb0ur4sovxcppAopEw,Inoxtag,Inoxtag,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCNGq4mP3Ds5OUGjPo8IJOcw,https://www.youtube.com/channel/UCNGq4mP3Ds5OUGjPo8IJOcw,Valouzz,Valouzz,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCOdKaYgvLlPuinUJ1z5Gm2g,https://www.youtube.com/channel/UCOdKaYgvLlPuinUJ1z5Gm2g,MichouOff,Michou,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCRCMNm2I4tM4BTmNSboc4QA,https://www.youtube.com/channel/UCRCMNm2I4tM4BTmNSboc4QA,Domingo,Domingo,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCS-dx0lGDGJA04aXfEodLKA,https://www.youtube.com/channel/UCS-dx0lGDGJA04aXfEodLKA,Grimkujow,Grimkujow,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCUl7mwOyySfZzUkq4H29nug,https://www.youtube.com/channel/UCUl7mwOyySfZzUkq4H29nug,LeBouseuh,LeBouseuh,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCWeg2Pkate69NFdBeuRFTAw,https://www.youtube.com/channel/UCWeg2Pkate69NFdBeuRFTAw,SQUEEZIE,Squeezie,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCY-_QmcW09PHAImgVnKxU2g,https://www.youtube.com/channel/UCY-_QmcW09PHAImgVnKxU2g,SQUEEZIE GAMING,Squeezie,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCZjZZc4lE_pPEKvAjKQhQbg,https://www.youtube.com/channel/UCZjZZc4lE_pPEKvAjKQhQbg,Domingo Legal,Domingo,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCfAV0Lg4IPzZyRQq_Nh-5KA,https://www.youtube.com/channel/UCfAV0Lg4IPzZyRQq_Nh-5KA,Domingo Replay,Domingo,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCg2o_EFcQ2GTO-L6xkde1DQ,https://www.youtube.com/channel/UCg2o_EFcQ2GTO-L6xkde1DQ,Norman Woods,Norman,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCiRDO4sVx9dsyMm9F7eWMvw,https://www.youtube.com/channel/UCiRDO4sVx9dsyMm9F7eWMvw,Kameto - Replays et VODs,Kameto,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCo3i0nUzZjjLuM7VjAVz4zA,https://www.youtube.com/channel/UCo3i0nUzZjjLuM7VjAVz4zA,Michou,Michou,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCo6Z9cEI8Hf3nyrLUfDITtA,https://www.youtube.com/channel/UCo6Z9cEI8Hf3nyrLUfDITtA,Inoxtag 2.0,Inoxtag,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCpwzkT9Ewjo-ziKtCpkWmaA,https://www.youtube.com/channel/UCpwzkT9Ewjo-ziKtCpkWmaA,Norman Sann,Norman,createur,,,,chaine surveillee (secondaire),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24
+youtube,UCww2zZWg4Cf5xcRKG-ThmXQ,https://www.youtube.com/channel/UCww2zZWg4Cf5xcRKG-ThmXQ,Norman,Norman,createur,,,,chaine surveillee (principale),,,,,surveillance_youtube_2026-08-24_1642.csv,2026-08-24

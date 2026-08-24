@@ -102,6 +102,15 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Ameliorer la cartographie
 
+- [ ] `[C]` **Combler la mesure d'audience.** Seuls 3 % des 605 comptes du
+      registre ont un nombre d'abonnes connu, alors que l'audience est le
+      critere de priorite du projet. La cle API YouTube reglera les chaines ;
+      Instagram restera manuel jusqu'a l'API Meta.
+- [ ] `[?]` **Rattacher les comptes aux personnes.** La colonne `personne` de
+      COMPTES.xlsx est vide a dessein : le rapprochement est un jugement
+      humain, jamais une deduction par le nom (risque d'homonyme). A faire
+      quand ca servira.
+
 Ce qui manque, par ordre d'impact sur la suite :
 
 - [ ] `[C]` **Croiser les 3 sources deja en main.** Les feuilles HATVP_* et

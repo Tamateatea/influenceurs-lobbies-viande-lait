@@ -33,6 +33,11 @@ seulement ou sont rangees les choses.
 - **`A_COMPLETER.xlsx`** — le classeur que **tu** remplis. Une question par
   ligne, une seule colonne a remplir, en vert. Aucun script ne l'ecrase :
   celui qui le fabrique refuse de le faire s'il existe deja.
+- **`COMPTES.xlsx`** — **le registre des comptes.** Tous les comptes connus du
+  projet, une ligne par couple (plateforme, identifiant). Fabrique par script :
+  ne pas l'editer a la main, il serait ecrase.
+- `PSEUDOS_A_ARBITRER.xlsx` — les jugements de Vincent. **Lu** par le script de
+  consolidation, jamais ecrase.
 - `cartographie_filiere.xlsx` — le classeur de reference, 12 feuilles :
   interprofessions, industriels, marques, **alias**, agences, influenceurs,
   sources de donnees, journal, et 3 feuilles HATVP_*. Fabrique par un script :
@@ -51,6 +56,11 @@ Chacun explique en tete ce qu'il fait et comment le lancer.
 | `test_croise_youtube.py` | Croise les signaux de collaboration sur des chaines francaises. |
 | `extraire_descriptions_youtube.py` | Lit les descriptions et y cherche les alias. **C'est ce script qui a trouve le premier cas.** |
 | `extraire_comptes_suivis.py` | Sort les listes d'abonnements collees dans `A_COMPLETER.xlsx` vers des fichiers propres et dates. |
+| `fouiller_sites_lobbies.py` | Cherche des createurs dans les sites des commanditaires eux-memes. |
+| `consolider_comptes.py` | **Rassemble toutes les sources en un seul registre**, `COMPTES.xlsx`. |
+| `tester_tiktok_commercial.py` | Interroge la Commercial Content Library de TikTok (attend les identifiants). |
+| `tester_meta_adlibrary.py` | Interroge l'API Meta Ad Library (attend un jeton utilisateur). |
+| `surveiller_youtube.py` | La chaine de surveillance YouTube, quatre signaux. |
 
 ### `donnees/` — ce qu'on a telecharge ou releve. Instantanes, pas production.
 

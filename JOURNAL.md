@@ -1309,3 +1309,77 @@ un champ ou une note.
 Excel refuse une saisie commencant par `@` : il la prend pour une formule.
 Vincent n'a pas pu entrer `@lacuisinedemercotte`. **Les colonnes destinees a
 des pseudos doivent etre formatees en texte a la generation.**
+
+---
+
+## 30. Journal de methode — 24 aout 2026 : le registre des comptes, enfin consolide
+
+### 30.1 Le probleme, souleve par Vincent
+
+« Je crains que tu ne fasses pas ce travail de consolidation et qu'on se
+retrouve avec des dizaines de fichiers avec des informations utiles qui
+devraient etre consolidees dans un seul. »
+
+Il avait raison, et le reproche etait deja dans le TODO de la premiere
+session : « sans identifiant stable, impossible de joindre les sources entre
+elles ». Cinq fichiers contenaient les memes comptes sans jamais se parler.
+
+### 30.2 Ce qui a ete construit
+
+`outils/consolider_comptes.py` lit les cinq sources et produit **un fichier
+unique**, `cartographie/COMPTES.xlsx`, plus un CSV horodate dans `recherche/`.
+
+Cle d'un compte : **le couple (plateforme, identifiant)**, jamais le nom
+(METHODOLOGIE section 8).
+
+MESURE, premier passage :
+
+| Source | Lignes lues |
+|---|---|
+| Abonnements Instagram des vitrines | 564 |
+| Pseudos publies par les sites des lobbies | 194 |
+| Chaines YouTube surveillees | 24 |
+| Jugements de Vincent | 22 |
+| Feuille Alias | 4 |
+
+**605 comptes distincts** : 552 Instagram, 24 YouTube, 29 de plateforme
+indeterminee.
+
+**11 comptes sont attestes par au moins deux methodes independantes** —
+@gastronogeek, @chateau.leg0, @juliamaufay, @florianonair, @julienduboue,
+@pepites2noisette... A la fois suivis par une vitrine ET publies sur le site
+du lobby. C'est le premier recoupement multi-sources du projet, et c'est
+exactement le materiau de la capture-recapture (section 9.3).
+
+Le script parse aussi les nombres d'abonnes releves par Vincent dans ses
+commentaires libres (« ~25k followers », « 2,4M followers! ») : c'est
+aujourd'hui **la seule mesure d'audience du projet**.
+
+### 30.3 Le trou que la consolidation rend visible
+
+**Seuls 3 % des comptes ont une audience connue** — 16 sur 605, tous releves
+a la main par Vincent.
+
+Or l'audience est le critere de priorite declare du projet : « les createurs
+les plus vus du public » (METHODOLOGIE section 8). On priorise donc
+aujourd'hui sur une mesure qu'on n'a presque pas.
+
+C'est le meilleur argument pour la cle API YouTube : `channels.list` renvoie
+le nombre d'abonnes, ce qui comblerait immediatement les 24 chaines et toutes
+celles a venir. Pour Instagram, la mesure restera manuelle tant que l'API Meta
+n'est pas debloquee.
+
+### 30.4 Ce que la consolidation ne fait PAS, volontairement
+
+La colonne `personne` reste presque vide. **C'est voulu.**
+
+`@lebouseuh` sur Instagram, `levraibouseuh` sur Instagram, la chaine
+`UCUl7mwOyySfZzUkq4H29nug` sur YouTube : le script ne les rattache pas
+automatiquement a une meme personne. Rapprocher deux comptes par la
+ressemblance de leur nom, c'est exactement ce qui produit une confusion
+d'homonyme — et « Norman » a deja montre que deux personnes peuvent porter le
+meme nom (JOURNAL 28.4).
+
+Le rattachement compte → personne est un **jugement humain explicite, date et
+source** (METHODOLOGIE section 8). Il sera demande a Vincent quand il servira
+a quelque chose, pas avant.
