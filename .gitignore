@@ -16,3 +16,6 @@ Thumbs.db
 desktop.ini
 __pycache__/
 *.pyc
+
+# Secrets : jetons d API, mots de passe. JAMAIS versionne.
+SECRETS.txt

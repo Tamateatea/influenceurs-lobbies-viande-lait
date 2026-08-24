@@ -1,0 +1,47 @@
+LISTES D'ABONNEMENTS DES COMPTES VITRINES DES LOBBIES
+=====================================================
+
+A quoi sert ce dossier
+----------------------
+On veut savoir QUI un lobby suit sur les reseaux. Pas qui le suit, lui :
+qui LUI suit. C'est le commanditaire qui designe lui-meme les createurs qui
+l'interessent. Ce signal n'est pas circulaire, contrairement a une liste de
+createurs qu'on aurait devinee nous-memes.
+
+Voir METHODOLOGIE.md section 15, « Mode B — surveiller le createur ».
+
+Comment deposer une liste
+-------------------------
+Un fichier .txt par compte, nomme d'apres le pseudo, sans le @ :
+
+    lesproduitslaitiers.txt
+    la_viande_fr.txt
+
+Contenu : le copier-coller brut de la liste, sans nettoyage. Claude s'en
+charge. Deroule la liste jusqu'en bas AVANT de selectionner : elle se charge
+par paquets, et une selection prematuree ne prend que le premier paquet.
+
+PREMIERE LIGNE du fichier : la date du releve, au format AAAA-MM-JJ.
+Une liste d'abonnements change dans le temps. Sans date, on ne peut ni
+comparer deux releves, ni dire de quand date une information.
+
+Exemple de debut de fichier :
+
+    2026-08-24
+    squeezie
+    Squeezie
+    inoxtag
+    Inoxtag
+    ...
+
+Pour Claude, aux sessions suivantes
+-----------------------------------
+Ces fichiers sont des DEPOTS MANUELS. Ils ne violent pas la regle 8.1 de
+METHODOLOGIE.md : cette regle interdit qu'un fichier telecharge a la main
+soit une dependance de l'OUTIL FINAL. Ici il s'agit d'une observation
+humaine horodatee, au meme titre qu'une annotation — c'est une donnee
+d'entree legitime, a condition qu'elle soit datee et que sa provenance soit
+ecrite.
+
+Ne jamais reecrire ces fichiers : ce sont des releves. Les traitements
+produisent leurs sorties ailleurs.

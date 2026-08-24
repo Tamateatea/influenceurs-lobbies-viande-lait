@@ -1,0 +1,217 @@
+# releve : 2026-08-24
+# plateforme : instagram
+# compte vitrine : @la_viande_fr
+# entite : INTERBEV
+# nature : liste des comptes SUIVIS par ce compte (following)
+# origine : copier-coller manuel de Vincent, via A_COMPLETER.xlsx
+# comptes : 209
+
+pointboucherie	Boucherie Point
+gaultetmillaufr	Gault&Millau France
+ferrandiparis	FERRANDI Paris
+nytcooking	NYT Cooking
+institutlyfe_	Institut Lyfe - Ex Institut Paul Bocuse
+ttbontv	Très Très Bon
+inn_ovin	Inn ovin
+thewebergrill	Weber Grill Restaurant + Cooking School
+teamfrancebocusedor	Team France Bocuse d'Or
+carredeboeuf	𝐂𝐀𝐑𝐑É 𝐃𝐄 𝐁𝐎𝐄𝐔𝐅
+lefooding	Le Fooding
+reussirpatre	Patre
+demotivateurfood_fr	Demotivateur Food
+maisonbach	Maison Robert Bach
+foodandwine	Food & Wine
+barbecueandco	Barbecue & Co
+boucherie.a	Boucherie Charcuterie A.mareau
+agencebio	Agence BIO
+viandeetchef	Viande & Chef
+lhotellerie.restauration	L'Hôtellerie Restauration
+os.normande	Les éleveurs de Normande
+saveurmag	SAVEUR
+jadorelagneau	J’adore l’agneau
+doriancuisine.com.leblog	
+academiedelaviande	L’Académie de la Viande
+gerard_holtz	Gérard Holtz
+lesfruitsetlegumesfrais	Les fruits et légumes frais
+primebbq	PRIME Barbecue
+vinsdulanguedoc	Vins du Languedoc
+vinsdeprovence_fr	Vins de Provence
+tastefrancemagazine	Taste France Magazine
+vinsdebordeaux	Vins de Bordeaux
+boucheries_raux	Boucheries-Raux
+barbecueweber	Barbecue Weber
+tendances.restauration	Tendances Restauration
+rufusteaguebbq	Rufus Teague
+seb_ochoa	Sébastien Ochoa
+salondelagriculture	Salon International de l'Agriculture
+interbev_occitanie	INTERBEV Occitanie
+vinsdebourgogne	Vins de Bourgogne
+marchederungis	
+boucheriepaupiette	PAUPIETTE | Lyon 3
+caves.petrissans	Caves Pétrissans | Cave & Restaurant
+sirha_lyon	Sirha Lyon
+spatulefoodcontent	Spatule Food Content
+maison_reverdel	Boucherie Reverdel
+lafemmeduboucher	La Femme du Boucher
+cookingout	Cookingout
+paulbocuse_officiel	Paul Bocuse
+undejeunerdesoleil	Edda Onorato. Photographe culinaire
+romain.leboeuf	Romain Leboeuf
+boucherie_jojo_paris	Boucherie Jojo Paris
+gastroart	Gastro Art
+audreycuisine	Audrey Bourdin
+axecfd	AXE CFD
+mister_vrdr	Nicolas Verdier
+lesproduitslaitiers	Les Produits Laitiers
+cuisineaz	CuisineAZ
+superbon	Superbon
+interbevgrandest	InterbevGrandEst
+bocusedor	Bocuse d'Or
+latabledesbouchers	La Table des Bouchers
+chef_autrement_by_veronique_s	Chef Autrement by Veronique S.
+semainedugout	La Semaine du Goût
+juliezwing	Julie Zwingelstein
+juliedosreisbuquet	Julie
+topchefm6	Top Chef
+boucheriebello	Boucherie Bello
+thierrymarx	Thierry Marx
+bretons_et_engages	BRETONS ET ENGAGES
+lechefmagazine	Le Chef magazine
+lagrande_bouffe	Sandy Ramier
+boucheriebernardon	Boucherie Bernardon 🔪
+dubruitdanslacuisine_fr	Du Bruit dans la Cuisine
+boucheriecourtinat	Boucherie Courtinat Viverols
+papilles	Anne . Papilles et Pupilles
+maitresrestaurateurs	AFMR - Maîtres Restaurateurs
+nicolasfagoo	Nicolas Fagoo
+anneso_revillion	Anne-So
+boucherie_dandelion	Boucherie bio Dandelion
+interbevcentre	Interbev Centre
+gueuleton	GUEULETON
+domidecenival	Domitille De Cenival
+sophieturbigo	Sophie Seïté 🍀 Food blogger 💕 Life Lover
+lacerisesurlemaillot	Stéphanie · Nutrition & recettes
+boucheriedupalais	Boucherie Du Palais, Carouge
+assiettesgourmandes	Chantal Descazeaux
+acoteparis	À Côté
+boucherielesfistons	Boucherie Les Fistons
+neo.mediafr	neo raconte la France
+laperriereangusboeuf	LaPerrièreAngusBoeuf
+boucherietrottoir	Boucherie Trottoir
+elleatable	ELLE à table
+a_la_belle_viande	A LA BELLE VIANDE
+boucherie_us	La Grande Boucherie
+interbevidf	InterbevIDF
+cerisesetgourmandises	Marie
+french_butcher	French butcher 👌🔪
+boucherie_arnoux	Cédric Arnoux
+miimosa_fr	MiiMOSA
+1jour1nuit1agri	Agriculteur le jour et la nuit
+chachou.russo	Charlotte Russo-Valentini
+danieljslee	Daniel Lee
+750grammes	
+750g	
+teammacadamscowboys	Team Macadam's Cowboys
+viandesdici	Viandes d'Ici
+meatstock	Meatstock
+emeline_en_cuisine_	Emeline
+livestory_agency	Livestory
+professioneleveur	Profession Éleveur
+labrigadeft	La Brigade
+roro_cuistot	Roro 👩🏼‍🍳
+beefpassion	Beef Passion
+boucherieduperche	Bertrand Doin
+bouchere_rocknroll_	Véronique Langlais
+clotilderoux	Clotilde Roux
+championnatfrancebarbecue	Championnat France de Barbecue
+boucherienouvelle	Boucherie Nouvelle
+boucherie_yves_lorenzoni	Yves Lorenzoni
+cantine_collective	Cantine Collective
+tnla_2020_melle	Tnla 2020 Jacques Bujault 🐮
+chef_theo_lignani	Theo Lignani
+victorunesco	Victor à l’Unesco
+taste_of_paris_official	Taste of Paris
+enrangdoignons	Raphaële Marchal
+florianonair	Florian OnAir
+dadbutcher	Damien Pinot
+matthieuotto	Matthieu Otto
+helenedarroze	Hélène Darroze
+cuisineculinaire	Cuisine Culinaire
+mumandchef	Océane MS
+top_paris_restaurants	🇫🇷 Paris's Top Restaurants
+youcookcuisine	YouCookCuisine 🥘🍱🌮
+boucherie_l_ecorcheur	
+lamaisondesviandes	La Maison des viandes
+les_diners_singuliers	Les Diners Singuliers
+maurocolagreco	Mauro Colagreco
+naturellementflexitariens	Naturellement Flexitariens
+lesfillesacotelettes	Les filles à côtelettes
+angel.i.x	Angelix Ra
+boucheriegrinder	Boucherie Grinder
+alexis_braconnier	Alexis Braconnier
+terroirmonamour	Terroir Mon Amour
+frenchgirlcuisine	une French girl cuisine
+webarbecue	#WeBarbecue
+directviande	Direct Viande
+alexcook.in	Alexandre De Oliveira
+jeanfrancoispiege	Jean François Piège
+mikula_flora	Mikula Flora
+panier_de_saison	Anne Reverdy
+artistic_smoke_	American BBQ fanatic 🔥
+romualdfassenet	Romuald Fassenet
+viandredi	VIANDREDI
+boucheriechristophe	Boucherie Christophe
+cuisinepinup	𝕃𝕒 ℂ𝕦𝕚𝕤𝕚𝕟𝕖 𝔻’𝕦𝕟𝕖 ℙ𝕚𝕟-𝕦𝕡 🌸🌸
+foodforlove	Réjane Candela
+rodolpheanimations	Rodolphe Animations
+benoitgavaland	Benoît Gavaland
+miamissime	Gaëlle Sacarabany🍍
+perepasparfaitetalors	Nicolas -Créateur de contenu
+90pour100healthy	Marie-Ange 🌸
+mxeparis	Maxence Paris
+celinedesousa_chef	Celine De Sousa
+alt.1886	ALT.1886 | VIANDES DU MASSIF
+adry_sdt	Adrien Sadat
+bistrotek	Bistrotek
+aufilduperigord	Au Fil du Perigord 🌳 ღ
+legrosmiam	Le Gros Miam I Pour le goût 😋
+cuisinertoutsimplement	✨Nathalie B.✨
+boucheriecoudray	
+produitstripiers	Les produits tripiers
+les_vins_du_capitaine	Laurent le conteur du vin 🍷🔞🍷
+okadran	Okadran. fr
+cilounette81	Ccil
+juanarbelaezchef	Juan Arbelaez
+welowcook	Welowcook
+boucherie_fagoo	Boucherie FAGOO
+julienduboue	Julien Duboué
+vincentdufrasne	vincent dufrasne
+bentimes10	BenTimes10
+plancha_barbecue	cuisine au jardin
+jonathanlacanal	Jonathan Lacanal
+olivier.moulin	Papa en Cuisine
+pieceduboucher	Pièce Du Boucher - Paris
+tabledeseleveurs	e-Boucherie normande
+pierre_sang	Pierre Sang BOYER
+gourmetartistry	World’s Finest Food Plating
+iness.255	
+cyrillignac	Cyril Lignac
+evarobineau	
+grandseigneurofficial	Le magazine du plaisir a table
+luanabelmondo.officiel	Luana Belmondo
+maisonlesellier.viard	Maison Lesellier Viard
+beatrizgonzalezchef	Beatriz Gonzalez
+david_toutain	David Toutain
+specialmeats	Specialmeats
+elevageducharrault	Elevage du Charrault 🐂
+passioncuisinart	Bertrand
+aneva_all	Aneva
+boucherie_claude_et_henri	Boucherie Claude & Henri
+steak4yourdoors	
+rafagomeschef	Rafa Gomes
+o_delice100	ô delice
+fabien_patanchon	Fabien Patanchon
+aculinarychef	❤ Chef ❤
+cedricchaumard	Cedric Chaumard
+boucheriemoderne	Boucherie Moderne
+allyouneediswine.fr	Allyouneediswine

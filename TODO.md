@@ -1,6 +1,6 @@
 # A faire
 
-Mis a jour le 22 aout 2026. A relire au debut de chaque session.
+Mis a jour le **24 aout 2026**. A relire au debut de chaque session.
 
 Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemble.
 
@@ -37,6 +37,10 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
       Si oui : la chaine fonctionne de bout en bout sur du contenu reel.
       Si non : on apprend que les collaborations des lobbies ne laissent pas
       les traces sur lesquelles on comptait — information plus precieuse encore.
+      **Precision du 24/08 :** le flux RSS ne donne que les 15 dernieres videos
+      d'une chaine. Ces deux collaborations sont anciennes, donc hors de portee
+      du flux : il faut les identifiants de video exacts. `[V]` retrouver les
+      deux liens, ou `[C]` les chercher — a decider.
 
 - [ ] `[?]` **Trancher la question du perimetre de la collecte.** On a maintenant
       la carte des acteurs. Il faut decider ce qu'on collecte en premier :
@@ -97,11 +101,17 @@ Chantier prioritaire : sans cela on ne saura jamais si le registre vaut quelque 
 - [ ] `[V]` **Constituer le jeu de reference** : annoter a la main, exhaustivement,
       toutes les collaborations viande/lait d'un petit echantillon tire au sort,
       sur une fenetre de temps fixee. Long, mais c'est le seul etalon possible.
-- [ ] `[C]` **Refaire le test croise a grande echelle.** Le test du 23/08 sur
-      32 videos donne 2 cas de segment sponsorise non declare. A reproduire sur
-      quelques centaines de videos et plusieurs dizaines de chaines pour que ce
-      soit une mesure et non une anecdote. Corriger la resolution des chaines :
-      Mister V et McFly & Carlito n'ont pas pu etre resolus.
+- [ ] `[V]` **Regarder a la main les 12 videos d'Inoxtag** marquees
+      « segment SponsorBlock sans declaration » au releve du 24/08. Question a
+      trancher pour chacune : est-ce un vrai sponsor exterieur, ou Inoxtag qui
+      fait la promotion de ses propres projets ? Sans cette verification, le
+      chiffre de non-declaration ne veut rien dire. Liste des URL dans
+      `recherche/test_croise_youtube_2026-08-24_1050.md`.
+- [ ] `[C]` **Resoudre Mister V et McFly & Carlito.** Leurs @pseudos exacts
+      sont faux dans le script ; les deux chaines echouent encore au 24/08.
+- [ ] `[C]` **Refaire le test croise a grande echelle**, une fois les 12 videos
+      arbitrees. Quelques centaines de videos et plusieurs dizaines de chaines,
+      pour que ce soit une mesure et non une anecdote.
 - [ ] `[C]` **Mettre en place la capture-recapture** entre la mention YouTube et
       SponsorBlock, pour estimer le rappel absolu.
 - [ ] `[C]` **Verifier que les cas deja documentes sont retrouves** (Squeezie,
@@ -175,3 +185,11 @@ Pas pour tout de suite, mais a ne pas oublier.
 - [x] 22/08 Lecture du schema de l'Observatoire Citoyen de la Publicite
 - [x] 22/08 Constat : l'export de Paye Ton Influence ne donne que des agregats
 - [x] 22/08 Extraction du sous-graphe viande/lait du repertoire HATVP
+- [x] 23/08 Confirme : la declaration « communication commerciale » de YouTube
+      est lisible par un programme, gratuitement et sans compte
+- [x] 24/08 Test croise YouTube **refait et enregistre** dans `recherche/`.
+      Correction d'un bug de resolution des chaines ; les chiffres du 23/08
+      sont retires de l'usage. Voir METHODOLOGIE.md section 16.
+- [x] 24/08 Verifie que le signal de declaration est stable : 18 relectures,
+      resultat identique
+- [x] 24/08 Remise a jour de LISEZ-MOI.md, en retard d'une session
