@@ -183,6 +183,26 @@ def charger(r):
                 n += 1
         resume.append((f.name, n, "audiences YouTube (API)"))
 
+    # --- chaines YouTube derivees des pseudos Instagram ---
+    f = dernier("croisement_ig_yt_*.csv")
+    if f:
+        n = 0
+        with f.open(encoding="utf-8") as fh:
+            for l in csv.DictReader(fh):
+                r.ajouter("youtube", l["channel_id"], f.name,
+                          url=l.get("url", ""),
+                          pseudo=l.get("pseudo_youtube", ""),
+                          nom_affiche=l.get("titre_youtube", ""),
+                          role="createur",
+                          audience=l.get("abonnes_youtube", ""),
+                          unite_audience="abonnes YouTube",
+                          audience_relevee_le=l.get("releve_le", ""),
+                          lien_avec_la_filiere="derive d'un compte Instagram suivi "
+                                               "par une vitrine (rattachement HYPOTHESE)",
+                          entites_liees=l.get("suivi_par", ""))
+                n += 1
+        resume.append((f.name, n, "chaines YouTube derivees d'Instagram"))
+
     # --- pseudos publies par les sites des lobbies ---
     f = dernier("sites_lobbies_*.csv")
     if f:

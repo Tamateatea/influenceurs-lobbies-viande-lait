@@ -4,7 +4,7 @@
 toute action.** Il est fait pour ca. Il est mis a jour a la fin de chaque
 session de travail.
 
-Derniere mise a jour : **24 aout 2026, fin de la 2e session** (soir).
+Derniere mise a jour : **24 aout 2026, fin de la 2e session** (nuit).
 
 ---
 
@@ -160,6 +160,11 @@ fichier `.md`.
 ---
 
 ## 6. Prochaine session — a faire en premier
+
+**Etat du registre au 24/08 au soir :** `cartographie/COMPTES.xlsx` —
+**766 comptes** (552 Instagram, 185 YouTube, 29 indetermines), dont 26 % avec
+audience connue. La liste de surveillance YouTube est passee de 27 chaines
+nommees a la main a **185 derivees des sources**.
 
 **Pour Vincent, par ordre de valeur :**
 

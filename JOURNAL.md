@@ -1459,3 +1459,78 @@ superpose les couches, on n'en choisit pas une (JOURNAL 23).
 
 608 comptes distincts : 552 Instagram, 27 YouTube, 29 de plateforme
 indeterminee. 43 avec audience connue. 22 arbitres par Vincent.
+
+---
+
+## 32. Journal de methode — 24 aout 2026 : la liste de surveillance se derive enfin toute seule
+
+### 32.1 L'objection de Vincent
+
+« Est-ce bien clair que le but de l'outil qu'on essaie de developper est
+d'identifier ces createurs ? Lors du travail, je peux etre amene a t'en fournir
+pour avancer, mais le produit final ne devra pas reposer sur mon travail. »
+
+Objection fondee. La journee avait pris cette pente : je lui demandais des
+pseudos, des comptes, des arbitrages. Legitime en R&D, disqualifiant comme
+architecture. Inscrit en METHODOLOGIE section 7.1bis.
+
+### 32.2 Premiere application : 162 chaines derivees, zero saisie
+
+`outils/croiser_instagram_youtube.py` demande a l'API YouTube, pour chacun des
+538 comptes Instagram suivis par les vitrines, s'il existe une chaine portant
+le meme pseudo. `channels.list?forHandle` coute 1 unite.
+
+MESURE — `recherche/croisement_ig_yt_2026-08-24.csv` :
+
+- 538 pseudos essayes, **162 chaines YouTube trouvees**, 0 erreur
+- **538 unites de quota** sur ~10 000 par jour
+
+La liste de surveillance passe de 27 chaines nommees a la main a **162 derivees
+des sources**. Les plus suivies, toutes issues des abonnements du CNIEL :
+
+| Chaine | Abonnes |
+|---|---|
+| Michou | 11 000 000 |
+| Inoxtag | 9 470 000 |
+| Valouzz | 3 280 000 |
+| Chefclub | 2 920 000 |
+| BouziTV (@levraibouseuh) | 2 850 000 |
+| Nota Bene | 2 770 000 |
+| Djilsi | 2 350 000 |
+| Pidi | 2 040 000 |
+| Loris Giuliano | 1 920 000 |
+| Juste Zoe | 1 560 000 |
+| Doigby | 1 390 000 |
+| Kemar | 1 280 000 |
+| RebeuDeter | 1 060 000 |
+| YanissaXoxo | 1 020 000 |
+
+**Une dizaine de ces noms n'avaient jamais ete cites dans le projet.** Ils ne
+viennent ni de la presse, ni de Vincent : ils sont derives du signal emis par
+le commanditaire lui-meme.
+
+### 32.3 Deux reserves, fermes
+
+1. **Un meme pseudo sur deux plateformes ne prouve pas la meme personne.**
+   Le rattachement est enregistre comme HYPOTHESE, jamais comme fait.
+   La colonne le dit explicitement dans le fichier.
+2. **Etre suivi par une vitrine ne prouve aucune collaboration** (JOURNAL 19).
+   Ce croisement elargit la liste a SURVEILLER, rien de plus.
+
+Le bruit est visible dans le resultat : @vice (19,2 M), @therock (7,1 M),
+@primevideofr, @nytcooking sont des medias et des celebrites internationales
+que le CNIEL suit sans rapport avec une collaboration francaise.
+
+### 32.4 Correction de perimetre demandee par Vincent
+
+« On veut aussi identifier des collaborations commerciales avec l'industrie
+directement, un producteur de yaourts par exemple, pas seulement celles avec
+les representants de l'industrie. »
+
+C'est deja le perimetre ecrit en section 1 — « interprofessions **et marques
+productrices** » — mais la table d'alias ne traite bien que les vitrines. Les
+52 lignes de la feuille `Marques` sont toutes en statut A VERIFIER et ne sont
+pas exploitees par les detecteurs.
+
+**Trou reel a combler** : Danone, Lactalis, Herta, Bigard, Sodiaal doivent
+entrer dans la table d'alias au meme titre que `@lesproduitslaitiers`.

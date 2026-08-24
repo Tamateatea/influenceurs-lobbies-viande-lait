@@ -102,6 +102,12 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Ameliorer la cartographie
 
+- [ ] `[C]` **Faire entrer les MARQUES dans la table d'alias.** Le perimetre
+      inclut les marques productrices (Danone, Lactalis, Herta, Bigard,
+      Sodiaal...), pas seulement les interprofessions. Les 52 lignes de la
+      feuille `Marques` sont toutes en A VERIFIER et aucun detecteur ne s'en
+      sert. Precision de Vincent, 24/08 : « c'est tres important ».
+
 - [ ] `[C]` **Combler la mesure d'audience.** Seuls 3 % des 605 comptes du
       registre ont un nombre d'abonnes connu, alors que l'audience est le
       critere de priorite du projet. La cle API YouTube reglera les chaines ;

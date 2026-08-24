@@ -215,6 +215,31 @@ par un programme**. Une source qui n'existe que sous forme de fichier a
 telecharger depuis un formulaire est une source de recherche, pas une source
 de production.
 
+### 7.1bis L'outil ne doit pas dependre du travail manuel de Vincent
+
+Pose par Vincent le 24 aout 2026 : « le produit final ne devra pas reposer sur
+mon travail pour ca ».
+
+Un outil auquel il faut fournir la liste des createurs a surveiller n'est pas
+un outil de detection : c'est l'humain qui detecte, l'outil ne fait que
+verifier. La liste de surveillance doit se **deriver des sources**.
+
+Distinction a tenir :
+
+- **En R&D, l'aide manuelle est legitime et souvent plus rapide.** Vincent a
+  debloque en dix secondes des pseudos que le code cherchait mal.
+- **Dans l'architecture finale, elle est disqualifiante.** Tout apport manuel
+  doit etre soit remplacable par une source, soit cantonne a la verification
+  (etape 5 de la section 3), qui est humaine par construction.
+
+C'est ce qui rend le **mode A** (interroger le commanditaire, section 12) si
+important : l'API TikTok rend le createur et la marque sans qu'on lui fournisse
+aucune liste.
+
+Premiere application concrete, le 24/08 : `croiser_instagram_youtube.py`
+derive 162 chaines YouTube des 538 comptes Instagram suivis par les vitrines,
+sans aucune saisie humaine.
+
 ### 7.2 Le perimetre geographique n'est pas la France par nature
 
 Le projet commence par la France parce que c'est le terrain de la personne a
