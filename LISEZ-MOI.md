@@ -1,63 +1,78 @@
 # Carte du dossier
 
 Projet : base de donnees publique des collaborations commerciales remunerees
-entre createurs de contenu et industrie de la viande et du lait, en France.
+entre createurs de contenu et industrie de la viande et du lait.
 
-Rien n'est encore construit. A ce stade le dossier contient de la recherche,
-une cartographie et des tests de sources, pas un outil.
+Etat au **24 aout 2026**. Depot **prive** sur GitHub :
+`github.com/Tamateatea/influenceurs-lobbies-viande-lait`
 
-Etat au **24 aout 2026**.
+**Le point d'entree du projet est `ETAT.md`, pas ce fichier.** Ici on decrit
+seulement ou sont rangees les choses.
 
 ---
 
-## Ou est quoi
+## Les documents
+
+| Fichier | Contenu | Qui l'ecrit |
+|---|---|---|
+| **`ETAT.md`** | **Le point d'entree.** Ou en est le projet maintenant. | Claude |
+| **`HYPOTHESES.md`** | Ce qui est teste, confirme, **refute**. A lire avant de tester. | Claude |
+| `METHODOLOGIE.md` | Ce qui est **tranche** : principes, definitions, decisions. | Les deux |
+| `JOURNAL.md` | Ce qu'on a fait, quand, ce qu'on en a appris. On ajoute a la fin. | Claude |
+| `TODO.md` | Qui fait quoi ensuite. | Les deux |
+| `CLAUDE.md` | Instructions de travail pour Claude. | Vincent |
+| `LISEZ-MOI.md` | Ce fichier. | Les deux |
+| `SECRETS.txt` | Jetons et mots de passe. **Jamais envoye sur GitHub.** | Vincent |
+
+---
+
+## Les dossiers
+
+### `cartographie/` — ce que des humains lisent et remplissent
+
+- **`A_COMPLETER.xlsx`** — le classeur que **tu** remplis. Une question par
+  ligne, une seule colonne a remplir, en vert. Aucun script ne l'ecrase :
+  celui qui le fabrique refuse de le faire s'il existe deja.
+- `cartographie_filiere.xlsx` — le classeur de reference, 12 feuilles :
+  interprofessions, industriels, marques, **alias**, agences, influenceurs,
+  sources de donnees, journal, et 3 feuilles HATVP_*. Fabrique par un script :
+  une modification faite directement dans Excel sera ecrasee.
+
+### `outils/` — les scripts
+
+Chacun explique en tete ce qu'il fait et comment le lancer.
+
+| Script | Ce qu'il fait |
+|---|---|
+| `generer_cartographie.py` | Fabrique `cartographie_filiere.xlsx`. Tout le contenu ecrit a la main est lisible ici en clair. |
+| `generer_classeur_a_completer.py` | Fabrique `A_COMPLETER.xlsx`. Refuse d'ecraser un classeur existant. |
+| `extraire_hatvp.py` | Sous-graphe viande/lait du repertoire des lobbies. |
+| `extraire_meta_adlibrary.py` | Filtre le rapport Meta Ad Library France sur la filiere. |
+| `test_croise_youtube.py` | Croise les signaux de collaboration sur des chaines francaises. |
+| `extraire_descriptions_youtube.py` | Lit les descriptions et y cherche les alias. **C'est ce script qui a trouve le premier cas.** |
+| `extraire_comptes_suivis.py` | Sort les listes d'abonnements collees dans `A_COMPLETER.xlsx` vers des fichiers propres et dates. |
+
+### `donnees/` — ce qu'on a telecharge ou releve. Instantanes, pas production.
+
+- `sources/hatvp/` — le repertoire HATVP des representants d'interets (open
+  data Etalab, telecharge le 22/08/2026), et dans `extraits/` le sous-graphe
+  viande-lait qu'on en tire.
+- `sources/meta/` — le rapport public Meta Ad Library France, et
+  `annonceurs_filiere.csv`, les 39 pages de la filiere.
+- `comptes_vitrines/` — les listes d'abonnements **Instagram** des comptes
+  vitrines des lobbies, relevees a la main. Un fichier par compte, date.
+- `paye_ton_influence/` — une `NOTE.md` seulement. Leurs fichiers etaient
+  vides, supprimes le 22/08. La note garde leurs ordres de grandeur.
+
+### `recherche/` — les MESURES qu'on produit
+
+Chaque releve est horodate, avec le detail ligne par ligne. **Ne jamais
+modifier ces fichiers a la main : c'est la trace des mesures.**
 
 ```
-InfluencersxMeat&MilkLobbyTracker/
-│
-├── LISEZ-MOI.md          ← ce fichier : la carte du dossier
-├── TODO.md               ← A LIRE EN DEBUT DE SESSION. Qui fait quoi ensuite.
-├── METHODOLOGIE.md       ← comment on compte s'y prendre, et ce qui n'est pas tranche
-├── CLAUDE.md             ← instructions de travail pour Claude
-│
-├── cartographie/
-│   └── cartographie_filiere.xlsx
-│         Le classeur principal. 12 feuilles : interprofessions, industriels,
-│         marques, alias, agences, influenceurs, sources de donnees, journal,
-│         et 3 feuilles HATVP_* extraites du repertoire des lobbies.
-│         C'est le document a partager avec des collegues.
-│
-├── outils/               ← les scripts. Chacun dit en tete ce qu'il fait.
-│   ├── generer_cartographie.py
-│   │     Fabrique le classeur ci-dessus. Tout le contenu ecrit a la main
-│   │     est lisible ici en texte clair.
-│   ├── extraire_hatvp.py
-│   │     Extrait le sous-graphe viande/lait du repertoire des lobbies.
-│   │     Produit les 3 feuilles HATVP_* du classeur.
-│   ├── extraire_meta_adlibrary.py
-│   │     Filtre le rapport public Meta Ad Library France sur la filiere.
-│   │     Produit donnees/sources/meta/annonceurs_filiere.csv
-│   └── test_croise_youtube.py
-│         Mesure, sur des chaines francaises, le croisement des deux signaux
-│         de collaboration : declaration YouTube et segment SponsorBlock.
-│         Ecrit ses resultats dans recherche/.
-│
-├── donnees/              ← ce qu'on a telecharge. Instantanes, pas production.
-│   ├── paye_ton_influence/
-│   │     Ne contient plus qu'une NOTE.md. Les fichiers telecharges depuis leur
-│   │     observatoire etaient vides : supprimes le 22/08. La note garde leurs
-│   │     ordres de grandeur, qui servent a dimensionner notre collecte.
-│   ├── sources/hatvp/
-│   │     Le repertoire HATVP des representants d'interets (open data Etalab,
-│   │     telecharge le 22/08/2026), sa notice, son dictionnaire de donnees,
-│   │     et dans extraits/ le sous-graphe viande-lait qu'on en tire.
-│   └── sources/meta/
-│         Le rapport public Meta Ad Library France (telecharge le 22/08/2026)
-│         et annonceurs_filiere.csv, les 39 pages de la filiere qu'on en tire.
-│
-└── recherche/            ← les MESURES qu'on produit. Chaque releve est date.
-      test_croise_youtube_AAAA-MM-JJ_HHMM.csv  le detail, une ligne par video
-      test_croise_youtube_AAAA-MM-JJ_HHMM.md   le resume lisible du meme releve
+test_croise_youtube_AAAA-MM-JJ_HHMM.csv / .md
+descriptions_youtube_AAAA-MM-JJ_HHMM.csv / .md
+comptes_suivis_AAAA-MM-JJ.csv
 ```
 
 ---
@@ -66,42 +81,35 @@ InfluencersxMeat&MilkLobbyTracker/
 
 Erreur commise le 23/08 et corrigee le 24/08 : un test avait ete lance sans
 enregistrer sa sortie. Ses chiffres ne vivaient que dans un tableau recopie a
-la main dans METHODOLOGIE.md, et n'ont pas pu etre reproduits.
+la main, et n'ont jamais pu etre reproduits.
 
-Consequence, valable pour tout le projet : **tout script qui mesure quelque
-chose ecrit son resultat dans `recherche/`, horodate, avec le detail ligne par
-ligne** — pas seulement le resume. Sans cela on ne peut ni comparer deux
-releves, ni verifier une affirmation, ni reprendre le travail a la session
-suivante.
+**Tout script qui mesure ecrit son resultat dans `recherche/`, horodate, avec
+le detail ligne par ligne** — pas seulement le resume. Et tout extracteur
+prouve par un total qu'il n'a rien perdu en silence.
 
 ---
 
 ## Qui edite quoi
 
-C'est la seule regle technique du dossier, et elle evite de perdre du travail.
-
 | Fichier | Qui l'edite | Attention |
 |---|---|---|
-| `cartographie_filiere.xlsx` | **Le script** | Une modification faite directement dans Excel sera ecrasee au prochain lancement. |
+| `cartographie_filiere.xlsx` | **Le script** | Une modification faite dans Excel sera ecrasee au prochain lancement. |
+| `A_COMPLETER.xlsx` | **Vincent** | Aucun script ne l'ecrase. |
 | `outils/*.py` | Claude, ou toi | Source de verite du contenu produit. |
-| `LISEZ-MOI.md`, `METHODOLOGIE.md`, `TODO.md` | Les deux | |
+| `recherche/**` | Les scripts | Ne jamais modifier a la main. |
 | `donnees/**` | Depots manuels | Chaque telechargement est annonce avant d'etre fait. |
-| `recherche/**` | Les scripts | Ne jamais modifier a la main : c'est la trace des mesures. |
+| `SECRETS.txt` | Vincent | Exclu de GitHub par `.gitignore`. Verifie. |
 
-Si tu veux corriger une ligne du classeur, deux options : me le dire, ou
-modifier la liste correspondante dans le script puis relancer :
+Pour corriger une ligne du classeur de reference : me le dire, ou modifier la
+liste correspondante dans le script puis relancer :
 
 ```
 python outils/generer_cartographie.py
 ```
 
-Si tu preferes editer le classeur a la main et te passer du script, dis-le :
-on supprime le script et le `.xlsx` devient la source de verite. C'est un
-arbitrage, pas une contrainte technique.
-
 ---
 
-## Conventions du classeur
+## Conventions du classeur de reference
 
 Chaque ligne factuelle porte un **statut** et une **source**.
 
@@ -111,29 +119,26 @@ Chaque ligne factuelle porte un **statut** et une **source**.
 | `A VERIFIER` | Repris d'une source secondaire, de la presse, ou de memoire. Surligne en orange. |
 | `HYPOTHESE` | Suppose, pas encore cherche. Surligne en orange. |
 
-Regle : **rien qui ne soit pas `CONFIRME` ne sort du dossier.** Le classeur est
-un outil de travail, pas une publication.
-
-Aujourd'hui, sur 142 lignes, une bonne moitie est en orange. C'est normal a ce
-stade et c'est fait pour se voir.
+**Rien qui ne soit pas `CONFIRME` ne sort du dossier.** Le classeur est un
+outil de travail, pas une publication.
 
 ---
 
-## Etat des sources, au 24 aout 2026
+## Etat des sources
+
+Le detail des hypotheses testees est dans `HYPOTHESES.md`. Resume :
 
 | Source | Etat |
 |---|---|
-| Declaration « communication commerciale » YouTube | **Testee et reproduite.** Lisible sans compte ni cle. Signal stable : 3 relectures identiques. Le plus solide a ce jour. |
-| API SponsorBlock | **Testee.** Fonctionne sans cle. Couvre bien les chaines francaises testees. Dump en masse desactive : interrogation video par video. |
-| Flux RSS de chaine YouTube | **Testes.** Fonctionnent sans cle. Ne donnent que les ~15 dernieres videos. |
-| HATVP open data | **Telecharge et exploite.** 35 organisations de la filiere, 132 mandats, 60 affiliations. |
-| Rapport Meta Ad Library France | **Telecharge et exploite.** 39 pages de la filiere. Ne couvre que les publicites dites politiques, pas les contenus de marque. |
-| API Meta Ad Library (`ad_type=ALL`) | Identifiee, **pas testee** : demande un jeton developpeur Meta (gratuit). |
-| Meta Content Library (chercheurs) | Identifiee, **pas testee** : demande une affiliation universitaire. |
-| TikTok Commercial Content Library | Accessible, **pas encore testee**. |
-| DGCCRF, Legifrance, AGRIP | Identifiees, pas encore explorees. |
-| Observatoire Paye Ton Influence | Export teste : ne renvoie que des agregats. Ecartee comme source. |
-| Observatoire Citoyen de la Publicite | Code source lu. Pas de jeu de donnees. |
-| ARPP | Fiabilite limitee, voir METHODOLOGIE.md section 5. |
-
-Le detail complet est dans la feuille `Sources_de_donnees` du classeur.
+| Declaration « communication commerciale » YouTube | **Testee.** Fiable, mais ne capte que 2 collaborations sur 14 chez Inoxtag. |
+| API SponsorBlock | **Testee.** Precise (12/12), couverture inegale selon les chaines. |
+| Description publique YouTube | **Testee.** A trouve le premier cas du projet. |
+| Sous-titres YouTube via `yt-dlp` | **Testee.** Atteint le contenu parle. Riche, mais bruyante. |
+| Flux RSS de chaine YouTube | **Testes.** 15 dernieres videos seulement, pas de retroactif. |
+| HATVP open data | **Exploite.** 35 organisations, 132 mandats, 60 affiliations. |
+| Rapport Meta Ad Library France | **Exploite.** 39 pages. Publicites politiques seulement. |
+| API Meta Ad Library | **Pas testee.** Attend un jeton et une verification d'identite. |
+| Meta Content Library (chercheurs) | **Ecartee.** Affiliation universitaire requise, non disponible. |
+| TikTok Commercial Content Library | **Pas testee.** Le plus gros trou du projet. |
+| DGCCRF, Legifrance, AGRIP | Identifiees, pas explorees. |
+| Paye Ton Influence, Observatoire Citoyen, ARPP | Ecartees. Voir `HYPOTHESES.md`. |

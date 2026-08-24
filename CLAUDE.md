@@ -9,13 +9,24 @@ createurs de contenu et industrie de la viande et du lait. Finalite : plaidoyer
 pour les animaux. Perimetre initial la France, mais le pays est un champ de
 donnees, pas une hypothese cablee.
 
-Trois documents portent l'etat du projet :
+**Commence par lire `ETAT.md`.** Il dit ou en est le projet, ce qu'on
+construit, et dans quel ordre lire le reste.
 
-- `LISEZ-MOI.md` — la carte du dossier et les conventions
-- `METHODOLOGIE.md` — ce qui est tranche, ce qui est ouvert, et le journal de
-  methode. **A tenir a jour a chaque session, sans qu'on ait a le demander.**
+Les documents, par ordre de lecture :
+
+- `ETAT.md` — ou on en est **maintenant**. Le point d'entree.
+- `HYPOTHESES.md` — le registre des hypotheses testees, confirmees, **refutees**.
+  **A consulter avant de tester quoi que ce soit** : le piege le plus couteux
+  du projet est de refaire un test deja fait ou de reprendre une piste refutee.
+- `METHODOLOGIE.md` — ce qui est **tranche** : principes, definitions, decisions.
+- `JOURNAL.md` — ce qui a ete fait, quand, ce qu'on en a appris. On y ajoute a
+  la fin, on ne reecrit jamais.
 - `TODO.md` — qui fait quoi ensuite, tague `[V]` Vincent, `[C]` Claude,
   `[?]` a decider ensemble
+- `LISEZ-MOI.md` — la carte des dossiers et les conventions
+
+**A tenir a jour a chaque session, sans qu'on ait a le demander :** `ETAT.md`,
+`HYPOTHESES.md` et `JOURNAL.md`.
 
 ## Avec qui tu travailles
 
@@ -56,7 +67,13 @@ explicitement que ce n'est pas verifie.
 ou les fichiers sont ranges et ce qu'ils contiennent.
 
 **Plusieurs hypotheses, toutes testees.** Ne retiens ni n'ecarte une technique
-sur intuition. Voir METHODOLOGIE.md section 11.
+sur intuition. Voir METHODOLOGIE.md section 10.
+
+**Etiquette chaque affirmation** — `MESURE` (un fichier de `recherche/` le
+prouve, le nommer), `RAPPORTE` (une source exterieure le dit, la citer),
+`SUPPOSE` (rien derriere). Y compris dans tes messages a Vincent. Et **jamais
+un chiffre sans nommer le fichier qui le produit.** Voir METHODOLOGIE.md
+section 13.
 
 ## Entretien du projet — c'est ta responsabilite
 
@@ -64,10 +81,14 @@ Vincent ne peut pas juger quand la documentation ou le code ont besoin d'etre
 reorganises : c'est a toi de le reperer et de le proposer. Il a explicitement
 demande qu'on prenne regulierement du recul pour nettoyer avant d'avancer.
 
-Point de vigilance en cours : `METHODOLOGIE.md` grossit par ajouts successifs
-(571 lignes au 23 aout 2026). Vers 700-800 lignes, il faudra le restructurer
-par theme plutot que par date, en gardant le journal de methode a part.
-Proposer la reorganisation, ne pas la faire sans accord.
+Fait le 24 aout 2026 : `METHODOLOGIE.md` avait atteint 952 lignes en melangeant
+principes et journal. Il a ete scinde en `ETAT.md`, `HYPOTHESES.md`,
+`METHODOLOGIE.md` et `JOURNAL.md`. Ce melange etait la cause d'une erreur
+reelle : un chiffre mesure une fois etait devenu un fait etabli.
+
+Point de vigilance : `JOURNAL.md` grossit par nature, c'est normal et voulu.
+En revanche `METHODOLOGIE.md` ne doit **pas** grossir : s'il depasse ~600
+lignes, c'est que du journal s'y est glisse.
 
 ## Contraintes fermes
 
@@ -75,9 +96,12 @@ Proposer la reorganisation, ne pas la faire sans accord.
   facturee.
 - **Pas de scraping authentifie**, pas de contournement de CGU.
 - **Rien ne se publie sans verification humaine.** Voir METHODOLOGIE.md
-  section 10 : a faible prevalence, meme un detecteur excellent produit
-  majoritairement des faux positifs.
-- **Aucune dependance a un fichier telecharge a la main.** Voir section 8.1.
+  section 9 : a faible prevalence, meme un detecteur excellent produit
+  majoritairement des faux positifs. Demonstration concrete en JOURNAL 20.4.
+- **Aucune dependance a un fichier telecharge a la main.** Voir METHODOLOGIE.md
+  section 7.1.
+- **Une mesure non ecrite n'existe pas.** Tout script qui mesure ecrit son
+  resultat dans `recherche/`, horodate, avec le detail ligne par ligne.
 
 ## Precision sur la nature du site
 
