@@ -50,7 +50,7 @@ RECHERCHE = RACINE / "recherche"
 CARTO = RACINE / "cartographie"
 
 COLONNES = [
-    "plateforme", "identifiant", "url", "nom_affiche", "personne",
+    "plateforme", "identifiant", "pseudo", "url", "nom_affiche", "personne",
     "role", "audience", "unite_audience", "audience_relevee_le",
     "lien_avec_la_filiere", "entites_liees", "priorite", "congruence",
     "commentaire_vincent", "sources", "vu_le",
@@ -164,6 +164,25 @@ def charger(r):
                           vu_le=l.get("releve_le", "")[:10])
         resume.append((f.name, len(vues), "chaines YouTube"))
 
+    # --- audiences YouTube relevees par l'API officielle ---
+    f = dernier("audiences_youtube_*.csv")
+    if f:
+        n = 0
+        with f.open(encoding="utf-8") as fh:
+            for l in csv.DictReader(fh):
+                r.ajouter("youtube", l["channel_id"], f.name,
+                          url=l.get("url", ""),
+                          nom_affiche=l.get("titre", ""),
+                          personne=l.get("personne_demandee", ""),
+                          role="createur",
+                          audience=l.get("abonnes", ""),
+                          unite_audience="abonnes YouTube",
+                          audience_relevee_le=l.get("releve_le", ""),
+                          pseudo=l.get("pseudo", ""))
+                # le @pseudo YouTube devient un alias connu du meme compte
+                n += 1
+        resume.append((f.name, n, "audiences YouTube (API)"))
+
     # --- pseudos publies par les sites des lobbies ---
     f = dernier("sites_lobbies_*.csv")
     if f:
@@ -260,7 +279,7 @@ def ecrire_xlsx(lignes, chemin):
     for c in ws[1]:
         c.font = Font(bold=True)
         c.fill = PatternFill("solid", fgColor="D9D9D9")
-    largeurs = [13, 26, 34, 24, 18, 26, 11, 17, 14, 26, 22, 15, 12, 40, 30, 12]
+    largeurs = [13, 26, 22, 34, 24, 18, 26, 11, 17, 14, 26, 22, 15, 12, 40, 30, 12]
     for i, w in enumerate(largeurs, start=1):
         ws.column_dimensions[chr(64 + i) if i <= 26 else "A" + chr(38 + i)].width = w
     for row in ws.iter_rows():

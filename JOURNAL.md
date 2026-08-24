@@ -1383,3 +1383,79 @@ meme nom (JOURNAL 28.4).
 Le rattachement compte → personne est un **jugement humain explicite, date et
 source** (METHODOLOGIE section 8). Il sera demande a Vincent quand il servira
 a quelque chose, pas avant.
+
+---
+
+## 31. Journal de methode — 24 aout 2026 : l'API YouTube, et l'audience comme detecteur d'erreur
+
+Cle fournie par Vincent. `outils/audiences_youtube.py` ecrit.
+
+### 31.1 Le trou d'audience est comble cote YouTube
+
+MESURE — `recherche/audiences_youtube_2026-08-24.csv`, **27 chaines,
+3 unites de quota depensees sur ~10 000 par jour.**
+
+| Chaine | Abonnes |
+|---|---|
+| SQUEEZIE | 20 200 000 |
+| Norman | 11 200 000 |
+| Michou | 11 000 000 |
+| Inoxtag | 9 470 000 |
+| Mcfly et Carlito | 7 660 000 |
+| Mister V | 6 540 000 |
+| SEB (@SEBFRIT) | 5 850 000 |
+| MichouOff | 5 550 000 |
+| SQUEEZIE GAMING | 5 100 000 |
+| **LeBouseuh** | **4 620 000** |
+| Inoxtag 2.0 | 3 140 000 |
+| ZACK (@ZackNani) | 974 000 |
+
+La couverture d'audience du registre passe de **3 % a 7 %** ; elle est
+desormais complete pour toutes les chaines YouTube surveillees.
+
+**LeBouseuh a 4,62 M d'abonnes sur YouTube contre 2,4 M sur Instagram.**
+Illustration directe de METHODOLOGIE section 8 : l'audience est un attribut du
+COMPTE, pas de la personne. Un seul chiffre par createur n'aurait aucun sens.
+
+### 31.2 L'audience a servi de detecteur d'erreur
+
+Le releve a fait apparaitre deux chaines absurdes : « seb la frite » avec
+**1 630 abonnes** et « Zack Nani » avec **0 abonne**.
+
+Origine : le releve de 16h39, anterieur au filtre du badge de verification,
+avait resolu ces noms vers des chaines d'imposteurs. Les vraies chaines sont
+@SEBFRIT (5,85 M) et @ZackNani (974 k).
+
+**Une chaine a 0 abonne qui pretend etre un createur connu est une erreur
+visible.** L'audience n'est donc pas seulement un critere de priorite : c'est
+un **controle de coherence** sur la resolution des chaines. A utiliser
+systematiquement.
+
+Les deux fausses chaines sont inscrites dans `donnees/chaines_youtube.json`
+sous `ecartes` : elles ne reviendront plus.
+
+### 31.3 Resoudre par pseudo coute 1 unite, par recherche 100
+
+Decouverte a l'usage. `channels.list?forHandle=SEBFRIT` renvoie directement la
+chaine pour **1 unite**. `search.list` en coute **100**.
+
+Et ce n'est pas qu'une question de cout : **un pseudo designe une seule
+chaine**, alors qu'une recherche par nom ramene des homonymes et des chaines
+de fans — c'est exactement ce qui avait produit la fausse « seb la frite ».
+
+Regle : **toujours resoudre par pseudo quand on le connait.** La recherche est
+un dernier recours, cher et ambigu. Consequence pratique : demander a Vincent
+les @pseudos plutot que les noms usuels est cent fois moins couteux en quota
+et plus sur.
+
+### 31.4 Ce que l'API ne remplace pas
+
+Elle ne donne pas la case de declaration « communication commerciale », qui
+n'existe que dans la page publique `/watch`. La lecture directe reste donc
+necessaire pour ce signal — conformement a l'arbitrage de Vincent : on
+superpose les couches, on n'en choisit pas une (JOURNAL 23).
+
+### 31.5 Etat du registre consolide
+
+608 comptes distincts : 552 Instagram, 27 YouTube, 29 de plateforme
+indeterminee. 43 avec audience connue. 22 arbitres par Vincent.

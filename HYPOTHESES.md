@@ -59,7 +59,10 @@ gratuits et sans authentification.
 | YT-20 | On peut interroger YouTube en masse sans limitation | **REFUTEE** | HTTP 429 des ~300 pages consecutives. JOURNAL 21.4 |
 | YT-21 | Ralentir suffit a contourner la limitation | **REFUTEE** | 3x moins de debit → 3x plus d'echecs. La limite est un budget cumule sur la journee, pas un debit. JOURNAL 28 |
 | YT-22 | Le badge de verification ecarte les homonymes | **REFUTEE** | « Norman » remonte Norman Greenbaum ; « Domingo » remonte Domingo Legal. Ecarte les fans, pas les homonymes reels. JOURNAL 28.4 |
-| YT-23 | L'API YouTube Data v3 offre un quota documente utilisable | **A TESTER** | Necessaire a une surveillance continue : la lecture directe a une limite opaque. Demande une cle gratuite |
+| YT-23 | L'API YouTube Data v3 offre un quota documente utilisable | **CONFIRMEE** | 27 chaines relevees pour 3 unites sur ~10 000. `audiences_youtube_2026-08-24.csv` |
+| YT-24 | L'API donne le nombre d'abonnes | **CONFIRMEE** | `channels.list?part=statistics`. Couverture d'audience 3 % → 7 % |
+| YT-25 | Resoudre une chaine par @pseudo coute autant que par recherche | **REFUTEE** | 1 unite contre 100. Et sans ambiguite d'homonyme. JOURNAL 31.3 |
+| YT-26 | L'API expose la case de declaration commerciale | **REFUTEE** | Absente de l'API : elle n'existe que dans la page `/watch`. La lecture directe reste necessaire |
 | YT-16 | Les sponsorings Twitch ressortent via les extraits reuploades sur YouTube | **CONFIRMEE** | INAPORC ecrit que les lives Gastronogeek et LeBouseuh ont fait l'objet d'un best of sur leurs chaines YouTube. JOURNAL 24.3 |
 
 ### Ce que YouTube a appris au projet
