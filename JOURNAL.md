@@ -1185,3 +1185,73 @@ sur l'operation Twitch.
 
 Cela confirme la lecture de METHODOLOGIE.md section 1 : le registre inclut
 tout le monde, mais la priorite de recherche va aux generalistes.
+
+---
+
+## 28. Journal de methode — 24 aout 2026 : la limitation YouTube est cumulative, pas instantanee
+
+### 28.1 Trois tentatives, un resultat contre-intuitif
+
+MESURE, trois lancements de `outils/surveiller_youtube.py` dans la soiree :
+
+| Videos | Pause | Fils | Pages refusees | Part |
+|---|---|---|---|---|
+| 288 | 0,35 s | 8 | 288 | **100 %** |
+| 300 | 0,35 s | 3 | 37 | 12 % |
+| 240 | **1,2 s** | **2** | 85 | **35 %** |
+
+**Ralentir a aggrave le taux d'echec.** Trois fois moins de debit, trois fois
+plus de refus en proportion.
+
+### 28.2 Ce que ca signifie
+
+L'hypothese implicite etait que YouTube limite un **debit** — trop de requetes
+par seconde. Elle est fausse, ou du moins insuffisante.
+
+Le comportement observe correspond a un **budget cumule sur la journee**,
+attache a l'adresse IP. Chaque lancement successif part d'un budget deja
+entame par le precedent ; ralentir n'y change rien, puisque ce n'est pas la
+vitesse qui est comptee mais le nombre.
+
+Consequence pratique immediate : **le quota YouTube de la journee est epuise.**
+La mesure elargie attendra. Inutile de reessayer aujourd'hui, quels que soient
+les reglages — c'est mesure, pas suppose.
+
+### 28.3 Et ca tranche la question de l'API officielle, par la mesure
+
+Vincent avait tranche le 24/08 que ce qui est techniquement possible sans
+enfreindre la loi est permis, et propose de superposer plusieurs couches
+plutot que de choisir (JOURNAL 23). Il avait raison sur le principe. On a
+maintenant l'argument chiffre.
+
+La lecture directe des pages a une limite **non documentee, non annoncee, et
+qui se degrade sans prevenir**. On ne peut pas planifier une surveillance
+continue dessus : impossible de savoir combien de videos on peut examiner
+avant d'etre coupe, ni quand le budget se reconstitue.
+
+L'API YouTube Data v3 a, elle, un quota **documente et compte** — de l'ordre
+de 10 000 unites par jour, RAPPORTE, a verifier. On sait a l'avance ce qu'on
+peut faire.
+
+**Ce n'est plus une question de posture, c'est une question d'exploitabilite.**
+Un outil de surveillance continue a besoin d'une limite connue. La couche API
+devient donc necessaire pour deux des quatre signaux — la liste des videos
+d'une chaine et la resolution des chaines — pendant que la lecture directe
+reste indispensable pour la case de declaration, absente de l'API.
+
+Cout : une cle gratuite. Ne contredit pas la contrainte de budget zero.
+
+### 28.4 Limite de resolution a retenir
+
+La recherche par nom, filtree sur le badge de verification, ecarte bien les
+chaines de fans mais **pas les homonymes reels** : « Norman » remonte aussi
+Norman Greenbaum, musicien americain ; « Domingo » remonte Domingo Legal et
+Domingo Gomes.
+
+Sans effet sur la mesure — ces chaines ne porteront aucun signal viande/lait —
+mais **ne jamais attribuer automatiquement une collaboration a un nom sans
+verifier de quelle personne il s'agit.** Le registre est nominatif : une
+confusion d'homonyme y serait disqualifiante.
+
+Ces chaines gonflent aussi le volume, donc consomment le budget quotidien pour
+rien. A filtrer.

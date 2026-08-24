@@ -105,8 +105,8 @@ INDICES = {
 # vides, et le script les a comptees comme « aucun signal ». Un faux negatif
 # total, silencieux, et parfaitement credible dans le rapport.
 # Depuis : on ralentit, on reessaie, et surtout ON SAIT QUAND ON A ECHOUE.
-PAUSE_ENTRE_APPELS = 0.35
-FILS = 3
+PAUSE_ENTRE_APPELS = 0.35   # ajustable par --pause
+FILS = 3                    # ajustable par --fils
 
 
 def get(url, timeout=30, essais=3):
@@ -315,11 +315,17 @@ def transcription(vid):
 
 
 def main():
+    global PAUSE_ENTRE_APPELS, FILS
     ap = argparse.ArgumentParser()
     ap.add_argument("--videos", type=int, default=VIDEOS_PAR_CHAINE)
     ap.add_argument("--sans-transcription", action="store_true")
+    ap.add_argument("--pause", type=float, default=PAUSE_ENTRE_APPELS,
+                    help="secondes d'attente entre deux appels ; monter en cas de HTTP 429")
+    ap.add_argument("--fils", type=int, default=FILS,
+                    help="telechargements simultanes ; baisser en cas de HTTP 429")
     ap.add_argument("--plafond-transcriptions", type=int, default=PLAFOND_TRANSCRIPTIONS)
     args = ap.parse_args()
+    PAUSE_ENTRE_APPELS, FILS = args.pause, args.fils
 
     SORTIE.mkdir(exist_ok=True)
     termes = charger_alias()
@@ -345,7 +351,7 @@ def main():
             taches.append((nom, cid, titre, nature, vid, t, publie))
     print(f"\n{len(taches)} videos a examiner", file=sys.stderr)
 
-    with ThreadPoolExecutor(FILS) as ex:
+    with ThreadPoolExecutor(args.fils) as ex:
         pages = list(ex.map(lambda t: page_video(t[4]), taches))
         segments = list(ex.map(lambda t: sponsorblock(t[4]), taches))
 

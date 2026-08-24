@@ -56,7 +56,10 @@ gratuits et sans authentification.
 | YT-17 | Un createur n'a qu'une seule chaine YouTube | **REFUTEE** | 13 createurs → 24 chaines officielles. La collaboration CNIEL etait sur une secondaire. JOURNAL 21.2 |
 | YT-18 | Les chaines secondaires sont plus densement sponsorisees que les principales | **PARTIELLE** | Inoxtag : 14/15 contre 4/15. Un seul createur, a confirmer. JOURNAL 21.2 |
 | YT-19 | Le badge de verification suffit a ecarter les chaines de fans | **CONFIRMEE** | 17 chaines « Squeezie » → 3 officielles. JOURNAL 21.3 |
-| YT-20 | On peut interroger YouTube en masse sans limitation | **REFUTEE** | HTTP 429 des ~300 pages consecutives. Il faut ralentir. JOURNAL 21.4 |
+| YT-20 | On peut interroger YouTube en masse sans limitation | **REFUTEE** | HTTP 429 des ~300 pages consecutives. JOURNAL 21.4 |
+| YT-21 | Ralentir suffit a contourner la limitation | **REFUTEE** | 3x moins de debit → 3x plus d'echecs. La limite est un budget cumule sur la journee, pas un debit. JOURNAL 28 |
+| YT-22 | Le badge de verification ecarte les homonymes | **REFUTEE** | « Norman » remonte Norman Greenbaum ; « Domingo » remonte Domingo Legal. Ecarte les fans, pas les homonymes reels. JOURNAL 28.4 |
+| YT-23 | L'API YouTube Data v3 offre un quota documente utilisable | **A TESTER** | Necessaire a une surveillance continue : la lecture directe a une limite opaque. Demande une cle gratuite |
 | YT-16 | Les sponsorings Twitch ressortent via les extraits reuploades sur YouTube | **CONFIRMEE** | INAPORC ecrit que les lives Gastronogeek et LeBouseuh ont fait l'objet d'un best of sur leurs chaines YouTube. JOURNAL 24.3 |
 
 ### Ce que YouTube a appris au projet
