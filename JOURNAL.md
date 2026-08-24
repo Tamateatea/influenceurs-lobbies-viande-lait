@@ -1072,3 +1072,35 @@ associatif. La documentation dit « public et chercheurs », mais l'examen est
 discretionnaire. Le formulaire demande de decrire le projet — c'est la que
 Vincent devra soigner sa formulation : recherche d'interet public sur la
 transparence de la communication commerciale, ce qui est exactement vrai.
+
+---
+
+## 26. Journal de methode — 24 aout 2026 : une erreur d'appariement, et ce qu'elle enseigne
+
+Tentative de retrouver les « best of » des lives INAPORC sur les chaines de
+LeBouseuh et Gastronogeek (cas documente en 24.3).
+
+La recherche YouTube a remonte une video `40JkqP1gYqA` intitulee « 24H A LA
+FERME ! » attribuee a LeBouseuh. Verification faite avant d'aller plus loin :
+**c'est en realite « Lebouseuh est un gros porc ! » de la chaine « Yuki
+Shorts »**, une chaine de fan sans rapport.
+
+Cause : une seule expression reguliere cherchant `videoId`, `title` et
+`ownerText` **a travers** un gros bloc JSON apparie des champs qui
+n'appartiennent pas au meme objet.
+
+C'est la troisieme fois de la journee que ce type d'erreur apparait :
+resolution de chaine par frequence (JOURNAL 16.2), alternance des listes
+d'abonnements (JOURNAL 18.4), et maintenant l'appariement de resultats de
+recherche.
+
+**Regle a appliquer partout : ne jamais extraire plusieurs champs d'un meme
+objet avec une expression reguliere qui traverse le document.** Decouper
+d'abord en blocs par objet, extraire ensuite dans chaque bloc. C'est ce que
+fait `resoudre_chaines()` depuis sa correction — l'outil de production est
+donc sain ; c'est la verification improvisee qui ne l'etait pas.
+
+Consequence pratique : les best-of des lives INAPORC restent **a retrouver**.
+Ils sont dates de la campagne Twitch et ne figurent donc plus dans les flux
+RSS, limites aux 15 dernieres videos (YT-03). Il faudra passer par la
+recherche, avec un decoupage par bloc, ou par l'API YouTube Data.
