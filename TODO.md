@@ -8,6 +8,22 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[V]` **CANDIDATER A L'API TIKTOK.** La plus haute valeur de toute la
+      liste. `developers.tiktok.com/application/commercial-content-api`.
+      Gratuit, ~2 jours ouvres, **aucune affiliation universitaire requise**
+      (contrairement a Meta). Elle rend directement le createur, la marque et
+      le label de partenariat pour la France. Decrire le projet comme une
+      recherche d'interet public sur la transparence de la communication
+      commerciale — ce qui est exactement vrai. Voir JOURNAL 25.
+- [ ] `[V]` **Arbitrer les 26 pseudos** recoltes sur les sites des lobbies :
+      createur remunere, eleveur, ou marque ? Voir
+      `recherche/sites_lobbies_2026-08-24_1719.md`.
+- [ ] `[C]` **Retrouver les best-of des lives INAPORC** sur les chaines de
+      LeBouseuh et Gastronogeek. Cas documente par le commanditaire lui-meme :
+      c'est le meilleur test de bout en bout disponible.
+- [ ] `[C]` **Ajouter Webedia a la feuille Agences**, source primaire : le
+      site d'INAPORC la nomme comme productrice des lives Twitch.
+
 - [ ] `[?]` **Conformite YouTube — a trancher.** Le `robots.txt` de YouTube
       interdit aux programmes `/feeds/videos.xml` (nos flux RSS) et `/results`
       (notre resolution de chaines). L'API YouTube Data v3 couvre ces deux

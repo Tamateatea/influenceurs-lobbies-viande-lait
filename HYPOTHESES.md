@@ -57,7 +57,7 @@ gratuits et sans authentification.
 | YT-18 | Les chaines secondaires sont plus densement sponsorisees que les principales | **PARTIELLE** | Inoxtag : 14/15 contre 4/15. Un seul createur, a confirmer. JOURNAL 21.2 |
 | YT-19 | Le badge de verification suffit a ecarter les chaines de fans | **CONFIRMEE** | 17 chaines « Squeezie » → 3 officielles. JOURNAL 21.3 |
 | YT-20 | On peut interroger YouTube en masse sans limitation | **REFUTEE** | HTTP 429 des ~300 pages consecutives. Il faut ralentir. JOURNAL 21.4 |
-| YT-16 | Les sponsorings Twitch ressortent via les extraits reuploades sur YouTube | **A TESTER** | — |
+| YT-16 | Les sponsorings Twitch ressortent via les extraits reuploades sur YouTube | **CONFIRMEE** | INAPORC ecrit que les lives Gastronogeek et LeBouseuh ont fait l'objet d'un best of sur leurs chaines YouTube. JOURNAL 24.3 |
 
 ### Ce que YouTube a appris au projet
 
@@ -94,14 +94,33 @@ Bloquee sur l'acces. Aucune methode de collecte validee a ce jour.
 
 ## TikTok
 
-Identifiee, jamais testee. **C'est le plus gros trou du projet.**
+**La source la plus prometteuse du projet.** Bloquee sur une candidature,
+pas sur une difficulte technique.
 
 | ID | Hypothese | Statut | Preuve |
 |---|---|---|---|
 | TT-01 | `library.tiktok.com` est accessible sans compte | **CONFIRMEE** | JOURNAL 7 |
-| TT-02 | La bibliotheque inclut les publications organiques portant le label de partenariat remunere | **RAPPORTE, non teste** | JOURNAL 12 |
-| TT-03 | Elle est interrogeable **par annonceur** — mode A | **A TESTER** | Si oui, les noms de createurs tombent sans liste prealable |
-| TT-04 | Un point d'acces JSON existe derriere l'interface web | **A TESTER** | — |
+| TT-02 | La bibliotheque inclut les publications organiques a label de partenariat | **CONFIRMEE (documentation)** | L'endpoint s'appelle `commercial_content/query/` et rend `label` + `brand_names` + `creator.username`. JOURNAL 25 |
+| TT-03 | Elle est interrogeable sans liste de createurs prealable | **CONFIRMEE (documentation)** | Filtre `creator_country_code: FR` seul suffit. JOURNAL 25 |
+| TT-04 | Un point d'acces JSON existe derriere l'interface web publique | **REFUTEE** | 12 chemins candidats testes, tous 404 ou HTML. **Passer par l'API officielle.** JOURNAL 25 |
+| TT-05 | L'API officielle existe et repond | **CONFIRMEE** | `open.tiktokapis.com/v2/research/adlib/commercial_content/query/` renvoie une erreur JSON structuree, pas un 404. JOURNAL 25 |
+| TT-06 | L'acces exige une affiliation universitaire | **REFUTEE** | Ouverte au public et aux chercheurs, contrairement a la Research API. **C'est ce qui la rend accessible.** JOURNAL 25 |
+| TT-07 | Les marques de la filiere y figurent pour la France | **A TESTER** | Bloquee sur la candidature |
+
+---
+
+## Sites des commanditaires — piste ouverte le 24 aout
+
+Les seuls resultats du projet qui soient des **declarations du commanditaire**
+plutot que des inferences sur du contenu.
+
+| ID | Hypothese | Statut | Preuve |
+|---|---|---|---|
+| SC-01 | Les sites des interprofessions sont explorables par plan de site | **PARTIELLE** | 3 sur 5. `sites_lobbies_2026-08-24_1719.csv` |
+| SC-02 | Ils publient des pseudos de createurs | **CONFIRMEE** | 26 pseudos distincts. JOURNAL 24.2 |
+| SC-03 | Certains ont une rubrique dediee aux influenceurs | **CONFIRMEE** | INAPORC : « Les recettes des influenceurs ». JOURNAL 24.2 |
+| SC-04 | Un credit de recette prouve une remuneration | **REFUTEE par principe** | Etablit une relation de travail, pas son caractere onereux |
+| SC-05 | Toutes les interprofessions publient autant | **REFUTEE** | INAPORC beaucoup, CNIEL peu, INTERBEV presque rien. JOURNAL 24.4 |
 
 ---
 

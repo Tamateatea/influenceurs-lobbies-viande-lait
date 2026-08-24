@@ -92,12 +92,31 @@ Acquis : les listes d'abonnements des comptes vitrines ont ete relevees a la
 main (538 comptes, `recherche/comptes_suivis_2026-08-24.csv`). Elles servent a
 **cibler**, jamais a conclure.
 
-### TikTok — jamais testee
+### TikTok — la source la plus prometteuse, bloquee sur une candidature
 
-**C'est le plus gros trou du projet.** La bibliotheque de contenus commerciaux
-est accessible et inclurait les publications organiques portant le label de
-partenariat — ce qui en ferait la seule source interrogeable **par
-annonceur**. Non verifie.
+L'API Commercial Content de TikTok rend **directement** ce que le registre
+cherche : `creator.username` + `brand_names` + `label` + date, pour l'EEE,
+depuis octobre 2022. Pas d'inference, pas de faux positif : c'est la
+plateforme qui declare.
+
+**Et elle n'exige pas d'affiliation universitaire** — contrairement a la
+Research API de TikTok et a la Meta Content Library. Elle est ouverte au
+public, aux journalistes et aux associations. Gratuite, ~2 jours ouvres.
+
+L'endpoint est verifie vivant. L'outil est ecrit et pret
+(`outils/tester_tiktok_commercial.py`). **Il ne manque que la candidature,
+qui revient a Vincent.**
+
+### Sites des commanditaires — piste ouverte le 24 aout
+
+La seule source dont les resultats sont des **declarations du commanditaire**
+et non des inferences sur du contenu. 26 pseudos recoltes sur les sites des
+interprofessions ; INAPORC a une rubrique « Les recettes des influenceurs »
+qui nomme ses partenaires, et decrit sur son site deux lives Twitch avec
+Gastronogeek et LeBouseuh, produits avec Webedia.
+
+Inegal selon les entites : INAPORC publie beaucoup, INTERBEV presque rien.
+`outils/fouiller_sites_lobbies.py`.
 
 ---
 
@@ -142,19 +161,28 @@ fichier `.md`.
 
 ## 6. Prochaine session — a faire en premier
 
-1. **Relancer `outils/surveiller_youtube.py`** sur les 24 chaines officielles,
-   principales ET secondaires, une fois la limitation HTTP 429 retombee.
-   Lancer avec `--videos 10` d'abord. Le releve du 24/08 a 288 videos est
-   invalide, celui a 174 videos ne couvrait que les chaines principales.
-2. **Resoudre Seb la Frite et Zack Nani**, dont aucune chaine verifiee ne
+**Pour Vincent, par ordre de valeur :**
+
+1. **Candidater a la Commercial Content API de TikTok** —
+   `developers.tiktok.com/application/commercial-content-api`. Gratuit,
+   ~2 jours, **pas d'affiliation universitaire requise**. C'est le meilleur
+   rapport effort/resultat de tout le projet.
+2. **Arbitrer les 26 pseudos recoltes** sur les sites des lobbies : lesquels
+   sont des createurs remuneres, lesquels sont des eleveurs ou des marques ?
+3. **Meta** : reprendre apres TikTok. Le jeton d'application est refuse, il
+   faut un jeton UTILISATEUR.
+
+**Pour Claude :**
+
+4. **Relancer `outils/surveiller_youtube.py`** sur les 24 chaines officielles
+   une fois la limitation HTTP 429 retombee. Commencer par `--videos 10`.
+5. **Verifier les chaines YouTube et Twitch de LeBouseuh et Gastronogeek**
+   pour retrouver les « best of » des lives INAPORC — un cas documente par le
+   commanditaire, donc un excellent test de bout en bout.
+6. **Resoudre Seb la Frite et Zack Nani**, dont aucune chaine verifiee ne
    remonte sous ce nom.
-3. **Tester TikTok** — jamais fait, et potentiellement le plus rentable :
-   c'est la seule plateforme dont on pense qu'elle est interrogeable par
-   annonceur (hypotheses TT-02 et TT-03).
-4. **Meta** : bloque sur l'acces. Le jeton d'app renvoie « Application does
-   not have permission for this action » sur les 12 requetes. Il faut un
-   jeton UTILISATEUR, et probablement une verification d'identite. Ne pas y
-   consacrer de temps tant que TikTok n'est pas teste.
+7. **Ajouter Webedia a la feuille Agences** du classeur, avec sa source
+   primaire (le site d'INAPORC).
 
 **Ne pas oublier :** un createur a plusieurs chaines, et la collaboration
 CNIEL trouvee etait sur une chaine secondaire.

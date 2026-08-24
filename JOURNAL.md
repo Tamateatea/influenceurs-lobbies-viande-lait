@@ -888,3 +888,187 @@ Reformulation retenue : l'API YouTube Data v3 devient une **couche
 supplementaire a construire**, pas un remplacement. La decision de posture
 n'a plus a etre prise aujourd'hui, ce qui est preferable : on la prendra avec
 des mesures des deux voies plutot que sur une intuition.
+
+---
+
+## 24. Journal de methode — 24 aout 2026, soiree : une nouvelle source, et elle est primaire
+
+*Travail mene en autonomie pendant l'absence de Vincent, sur sa demande.*
+
+### 24.1 Renverser le sens de la recherche
+
+Toutes les methodes du projet partaient jusqu'ici du **contenu du createur**,
+pour y reconnaitre un annonceur. Hypothese nouvelle, formulee et testee le
+meme soir : **partir du site du commanditaire et y chercher des createurs.**
+
+Interet immediat : ce sont des **sources primaires**. Un lobby qui ecrit
+lui-meme « recette par @X » etablit la relation bien mieux qu'une inference
+sur une description de video. Ces sites sont publics, sans authentification,
+et exposent des plans de site complets.
+
+Outil : `outils/fouiller_sites_lobbies.py`. Il lit les plans de site des
+interprofessions, telecharge les pages, et y cherche deux choses independantes :
+le vocabulaire de l'influence, et **tout pseudo publie**.
+
+La deuxieme est la bonne. Chercher des createurs *deja connus* ne fait que
+confirmer ce qu'on sait ; **recolter tous les pseudos publies trouve des
+createurs qu'on ignorait.**
+
+### 24.2 Resultat : 26 pseudos, publies par les lobbies eux-memes
+
+MESURE — `recherche/sites_lobbies_2026-08-24_1719.csv`, 360 pages lues sur
+trois sites.
+
+**INAPORC (leporc.com) a une rubrique dediee : « Les recettes des
+influenceurs ».** Elle nomme ses partenaires et publie leurs recettes :
+
+| Pseudo ou nom | Pages |
+|---|---|
+| @pepites2noisette | 41 |
+| @chateau.leg0 | 33 |
+| @olivier.moulin | 31 |
+| @juliamaufay | 24 |
+| @mummyfast | 17 |
+| @julienduboue | 12 |
+| @menthe_banane, @sophiecuisine | 8 |
+| @woodmoodfood, @florianonair, @agatheduchesne_ | 2 |
+| **Mercotte**, Dorian, Audrey | pages nominatives |
+
+CNIEL (produits-laitiers.com) : @minireyve, @lesprolaitiers, @agriskippy,
+@onestpret, @valentinwerther — ces trois derniers etant des **eleveurs**
+presentes comme « eleveurs connectes », pas des createurs remuneres.
+
+**Reserve ferme : un credit de recette n'est pas une preuve de remuneration.**
+Il etablit une relation de travail documentee, pas son caractere onereux.
+C'est un candidat solide, pas une entree de registre.
+
+### 24.3 Le cas le plus important : INAPORC x Twitch x LeBouseuh
+
+Page `leporc.com/le-porc-en-france/le-metier-d-eleveur-de-porcs-mis-en-lumiere-sur-twitch`,
+ecrite par INAPORC. Citations exactes :
+
+> « Lors d'un premier live, **@Gastronogeek**, auteur culinaire et candidat Top
+> Chef, a accueilli Sophie, eleveuse de porcs en Bretagne [...] Le "live" a
+> dure pres de deux heures et a fait l'objet d'un "best of" sur les chaines
+> youtube et Twitch de @Gastronogeek. **Chaine Youtube de webedia** pour le
+> live cuisine »
+
+> « Pour le deuxieme live, **@Lebouseuh, youtuber breton**, a accueilli Hugo,
+> futur eleveur en Normandie autour d'un defi en live gaming autour de la
+> creation d'un elevage de porcs sur MineCraft »
+
+Cible declaree : « les jeunes de 18 a 30 ans ».
+
+**Trois enseignements, chacun important :**
+
+1. **LeBouseuh est exactement le profil vise par le plaidoyer** : un youtubeur
+   gaming generaliste, sans rapport avec l'alimentation, remunere par une
+   interprofession de la viande. Et il figurait deja dans la liste
+   d'abonnements du CNIEL relevee par Vincent.
+2. **L'hypothese YT-16 est confirmee par un cas reel.** Elle disait que les
+   sponsorings Twitch pouvaient ressortir via les extraits reuploades sur
+   YouTube. Le lobby ecrit lui-meme que les lives ont fait l'objet d'un
+   « best of » sur les chaines YouTube des deux createurs. **Twitch n'est donc
+   pas hors de portee : il transite par YouTube.**
+3. **Webedia est identifie comme producteur** de l'operation. C'est une agence
+   a ajouter a la feuille Agences du classeur, avec une source primaire — ce
+   qui manquait (voir TODO, « Completer la feuille Agences »).
+
+### 24.4 Ce que cette source ne fera pas
+
+Le resultat est excellent pour INAPORC et faible pour le CNIEL et INTERBEV.
+Ce n'est probablement pas un hasard : plus une interprofession assume ses
+partenariats, plus elle les publie. Celles qui brouillent le donneur d'ordre —
+le cas d'INTERBEV decrit en METHODOLOGIE.md section 2 — n'auront rien a
+recolter ici.
+
+**Cette source ne remplace donc rien.** Elle s'ajoute, et elle a l'avantage
+d'etre la seule dont les resultats sont des declarations du commanditaire
+plutot que des inferences. C'est aussi un bon candidat pour l'estimation par
+capture-recapture (METHODOLOGIE.md section 9.3) : elle est totalement
+independante des signaux YouTube.
+
+### 24.5 Faux positif corrige
+
+Les reglements de jeu-concours listent des domaines de courriel jetables
+(`@jetable.com`, `@yopmail.com`, `@spambox.us`). Le motif les prenait pour des
+pseudos. Filtre ajoute sur les extensions de domaine.
+
+---
+
+## 25. Journal de methode — 24 aout 2026 : TikTok, la source la plus prometteuse du projet
+
+*Travail mene en autonomie pendant l'absence de Vincent, sur sa demande.*
+
+### 25.1 L'interface web publique est un cul-de-sac
+
+`library.tiktok.com` repond, mais ne sert qu'une coquille JavaScript de 38 Ko :
+aucun chemin d'API dans le HTML. Douze chemins candidats ont ete essayes
+(`/api/v1/ad/query`, `/api/v1/search/ad`, `/api/v1/commercial_content/query`...) :
+tous en 404, sauf un qui renvoie du HTML.
+
+**Hypothese TT-04 refutee. Ne pas y revenir par ce chemin.**
+
+### 25.2 L'API officielle est exactement ce qu'il nous faut
+
+Point d'acces :
+`https://open.tiktokapis.com/v2/research/adlib/commercial_content/query/`
+
+Verifie : il repond une erreur JSON structuree (`code 40006, no schema found`)
+et non un 404 — **l'endpoint existe et repond**, il attend une authentification.
+
+Ce qu'il rend, d'apres la documentation officielle :
+
+| Champ | Contenu |
+|---|---|
+| `creator.username` | le createur |
+| `brand_names` | **la ou les marques qui le remunerent** |
+| `label` | le label de partenariat |
+| `create_date` | la date |
+| `videos` | les URL |
+
+**C'est le modele de donnees du registre, deja constitue, et declare par la
+plateforme elle-meme.** Pas d'inference, pas de table d'alias a appliquer sur
+du texte libre, pas de faux positif de type blague sur un sponsor (JOURNAL
+20.4).
+
+Filtres : `content_published_date_range` (depuis le 1er octobre 2022),
+`creator_country_code`, `creator_usernames`. Perimetre EEE : la France est
+couverte, le Royaume-Uni et la Suisse sont exclus.
+
+Il n'y a **pas de filtre par marque**. La bonne strategie est donc de
+recuperer tout le contenu commercial francais de la periode et de filtrer sur
+`brand_names` chez nous, contre la table d'alias. C'est meme preferable : on
+ne depend pas de la facon dont TikTok orthographie « Cniel ».
+
+### 25.3 Et l'acces n'exige PAS d'affiliation universitaire
+
+C'est le point decisif, et il corrige un decouragement premature.
+
+TikTok a **deux** programmes distincts, qu'on confondait :
+
+| Programme | Public vise | Notre situation |
+|---|---|---|
+| **Research API** | chercheurs academiques, a but non lucratif | hors de portee, affiliation UCD morte |
+| **Commercial Content API** | RAPPORTE : « le public et les chercheurs », journalistes et associations compris | **accessible** |
+
+Delai annonce : environ 2 jours ouvres. Gratuit. Candidature sur
+`developers.tiktok.com/application/commercial-content-api` — page verifiee,
+elle existe et demande une connexion. Contact :
+`commercial-research-questions@tiktok.com`.
+
+**C'est la meilleure nouvelle du projet depuis le premier cas trouve.** La
+Meta Content Library etait perdue faute d'affiliation ; l'equivalent TikTok ne
+la demande pas, et son perimetre — contenus organiques a label de partenariat,
+avec la marque ET le createur — est meilleur que ce qu'on esperait de Meta.
+
+Outil ecrit et pret : `outils/tester_tiktok_commercial.py`. Il attend
+`TIKTOK_CLIENT_KEY` et `TIKTOK_CLIENT_SECRET` dans SECRETS.txt.
+
+### 25.4 Ce qui reste incertain
+
+`SUPPOSE` : que la candidature soit acceptee pour un projet de plaidoyer
+associatif. La documentation dit « public et chercheurs », mais l'examen est
+discretionnaire. Le formulaire demande de decrire le projet — c'est la que
+Vincent devra soigner sa formulation : recherche d'interet public sur la
+transparence de la communication commerciale, ce qui est exactement vrai.
