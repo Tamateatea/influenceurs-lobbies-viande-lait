@@ -769,3 +769,75 @@ NordVPN », « merci a happn ») et de simples remerciements entre createurs
 
 Statut de YT-14 : **confirmee pour le gain de rappel, avec une reserve de
 precision documentee.**
+
+---
+
+## 22. Journal de methode — 24 aout 2026 : le robots.txt de YouTube, et une question de conformite
+
+### 22.1 Ce qui a ete verifie
+
+Question de Vincent apres l'erreur HTTP 429 : « ca veut dire que YouTube
+empeche des outils automatiques de faire ce qu'on essaie de faire ? »
+
+Le 429 lui-meme est une **limitation de debit**, pas une interdiction. Mais la
+question a conduit a lire le `robots.txt` de YouTube, ce qui n'avait jamais
+ete fait. MESURE, lecture directe de `https://www.youtube.com/robots.txt` :
+
+```
+User-agent: *
+Disallow: /feeds/videos.xml
+Disallow: /results
+Disallow: /api/
+Disallow: /youtubei/
+Disallow: /timedtext_video
+...
+```
+
+**Deux des techniques centrales du projet sont sur la liste des chemins
+interdits aux robots :**
+
+| Technique | Chemin | Statut robots.txt |
+|---|---|---|
+| Flux RSS de chaine | `/feeds/videos.xml` | **Disallow** |
+| Resolution de chaine par recherche | `/results` | **Disallow** |
+| Lecture de la page video | `/watch` | autorise |
+| Sous-titres via yt-dlp | `/api/timedtext` | **Disallow** |
+
+La lecture des pages `/watch` — d'ou viennent la declaration et la description,
+donc le premier cas trouve — n'est pas concernee.
+
+### 22.2 Pourquoi ca compte pour ce projet en particulier
+
+`robots.txt` n'est pas un contrat, et son non-respect n'est pas en soi une
+infraction en droit francais. Mais c'est la declaration lisible par machine de
+ce que l'exploitant autorise aux programmes, et les CGU de YouTube restreignent
+par ailleurs l'acces automatise hors API.
+
+Or la valeur de ce registre repose **entierement sur sa credibilite**
+(METHODOLOGIE.md section 6). Un registre nominatif construit sur des techniques
+que la plateforme declare interdire offre a toute partie attaquee un argument
+qui n'a rien a voir avec le fond : « ces donnees ont ete collectees en
+violation des regles du site ». C'est exactement le type de contre-attaque que
+le projet ne peut pas se permettre.
+
+**Ce n'est pas une question technique, c'est une question de posture, et elle
+revient a Vincent.**
+
+### 22.3 L'alternative existe et rentre dans le budget
+
+RAPPORTE, a verifier : l'**API YouTube Data v3** offre un quota gratuit
+(de l'ordre de 10 000 unites par jour) et couvre precisement les deux usages
+problematiques — rechercher une chaine, et lister les videos d'une chaine.
+Elle demande une cle, gratuite, sans moyen de paiement.
+
+Cela ne contredit pas la contrainte « budget zero euro » : une cle gratuite
+n'est pas un abonnement. Cela contredit en revanche le confort du « sans cle »
+qui avait guide les premiers choix — un confort, pas un principe.
+
+Ce que l'API ne couvre pas : la case de declaration
+(`paidContentOverlayRenderer`), qui n'existe que dans la page `/watch`, elle
+autorisee. Et SponsorBlock est un service tiers, sans rapport avec YouTube.
+
+**Decision a prendre par Vincent, non tranchee a ce jour.** Trois options :
+migrer vers l'API pour les deux usages concernes ; rester en l'etat en
+l'assumant ; ou un intermediaire. Aucune n'est engagee.

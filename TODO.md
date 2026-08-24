@@ -8,6 +8,21 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[?]` **Conformite YouTube — a trancher.** Le `robots.txt` de YouTube
+      interdit aux programmes `/feeds/videos.xml` (nos flux RSS) et `/results`
+      (notre resolution de chaines). L'API YouTube Data v3 couvre ces deux
+      usages avec une cle gratuite. Migrer, assumer, ou intermediaire ?
+      Voir JOURNAL 22. **Decision de posture, pas technique.**
+- [ ] `[C]` **Reprendre Meta plus tard.** Le jeton d'application est refuse
+      (« Application does not have permission »). Il faut un jeton UTILISATEUR
+      et probablement une verification d'identite. Note demandee par Vincent
+      le 24/08 : ne pas abandonner, y revenir apres TikTok.
+- [ ] `[C]` **Mesurer l'audience des chaines surveillees.** Le critere de
+      priorite est « les createurs les plus vus du public » (precision de
+      Vincent, 24/08). Or on ne collecte aujourd'hui NI le nombre d'abonnes,
+      NI le nombre de vues. On ne peut donc pas verifier qu'on couvre bien
+      les plus vus.
+
 - [ ] `[V]` **Mettre le projet sur GitHub.** Le depot local existe deja, le
       premier commit est fait. Il reste a creer un depot **prive** sur
       github.com/new (ne pas cocher "Add a README"), coller l'URL a Claude,
