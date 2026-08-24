@@ -1104,3 +1104,84 @@ Consequence pratique : les best-of des lives INAPORC restent **a retrouver**.
 Ils sont dates de la campagne Twitch et ne figurent donc plus dans les flux
 RSS, limites aux 15 dernieres videos (YT-03). Il faudra passer par la
 recherche, avec un decoupage par bloc, ou par l'API YouTube Data.
+
+---
+
+## 27. Journal de methode — 24 aout 2026 : 92 recettes creditees, et une erreur de conception que Vincent a relevee
+
+### 27.1 L'erreur : avoir donne l'URL la moins informative
+
+Le premier classeur d'arbitrage donnait, pour chaque pseudo, « l'URL la plus
+courte ou il apparait », en supposant que la plus courte serait la plus
+canonique. **C'est l'inverse.**
+
+Un pseudo present sur 41 pages l'est parce qu'il figure dans un encart
+« recette du moment » repris dans toute la navigation du site. L'URL la plus
+courte est donc la page d'accueil, `/contact` ou `/faq` — precisement les
+pages qui ne montrent pas la relation.
+
+Vincent : « Je ne vois pas le lien avec les influenceurs pour la plupart. »
+Il avait raison, et il ne pouvait pas conclure autrement.
+
+**Regle : la preuve jointe a un candidat doit etre la page qui MONTRE la
+relation, pas n'importe quelle page ou la chaine apparait.** Choisir l'URL la
+plus specifique — celle dont l'adresse ou le titre porte le nom du createur —
+et non la plus courte.
+
+### 27.2 Sa deuxieme question etait la meilleure : « pourquoi avais-tu besoin de moi ? »
+
+Reponse honnete : pour l'essentiel, je n'en avais pas besoin. Ces pages sont
+publiques et lisibles par le script. J'ai demande un arbitrage humain sur un
+travail que je pouvais faire moi-meme, et je l'ai demande sans avoir regarde
+les pages.
+
+**Regle : ne demander a Vincent que ce qui exige reellement son jugement.**
+L'identification se fait par lecture — c'est mon travail. Ce qui lui revient,
+c'est la **priorite** : quels cas valent d'etre poursuivis pour le plaidoyer.
+C'est un jugement editorial que je ne peux pas rendre a sa place.
+
+### 27.3 Ce que la lecture a donne : bien plus qu'un credit isole
+
+MESURE, en lisant le plan de site d'INAPORC — 521 pages de recettes :
+
+| Createur | Recettes creditees a son nom |
+|---|---|
+| @pepites2noisette | **32** |
+| @olivier.moulin | **19** |
+| @juliamaufay | 13 |
+| @mummyfast | 12 |
+| @menthe_banane | 5 |
+| @sophiecuisine | 4 |
+| @julienduboue, @woodmoodfood | 3 |
+| @florianonair | 1 |
+
+**Au moins 92 recettes** portent le nom d'un createur dans leur adresse et
+dans leur titre. Ce n'est pas un credit ponctuel : c'est un **programme
+editorial suivi**.
+
+Et INAPORC publie une **notice biographique** pour chacun sur sa page « Dans
+la cuisine des influenceurs » — dont **Mercotte**, jury du Meilleur Patissier
+sur M6, Agathe Duchesne, Dorian et Audrey, qui n'apparaissaient pas dans la
+recolte de pseudos faute d'arobase.
+
+### 27.4 Tri des faux positifs, fait par lecture
+
+- `@onestpret` n'est pas une personne : c'est le hashtag de la campagne climat
+  **#OnEstPrets**. Faux positif.
+- `@agriskippy` (Antoine Thibault) et `@valentinwerther` sont des **eleveurs**
+  cites dans un article editorial du CNIEL sur les « eleveurs connectes ».
+  Aucun partenariat commercial n'y est decrit.
+- `@interbev_fr` et `@laviandetv` sont les comptes d'INTERBEV lui-meme.
+
+Restent trois pseudos **non verifies** : `@minireyve`, `@lesprolaitiers`,
+`@lamourboeuf`.
+
+### 27.5 Ce que ca dit du perimetre
+
+Les partenaires d'INAPORC identifies ici sont, a deux exceptions pres, des
+createurs **culinaires**. Les deux exceptions sont precisement celles qui
+interessent le plaidoyer : **@gastronogeek** et **@lebouseuh**, generalistes,
+sur l'operation Twitch.
+
+Cela confirme la lecture de METHODOLOGIE.md section 1 : le registre inclut
+tout le monde, mais la priorite de recherche va aux generalistes.

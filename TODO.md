@@ -8,6 +8,15 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[V]` **RECUPERER LES IDENTIFIANTS TIKTOK — a partir du 26 aout 2026.**
+      Candidature deposee le 24/08/2026, delai annonce 2 jours ouvres.
+      Aller sur `developers.tiktok.com`, recuperer la **client key** et la
+      **client secret**, et les coller dans `SECRETS.txt` :
+      `TIKTOK_CLIENT_KEY = ...` et `TIKTOK_CLIENT_SECRET = ...`
+      Puis le dire a Claude : `outils/tester_tiktok_commercial.py` est pret.
+      **Si aucune reponse au 28/08, relancer** :
+      commercial-research-questions@tiktok.com
+
 - [ ] `[V]` **CANDIDATER A L'API TIKTOK.** La plus haute valeur de toute la
       liste. `developers.tiktok.com/application/commercial-content-api`.
       Gratuit, ~2 jours ouvres, **aucune affiliation universitaire requise**
