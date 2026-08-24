@@ -51,8 +51,12 @@ gratuits et sans authentification.
 | YT-11 | La table d'alias fonctionne aussi sur le contenu parle | **CONFIRMEE** | 1 cas. JOURNAL 20.3 |
 | YT-12 | Le segment SponsorBlock correspond a l'annonceur cite en description | **REFUTEE** | Trois annonceurs distincts dans une meme video. JOURNAL 20.2 |
 | YT-13 | Un motif regulier sur la transcription suffit a identifier un annonceur | **REFUTEE** | Faux positif sur une blague. JOURNAL 20.4 |
-| YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **A TESTER** | Observe sur 12 videos, jamais mesure. JOURNAL 18.2 |
-| YT-15 | Les createurs generalistes suivis par le CNIEL portent des collaborations non encore documentees | **A TESTER** | **C'est le prochain test.** |
+| YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **CONFIRMEE, avec reserve** | 42 videos contre 18. Mais « remerciement » melange sponsors et amis. JOURNAL 21.5 |
+| YT-15 | Les createurs generalistes suivis par le CNIEL portent des collaborations non encore documentees | **EN COURS** | 174 videos, 13 chaines : aucune entite trouvee. Mais chaines secondaires non couvertes a ce stade. `surveillance_youtube_2026-08-24_1639.csv` |
+| YT-17 | Un createur n'a qu'une seule chaine YouTube | **REFUTEE** | 13 createurs → 24 chaines officielles. La collaboration CNIEL etait sur une secondaire. JOURNAL 21.2 |
+| YT-18 | Les chaines secondaires sont plus densement sponsorisees que les principales | **PARTIELLE** | Inoxtag : 14/15 contre 4/15. Un seul createur, a confirmer. JOURNAL 21.2 |
+| YT-19 | Le badge de verification suffit a ecarter les chaines de fans | **CONFIRMEE** | 17 chaines « Squeezie » → 3 officielles. JOURNAL 21.3 |
+| YT-20 | On peut interroger YouTube en masse sans limitation | **REFUTEE** | HTTP 429 des ~300 pages consecutives. Il faut ralentir. JOURNAL 21.4 |
 | YT-16 | Les sponsorings Twitch ressortent via les extraits reuploades sur YouTube | **A TESTER** | — |
 
 ### Ce que YouTube a appris au projet

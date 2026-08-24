@@ -475,8 +475,19 @@ Tout extracteur affiche un total permettant de verifier qu'aucune donnee
 d'entree n'a ete perdue en silence. Un outil qui jette des donnees sans le
 dire est plus dangereux qu'un outil qui plante.
 
-Origine : le 24/08, le premier extracteur des listes d'abonnements a jete 92
-comptes sur 150 sans rien signaler.
+**Et il doit distinguer l'absence de RESULTAT de l'absence de MESURE.**
+« Je n'ai rien trouve » et « je n'ai pas pu regarder » ne doivent jamais
+produire la meme sortie. Un collecteur qui n'a pas pu lire ses sources
+**s'arrete** ; il ne rend pas un rapport disant que rien n'a ete trouve.
+
+C'est la regle la plus importante du projet. Un registre nominatif dont
+l'absence signifie « pas de collaboration » ne peut pas se permettre un faux
+negatif silencieux : il blanchirait.
+
+Origines, toutes deux du 24/08 : le premier extracteur des listes
+d'abonnements a jete 92 comptes sur 150 sans rien signaler ; et un releve de
+288 videos a annonce « aucun signal, aucune entite » alors que YouTube avait
+refuse les 288 telechargements en HTTP 429. Voir JOURNAL 18.4 et 21.4.
 
 ### 13.4 Les taches confiees a Vincent sont auto-portantes
 

@@ -640,3 +640,132 @@ Les trois enregistrements de la premiere session portaient une adresse
 universitaire qui n'est plus active. Ils ont ete reecrits avant tout envoi.
 `SECRETS.txt` est exclu par `.gitignore` — verifie apres envoi : absent du
 depot.
+
+---
+
+## 21. Journal de methode — 24 aout 2026 : la surveillance elargie, et un faux negatif total evite de justesse
+
+### 21.1 Ce qui a ete lance
+
+Premier essai d'elargissement, de 2 chaines a 13 createurs generalistes tires
+de la liste d'abonnements du CNIEL. Outil consolide :
+`outils/surveiller_youtube.py`, qui absorbe les deux scripts precedents et
+porte les quatre signaux.
+
+MESURE — `recherche/surveillance_youtube_2026-08-24_1639.csv`, **174 videos,
+13 chaines** :
+
+| Signal | Videos | Part |
+|---|---|---|
+| 1. Case de declaration YouTube | 23 | 13 % |
+| 2. Segment SponsorBlock | 19 | 11 % |
+| 3. Indice commercial en description | 42 | 24 % |
+| **Au moins un signal** | **49** | **28 %** |
+
+**Entites de la filiere viande/lait trouvees : aucune.** C'est une mesure, pas
+un echec — mais voir 21.3, qui l'explique en partie.
+
+### 21.2 Un createur n'a pas une chaine, il en a plusieurs
+
+Decouvert en verifiant pourquoi les identifiants de chaine du matin ne
+correspondaient pas a ceux de l'apres-midi. Aucun des deux n'etait faux :
+c'etaient **des chaines differentes du meme createur**.
+
+| Nom demande | Resolution par pseudo | Resolution par recherche |
+|---|---|---|
+| Inoxtag | « Inoxtag 2.0 » (secondaire) | « Inoxtag » (principale) |
+| Squeezie | « SQUEEZIE GAMING » (secondaire) | « SQUEEZIE » (principale) |
+
+**Et la chaine secondaire est bien plus sponsorisee que la principale :**
+
+| Chaine | Videos avec segment SponsorBlock |
+|---|---|
+| Inoxtag 2.0 (secondaire) | **14 / 15** |
+| Inoxtag (principale) | 4 / 15 |
+
+**La collaboration Inoxtag x CNIEL trouvee le matin etait sur la chaine
+secondaire.** Une surveillance limitee aux chaines principales l'aurait
+manquee — et le rapport aurait dit « aucune entite trouvee » avec assurance.
+
+Consequence, inscrite dans l'outil : **on surveille toutes les chaines
+officielles d'un createur, pas la principale.** Hypothese ouverte, non
+mesuree : les chaines secondaires sont moins regardees par les journalistes et
+pourraient concentrer les collaborations les moins visibles.
+
+### 21.3 Le filtre du badge de verification
+
+Une recherche « Squeezie » remonte 17 chaines, dont la plupart sont des
+reuploads de fans. Les inclure aurait attribue a un createur des videos qu'il
+n'a pas publiees — une erreur qui, dans un registre nominatif, est
+disqualifiante.
+
+Le **badge de verification** separe proprement les chaines officielles des
+autres. Retenu comme filtre. 13 createurs donnent 24 chaines officielles.
+
+Deux createurs ne remontent aucune chaine verifiee sous ce nom : **Seb la
+Frite** et **Zack Nani**. A resoudre, ce ne sont pas des absences reelles.
+
+### 21.4 HTTP 429 — le faux negatif que le rapport allait annoncer
+
+Le releve elargi a 288 videos a rendu, dans son rapport :
+
+> Case de declaration : **0 video (0 %)**
+> Indice commercial en description : **0 video (0 %)**
+> Entites de la filiere : **aucune**
+
+**Tout etait faux.** YouTube avait repondu **HTTP 429 (« Too Many Requests »)**
+aux 288 telechargements de pages — consequence de deux releves lances coup sur
+coup. Le script comptait une page non telechargee comme une video sans signal.
+Seul SponsorBlock, servi par un autre serveur, avait repondu.
+
+Rien dans le rapport ne le signalait. Il annoncait « aucune entite trouvee »
+sur un echantillon ou **rien n'avait ete lu**.
+
+C'est le pire type d'erreur possible pour ce projet : un **faux negatif
+silencieux et credible**. Il ne se manifeste par aucun plantage, aucun message,
+aucune anomalie visible. Un registre qui affirme « ce createur n'a pas de
+collaboration » sur cette base est pire qu'inutile — il blanchit.
+
+Il n'a ete repere que parce que deux signaux tombaient a zero *exactement*, ce
+qui etait incompatible avec le releve d'une heure plus tot.
+
+**Corrections apportees le jour meme :**
+
+1. `get()` renvoie desormais **(contenu, erreur)**. Une chaine vide n'est plus
+   jamais silencieuse.
+2. Pause de 0,35 s entre appels, 3 fils au lieu de 8, et reessai avec attente
+   croissante sur 429.
+3. **Le script s'arrete et ne produit aucun rapport si plus de 10 % des pages
+   manquent.** Verifie : sur un essai a 48 videos encore limite, il refuse de
+   conclure au lieu d'annoncer « aucun signal ».
+4. Le releve fautif `surveillance_youtube_2026-08-24_1642.md` porte un
+   avertissement en tete et ne doit pas etre cite.
+
+**Regle generale, a ajouter a METHODOLOGIE 13.3 :** un extracteur ne doit pas
+seulement rendre compte de ses lignes d'entree — il doit **distinguer
+l'absence de resultat de l'absence de mesure**, et refuser de conclure quand
+il n'a pas pu lire. « Je n'ai rien trouve » et « je n'ai pas regarde » ne
+doivent jamais produire la meme sortie.
+
+### 21.5 Le detecteur elargi, mesure
+
+L'hypothese YT-14 disait que le code promo et le lien d'affilie valent mieux
+que la mention legale. Mesure sur les 174 videos valides :
+
+| Famille d'indices | Videos | Part |
+|---|---|---|
+| remerciement | 27 | 16 % |
+| mention legale | 18 | 10 % |
+| lien affilie | 18 | 10 % |
+| code promo | 11 | 6 % |
+
+L'elargissement double bien la couverture : 42 videos portent un indice
+commercial contre 18 pour la seule mention legale.
+
+**Mais la famille « remerciement » est imprecise** : sur 14 videos, elle se
+declenche seule, et les exemples melangent de vrais annonceurs (« merci a
+NordVPN », « merci a happn ») et de simples remerciements entre createurs
+(« merci a Doigby »). A conserver comme indice faible, jamais comme preuve.
+
+Statut de YT-14 : **confirmee pour le gain de rappel, avec une reserve de
+precision documentee.**

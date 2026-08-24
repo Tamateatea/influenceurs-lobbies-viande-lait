@@ -4,7 +4,7 @@
 toute action.** Il est fait pour ca. Il est mis a jour a la fin de chaque
 session de travail.
 
-Derniere mise a jour : **24 aout 2026, fin de la 2e session.**
+Derniere mise a jour : **24 aout 2026, fin de la 2e session** (soir).
 
 ---
 
@@ -142,14 +142,22 @@ fichier `.md`.
 
 ## 6. Prochaine session — a faire en premier
 
-1. **Elargir le test croise** aux createurs generalistes suivis par le CNIEL
-   (Michou, Kameto, Domingo, Norman, Zack Nani, Grimkujow, LeBouseuh, Seb la
-   Frite, Valouzz). C'est la ou de nouveaux cas peuvent apparaitre.
-2. **Elargir le detecteur** aux codes promo et liens d'affiliation, puis le
-   remesurer sur le meme echantillon (hypothese YT-14).
-3. **Tester l'API Meta Ad Library** des que le jeton est disponible
-   (hypothese IG-02).
-4. **Tester TikTok** — jamais fait, et potentiellement le plus rentable.
+1. **Relancer `outils/surveiller_youtube.py`** sur les 24 chaines officielles,
+   principales ET secondaires, une fois la limitation HTTP 429 retombee.
+   Lancer avec `--videos 10` d'abord. Le releve du 24/08 a 288 videos est
+   invalide, celui a 174 videos ne couvrait que les chaines principales.
+2. **Resoudre Seb la Frite et Zack Nani**, dont aucune chaine verifiee ne
+   remonte sous ce nom.
+3. **Tester TikTok** — jamais fait, et potentiellement le plus rentable :
+   c'est la seule plateforme dont on pense qu'elle est interrogeable par
+   annonceur (hypotheses TT-02 et TT-03).
+4. **Meta** : bloque sur l'acces. Le jeton d'app renvoie « Application does
+   not have permission for this action » sur les 12 requetes. Il faut un
+   jeton UTILISATEUR, et probablement une verification d'identite. Ne pas y
+   consacrer de temps tant que TikTok n'est pas teste.
+
+**Ne pas oublier :** un createur a plusieurs chaines, et la collaboration
+CNIEL trouvee etait sur une chaine secondaire.
 
 Vincent doit, de son cote : terminer la verification d'identite Meta, et
 arbitrer les nouveaux cas que le test elargi fera remonter.
