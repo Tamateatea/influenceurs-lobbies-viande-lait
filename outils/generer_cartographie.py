@@ -271,6 +271,19 @@ FEUILLES["Agences"] = {
          "Site Shokola, page realisations"],
         ["", "CNIEL", "Partenariat application YouMiam",
          "Pool de 10 influenceurs mobilises. Noms a identifier.", "A VERIFIER", "Presse filiere"],
+        ["Webedia", "INAPORC", "Lives Twitch sur le metier d'eleveur de porcs",
+         "Gastronogeek (live cuisine, best-of sur sa chaine YouTube) et LeBouseuh "
+         "(defi Minecraft sur l'elevage porcin, best-of egalement). Cible declaree : "
+         "18-30 ans. Deux createurs generalistes.",
+         "CONFIRME",
+         "leporc.com/le-porc-en-france/le-metier-d-eleveur-de-porcs-mis-en-lumiere-sur-twitch"],
+        ["", "INAPORC", "Les recettes des influenceurs (programme suivi)",
+         "Au moins 92 recettes creditees a des createurs nommes, avec notice "
+         "biographique publiee par INAPORC : Mercotte, pepites2noisette (32 recettes), "
+         "olivier.moulin (19), juliamaufay (13), mummyfast (12), menthe_banane, "
+         "sophiecuisine, julienduboue, woodmoodfood, florianonair, chateau.leg0, "
+         "agatheduchesne_, Dorian, Audrey.",
+         "CONFIRME", "leporc.com/recettes/la-cuisine-des-influenceurs"],
     ],
 }
 

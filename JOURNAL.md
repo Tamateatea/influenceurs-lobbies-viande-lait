@@ -1255,3 +1255,57 @@ confusion d'homonyme y serait disqualifiante.
 
 Ces chaines gonflent aussi le volume, donc consomment le budget quotidien pour
 rien. A filtrer.
+
+---
+
+## 29. Journal de methode — 24 aout 2026 : Vincent corrige trois de mes erreurs
+
+Arbitrage des 24 pseudos, avec verification des comptes Instagram et de leur
+nombre d'abonnes — un travail que je ne peux pas faire, la navigation sociale
+etant derriere une authentification.
+
+### 29.1 Trois erreurs de ma part
+
+**`@onestpret` n'est pas un hashtag.** J'avais ecrit « pas une personne :
+hashtag de la campagne climat #OnEstPrets. Faux positif. » C'est un **compte
+reel, 194 000 abonnes**, mouvement de mobilisation pour le climat. Vincent :
+« ce serait incroyable qu'il collabore avec un lobby laitier ». En effet — et
+c'est desormais une piste, pas un faux positif.
+
+**`@lesprolaitiers` existe, mais sur Twitter.** Vincent l'a cherche sur
+Instagram, ne l'a pas trouve, et a conclu qu'il n'existait pas. Verification :
+la page du CNIEL ecrit « leur compte **Twitter** @LesProLaitiers ». Le pseudo
+est reel ; c'est ma recolte qui ne retenait pas la plateforme.
+
+**`@interbev_fr` et `@laviandetv` n'existent pas sur Instagram** non plus : la
+page « nous suivre » liste des comptes de plusieurs plateformes.
+
+**Cause commune : un pseudo sans sa plateforme est ininterpretable.** Corrige
+dans `fouiller_sites_lobbies.py`, qui capture desormais la plateforme nommee
+au voisinage du pseudo. C'est aussi ce constat qui a fait poser l'unite de
+collecte (METHODOLOGIE section 8).
+
+### 29.2 Ce que son arbitrage a apporte
+
+Il a releve les nombres d'abonnes, ce qui manquait completement : le projet
+n'avait aucune mesure d'audience alors que c'est son critere de priorite.
+
+Priorite haute retenue : **@lebouseuh (2,4 M)**, @lacuisinedemercotte (580 k),
+@gastronogeek (364 k), @florianonair (231 k), @menthe_banane (208 k),
+@onestpret (194 k), @minireyve (193 k), @mummyfast (83 k), @chateau.leg0
+(80 k), @juliamaufay.
+
+Ecartes : @agriskippy (agriculteur), @valentinwerther, @woodmoodfood, Dorian
+et Audrey (introuvables sur Instagram), @interbev_fr, @laviandetv.
+
+**Un raisonnement a garder :** il classe @menthe_banane en priorite haute bien
+qu'il soit dieteticien, « car du point de vue du plaidoyer, un dieteticien n'a
+pas le meme statut » — l'autorite sanitaire pretee a la profession change la
+portee du message. La congruence seule ne capture pas ce critere ; il meritera
+un champ ou une note.
+
+### 29.3 Defaut d'ergonomie a corriger
+
+Excel refuse une saisie commencant par `@` : il la prend pour une formule.
+Vincent n'a pas pu entrer `@lacuisinedemercotte`. **Les colonnes destinees a
+des pseudos doivent etre formatees en texte a la generation.**

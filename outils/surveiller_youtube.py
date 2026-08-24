@@ -61,10 +61,13 @@ UA = {
 # chaines deja testees. Cette liste est une HYPOTHESE DE CIBLAGE datee, pas un
 # resultat : un abonnement ne prouve aucune collaboration (JOURNAL 19).
 # Elle doit etre re-derivee des sources, jamais figee (METHODOLOGIE 14).
+# Les pseudos exacts priment sur les noms usuels : « Seb la Frite » et
+# « Zack Nani » ne remontaient aucune chaine verifiee. Pseudos confirmes par
+# Vincent le 24/08 (SEBFRIT : ~6 M d'abonnes).
 CHAINES = [
     "Squeezie", "Inoxtag", "Valouzz", "Mister V", "Mcfly et Carlito",
     "Michou", "Domingo", "Norman", "Grimkujow", "LeBouseuh",
-    "Seb la Frite", "Kameto", "Zack Nani",
+    "SEBFRIT", "Kameto", "ZackNani",
 ]
 
 VIDEOS_PAR_CHAINE = 15
@@ -212,13 +215,20 @@ def resoudre_chaines(nom):
             continue
         if "VERIFIED" not in bloc and "ownerBadges" not in bloc:
             continue                                    # chaine non officielle
-        plat = aplatir(titre)
-        if not (plat == cible or plat.startswith(cible)):
-            continue
         mhandle = re.search(r'"subscriberCountText":\{"simpleText":"(@[\w.-]+)"', bloc)
+        handle = mhandle.group(1) if mhandle else ""
+        # On accepte une chaine si son TITRE ou son @PSEUDO correspond. Vincent
+        # fournit souvent des pseudos (@SEBFRIT) alors que le titre affiche est
+        # different (« SEB ») : ne comparer que le titre les rejetait toutes.
+        plat = aplatir(titre)
+        plat_handle = aplatir(handle)
+        if not (plat == cible or plat.startswith(cible)
+                or plat_handle == cible or plat_handle.startswith(cible)):
+            continue
         vus.add(cid)
-        retenues.append((cid, titre, "principale" if plat == cible else "secondaire",
-                         mhandle.group(1) if mhandle else ""))
+        nature = ("principale" if (plat == cible or plat_handle == cible)
+                  else "secondaire")
+        retenues.append((cid, titre, nature, handle))
     return retenues
 
 

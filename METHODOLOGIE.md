@@ -292,6 +292,72 @@ les personnalites connues et manque des createurs plus petits qui peuvent
 concentrer une part importante des budgets. Le seuil sera fixe, s'il doit
 l'etre, au vu des donnees.
 
+### La congruence — champ valide par Vincent le 24 aout 2026
+
+Le registre **n'exclut personne**, mais il **priorise**. L'axe de priorite
+n'est pas le sujet du createur : c'est **l'ecart entre son contenu habituel et
+le produit promu**.
+
+| Congruence | Exemple | Valeur pour le plaidoyer |
+|---|---|---|
+| **forte** | createur cuisine x filiere porcine | l'association est attendue, elle ne deplace rien |
+| **moyenne** | createur sport ou lifestyle x produits laitiers | discutable, a instruire |
+| **faible** | createur gaming x lobby laitier | **le mecanisme devient visible** |
+
+Trois raisons d'avoir retenu cet axe plutot que « cuisine ou pas » :
+
+- il s'applique a des cas qu'on n'a pas encore vus (fitness x proteines,
+  parentalite x lait infantile) ;
+- il se justifie sans jugement de valeur sur les personnes ;
+- il classe correctement les cas limites : un createur gaming dans un buffet a
+  fromages reste une congruence faible.
+
+**`congruence` est un champ du modele de donnees**, au meme titre que le degre
+de certitude (section 1). Il permettra au site une entree « les collaborations
+les plus inattendues », qui est ce que cherchent des militants.
+
+Ce qu'il ne fait pas : **il ne filtre pas la collecte.** Exclure une categorie
+a la collecte rendrait impossible la mesure du rappel (section 9) et priverait
+le registre de son denominateur — la proportion de createurs culinaires parmi
+les partenaires d'une interprofession est elle-meme un fait publiable.
+
+Limite assumee, relevee par Vincent : la congruence n'est pas binaire et son
+evaluation restera un jugement humain. Un compte dont la bio est « food,
+travel & good vibes » n'a pas de classement evident. C'est pourquoi elle a
+trois valeurs et sert a prioriser, non a trancher.
+
+### L'unite de collecte est le COMPTE, pas la personne
+
+Pose le 24 aout 2026, apres trois constats de la journee.
+
+Une personne a **plusieurs comptes**, sur plusieurs plateformes, et la
+collaboration se produit sur **un compte precis** :
+
+- Inoxtag a au moins deux chaines YouTube ; la collaboration CNIEL trouvee
+  etait sur la secondaire (JOURNAL 21.2) ;
+- `@LesProLaitiers` existe sur Twitter et pas sur Instagram : un pseudo sans sa
+  plateforme est ininterpretable (JOURNAL 29) ;
+- « Norman » designe deux personnes differentes sur YouTube (JOURNAL 28.4).
+
+Modele retenu :
+
+    Personne  --<  Compte (plateforme + identifiant)  --<  Publication  --<  Collaboration
+
+Consequences fermes :
+
+1. **Toute donnee collectee porte sa plateforme et l'identifiant du compte.**
+   Un pseudo seul n'est pas une donnee.
+2. **Le perimetre de surveillance (section 9.4) se declare par compte** :
+   « @X sur YouTube, depuis telle date ». On ne peut pas ecrire « on surveille
+   Untel » — on surveille des comptes.
+3. **Le rattachement d'un compte a une personne est un jugement explicite**,
+   date et source, jamais une deduction automatique par le nom. C'est la seule
+   protection contre les homonymes, et un registre nominatif ne peut pas se
+   permettre d'en confondre deux.
+
+La **fiche publique**, elle, reste au niveau de la personne : c'est elle que le
+public cherche. Mais elle affiche la liste des comptes couverts.
+
 Note : aucune categorie de contenu n'est privilegiee. Les faits collectes
 jusqu'ici montrent que les lobbies achetent d'abord des createurs gaming,
 humour et divertissement — Squeezie, Mister V, McFly & Carlito, Valouzz,

@@ -86,8 +86,26 @@ PSEUDOS_MAISON = {
     "label_rouge_quality", "oeufsdefrance", "ouefsdefrance",
 }
 
+# Un pseudo n'existe QUE sur une plateforme. Constate le 24/08 : le site du
+# CNIEL ecrit « leur compte Twitter @LesProLaitiers » — Vincent a cherche ce
+# compte sur Instagram, ne l'a pas trouve, et a conclu a tort qu'il n'existait
+# pas. Recolter un pseudo sans sa plateforme produit des fantomes.
+PLATEFORMES = {
+    "instagram": ["instagram", "insta "], "twitter": ["twitter", " x ", "tweet"],
+    "tiktok": ["tiktok"], "youtube": ["youtube", "chaine youtube"],
+    "facebook": ["facebook"], "twitch": ["twitch"], "linkedin": ["linkedin"],
+}
+
 PAUSE = 0.3
 FILS = 4
+
+
+def plateforme_probable(texte, position, fenetre=220):
+    """La plateforme nommee le plus pres du pseudo, ou vide."""
+    autour = texte[max(0, position - fenetre):position + fenetre].lower()
+    trouvees = [nom for nom, mots in PLATEFORMES.items()
+                if any(m in autour for m in mots)]
+    return " | ".join(trouvees)
 
 
 def get(url, timeout=30, essais=2):
@@ -217,11 +235,18 @@ def main():
             # pseudo. Les reglements de jeu-concours en listent des dizaines
             # (jetable.com, yopmail.com...) : sans ce filtre, ils polluent
             # la recolte.
-            pseudos = sorted(
-                {p.lower() for p in ARROBASE.findall(brut.lower())}
-                - PSEUDOS_MAISON
-                - {p.lower() for p in ARROBASE.findall(brut.lower())
-                   if re.search(r"\.(com|net|org|fr|io|us|eu|co)$", p.lower())})
+            trouves_pseudos = {}
+            for m in ARROBASE.finditer(brut.lower()):
+                ps = m.group(1)
+                if ps in PSEUDOS_MAISON:
+                    continue
+                # « @quelquechose.com » est un domaine de courriel, pas un pseudo
+                if re.search(r"\.(com|net|org|fr|io|us|eu|co)$", ps):
+                    continue
+                plat = plateforme_probable(brut.lower(), m.start())
+                if ps not in trouves_pseudos or (plat and not trouves_pseudos[ps]):
+                    trouves_pseudos[ps] = plat
+            pseudos = sorted(trouves_pseudos)
             if not mots and not trouves and not pseudos:
                 continue
             if mots:
@@ -238,6 +263,8 @@ def main():
                 "site": base,
                 "url": url,
                 "pseudos_publies": " | ".join(pseudos[:15]),
+                "plateformes_probables": " ; ".join(
+                    f"{ps}={trouves_pseudos[ps] or '?'}" for ps in pseudos[:15]),
                 "createurs_trouves": " | ".join(sorted(set(trouves))[:8]),
                 "vocabulaire_influence": " | ".join(mots[:8]),
                 "extrait": extrait[:400],
