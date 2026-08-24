@@ -841,3 +841,50 @@ autorisee. Et SponsorBlock est un service tiers, sans rapport avec YouTube.
 **Decision a prendre par Vincent, non tranchee a ce jour.** Trois options :
 migrer vers l'API pour les deux usages concernes ; rester en l'etat en
 l'assumant ; ou un intermediaire. Aucune n'est engagee.
+
+---
+
+## 23. Arbitrage de Vincent — 24 aout 2026 : robots.txt, et la superposition des couches
+
+### 23.1 La regle, telle que Vincent la formule
+
+Objection posee en 22.2 : construire le registre sur des chemins que le
+`robots.txt` de YouTube declare interdits offrirait un argument de procedure
+a toute partie mise en cause.
+
+Reponse de Vincent, qui tranche : **« si on peut faire techniquement quelque
+chose sans enfreindre la loi, on peut le faire ».**
+
+C'est sa decision et elle est fondee : un `robots.txt` est une preference
+d'exploitant, pas une norme juridique. Le contourner n'est pas une infraction
+en droit francais.
+
+**Ce qui reste ferme, et n'a pas change :** ne franchir aucune
+authentification, ne contourner aucun paywall, ne lire que du contenu
+publiquement accessible. C'est cette limite-la qui protege le projet, pas le
+`robots.txt`.
+
+### 23.2 Et la bonne reponse a l'objection : superposer, pas choisir
+
+Deuxieme remarque de Vincent, et elle vaut mieux que ma recommandation :
+**« ne peut-on pas avoir plusieurs couches ? plusieurs outils en meme temps ? »**
+
+Oui. C'est meme le principe deja pose en METHODOLOGIE.md section 10 — plusieurs
+hypotheses, toutes testees, on garde tout ce qui apporte — et je ne l'avais pas
+applique a cette question. J'avais presente une alternative la ou il fallait
+une addition.
+
+Superposer l'API officielle et la lecture directe apporte trois choses :
+
+1. **Redondance.** Si une voie casse — changement d'interface, limitation de
+   debit, quota epuise — l'autre continue.
+2. **Deux methodes independantes**, donc un couple utilisable pour
+   l'estimation par capture-recapture de METHODOLOGIE.md section 9.3.
+3. **Le choix de la posture reste ouvert.** Si le projet doit un jour ne
+   dependre que de sources sanctionnees, la couche existe deja et il suffit
+   d'eteindre l'autre.
+
+Reformulation retenue : l'API YouTube Data v3 devient une **couche
+supplementaire a construire**, pas un remplacement. La decision de posture
+n'a plus a etre prise aujourd'hui, ce qui est preferable : on la prendra avec
+des mesures des deux voies plutot que sur une intuition.

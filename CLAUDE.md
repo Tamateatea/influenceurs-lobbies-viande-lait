@@ -95,6 +95,12 @@ lignes, c'est que du journal s'y est glisse.
 - **Budget zero euro.** Aucune source payante, aucun abonnement, aucune API
   facturee.
 - **Pas de scraping authentifie**, pas de contournement de CGU.
+  **Precision de Vincent, 24 aout 2026 :** « si on peut faire techniquement
+  quelque chose sans enfreindre la loi, on peut le faire ». Un `robots.txt`
+  n'est pas la loi : il n'interdit rien juridiquement. Ce qui reste ferme,
+  c'est de ne pas franchir une authentification, de ne pas contourner un
+  paywall, et de ne lire que du contenu publiquement accessible.
+  Voir JOURNAL 22 pour le detail de la question et 23 pour l'arbitrage.
 - **Rien ne se publie sans verification humaine.** Voir METHODOLOGIE.md
   section 9 : a faible prevalence, meme un detecteur excellent produit
   majoritairement des faux positifs. Demonstration concrete en JOURNAL 20.4.
