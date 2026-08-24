@@ -119,7 +119,7 @@ plutot que des inferences sur du contenu.
 | SC-01 | Les sites des interprofessions sont explorables par plan de site | **PARTIELLE** | 3 sur 5. `sites_lobbies_2026-08-24_1719.csv` |
 | SC-02 | Ils publient des pseudos de createurs | **CONFIRMEE** | 26 pseudos distincts. JOURNAL 24.2 |
 | SC-03 | Certains ont une rubrique dediee aux influenceurs | **CONFIRMEE** | INAPORC : « Les recettes des influenceurs ». JOURNAL 24.2 |
-| SC-04 | Un credit de recette prouve une remuneration | **REFUTEE par principe** | Etablit une relation de travail, pas son caractere onereux |
+| SC-04 | Un credit de recette prouve une remuneration | **REFUTEE** | Etablit une relation de travail, pas son caractere onereux. **Mais publiable** avec le degre de certitude `lien commercial documente` — arbitrage de Vincent, METHODOLOGIE 1 |
 | SC-05 | Toutes les interprofessions publient autant | **REFUTEE** | INAPORC beaucoup, CNIEL peu, INTERBEV presque rien. JOURNAL 24.4 |
 
 ---
@@ -133,6 +133,8 @@ plutot que des inferences sur du contenu.
 | TR-03 | La distinction contrat remunere / cadeau est lisible dans le contenu | **A TESTER** | METHODOLOGIE.md section 4 |
 | TR-04 | Les bilans annuels d'Interbev et du Cniel donnent les budgets de communication | **A TESTER** | Remplacerait le chiffre de 30 M EUR, aujourd'hui inutilisable |
 | TR-05 | Les injonctions DGCCRF sont extractibles de leur page paginee | **A TESTER** | — |
+| TR-06 | Twitch merite d'etre collecte directement | **REFUTEE pour l'instant** | VOD ephemeres (14 a 60 j), aucun registre publicitaire, et les best-of migrent vers YouTube — constate sur le cas INAPORC. JOURNAL 24.3 |
+| TR-07 | Les **clips** Twitch, permanents, sont accessibles via l'API officielle gratuite | **A TESTER** | Piste etroite et bon marche, a garder pour apres TikTok |
 
 ---
 

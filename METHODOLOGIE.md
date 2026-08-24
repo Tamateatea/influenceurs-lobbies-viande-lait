@@ -39,6 +39,29 @@ influenceurs, c'est un crawl infini.
 **Contrats remuneres.** Les envois de produits gratuits ne sont pas l'objet.
 Voir la section 4 : ce choix n'est pas encore traduisible en regle technique.
 
+**Precision de Vincent, 24 aout 2026 — le registre publie ce qu'il sait, avec
+son degre de certitude.** Un lien commercial documente mais dont la
+remuneration n'est pas etablie — par exemple une recette creditee a un
+createur sur le site d'une interprofession — **a sa place dans le registre**,
+a condition que l'incertitude soit affichee.
+
+Consequence sur le modele de donnees : le degre de certitude est un **champ**,
+pas une note de bas de page. Trois valeurs au minimum :
+
+| Valeur | Signification |
+|---|---|
+| `remuneration confirmee` | source primaire etablissant le caractere onereux |
+| `lien commercial documente` | relation etablie et sourcee, remuneration non etablie |
+| `signale, non verifie` | remontee par un tiers, pas encore instruit |
+
+Etre un champ le rend filtrable, present dans chaque export, et impossible a
+oublier.
+
+**Point de conception a retenir pour le site :** le qualificatif doit figurer
+**sur la meme ligne que le nom**, jamais renvoye en note. Une capture d'ecran
+d'une fiche circule sans ses notes de bas de page ; le degre de certitude doit
+voyager avec l'information.
+
 Et une contrainte : **budget zero euro.** Toute source payante est hors jeu.
 
 ---
