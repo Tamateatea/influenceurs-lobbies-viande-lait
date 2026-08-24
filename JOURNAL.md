@@ -1534,3 +1534,94 @@ pas exploitees par les detecteurs.
 
 **Trou reel a combler** : Danone, Lactalis, Herta, Bigard, Sodiaal doivent
 entrer dans la table d'alias au meme titre que `@lesproduitslaitiers`.
+
+---
+
+## 33. Journal de methode — 24 aout 2026, nuit : 35 612 videos, et la recherche retroactive devient possible
+
+Vincent, avant d'aller dormir : « es-tu sur qu'il n'y a pas un travail long et
+laborieux qu'on pourrait lancer maintenant ? » Il avait raison d'insister.
+
+### 33.1 Le deblocage : 50 videos avec descriptions pour 1 unite
+
+`playlistItems.list` renvoie **50 videos avec leur description complete pour
+1 unite de quota**. Verifie avant de s'en servir.
+
+Le catalogue entier d'une chaine de 1 000 videos coute donc 20 unites sur les
+~10 000 quotidiennes — **cinquante fois moins cher que telecharger les pages
+une par une**, et sans la limitation opaque qui avait bloque la journee
+(JOURNAL 28).
+
+**L'hypothese YT-03 est levee.** Le flux RSS limitait a 15 videos par chaine
+et interdisait toute recherche retroactive. L'API rend tout le catalogue.
+
+### 33.2 La moisson
+
+MESURE — `recherche/moisson_videos_2026-08-24.csv` :
+
+| | |
+|---|---|
+| Chaines moissonnees | **185 sur 185** |
+| Videos examinees | **35 612** |
+| Quota depense | **806 unites** sur ~10 000 |
+| Videos portant un signal commercial | 5 164 |
+| Videos citant une entite de la filiere | 1 574 |
+| **dont sur alias d'INTERPROFESSION (fiable)** | **271** |
+
+### 33.3 Deux cas reels, hors de portee ce matin
+
+**Michou — 11 000 000 d'abonnes — 8 mai 2022**
+
+> « Merci aux produits laitiers ainsi qu'a la Federation francaise de Hockey
+> sur glace de nous avoir accompagne sur ce projet ! »
+
+Createur gaming generaliste, audience enorme, congruence faible : exactement
+le profil defini avec Vincent le meme jour.
+
+**Inoxtag — KAIZEN, le documentaire sur l'Everest — 20 septembre 2024**
+
+> « Merci a mes partenaires air up, Nike, Deezer, Fitness Park, Erborian,
+> **Les Produits Laitiers**, Orange, et Therm-ic de m'avoir accompagne et
+> soutenu dans ce projet fou ! »
+
+Le CNIEL etait partenaire de l'un des plus gros evenements YouTube francais
+de 2024.
+
+**Piste : Loris Giuliano, 35 videos** citant les produits laitiers entre 2019
+et 2025. Trente-cinq occurrences etalees sur six ans ne sont pas un hasard :
+c'est un partenariat suivi, a instruire. Idem **FlorianOnAir, 48 videos**.
+
+Repartition des 271 detections fiables sur les grandes chaines : Michou (1),
+Inoxtag (7, plus 2 sur sa chaine secondaire), Mister V (1), Valouzz (2),
+Nota Bene (1), RebeuDeter (4), Juste Zoe (1).
+
+### 33.4 Le bruit, et d'ou il vient
+
+Sur 1 574 detections, **la majorite sont fausses**, et la cause est identifiee :
+la feuille `Marques` — que Vincent a demande a integrer le meme soir — contient
+des marques dont le nom est un **mot courant du francais**.
+
+| Terme | Detections | Realite |
+|---|---|---|
+| « Marie » (LDC) | 308 | le prenom |
+| « Societe » (Lactalis) | 228 | le mot |
+| « President » (Lactalis) | 162 | le mot |
+| « Le Foie Gras » (CIFOG) | 91 | l'aliment, pas la marque |
+
+**Ce n'est pas un argument contre l'integration des marques** : elle etait
+necessaire et Vincent avait raison de la demander. C'est un probleme de
+methode d'appariement, a resoudre.
+
+Piste retenue, non encore implementee : exiger qu'un terme figurant dans une
+liste de « noms trop courants » **co-occure avec un indice commercial**
+(code promo, mention legale, lien d'affiliation) pour compter. Les alias
+d'interprofession, eux, sont specifiques et n'ont pas besoin de cette garde —
+`@lesproduitslaitiers` ne ressemble a rien d'autre.
+
+### 33.5 Ce que la moisson ne remplace pas
+
+Ni la case de declaration (absente de l'API, page publique seulement), ni les
+segments SponsorBlock (service tiers). Elle sert a **reduire l'espace de
+recherche** : sur 35 612 videos elle en designe 271 a instruire. Les signaux
+couteux ne s'appliqueront qu'a celles-la — ce qui rend enfin la surveillance
+continue tenable en quota.

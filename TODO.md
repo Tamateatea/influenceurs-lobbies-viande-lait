@@ -8,6 +8,19 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[C]` **Corriger l'appariement des marques au nom courant.** « Marie »
+      (LDC), « Societe » et « President » (Lactalis), « Le Foie Gras » (CIFOG)
+      produisent 698 faux positifs sur la moisson du 24/08. Exiger qu'un nom
+      figurant dans une liste de termes courants co-occure avec un indice
+      commercial. Voir JOURNAL 33.4.
+- [ ] `[?]` **Instruire les 271 videos citant un alias d'interprofession**
+      (`recherche/moisson_videos_2026-08-24.csv`). Commencer par les plus
+      grosses audiences : Michou, Inoxtag, Mister V, Valouzz, Nota Bene.
+      A repartir entre Claude (lecture) et Vincent (jugement).
+- [ ] `[C]` **Instruire les motifs repetes** : Loris Giuliano 35 videos et
+      FlorianOnAir 48 videos citant les produits laitiers. Un partenariat
+      suivi, ou une mention recurrente sans contrat ?
+
 - [ ] `[V]` **RECUPERER LES IDENTIFIANTS TIKTOK — a partir du 26 aout 2026.**
       Candidature deposee le 24/08/2026, delai annonce 2 jours ouvres.
       Aller sur `developers.tiktok.com`, recuperer la **client key** et la

@@ -77,8 +77,18 @@ tout mais produit des faux positifs qu'aucun motif automatique ne rattrape.
 **Premier cas reel trouve** : Inoxtag x CNIEL (`@lesproduitslaitiers`), non
 declare sur YouTube, identifie par la table d'alias.
 
-**Ce qui reste a faire :** elargir a plusieurs dizaines de chaines pour passer
-de la preuve d'existence a la mesure.
+**La recherche retroactive fonctionne.** L'API rend 50 videos avec leurs
+descriptions pour 1 unite de quota : 185 chaines et **35 612 videos** ont ete
+moissonnees le 24/08 pour 806 unites sur ~10 000. Le flux RSS, limite a 15
+videos, n'est plus la contrainte.
+
+**271 videos citent un alias d'interprofession** et attendent une verification
+humaine — dont Michou (11 M d'abonnes) et le documentaire Everest d'Inoxtag,
+tous deux remerciant Les Produits Laitiers.
+
+**Ce qui reste a faire :** instruire ces 271 videos, et corriger l'appariement
+des marques au nom courant (« Marie », « Societe », « President » produisent
+698 faux positifs).
 
 ### Instagram — bloquee sur l'acces
 
