@@ -277,6 +277,26 @@ FEUILLES["Agences"] = {
          "18-30 ans. Deux createurs generalistes.",
          "CONFIRME",
          "leporc.com/le-porc-en-france/le-metier-d-eleveur-de-porcs-mis-en-lumiere-sur-twitch"],
+        ["iProspect Conseil France", "INTERBEV", "Publicite TikTok (26 annonces)",
+         "Agence declaree par TikTok comme payeur des annonces INTERBEV. "
+         "Aucun createur associe : l'API ne relie pas annonceur et createur.",
+         "CONFIRME", "API TikTok ad/query, champ advertiser.paid_for_by, 25/08/2026"],
+        ["Publicis Media - Starcom", "Groupe Bel", "Publicite TikTok (56 annonces)",
+         "Babybel, Kiri, La Vache qui rit. Agence declaree payeur.",
+         "CONFIRME", "API TikTok ad/query, 25/08/2026"],
+        ["WPP MEDIA FRANCE", "Danone / Yoplait / Nestle", "Publicite TikTok",
+         "Meme agence declaree pour Danone Produits Frais (17), Yoplait (60) "
+         "et Nestle France. Actimel, Activia.",
+         "CONFIRME", "API TikTok ad/query, 25/08/2026"],
+        ["VMLY&R France", "Nestle France", "Publicite TikTok (38 annonces)",
+         "Sort sur les termes « lait », « viande » et « Charal ».",
+         "CONFIRME", "API TikTok ad/query, 25/08/2026"],
+        ["Havas Media France", "Lactalis", "Publicite TikTok",
+         "Marque Lactel.", "CONFIRME", "API TikTok ad/query, 25/08/2026"],
+        ["Publicis Media - Blue449", "Savencia", "Publicite TikTok",
+         "Caprice des Dieux.", "CONFIRME", "API TikTok ad/query, 25/08/2026"],
+        ["Vanksen", "Candia (Sodiaal)", "Publicite TikTok (8 annonces)",
+         "", "CONFIRME", "API TikTok ad/query, 25/08/2026"],
         ["", "INAPORC", "Les recettes des influenceurs (programme suivi)",
          "Au moins 92 recettes creditees a des createurs nommes, avec notice "
          "biographique publiee par INAPORC : Mercotte, pepites2noisette (32 recettes), "

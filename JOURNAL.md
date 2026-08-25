@@ -1733,3 +1733,82 @@ TikTok ne remplace pas la chaine YouTube, contrairement a ce qu'on esperait
 hier. Il apporte autre chose, peut-etre plus precieux : **une population de
 reference declaree par la plateforme**, sur laquelle mesurer le rappel de nos
 propres methodes (METHODOLOGIE section 9).
+
+---
+
+## 35. Journal de methode — 25 aout 2026 : nettoyage des detections, et cartographie des annonceurs
+
+### 35.1 Le bruit tombe de 1 029 detections
+
+`outils/nettoyer_detections.py`, sans aucun appel reseau, retrie la moisson du
+24/08 en separant deux familles de termes qui ne se valent pas :
+
+| Famille | Exigence | Justification |
+|---|---|---|
+| Alias d'interprofession | une occurrence suffit | `@lesproduitslaitiers` ne ressemble a rien d'autre en francais |
+| Nom de marque | **+ un indice commercial** | « Marie » et « Societe » sont des mots courants |
+
+MESURE — `recherche/detections_nettoyees_2026-08-25.csv` :
+
+| | |
+|---|---|
+| Detections brutes | 5 164 |
+| **Preuves fortes** | **271** |
+| Preuves faibles (marque + indice) | 274 |
+| **Ecartees** | **1 029** |
+
+Raisonnement de la regle : une vraie collaboration laisse presque toujours une
+trace commerciale a cote du nom de la marque — code promo, lien, remerciement.
+Un prenom dans un titre, non.
+
+Ce que la regle coute : les mentions de marque sans indice commercial. Elles ne
+sont pas supprimees mais classees « preuves faibles », et restent consultables.
+
+### 35.2 Balayage de la bibliotheque publicitaire TikTok
+
+`outils/balayer_annonceurs_tiktok.py` interroge `ad/query` sur les 52 marques
+du classeur, les alias d'interprofession et douze termes generiques.
+
+**Garde-fou applique d'emblee** : le script cherche d'abord un terme absurde et
+s'arrete si celui-ci rend des resultats. Lecon directe de TT-09, ou
+`search_term` etait silencieusement ignore sur l'autre endpoint. Controle
+passe : 0 resultat.
+
+MESURE — `recherche/tiktok_annonceurs_2026-08-25.csv` : 85 termes balayes,
+**2 054 publicites, 655 annonceurs distincts**.
+
+### 35.3 Ce que ca donne pour la filiere
+
+| Annonceur | Pubs | Agence declaree (`paid_for_by`) |
+|---|---|---|
+| **INTERBEV** | **26** | **iProspect Conseil France** |
+| FLEURY MICHON | 60 | en propre |
+| YOPLAIT FRANCE | 60 | WPP MEDIA FRANCE |
+| **BEL** (Babybel, Kiri, La Vache qui rit) | 56 | Publicis Media - Starcom |
+| Entremont | 45 | Attraptemps |
+| **NESTLE FRANCE** | 38 | VMLY&R France, WPP MEDIA FRANCE |
+| DANONE PRODUITS FRAIS FRANCE | 17 | WPP MEDIA FRANCE |
+| Candia (Sodiaal) | 8 | Vanksen |
+| Savencia | 5 | Publicis Media - Blue449 |
+| SOCOPA VIANDES | 5 | Gulfstream Communication |
+| LACTALIS (Lactel) | 4 | Havas Media France |
+
+**INTERBEV achete de la publicite sur TikTok via iProspect Conseil France.**
+C'est une interprofession, pas une marque : elle fait de la publicite en son
+nom propre sur une plateforme dont le public est tres jeune. L'agence n'etait
+pas connue du projet — la feuille `Agences` comptait quatre lignes, dont deux
+sans agence nommee.
+
+Sept agences ont ete ajoutees a la feuille `Agences` avec cette source
+primaire.
+
+### 35.4 Deux limites a ne pas oublier
+
+1. **Aucun createur dans ces donnees.** `ad/query` couvre les publicites
+   achetees ; l'API ne relie jamais un annonceur a un createur remunere
+   (TT-12, JOURNAL 34.4). Ces lignes enrichissent la cartographie des
+   commanditaires, elles ne produisent aucune entree de registre.
+2. **Faux positifs residuels** sur les marques au nom courant : « MADAM
+   PRESIDENT » et « Artists for President B.V. » sortent sur le terme
+   « President » (Lactalis). Le meme probleme qu'en 33.4, ici sans
+   consequence puisque le tri est visuel.

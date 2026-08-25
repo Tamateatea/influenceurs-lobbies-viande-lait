@@ -114,7 +114,8 @@ pas sur une difficulte technique.
 | TT-08 | `brand_names` permet de savoir POUR QUI travaille le createur | **REFUTEE** | Renseigne 2 fois sur 20 000. JOURNAL 34.1 |
 | TT-09 | `search_term` filtre sur `commercial_content/query` | **REFUTEE** | Accepte et **silencieusement ignore** : un terme absurde rend les memes resultats. JOURNAL 34.2 |
 | TT-10 | `search_term` filtre sur `ad/query` | **CONFIRMEE** | Terme absurde → 0 resultat. « lait » → NESTLE FRANCE. JOURNAL 34.3 |
-| TT-11 | `ad/query` nomme l'agence | **CONFIRMEE** | `advertiser.paid_for_by` : « Publicis Media - Starcom ». JOURNAL 34.3 |
+| TT-11 | `ad/query` nomme l'agence | **CONFIRMEE** | 7 agences de la filiere identifiees, dont iProspect pour INTERBEV. JOURNAL 35.3 |
+| TT-13 | Les interprofessions achetent de la publicite sur TikTok | **CONFIRMEE** | INTERBEV, 26 annonces via iProspect Conseil France. JOURNAL 35.3 |
 | TT-12 | On peut aller de l'annonceur au createur remunere | **REFUTEE** | Les deux endpoints ne se joignent pas : l'un a le createur sans la marque, l'autre l'inverse. **C'etait l'esperance principale placee dans TikTok.** JOURNAL 34.4 |
 | TT-04 | Un point d'acces JSON existe derriere l'interface web publique | **REFUTEE** | 12 chemins candidats testes, tous 404 ou HTML. **Passer par l'API officielle.** JOURNAL 25 |
 | TT-05 | L'API officielle existe et repond | **CONFIRMEE** | `open.tiktokapis.com/v2/research/adlib/commercial_content/query/` renvoie une erreur JSON structuree, pas un 404. JOURNAL 25 |
