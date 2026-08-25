@@ -1935,3 +1935,102 @@ Le chemin, en trois temps :
 
 **Annoter maintenant, c'est ce qui permettra de ne plus annoter plus tard.**
 C'est ecrit dans l'onglet « COMMENT FAIRE » du classeur.
+
+---
+
+## 38. Journal de methode — 25 aout 2026 : le projet a enfin une mesure
+
+Vincent a juge **les 271 candidats**, un par un — pas la centaine suggeree.
+C'est le **jeu de reference** qui manquait depuis le premier jour
+(METHODOLOGIE section 9.2).
+
+### 38.1 La verite de terrain
+
+MESURE — `cartographie/A_VERIFIER.xlsx`, 271 lignes annotees :
+
+| Verdict | Videos |
+|---|---|
+| **collaboration remuneree** | **67** |
+| hors sujet | 195 |
+| je ne sais pas | 9 |
+
+**Precision de la detection actuelle : 25 %.** Trois candidats sur quatre
+etaient du bruit. C'est la premiere fois que le projet peut ecrire ce chiffre.
+
+### 38.2 Pourquoi, entite par entite
+
+| Entite | Vrais / total | Precision |
+|---|---|---|
+| CNIEL | 57 / 129 | 44 % |
+| INTERBEV | 7 / 31 | 23 % |
+| INAPORC | 2 / 7 | 29 % |
+| ANVOL | 1 / 3 | 33 % |
+| **CIFOG** | **0 / 91** | **0 %** |
+| **CLIPP** | **0 / 10** | **0 %** |
+
+**CIFOG a produit a lui seul 88 des 195 faux positifs.** Son alias est « Le
+Foie Gras » — qui designe l'aliment bien plus souvent que la marque.
+
+Meme mecanisme, plus discret, pour `@lesproduitslaitiers` : 45 faux positifs,
+parce que « produits laitiers » est une categorie alimentaire courante.
+
+**Constat de fond : les interprofessions ont choisi des noms generiques a
+dessein.** « Les Produits Laitiers », « Le Foie Gras », « Le Porc Francais »,
+« La Viande ». C'est toute la strategie de la vitrine, decrite en
+METHODOLOGIE section 2 — et elle **defait l'appariement de chaines de
+caracteres par construction**. Ce n'est pas un defaut de notre table d'alias :
+c'est le resultat d'un choix de communication de l'industrie.
+
+Ce qui distingue une vraie mention n'est donc pas le terme, mais **ce qu'il y
+a autour**. « Merci aux Produits Laitiers **de nous avoir accompagnes** » n'est
+pas « bien manger, avec des produits laitiers ».
+
+### 38.3 Quatre regles mises a l'epreuve du jeu de reference
+
+`outils/evaluer_detection.py`. Descriptions **completes** recuperees par
+l'API (`videos.list`, 6 unites) — la moisson n'en avait garde que 900
+caracteres, ce qui coupait la mention dans 27 cas.
+
+| Regle | Retenus | Vrais | Faux | Precision | Rappel |
+|---|---:|---:|---:|---:|---:|
+| **A.** l'alias suffit *(actuelle)* | 271 | 67 | 204 | **25 %** | 100 % |
+| **B.** + vocabulaire de collaboration dans la description | 99 | 60 | 39 | 61 % | 90 % |
+| **C.** + vocabulaire **pres** de la mention | 92 | 60 | 32 | 65 % | 90 % |
+| **D.** C, et alias generique ecarte s'il est seul | **69** | **57** | **12** | **83 %** | **85 %** |
+
+**La regle D fait passer la precision de 25 % a 83 % en ne perdant que 15 %
+des vrais cas.** Le travail humain de verification est divise par quatre.
+
+C'est la reponse chiffree a la question de Vincent — « est-ce que ca a des
+chances de mener a une automatisation ? ». Oui, et voici de combien.
+
+### 38.4 Ce que ca dit du role de l'annotation
+
+Aucune de ces quatre regles n'aurait pu etre comparee sans les jugements de
+Vincent. On aurait choisi a l'intuition, et on aurait probablement garde la
+regle A en croyant bien faire.
+
+**Le jeu de reference ne sert pas a valider des videos : il sert a choisir des
+methodes.** Il se reutilise a chaque nouvelle idee de detection, indefiniment.
+Les heures passees a annoter sont un investissement a rendement permanent.
+
+Limite honnete : 271 cas venant de 6 entites et d'un seul canal de detection.
+Le jeu est **biaise vers ce que la methode actuelle trouve** — il ne dit rien
+des collaborations qu'aucune de nos regles ne voit. Pour cela il faudra le
+tirage aleatoire de la section 9.2, qui reste a faire.
+
+### 38.5 Les cas ou Vincent ne peut pas trancher
+
+Neuf « je ne sais pas », et ses notes disent pourquoi :
+
+> « Pas sur a 100 %, mais presque. Une mention d'un lobby identifie est tres
+> probablement le signe d'une collaboration remuneree. »
+
+> « Comment je fais pour savoir s'ils ont recu des sous ? »
+
+Ce n'est pas un defaut d'attention : **l'information n'existe pas dans le
+contenu.** En l'absence de declaration du createur, la remuneration n'est pas
+etablissable par observation. Cela confirme le champ `degre de certitude`
+decide le 24/08 (METHODOLOGIE section 1) — et cela justifie la proposition
+qu'il formule au meme moment : publier les **signaux observes** plutot qu'un
+verdict.

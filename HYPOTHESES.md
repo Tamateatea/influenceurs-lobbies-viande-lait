@@ -42,7 +42,9 @@ gratuits et sans authentification.
 | YT-02 | Le flux RSS de chaine donne les videos recentes sans cle | **CONFIRMEE** | JOURNAL 7 |
 | YT-03 | Le flux RSS permet de remonter dans le passe d'une chaine | **REFUTEE** | 15 videos maximum. JOURNAL 16.5 |
 | YT-27 | La recherche retroactive est hors de portee | **REFUTEE** | `playlistItems.list` rend 50 videos AVEC descriptions pour 1 unite. 35 612 videos moissonnees pour 806 unites. JOURNAL 33 |
-| YT-28 | Les grandes chaines generalistes portent des collaborations CNIEL non documentees | **CONFIRMEE** | Michou (11 M) et Inoxtag (KAIZEN) remercient Les Produits Laitiers. JOURNAL 33.3 |
+| YT-28 | Les grandes chaines generalistes portent des collaborations CNIEL non documentees | **CONFIRMEE** | 67 collaborations confirmees par Vincent sur 271 candidats. JOURNAL 38.1 |
+| YT-30 | L'appariement d'alias seul est exploitable | **REFUTEE** | Precision 25 %. CIFOG 0 %, CLIPP 0 %. Les vitrines ont des noms generiques a dessein. JOURNAL 38.2 |
+| YT-31 | Exiger du vocabulaire de collaboration pres de la mention ameliore la precision | **CONFIRMEE** | 25 % → 83 % de precision, 85 % de rappel conserve. JOURNAL 38.3 |
 | YT-29 | Une marque au nom courant peut etre detectee par simple appariement | **REFUTEE** | « Marie », « Societe », « President » : 698 faux positifs. Il faut exiger un indice commercial. JOURNAL 33.4 |
 | YT-04 | SponsorBlock couvre les chaines francaises | **PARTIELLE** | Inoxtag 14/15, Squeezie 1/15. `test_croise_youtube_2026-08-24_1050.csv` |
 | YT-05 | Un segment SponsorBlock correspond a un sponsor exterieur reel, pas a de l'auto-promotion | **CONFIRMEE** | 12 sur 12, arbitrage humain. JOURNAL 18.1 |
