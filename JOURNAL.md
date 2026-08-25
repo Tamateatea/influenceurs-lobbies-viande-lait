@@ -2115,3 +2115,57 @@ devient aussi une **sortie**. C'est la reponse a l'inquietude de Vincent —
 Le cout est faible : environ 9 unites de quota par chaine pour 600 videos,
 soit moins de 2 000 unites pour les 185 chaines surveillees, sur 10 000
 disponibles par jour.
+
+---
+
+## 41. Journal de methode — 25 aout 2026, nuit : la moisson complete de decouverte
+
+MESURE — `recherche/alias_candidats_2026-08-25.csv` :
+
+| | |
+|---|---|
+| Chaines parcourues | **185 sur 185** |
+| Videos examinees | **31 149** |
+| Quota depense | **851 unites** sur ~10 000 |
+| Mentions de remerciement capturees | 2 661 |
+| **Annonceurs inconnus de la table d'alias** | **229** |
+
+Les plus repandus : Air up (8 chaines), Saily (7), NordVPN (7), Ultra Premium
+Direct (7), Rhinoshield (5), happn, Epic Games, IGraal, Revolut, Vinted,
+BoursoBank, HelloFresh, FRUITZ.
+
+### 41.1 Le mecanisme s'est valide lui-meme, par accident
+
+Au premier passage, le script a signale **« Produits Laitiers » comme annonceur
+INCONNU** — 4 chaines, 8 mentions.
+
+C'etait un bug : la comparaison aplatissait `@lesproduitslaitiers` en
+`lesproduitslaitiers`, alors que la capture donnait `produitslaitiers`, sans
+l'article. Les deux ne se reconnaissaient pas.
+
+**Mais c'est aussi la meilleure validation possible du mecanisme.** Sans rien
+savoir de la filiere, en cherchant seulement la forme « merci a X », le script
+a redecouvert tout seul le principal commanditaire du projet, sur quatre
+chaines differentes. C'est exactement ce qu'on lui demande de faire pour une
+marque qui n'existe pas encore.
+
+Corrige : les formes sans article sont ajoutees a l'ensemble des connus.
+
+### 41.2 Deuxieme correction : le drapeau « connu » se recalcule
+
+Le drapeau etait fige au moment de la capture. Or **la table d'alias evolue** :
+un candidat d'hier peut etre un alias connu aujourd'hui. Fige, il aurait fallu
+re-moissonner 31 000 videos pour le mettre a jour.
+
+Il est desormais recalcule a l'agregation, sur le cache existant, sans aucun
+appel reseau. C'est ce qui permet de relancer le tri gratuitement chaque fois
+que la table change.
+
+### 41.3 Le bruit restant
+
+Sur les 229 candidats, une part notable n'est pas un annonceur : « tous ceux »,
+« toutes les personnes », des prenoms de createurs qui se remercient entre eux,
+et des URL capturees par le motif. Le tri reste humain, comme prevu.
+
+Le rapport de cout est neanmoins favorable : **851 unites de quota pour
+parcourir 31 149 videos** et en extraire 229 candidats a examiner.

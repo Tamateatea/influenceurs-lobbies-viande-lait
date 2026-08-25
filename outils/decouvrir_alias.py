@@ -76,6 +76,8 @@ BRUIT = {
     "l equipe", "lequipe", "team", "toi qui", "vous tous", "vous davoir",
     "vous d avoir", "davoir", "d avoir", "tout le monde", "everyone", "all",
     "you", "watching", "my", "the", "for", "toi davoir", "ceux",
+    # une URL capturee par le motif n'est pas un annonceur
+    "https", "http", "www", "bit", "youtu", "equipes", "artistes",
 }
 
 
@@ -136,6 +138,14 @@ def alias_connus():
                     a = aplatir(l[i])
                     if len(a) >= 4:
                         connus.add(a)
+                        # « @lesproduitslaitiers » et « Produits Laitiers »
+                        # doivent se reconnaitre : on ajoute la forme sans
+                        # article. Sans cela le script a redecouvert le CNIEL
+                        # comme un annonceur inconnu — ce qui etait a la fois
+                        # un bug et une validation du mecanisme (JOURNAL 41).
+                        for art in ("les", "le", "la", "des", "du", "de", "l"):
+                            if a.startswith(art) and len(a) - len(art) >= 4:
+                                connus.add(a[len(art):])
     wb.close()
     return connus
 
@@ -244,10 +254,15 @@ def main():
     par_nom = defaultdict(lambda: {"n": 0, "chaines": set(), "connu": False,
                                    "exemple": "", "abonnes": 0})
     for c in etat["captures"]:
-        d = par_nom[aplatir(c["annonceur"])]
+        plat = aplatir(c["annonceur"])
+        d = par_nom[plat]
         d["n"] += 1
         d["chaines"].add(c["chaine"])
-        d["connu"] = d["connu"] or c["connu"]
+        # « connu » est RECALCULE ici, pas repris du cache : la table d'alias
+        # evolue, et un candidat d'hier peut etre un alias connu aujourd'hui.
+        # Fige au moment de la capture, il aurait fallu tout re-moissonner.
+        d["connu"] = plat in connus or any(
+            plat.startswith(k) and len(k) >= 8 for k in connus)
         d["abonnes"] = max(d["abonnes"], c["abonnes"])
         if not d["exemple"]:
             d["exemple"] = c["annonceur"]
