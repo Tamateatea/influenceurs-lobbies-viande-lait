@@ -1625,3 +1625,111 @@ segments SponsorBlock (service tiers). Elle sert a **reduire l'espace de
 recherche** : sur 35 612 videos elle en designe 271 a instruire. Les signaux
 couteux ne s'appliqueront qu'a celles-la — ce qui rend enfin la surveillance
 continue tenable en quota.
+
+---
+
+## 34. Journal de methode — 25 aout 2026 : l'API TikTok livre, et decoit sur un point precis
+
+Candidature approuvee le 25/08. Identifiants recuperes par Vincent. Deux
+blocages triviaux d'abord, tous deux resolus par le message d'erreur de l'API :
+le champ s'appelle `creator` et non `creator.username`, et la borne haute de
+date doit etre **strictement anterieure** au jour courant.
+
+### 34.1 Ce que `commercial_content/query` rend vraiment
+
+MESURE — `recherche/tiktok_commercial_2026-08-25_0539.csv` :
+
+| | |
+|---|---|
+| Contenus recuperes | **20 000** (plafond de pagination atteint, il y en a plus) |
+| **Createurs francais distincts** | **8 061** |
+| Label « Paid Partnership » | 15 685 |
+| Label « Promotional Content » | 4 313 |
+| **`brand_names` renseigne** | **2 sur 20 000, soit 0 %** |
+
+**TT-02 est CONFIRMEE** : les publications organiques a label de partenariat
+figurent bien dans la bibliotheque. Ce n'est pas qu'un catalogue de publicites
+achetees, et le filtre `creator_country_code: FR` suffit — **aucune liste de
+createurs n'est necessaire en amont**, ce qui satisfait la contrainte posee par
+Vincent (METHODOLOGIE 7.1bis).
+
+**Mais `brand_names` est vide.** On sait qu'il y a partenariat remunere, on
+sait qui est le createur, on ne sait pas **pour qui**. C'est precisement
+l'information qui fait le registre.
+
+### 34.2 Un piege : `search_term` est accepte et silencieusement ignore
+
+Teste explicitement sur `commercial_content/query` :
+
+| Terme cherche | Resultats | Memes identifiants que sans terme ? |
+|---|---|---|
+| aucun | 20 | — |
+| « produits laitiers » | 20 | **oui** |
+| « zzzzqqqxxx » | 20 | **oui** |
+
+Un terme absurde rend exactement les memes contenus qu'une recherche vide.
+**Le parametre est accepte sans erreur et n'a aucun effet.**
+
+C'est le pire comportement possible pour un outil de recherche : rien ne
+signale l'echec. Sans ce test a trois branches — sans terme, terme plausible,
+terme absurde — on aurait conclu que la filiere viande/lait est absente de
+TikTok, alors qu'on n'avait rien cherche du tout.
+
+**A generaliser : toute fonction de recherche fournie par un tiers doit etre
+validee par un terme absurde avant d'etre exploitee.** Si le terme absurde
+rend des resultats, la recherche ne marche pas.
+
+### 34.3 L'autre endpoint, lui, cherche vraiment — et nomme l'annonceur
+
+`ad/query/` couvre les **publicites achetees**, pas les partenariats de
+createurs. Mais son `search_term` fonctionne, verifie de la meme facon :
+
+| Terme | Resultats | Annonceurs |
+|---|---|---|
+| « lait » | 10 | **NESTLE FRANCE**, MONDELEZ EUROPE SERVICES |
+| « fromage » | 10 | **BEL**, BARILLA |
+| « zzzqqqxxx » | **0** | — |
+
+Zero resultat sur le terme absurde : le filtre est reel.
+
+Champs valides, verifies un par un :
+
+| Champ | Contenu |
+|---|---|
+| `advertiser.business_name` | l'annonceur — NESTLE FRANCE, BEL |
+| **`advertiser.paid_for_by`** | **l'agence** — « Publicis Media - Starcom » |
+| `ad.reach.unique_users_seen` | audience, par tranche (« 1M-10M ») |
+| `ad.first_shown_date`, `ad.last_shown_date` | periode de diffusion |
+| `ad.videos`, `ad.image_urls`, `ad.status` | le creatif |
+
+`ad.creator` et `ad.audience` n'existent pas.
+
+### 34.4 Le verdict, sans enjoliver
+
+**Les deux endpoints ne se joignent pas.** L'un donne le createur sans la
+marque, l'autre la marque sans le createur. **Il n'existe pas, dans cette API,
+de chemin qui aille de l'annonceur au createur remunere.**
+
+**TT-03 est donc REFUTEE** : la bibliotheque n'est pas interrogeable par
+annonceur pour retrouver des createurs. C'etait l'esperance principale placee
+dans TikTok, et elle ne se realise pas telle quelle.
+
+**Ce qui reste, et qui est loin d'etre rien :**
+
+1. **8 061 createurs francais** dont TikTok declare qu'ils ont fait du
+   partenariat remunere. C'est une population definie, exactement ce qui
+   manquait a la section 9.2 pour constituer un jeu de reference.
+2. **Les annonceurs de la filiere sont identifiables** par mot-cle : NESTLE
+   FRANCE et BEL sont deja sortis sur deux essais de dix resultats.
+3. **`paid_for_by` nomme les agences** — la feuille Agences du classeur en
+   avait quatre lignes ; cette source peut la nourrir systematiquement.
+4. Chaque contenu porte l'**URL de sa video**. Le lien createur → marque
+   manquant peut donc etre reconstruit en lisant la video elle-meme. C'est
+   du travail, mais la voie existe.
+
+### 34.5 Consequence pour la strategie
+
+TikTok ne remplace pas la chaine YouTube, contrairement a ce qu'on esperait
+hier. Il apporte autre chose, peut-etre plus precieux : **une population de
+reference declaree par la plateforme**, sur laquelle mesurer le rappel de nos
+propres methodes (METHODOLOGIE section 9).

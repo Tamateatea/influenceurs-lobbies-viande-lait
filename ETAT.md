@@ -102,7 +102,7 @@ Acquis : les listes d'abonnements des comptes vitrines ont ete relevees a la
 main (538 comptes, `recherche/comptes_suivis_2026-08-24.csv`). Elles servent a
 **cibler**, jamais a conclure.
 
-### TikTok — la source la plus prometteuse, bloquee sur une candidature
+### TikTok — accessible depuis le 25/08. Riche, mais pas ce qu'on croyait
 
 L'API Commercial Content de TikTok rend **directement** ce que le registre
 cherche : `creator.username` + `brand_names` + `label` + date, pour l'EEE,
@@ -113,9 +113,17 @@ plateforme qui declare.
 Research API de TikTok et a la Meta Content Library. Elle est ouverte au
 public, aux journalistes et aux associations. Gratuite, ~2 jours ouvres.
 
-L'endpoint est verifie vivant. L'outil est ecrit et pret
-(`outils/tester_tiktok_commercial.py`). **Il ne manque que la candidature,
-qui revient a Vincent.**
+**Resultat reel :** 8 061 createurs francais avec un label de partenariat
+remunere declare par la plateforme. Mais `brand_names` est vide (2 sur
+20 000) : on sait qu'il y a partenariat, pas pour qui.
+
+L'endpoint `ad/query` couvre les publicites achetees et permet, lui, une
+recherche par mot-cle qui fonctionne : « lait » sort NESTLE FRANCE, « fromage »
+sort BEL. Il nomme aussi l'agence (`advertiser.paid_for_by`).
+
+**Les deux ne se joignent pas** : aucun chemin de l'annonceur au createur.
+TikTok apporte donc une **population de reference** plutot qu'un moteur de
+decouverte. Voir JOURNAL 34.
 
 ### Sites des commanditaires — piste ouverte le 24 aout
 

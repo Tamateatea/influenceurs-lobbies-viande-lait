@@ -40,7 +40,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -50,11 +50,16 @@ SORTIE = RACINE / "recherche"
 JETON_URL = "https://open.tiktokapis.com/v2/oauth/token/"
 BASE = "https://open.tiktokapis.com/v2/research/adlib/"
 
-CHAMPS = ("id,create_date,create_timestamp,label,brand_names,"
-          "creator.username,creator.country_code,videos")
+# Noms de champs verifies contre l'API le 25/08/2026. Attention : c'est
+# « creator » et non « creator.username » — l'API refuse la notation pointee
+# et renvoie un objet imbrique {"username": ...}.
+CHAMPS = "id,create_date,brand_names,creator,label,videos"
 
 DEBUT = "20221001"          # borne minimale imposee par TikTok
-FIN = datetime.now(timezone.utc).strftime("%Y%m%d")
+# La borne haute doit etre STRICTEMENT anterieure a aujourd'hui : l'API refuse
+# la date du jour (« Please provide a value before today's date »). Verifie le
+# 25/08/2026.
+FIN = (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y%m%d")
 
 
 def lire_secret(nom):
@@ -133,7 +138,7 @@ def main():
     # Tout le contenu commercial francais de la periode. Le filtrage sur la
     # filiere viande/lait se fait chez nous, sur brand_names : c'est plus sur
     # que d'esperer que TikTok comprenne « Cniel ».
-    while page < 40:
+    while page < 400:
         page += 1
         corps = {
             "filters": {

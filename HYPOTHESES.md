@@ -110,11 +110,16 @@ pas sur une difficulte technique.
 |---|---|---|---|
 | TT-01 | `library.tiktok.com` est accessible sans compte | **CONFIRMEE** | JOURNAL 7 |
 | TT-02 | La bibliotheque inclut les publications organiques a label de partenariat | **CONFIRMEE (documentation)** | L'endpoint s'appelle `commercial_content/query/` et rend `label` + `brand_names` + `creator.username`. JOURNAL 25 |
-| TT-03 | Elle est interrogeable sans liste de createurs prealable | **CONFIRMEE (documentation)** | Filtre `creator_country_code: FR` seul suffit. JOURNAL 25 |
+| TT-03 | Elle est interrogeable sans liste de createurs prealable | **CONFIRMEE** | 8 061 createurs francais obtenus avec le seul filtre pays. JOURNAL 34.1 |
+| TT-08 | `brand_names` permet de savoir POUR QUI travaille le createur | **REFUTEE** | Renseigne 2 fois sur 20 000. JOURNAL 34.1 |
+| TT-09 | `search_term` filtre sur `commercial_content/query` | **REFUTEE** | Accepte et **silencieusement ignore** : un terme absurde rend les memes resultats. JOURNAL 34.2 |
+| TT-10 | `search_term` filtre sur `ad/query` | **CONFIRMEE** | Terme absurde → 0 resultat. « lait » → NESTLE FRANCE. JOURNAL 34.3 |
+| TT-11 | `ad/query` nomme l'agence | **CONFIRMEE** | `advertiser.paid_for_by` : « Publicis Media - Starcom ». JOURNAL 34.3 |
+| TT-12 | On peut aller de l'annonceur au createur remunere | **REFUTEE** | Les deux endpoints ne se joignent pas : l'un a le createur sans la marque, l'autre l'inverse. **C'etait l'esperance principale placee dans TikTok.** JOURNAL 34.4 |
 | TT-04 | Un point d'acces JSON existe derriere l'interface web publique | **REFUTEE** | 12 chemins candidats testes, tous 404 ou HTML. **Passer par l'API officielle.** JOURNAL 25 |
 | TT-05 | L'API officielle existe et repond | **CONFIRMEE** | `open.tiktokapis.com/v2/research/adlib/commercial_content/query/` renvoie une erreur JSON structuree, pas un 404. JOURNAL 25 |
 | TT-06 | L'acces exige une affiliation universitaire | **REFUTEE** | Ouverte au public et aux chercheurs, contrairement a la Research API. **C'est ce qui la rend accessible.** JOURNAL 25 |
-| TT-07 | Les marques de la filiere y figurent pour la France | **A TESTER** | Bloquee sur la candidature |
+| TT-07 | Les marques de la filiere y figurent pour la France | **CONFIRMEE** | NESTLE FRANCE et BEL sortent sur deux essais de 10 resultats. JOURNAL 34.3 |
 
 ---
 

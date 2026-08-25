@@ -8,6 +8,18 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[C]` **Balayer `ad/query` sur tous les termes de la filiere.** Le
+      search_term y fonctionne (verifie par terme absurde). Deux essais de dix
+      resultats ont deja sorti NESTLE FRANCE et BEL. Balayer les 52 marques de
+      la feuille `Marques` plus les alias d'interprofession, et recolter aussi
+      `advertiser.paid_for_by` pour nourrir la feuille Agences.
+- [ ] `[C]` **Croiser les 8 061 createurs TikTok** avec le registre COMPTES.
+      C'est une population declaree par la plateforme : elle peut servir de
+      jeu de reference pour mesurer le rappel (METHODOLOGIE section 9).
+- [ ] `[?]` **Reconstruire le lien createur → marque sur TikTok.** L'API ne le
+      donne pas, mais chaque contenu porte l'URL de sa video. A decider :
+      vaut-il le cout de lire les videos ?
+
 - [ ] `[C]` **Corriger l'appariement des marques au nom courant.** « Marie »
       (LDC), « Societe » et « President » (Lactalis), « Le Foie Gras » (CIFOG)
       produisent 698 faux positifs sur la moisson du 24/08. Exiger qu'un nom
