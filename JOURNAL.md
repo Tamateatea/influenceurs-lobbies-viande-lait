@@ -2288,3 +2288,67 @@ Ce qui reste solide malgre l'artefact : **8 des 9 cas SponsorBlock sont aussi
 des cas description**. La ou SponsorBlock voit quelque chose, la description
 voit presque toujours la meme chose. Ce recouvrement-la ne depend pas du biais
 d'echantillonnage.
+
+---
+
+## 44. Journal de methode — 25 aout 2026, nuit : la population de surveillance x13
+
+### 44.1 Une meilleure semence
+
+Les 185 chaines surveillees venaient des abonnements Instagram des vitrines.
+**Etre suivi par un lobby ne prouve rien** (JOURNAL 19) : ce vivier n'est
+qu'une hypothese de ciblage.
+
+Les createurs de la Commercial Content Library sont d'une autre nature :
+**TikTok declare qu'ils ont fait du partenariat remunere**. Ce sont des
+createurs commerciaux averes. Comme semence, c'est strictement meilleur.
+
+MESURE — `recherche/croisement_tt_yt_2026-08-25.csv` :
+
+| | |
+|---|---|
+| Createurs TikTok essayes | **7 000** sur 8 061 |
+| **Chaines YouTube trouvees** | **2 187** |
+| dont au moins 100 000 abonnes | **373** |
+| Quota depense | 7 000 unites (budget du jour epuise) |
+
+Taux de correspondance : **31 %**, identique a celui du croisement Instagram.
+Les 1 061 createurs restants attendent le quota de demain.
+
+Les plus grosses chaines ainsi trouvees : FastGoodCuisine (8,77 M),
+L'atelier de Roxane (4,52 M), Nicocapone (6,37 M), Victor de Martrin (4,86 M),
+Gotaga (4,43 M), Greg Guillotin (4,41 M), Poisson Fecond, Studio Bagel,
+EnjoyPhoenix (3,71 M), Guillaume Pley.
+
+**Aucune n'etait dans la liste de surveillance.**
+
+### 44.2 Un defaut du filtre a signaler
+
+Le filtre `creator_country_code: FR` remonte aussi David Guetta (27,9 M),
+Neymar Jr (9,07 M) et Christian Dior. Ce ne sont pas des createurs francais au
+sens du projet : le champ decrit apparemment le marche vise ou la localisation
+declaree, pas la nationalite du compte.
+
+Sans consequence pour la detection — ces comptes ne porteront simplement aucun
+signal filiere — mais **il ne faudra jamais decrire cette population comme
+« les createurs francais »** sans cette reserve.
+
+### 44.3 Etat du registre
+
+`cartographie/COMPTES.xlsx` passe de 766 a **5 129 comptes** :
+
+| Plateforme | Comptes |
+|---|---|
+| YouTube | 2 361 |
+| TikTok | 2 187 |
+| Instagram | 552 |
+| indeterminee | 29 |
+
+**46 % ont une audience connue**, contre 3 % ce matin.
+
+### 44.4 Ce qui reste a faire, et son cout
+
+Moissonner les descriptions de ces 2 361 chaines coutera environ **20 000
+unites** de quota — deux jours de budget. C'est la prochaine etape, et elle
+demultipliera d'autant la detection : la moisson de 185 chaines avait deja
+sorti 271 candidats dont 67 vraies collaborations.

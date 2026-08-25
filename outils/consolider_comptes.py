@@ -203,6 +203,31 @@ def charger(r):
                 n += 1
         resume.append((f.name, n, "chaines YouTube derivees d'Instagram"))
 
+    # --- chaines YouTube derivees des createurs TikTok commerciaux ---
+    # Meilleure semence que les abonnements des vitrines : TikTok DECLARE que
+    # ces createurs font du partenariat remunere (JOURNAL 44).
+    f = dernier("croisement_tt_yt_*.csv")
+    if f:
+        n = 0
+        with f.open(encoding="utf-8") as fh:
+            for l in csv.DictReader(fh):
+                r.ajouter("youtube", l["channel_id"], f.name,
+                          url=l.get("url", ""),
+                          pseudo=l.get("pseudo_youtube", ""),
+                          nom_affiche=l.get("titre_youtube", ""),
+                          role="createur",
+                          audience=l.get("abonnes_youtube", ""),
+                          unite_audience="abonnes YouTube",
+                          audience_relevee_le=l.get("releve_le", ""),
+                          lien_avec_la_filiere="createur commercial declare sur "
+                                               "TikTok (rattachement HYPOTHESE)")
+                r.ajouter("tiktok", l["pseudo_commun"], f.name,
+                          role="createur",
+                          lien_avec_la_filiere="partenariat remunere declare "
+                                               "par TikTok")
+                n += 1
+        resume.append((f.name, n, "chaines YouTube derivees de TikTok"))
+
     # --- pseudos publies par les sites des lobbies ---
     f = dernier("sites_lobbies_*.csv")
     if f:
