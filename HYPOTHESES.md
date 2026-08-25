@@ -145,6 +145,9 @@ plutot que des inferences sur du contenu.
 
 | ID | Hypothese | Statut | Preuve |
 |---|---|---|---|
+| TR-08 | La detection par forme de remerciement trouve des annonceurs inconnus | **CONFIRMEE** | 229 annonceurs hors table sur 31 149 videos. JOURNAL 41 |
+| TR-09 | Elle trouve des annonceurs de la filiere que la table ignore | **REFUTEE** | 1 candidat alimentaire sur 229, et c'est du mobilier de cuisine. JOURNAL 42.1 |
+| TR-10 | Un zero de detection prouve l'absence de collaboration | **REFUTEE** | Le mecanisme n'attrape que les annonceurs NOMMES. La strategie de la vitrine consiste precisement a ne pas se nommer. JOURNAL 42.2 |
 | TR-01 | Les registres DSA de Google et Meta incluent les publications organiques a label de partenariat, comme celui de TikTok | **A TESTER** | Affirmation jamais verifiee. JOURNAL 12 |
 | TR-02 | Un modele de langage lisant description et transcription fait mieux qu'un motif regulier | **A TESTER** | Fortement suggere par YT-13, jamais mesure |
 | TR-03 | La distinction contrat remunere / cadeau est lisible dans le contenu | **A TESTER** | METHODOLOGIE.md section 4 |

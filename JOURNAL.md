@@ -2169,3 +2169,58 @@ et des URL capturees par le motif. Le tri reste humain, comme prevu.
 
 Le rapport de cout est neanmoins favorable : **851 unites de quota pour
 parcourir 31 149 videos** et en extraire 229 candidats a examiner.
+
+---
+
+## 42. Correction — 25 aout 2026 : ce que la decouverte a reellement montre
+
+Reaction de Vincent au compte rendu de l'entree 41 : « la plupart ne sont pas
+lies au lobby de la viande ou du lait. Qu'est-ce que tu racontes ? »
+
+**Il a raison, et le compte rendu etait fautif.** L'entree 41 mettait en avant
+Air up, NordVPN, Saily, Vinted, Epic Games comme s'il s'agissait de resultats
+du projet. Ce sont des prises accessoires d'un test de mecanisme. Le cadrage
+avait ete donne au message precedent puis abandonne au moment de presenter la
+moisson complete.
+
+### 42.1 Le resultat reel, verifie
+
+Balayage des 229 candidats sur un motif alimentaire large — lait, fromage,
+viande, porc, volaille, oeuf, ferme, elevage, plus les noms des grands groupes
+(Danone, Lactalis, Nestle, Bel, Savencia, Sodiaal, Bigard, Herta, LDC...) :
+
+**1 candidat sur 229**, et c'est « Noblessa Cuisines » — du mobilier.
+
+**Zero nouvel annonceur de la filiere viande/lait sur 31 149 videos et
+185 chaines.**
+
+### 42.2 Ce que ce zero veut dire, et ce qu'il ne veut pas dire
+
+**Ce qu'il dit :** la table d'alias n'est pas gravement incomplete sur cette
+population. C'est une mesure de completude, et c'est la seule vraie trouvaille
+de la moisson.
+
+**Ce qu'il ne dit pas :** que la filiere soit absente de ces 185 chaines. Le
+mecanisme ne detecte que les annonceurs **nommes dans une formule de
+remerciement**.
+
+Or METHODOLOGIE section 2 documente exactement le contraire : sur la campagne
+INTERBEV de 2025, **le commanditaire n'etait jamais nomme**, et le compte
+partenaire n'apparaissait que sur une publication sur trois.
+
+**Un lobby qui applique la strategie de la vitrine a fond est invisible pour
+cet outil, par construction.** Le zero prouve l'absence de mentions nommees,
+pas l'absence de collaborations.
+
+### 42.3 Consequence
+
+La decouverte par la forme du remerciement reste utile — c'est un filet de
+securite contre les marques nouvelles — mais elle **ne peut pas etre le
+principal moyen de detection**. Elle partage l'angle mort du reste de la
+chaine : tout ce qui repose sur le nom echoue quand le nom est volontairement
+absent.
+
+Les signaux qui ne dependent pas du nom gardent donc leur importance : la case
+de declaration YouTube, les segments SponsorBlock, et le signalement citoyen
+prevu par l'extension (METHODOLOGIE 14bis.5). Aucun des trois n'a encore ete
+mesure contre le jeu de reference.
