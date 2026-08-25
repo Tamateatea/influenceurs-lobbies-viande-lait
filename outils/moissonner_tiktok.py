@@ -121,7 +121,7 @@ def main():
     for dmin, dmax in fenetres:
         if dmin in etat["mois_faits"]:
             continue
-        curseur, n, pages = None, 0, 0
+        curseur, n, pages, echec = None, 0, 0, None
         while pages < 500:
             pages += 1
             d, err = interroger(tok, dmin, dmax, curseur)
@@ -129,6 +129,7 @@ def main():
                 if "401" in err or "invalid_token" in err.lower():
                     tok = jeton()          # le jeton expire au bout de 2 h
                     continue
+                echec = err
                 print(f"  {dmin} : ERREUR {err[:90]}", file=sys.stderr)
                 break
             for c in d.get("commercial_contents", []) or []:
@@ -149,6 +150,18 @@ def main():
             if not curseur:
                 break
             time.sleep(0.15)
+        # Un mois qui a echoue ne doit PAS etre marque comme fait : une
+        # reprise le sauterait et le trou serait definitif et invisible.
+        # C'est la regle METHODOLOGIE 13.3 — distinguer l'absence de resultat
+        # de l'absence de mesure — appliquee a la reprise.
+        if echec:
+            if "quota" in echec.lower():
+                print(f"  quota TikTok epuise pour aujourd'hui, arret propre "
+                      f"a {dmin[:4]}-{dmin[4:6]}", file=sys.stderr)
+                ETAT.write_text(json.dumps(etat, ensure_ascii=False),
+                                encoding="utf-8")
+                break
+            continue
         etat["mois_faits"][dmin] = n
         print(f"  {dmin[:4]}-{dmin[4:6]} : {n:>6d} contenus "
               f"| total {len(etat['contenus']):>7d}", file=sys.stderr)

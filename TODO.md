@@ -8,6 +8,17 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[C]` **Reprendre la moisson TikTok** : 45 mois sur 47 restent a
+      interroger. Le quota journalier de TikTok n'en autorise qu'environ deux
+      par jour — compter une vingtaine de jours. Relancer
+      `outils/moissonner_tiktok.py` chaque jour ; il reprend ou il s'est
+      arrete. Voir JOURNAL 45.
+- [ ] `[C]` **Moissonner les 2 361 chaines YouTube** du registre elargi.
+      Environ 20 000 unites, soit deux jours de quota. C'est ce qui
+      demultipliera la detection.
+- [ ] `[C]` **Finir le croisement TikTok → YouTube** : 1 061 createurs sur
+      8 061 n'ont pas pu etre essayes, quota epuise.
+
 - [ ] `[C]` **Evaluer les trois autres signaux contre le jeu de reference.**
       Seule la description a ete mesuree (83 % de precision avec la regle D).
       La case de declaration YouTube, SponsorBlock et la transcription n'ont

@@ -2352,3 +2352,65 @@ Moissonner les descriptions de ces 2 361 chaines coutera environ **20 000
 unites** de quota — deux jours de budget. C'est la prochaine etape, et elle
 demultipliera d'autant la detection : la moisson de 185 chaines avait deja
 sorti 271 candidats dont 67 vraies collaborations.
+
+---
+
+## 45. Correction — 25 aout 2026 : la « population de reference » TikTok n'en est pas une
+
+### 45.1 Ce que la moisson a reellement couvert
+
+Le rapport genere annoncait « 47 mois sur 47 » et « 6 227 createurs francais
+distincts ». **Les deux chiffres sont trompeurs.**
+
+Verification de l'etat reel :
+
+| Mois | Contenus |
+|---|---|
+| Octobre 2022 | 13 038 |
+| Novembre 2022 | 2 747 |
+| **Decembre 2022 a aout 2026** | **0 — jamais interroges** |
+
+**TikTok a un quota journalier**, epuise apres deux mois de moisson. Tous les
+appels suivants ont echoue en `daily_quota_limit_exceeded`, et le script les a
+comptabilises comme des mois « faits » a zero contenu.
+
+La population n'est donc pas « les createurs francais de 2022 a 2026 » : c'est
+**deux mois de fin 2022**, vieux de bientot quatre ans.
+
+### 45.2 Le bug, et pourquoi il est grave
+
+Le script marquait un mois comme **fait** meme quand l'appel avait echoue. Une
+reprise le lendemain aurait saute les 45 mois manquants et **le trou serait
+devenu permanent et invisible** : le fichier aurait affiche « 47 mois sur 47 »
+indefiniment.
+
+C'est exactement la faute que METHODOLOGIE 13.3 interdit — confondre l'absence
+de resultat et l'absence de mesure — appliquee cette fois a la **reprise**
+plutot qu'a la collecte. Je l'avais ecrite le 24/08 et je l'ai refaite le 25.
+
+Corrige : un mois en echec n'est plus enregistre, et un epuisement de quota
+arrete proprement la boucle au lieu de la laisser echouer 45 fois de suite.
+L'etat a ete nettoye : 45 mois sont a reprendre.
+
+### 45.3 Ce que ca dit du volume reel
+
+Octobre 2022 seul rend **13 038 contenus commerciaux francais**. Si l'ordre de
+grandeur tient sur 47 mois, la bibliotheque contient **plusieurs centaines de
+milliers** de contenus pour la France.
+
+Au rythme observe — environ deux mois de donnees par jour de quota — la
+moisson complete demanderait **une vingtaine de jours**. C'est faisable, mais
+c'est un chantier de fond, pas une tache de nuit.
+
+### 45.4 Ce qui reste vrai malgre la correction
+
+- `brand_names` est vide sur **15 781 contenus** verifies, soit 0,00 %.
+  L'hypothese TT-08 est refutee de facon bien plus solide qu'hier.
+- Le decoupage mensuel **fonctionne** : il contourne le plafond de pagination.
+  Octobre 2022 a rendu 13 038 contenus la ou une requete unique plafonnait a
+  20 000 pour toute la periode.
+- Les 8 061 createurs issus de la premiere moisson restent valides comme
+  vivier — ils ont produit 2 187 chaines YouTube.
+
+Mais **le projet n'a toujours pas de population de reference complete**, et
+donc toujours pas de moyen de tirer un echantillon aleatoire.

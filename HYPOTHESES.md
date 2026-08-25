@@ -125,6 +125,9 @@ pas sur une difficulte technique.
 | TT-05 | L'API officielle existe et repond | **CONFIRMEE** | `open.tiktokapis.com/v2/research/adlib/commercial_content/query/` renvoie une erreur JSON structuree, pas un 404. JOURNAL 25 |
 | TT-06 | L'acces exige une affiliation universitaire | **REFUTEE** | Ouverte au public et aux chercheurs, contrairement a la Research API. **C'est ce qui la rend accessible.** JOURNAL 25 |
 | TT-07 | Les marques de la filiere y figurent pour la France | **CONFIRMEE** | NESTLE FRANCE et BEL sortent sur deux essais de 10 resultats. JOURNAL 34.3 |
+| TT-14 | L'API TikTok a un quota journalier | **CONFIRMEE** | `daily_quota_limit_exceeded` apres deux mois de moisson. JOURNAL 45.1 |
+| TT-15 | Le decoupage mensuel contourne le plafond de pagination | **CONFIRMEE** | Octobre 2022 seul rend 13 038 contenus. JOURNAL 45.4 |
+| TT-16 | La population de reference francaise est constituee | **REFUTEE** | 2 mois sur 47 moissonnes. Il faudra une vingtaine de jours de quota. JOURNAL 45.3 |
 
 ---
 
