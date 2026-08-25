@@ -47,6 +47,8 @@ gratuits et sans authentification.
 | YT-31 | Exiger du vocabulaire de collaboration pres de la mention ameliore la precision | **CONFIRMEE** | 25 % → 83 % de precision, 85 % de rappel conserve. JOURNAL 38.3 |
 | YT-29 | Une marque au nom courant peut etre detectee par simple appariement | **REFUTEE** | « Marie », « Societe », « President » : 698 faux positifs. Il faut exiger un indice commercial. JOURNAL 33.4 |
 | YT-04 | SponsorBlock couvre les chaines francaises | **PARTIELLE** | Inoxtag 14/15, Squeezie 1/15. `test_croise_youtube_2026-08-24_1050.csv` |
+| YT-32 | SponsorBlock apporte une couverture utile en plus de la description | **REFUTEE** | Rappel 13 %, et 8 de ses 9 vrais cas sont deja vus par la description. Le gain total est de 1 point. JOURNAL 43.1 |
+| YT-33 | SponsorBlock et la description sont independants (capture-recapture) | **REFUTEE** | Estimation 65 pour 67 observes : recouvrement quasi total. La paire est inutilisable pour estimer le rappel absolu. JOURNAL 43.2 |
 | YT-05 | Un segment SponsorBlock correspond a un sponsor exterieur reel, pas a de l'auto-promotion | **CONFIRMEE** | 12 sur 12, arbitrage humain. JOURNAL 18.1 |
 | YT-06 | La case de declaration YouTube capte la majorite des collaborations reelles | **REFUTEE** | 2 sur 14 chez Inoxtag. JOURNAL 18.1 |
 | YT-07 | La description publique nomme l'annonceur | **CONFIRMEE** | `descriptions_youtube_2026-08-24_1234.csv` |

@@ -2224,3 +2224,67 @@ Les signaux qui ne dependent pas du nom gardent donc leur importance : la case
 de declaration YouTube, les segments SponsorBlock, et le signalement citoyen
 prevu par l'extension (METHODOLOGIE 14bis.5). Aucun des trois n'a encore ete
 mesure contre le jeu de reference.
+
+---
+
+## 43. Journal de methode — 25 aout 2026, nuit : SponsorBlock mesure, et il decoit
+
+`outils/mesurer_signaux.py`, sur les 271 candidats juges par Vincent.
+SponsorBlock est un service tiers gratuit : la mesure n'a coute aucun quota.
+
+MESURE — `recherche/mesure_signaux_2026-08-25.md`, 271 interrogations,
+0 erreur :
+
+| Signal | Retenus | Vrais | Precision | Rappel |
+|---|---:|---:|---:|---:|
+| **Indice commercial en description** | 82 | 58 | 71 % | **87 %** |
+| Mention legale en description | 21 | 15 | 71 % | 22 % |
+| **SponsorBlock : au moins un segment** | 13 | 9 | 69 % | **13 %** |
+| SponsorBlock OU indice en description | 83 | 59 | 71 % | 88 % |
+| SponsorBlock ET indice en description | 12 | 8 | 67 % | 12 % |
+| Code promo en description | 2 | 0 | 0 % | 0 % |
+
+### 43.1 SponsorBlock n'apporte presque rien
+
+**Precision honorable (69 %), rappel tres faible (13 %).** Sur 67 vraies
+collaborations, SponsorBlock n'en voit que 9.
+
+Pire pour la strategie : **8 de ces 9 sont deja vues par la description.**
+Ajouter SponsorBlock a la detection par description fait passer le rappel de
+87 % a 88 % — un point.
+
+C'est une revision nette de l'entree JOURNAL 18.1, qui saluait la precision de
+SponsorBlock (12 sur 12 a l'arbitrage humain). Cette precision est reelle ;
+c'est sa **couverture** qui est insuffisante.
+
+### 43.2 La capture-recapture echoue, et c'est instructif
+
+METHODOLOGIE section 9.3 exige deux methodes **independantes**. Calcul sur les
+vraies collaborations : SponsorBlock en voit 9, la description 58, les deux en
+commun 8. L'estimation *a x b / m* donne **65**, pour 67 cas observes.
+
+Une estimation egale au nombre deja observe signifie que les deux methodes ne
+sont pas independantes : elles se trompent sur les memes videos. **La
+capture-recapture entre ces deux signaux-la est donc inutilisable.**
+
+Il faut chercher des paires reellement independantes. Candidats : la
+declaration YouTube, le contenu parle par transcription, le signalement
+citoyen de la future extension.
+
+### 43.3 Le code promo, contre-mesure
+
+L'entree 18.2 avancait que le code promo est un meilleur indice que la
+mention legale, parce qu'il est ecrit pour etre utilise. **Sur ce jeu, il fait
+0 sur 2.** L'echantillon est minuscule et ne refute rien, mais il n'appuie
+rien non plus : l'idee reste a tester ailleurs.
+
+### 43.4 La limite qui pese sur toute cette mesure
+
+Les 271 candidats viennent **tous** du canal « description ». Le faible rappel
+de SponsorBlock est donc en partie un artefact : on ne mesure sa couverture que
+la ou la description a deja trouve quelque chose.
+
+Ce qui reste solide malgre l'artefact : **8 des 9 cas SponsorBlock sont aussi
+des cas description**. La ou SponsorBlock voit quelque chose, la description
+voit presque toujours la meme chose. Ce recouvrement-la ne depend pas du biais
+d'echantillonnage.
