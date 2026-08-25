@@ -632,6 +632,121 @@ seule.**
 
 ---
 
+## 14bis. Cinq orientations posees par Vincent le 25 aout 2026
+
+Formulees pendant qu'il annotait les 271 candidats. Elles repondent toutes a
+la meme question : comment un outil de detection reste-t-il valable quand
+l'industrie qu'il observe change ?
+
+### 14bis.1 La table d'alias doit se nourrir toute seule
+
+« L'industrie va toujours creer de nouvelles marques, de nouveaux alias. »
+
+Une table tenue a la main sera toujours en retard. Mais **le mecanisme est
+stable meme quand les chaines de caracteres changent** : une interprofession
+communique par une vitrine, une campagne a un nom, un createur remercie son
+financeur.
+
+Consequence : la detection ne doit pas seulement chercher les alias CONNUS,
+elle doit **reperer la forme « remerciement + entite inconnue »** et proposer
+l'entite comme alias candidat. La table devient une **sortie** du systeme
+autant qu'une entree.
+
+Trois sources de renouvellement automatique, deja disponibles :
+
+- le repertoire HATVP, mis a jour toutes les nuits ;
+- les sites des interprofessions, qui publient leurs propres noms de campagne ;
+- le balayage des annonceurs TikTok, qui a deja rendu NESTLE FRANCE et BEL
+  sans qu'on les ait cherches.
+
+### 14bis.2 L'operationnel est incremental, l'archive reste
+
+« On se fiche peut-etre des videos anciennes. On est surtout interesses par
+les collaborations en cours. »
+
+Juste pour le **plaidoyer** : une campagne en cours s'interpelle, une campagne
+de 2020 s'analyse. Mais l'archive garde deux usages : montrer l'anciennete
+d'une relation (le CNIEL travaille avec Inoxtag depuis 2020), et servir de jeu
+d'evaluation.
+
+Architecture retenue : **un rattrapage initial, puis une veille incrementale**
+qui ne regarde que les publications nouvelles. C'est aussi ce qui rend la
+surveillance tenable en quota. La date devient un critere de tri et de
+priorite de verification, jamais un filtre de collecte.
+
+### 14bis.3 L'audience : un critere de priorite, pas un seuil de collecte
+
+« Il y a sans doute un seuil en dessous duquel nous, et l'industrie, ne sommes
+pas interesses. »
+
+Vrai, et l'industrie applique effectivement un seuil. Mais fixer un seuil **a
+la collecte** rendrait la mesure du rappel impossible et empecherait de
+constater un deplacement vers les micro-influenceurs — qui serait justement
+une information.
+
+Meme regle que pour la congruence (section 8) : **on collecte tout, on
+priorise par l'audience.** Le seuil s'applique a la file de verification
+humaine, pas au robot.
+
+### 14bis.4 Publier les SIGNAUX, pas un verdict
+
+C'est l'orientation la plus importante des cinq.
+
+Constat de Vincent en annotant : « je suis moi-meme seulement certain a 90 %,
+en l'absence de declaration de l'auteur ». Sur neuf cas il n'a pas pu trancher
+du tout. **Ce n'est pas un defaut d'attention : la remuneration n'est pas
+etablissable par observation** quand le createur ne la declare pas.
+
+Sa proposition : **le site affiche ce qui a ete observe**, pas une conclusion.
+
+    Chaine XXX, video du 12/03/2025
+      mention « Les Produits Laitiers » en description       OUI
+      formule de remerciement a proximite                    OUI
+      case « communication commerciale » de YouTube          NON
+      segment sponsorise signale par SponsorBlock            OUI
+      audience de la chaine                                  4,6 M
+
+Le lecteur voit le faisceau et juge. Le registre n'affirme que des faits
+verifiables un par un.
+
+Trois avantages, dont un juridique :
+
+1. **Chaque ligne est verifiable independamment.** Une accusation de
+   diffamation porte sur une affirmation ; ici il n'y en a pas.
+2. **C'est plus utile au plaidoyer** : un faisceau de signaux invite le
+   createur a s'expliquer, la ou un verdict le pousse a se defendre.
+3. **Ca ne bloque pas sur l'indecidable.** Les 9 cas indecidables de Vincent
+   deviennent publiables tels quels.
+
+Complement propose par lui, et retenu : **ecrire au createur** avant
+publication. Cela vaut verification, cela offre un droit de reponse — pratique
+journalistique standard et protection reelle — et cela rappelle au passage
+l'obligation legale de declaration de la loi du 9 juin 2023.
+
+Reserve a documenter : ecrire au createur l'avertit. Pour un registre factuel
+qui ne cherche pas l'effet de surprise, ce n'est pas un probleme ; ce le
+serait pour une enquete.
+
+### 14bis.5 L'extension de navigateur fait partie du projet
+
+Retenue comme **composant a part entiere**, pas comme idee secondaire.
+
+Ce qu'elle apporte, et que rien d'autre n'apporte : les formats hors de portee
+de toute collecte automatique — Stories Instagram (24 h), directs Twitch,
+mentions orales. Elle transforme des militants en capteurs.
+
+Sequencement decide : **apres** que le registre existe. Une extension qui
+alimente une base inexistante n'a nulle part ou envoyer ses signalements. Mais
+le modele de donnees doit **des maintenant** accueillir les signalements
+citoyens, avec la separation `signalement brut` / `cas instruit` reprise de
+l'Observatoire Citoyen de la Publicite (section 3).
+
+Difficultes reelles, a ne pas minimiser : moderation d'un bouton de
+signalement public, qui attire le bruit et la mauvaise foi ; hebergement d'un
+service de reception ; publication sur les magasins d'extensions.
+
+---
+
 ## 14. L'outil re-derive, il ne fige jamais
 
 Pose par Vincent le 24 aout 2026, en reaction a un tableau decrivant le profil

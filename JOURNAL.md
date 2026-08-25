@@ -2034,3 +2034,31 @@ etablissable par observation. Cela confirme le champ `degre de certitude`
 decide le 24/08 (METHODOLOGIE section 1) — et cela justifie la proposition
 qu'il formule au meme moment : publier les **signaux observes** plutot qu'un
 verdict.
+
+---
+
+## 39. Journal de methode — 25 aout 2026 : cinq orientations, et une reserve sur la solidite
+
+Vincent, apres avoir annote les 271 : « si tu es sur qu'on tient la piste
+d'une methode solide, je suis content. Mais en es-tu sur ? »
+
+**Reponse donnee, et a garder : on tient un morceau solide de methode, pas une
+methode solide.**
+
+Ce qui est solide : sur YouTube, le canal « description » fonctionne, il est
+mesure, on sait l'ameliorer. 83 % de precision est exploitable.
+
+Ce qui ne l'est pas :
+
+1. **On ne sait pas ce qu'on rate.** Le « rappel » de 85 % se mesure sur les
+   67 cas que la regle A avait trouves — pas sur la realite. Le vrai rappel
+   reste inconnu.
+2. Une plateforme sur trois est operationnelle.
+3. Six entites testees, dont deux a 0 % de precision.
+4. **Un signal sur quatre a ete evalue.** La case de declaration, SponsorBlock
+   et la transcription n'ont jamais ete confrontes au jeu de reference.
+
+Les cinq orientations formulees par Vincent pendant l'annotation sont
+inscrites en METHODOLOGIE 14bis. La quatrieme — publier les signaux plutot
+qu'un verdict — change la nature du produit final et merite d'etre relue en
+entier.

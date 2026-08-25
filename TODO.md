@@ -8,6 +8,22 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[C]` **Appliquer la regle D a la chaine de detection.** Mesuree le
+      25/08 : precision 25 % → 83 %, rappel 85 % conserve. Voir JOURNAL 38.3.
+- [ ] `[V]` **Meta** — reprendre la ou on s'est arretes : le jeton
+      d'application est refuse, il faut un jeton UTILISATEUR, probablement
+      apres verification d'identite sur facebook.com/ID. Reporte au 25/08 au
+      soir, non traite.
+- [ ] `[?]` **Le tirage aleatoire** (METHODOLOGIE section 9.2). Les 271 cas
+      annotes viennent tous d'un seul canal : ils ne disent rien de ce qu'on
+      rate entierement. C'est la seule facon de connaitre le vrai rappel.
+      Demande par Vincent le 25/08 : « notons-nous de faire ca plus tard ».
+- [ ] `[C]` **Detecter les alias INCONNUS** : reperer « remerciement + entite
+      non repertoriee » et proposer l'entite comme alias candidat. C'est ce
+      qui rend la table robuste aux nouvelles marques (METHODOLOGIE 14bis.1).
+- [ ] `[?]` **Extension de navigateur** — retenue comme composant du projet,
+      a construire APRES le registre. Voir METHODOLOGIE 14bis.5.
+
 - [ ] `[C]` **Balayer `ad/query` sur tous les termes de la filiere.** Le
       search_term y fonctionne (verifie par terme absurde). Deux essais de dix
       resultats ont deja sorti NESTLE FRANCE et BEL. Balayer les 52 marques de
