@@ -2062,3 +2062,56 @@ Les cinq orientations formulees par Vincent pendant l'annotation sont
 inscrites en METHODOLOGIE 14bis. La quatrieme — publier les signaux plutot
 qu'un verdict — change la nature du produit final et merite d'etre relue en
 entier.
+
+---
+
+## 40. Journal de methode — 25 aout 2026, nuit : la decouverte d'alias inconnus
+
+Mise en oeuvre de l'orientation 14bis.1. `outils/decouvrir_alias.py`.
+
+### 40.1 Le renversement
+
+Toute la detection cherchait des alias **connus**. Elle ne pouvait donc, par
+construction, rien trouver de nouveau : une marque creee demain resterait
+invisible jusqu'a ce qu'un humain l'ajoute a la main.
+
+Ce script cherche la **forme** du remerciement commercial — « merci a X »,
+« en partenariat avec X », « avec le soutien de X », « sponsorisee par X » —
+et recolte le X **quel qu'il soit**. Les X connus sont ecartes ; les autres
+deviennent des candidats.
+
+Le pari : le vocabulaire de l'industrie change, la forme du remerciement non.
+
+### 40.2 Verification a petite echelle
+
+MESURE, 13 chaines, 2 448 videos, 62 unites de quota : **51 annonceurs
+inconnus de la table d'alias**, dont
+
+| Annonceur | Chaines distinctes |
+|---|---|
+| Air up | 5 |
+| NordVPN | 4 |
+| Rhinoshield | 4 |
+| Saily | 3 |
+| Ultra Premium Direct | 3 |
+| Revolut, Odoo, happn, Qonto, Holy | 2 |
+
+Aucun n'est de la filiere viande/lait — c'etait attendu. **Ce n'est pas un
+echec : c'est la demonstration que le mecanisme fonctionne** sur des
+annonceurs que personne n'avait saisis. Le jour ou une marque laitiere apparait
+dans un remerciement, elle sera capturee sans intervention.
+
+Bruit residuel a trier : « tous ceux », « toute l'equipe », et des prenoms de
+createurs qui se remercient entre eux. Le tri reste humain — **aucun jugement
+automatique n'est porte sur le secteur d'un annonceur**, ce serait exactement
+l'inference dont ce projet se mefie.
+
+### 40.3 Ce que ca change pour la robustesse
+
+La table d'alias cesse d'etre uniquement une **entree** du systeme : elle en
+devient aussi une **sortie**. C'est la reponse a l'inquietude de Vincent —
+« l'industrie va toujours creer de nouvelles marques ».
+
+Le cout est faible : environ 9 unites de quota par chaine pour 600 videos,
+soit moins de 2 000 unites pour les 185 chaines surveillees, sur 10 000
+disponibles par jour.

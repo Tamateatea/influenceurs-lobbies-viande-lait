@@ -8,6 +8,20 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[C]` **Evaluer les trois autres signaux contre le jeu de reference.**
+      Seule la description a ete mesuree (83 % de precision avec la regle D).
+      La case de declaration YouTube, SponsorBlock et la transcription n'ont
+      jamais ete confrontes aux 271 jugements de Vincent. Reporte a sa demande
+      le 25/08. Voir JOURNAL 39.
+- [ ] `[C]` **Tester la regle D sur des entites jamais vues.** Six entites
+      seulement ont ete evaluees, dont deux a 0 % de precision. Rien ne dit
+      comment la regle se comporte ailleurs.
+- [ ] `[?]` **Produire des jeux de donnees pour la recherche.** Idee de
+      Vincent, 25/08 : les collaborations anciennes ne servent pas au plaidoyer
+      direct mais restent utiles a la recherche. Le projet peut publier des
+      jeux de donnees historiques meme quand ils ne fondent aucune campagne.
+      A cadrer : quelle licence, quel format, quelle anonymisation.
+
 - [ ] `[C]` **Appliquer la regle D a la chaine de detection.** Mesuree le
       25/08 : precision 25 % → 83 %, rappel 85 % conserve. Voir JOURNAL 38.3.
 - [ ] `[V]` **Meta** — reprendre la ou on s'est arretes : le jeton

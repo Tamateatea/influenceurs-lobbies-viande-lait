@@ -669,6 +669,12 @@ de 2020 s'analyse. Mais l'archive garde deux usages : montrer l'anciennete
 d'une relation (le CNIEL travaille avec Inoxtag depuis 2020), et servir de jeu
 d'evaluation.
 
+**Precision de Vincent, 25 aout au soir :** les donnees anciennes gardent une
+valeur propre — « on pourrait generer des jeux de donnees utiles, meme s'ils ne
+permettent pas des actions de plaidoyer direct ». Le registre a donc **deux
+publics** : les militants, qui veulent l'actuel, et la recherche, qui veut la
+serie longue. Ce sont deux usages du meme fonds, pas deux collectes.
+
 Architecture retenue : **un rattrapage initial, puis une veille incrementale**
 qui ne regarde que les publications nouvelles. C'est aussi ce qui rend la
 surveillance tenable en quota. La date devient un critere de tri et de
