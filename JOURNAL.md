@@ -1858,3 +1858,80 @@ commun : la declaration de TikTok d'un cote, les abonnements Instagram des
 vitrines de l'autre. Cette independance est exactement la condition de
 validite de l'estimation par capture-recapture (METHODOLOGIE section 9.3),
 qui reste a mettre en oeuvre.
+
+---
+
+## 37. Journal de methode — 25 aout 2026 : le classeur de verification
+
+Vincent : « quand j'ouvre le CSV, ce n'est pas evident a lire, c'est meme
+illisible. Le .md n'est pas plus facile. Pense a me faciliter la tache. »
+
+Troisieme reproche du meme ordre en deux jours. Regle inscrite en
+METHODOLOGIE 13.4 : **tout ce qu'on lui demande arrive en classeur Excel mis
+en forme.**
+
+### 37.1 Ce qui rend un candidat jugeable
+
+`outils/generer_classeur_verification.py` produit `cartographie/A_VERIFIER.xlsx`
+— 271 videos triees par audience decroissante, deux colonnes a remplir.
+
+L'element decisif n'est pas la mise en forme : c'est **l'extrait**. Le classeur
+montre le passage de la description qui a declenche la detection, pas la
+description entiere. Un passage de 300 caracteres se juge sans ouvrir la video.
+
+### 37.2 Trois defauts corriges avant livraison
+
+**L'extrait tombait a cote dans 3 cas sur 4.** L'appariement se fait sur une
+forme aplatie — sans accents, sans espaces — pour que `@lesproduitslaitiers`
+rencontre « Les Produits Laitiers ». Mais l'extrait doit etre decoupe dans le
+texte ORIGINAL. Il fallait donc garder la correspondance entre les deux
+positions, ce que le premier jet ne faisait pas.
+
+**La fenetre etait mal placee.** Elle montrait 200 caracteres avant la mention
+et s'arretait juste apres. Or c'est ce qui SUIT qui renseigne : « merci aux
+Produits Laitiers **pour nous avoir finance le voyage** ». Fenetre passee a
+90 avant, 330 apres.
+
+**27 mentions sont hors de portee.** La moisson n'avait conserve que les 900
+premiers caracteres de chaque description ; quand la mention est au-dela, le
+classeur l'ecrit explicitement au lieu d'afficher un debut de texte sans
+rapport. Un extrait trompeur ferait juger sur le mauvais passage.
+
+Resultat : **244 extraits exploitables sur 271**.
+
+### 37.3 Un cas explicite
+
+Inoxtag, 15 aout 2020 :
+
+> « Merci aux Produits Laitiers pour nous avoir **financer le voyage** ! »
+
+Le createur ecrit lui-meme que le CNIEL a finance le deplacement. C'est le
+libelle le plus explicite rencontre jusqu'ici.
+
+### 37.4 A quoi servent ces annotations — la reponse a Vincent
+
+Sa question : « est-ce que ca a des chances de mener a une automatisation ?
+Le but final n'est pas que je passe des heures a valider toutes les nouvelles
+videos. »
+
+**Non, ces annotations ne sont pas de la validation perpetuelle. Elles
+construisent l'instrument de mesure.**
+
+Sans un ensemble de cas juges par un humain, aucune detection automatique ne
+peut etre EVALUEE. On peut faire lire les descriptions par un modele de
+langage — c'est deja techniquement possible et gratuit — mais on n'aurait
+aucun moyen de savoir si ses jugements sont bons. Les annotations de Vincent
+donnent cette reference.
+
+Le chemin, en trois temps :
+
+1. Vincent juge une centaine de cas. Cout : quelques heures, une fois.
+2. La detection automatique tourne sur **exactement les memes cas**. On
+   compare, on obtient un taux d'erreur chiffre — ce que le projet n'a jamais
+   eu (METHODOLOGIE section 9).
+3. Si le taux est bon, l'automatisation prend le relais et l'humain ne
+   verifie plus que par sondage. S'il est mauvais, on sait **ou** elle se
+   trompe, donc quoi corriger.
+
+**Annoter maintenant, c'est ce qui permettra de ne plus annoter plus tard.**
+C'est ecrit dans l'onglet « COMMENT FAIRE » du classeur.

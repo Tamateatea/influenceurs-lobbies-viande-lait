@@ -605,6 +605,23 @@ refuse les 288 telechargements en HTTP 429. Voir JOURNAL 18.4 et 21.4.
 
 ### 13.4 Les taches confiees a Vincent sont auto-portantes
 
+**Et elles arrivent en classeur Excel mis en forme, jamais en CSV ni en
+Markdown.** Regle posee le 25 aout 2026 apres trois echecs consecutifs : des
+colonnes nommees pour la conversation, des URL sans rapport avec la question
+posee, puis un format brut illisible.
+
+Trois exigences pour tout classeur remis a Vincent :
+
+1. **Montrer l'extrait qui a declenche la detection**, pas la donnee entiere.
+   Un passage de 300 caracteres se juge d'un coup d'oeil ; une description de
+   mille caracteres, non.
+2. **Dire quand l'extrait manque** plutot que d'afficher un texte sans
+   rapport. Un extrait trompeur fait juger sur le mauvais passage.
+3. **Colonnes a remplir en vert, tout le reste en gris.** Liste deroulante
+   partout ou c'est possible.
+
+Le travail de mise en forme est a la charge de l'outil, pas du lecteur.
+
 Le classeur `A_COMPLETER.xlsx` ne contient que des taches dont l'enonce, le
 lien et le format de reponse suffisent **sans aucun contexte exterieur**. Une
 tache qui suppose d'avoir lu une conversation reste dans la conversation
