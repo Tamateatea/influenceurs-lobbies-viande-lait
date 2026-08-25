@@ -1812,3 +1812,49 @@ primaire.
    PRESIDENT » et « Artists for President B.V. » sortent sur le terme
    « President » (Lactalis). Le meme probleme qu'en 33.4, ici sans
    consequence puisque le tri est visuel.
+
+---
+
+## 36. Journal de methode — 25 aout 2026 : croisement TikTok x registre
+
+`outils/croiser_tiktok_registre.py`, sans appel reseau.
+
+MESURE — `recherche/croisement_tiktok_registre_2026-08-25.csv` :
+8 060 createurs TikTok a partenariat declare, 764 identifiants au registre,
+**31 comptes presents dans les deux**.
+
+Les plus notables, par audience de l'autre plateforme :
+
+| Pseudo | Contenus TikTok | Autre plateforme | Audience | Lien avec la filiere |
+|---|---:|---|---:|---|
+| **@justezoe** | **16** | YouTube | 1 560 000 | derive d'un compte suivi par le CNIEL |
+| @doigby_ | 1 | YouTube | 1 390 000 | idem |
+| @zacknani | 1 | YouTube | 974 000 | chaine surveillee |
+| @florianonair | 3 | YouTube | 734 000 | idem, et partenaire INAPORC connu |
+| @minireyve | 1 | Instagram | 193 000 | arbitre par Vincent, priorite haute |
+| @herta_france | 13 | Instagram | — | **compte de marque**, suivi par INAPORC |
+| @rorocuistot, @totocuistot | 14, 13 | Instagram | — | suivis par une vitrine |
+
+**@justezoe est le candidat le plus fort du croisement** : 1,56 M d'abonnes
+YouTube, seize contenus commerciaux declares sur TikTok, et son compte
+Instagram figure dans les abonnements de la vitrine du CNIEL.
+
+### Ce que ce croisement etablit, et rien de plus
+
+Ces personnes font du partenariat remunere **declare par la plateforme**, ET
+une source independante les associe deja a la filiere. **Cela ne dit pas que
+le partenariat TikTok soit avec la filiere** : un createur peut etre suivi par
+le CNIEL et faire du partenariat pour une marque de telephones. Les deux faits
+sont vrais et independants ; leur conjonction est une **priorite d'enquete**.
+
+Cas particulier : `@herta_france` est le compte d'une marque, pas d'un
+createur. Il apparait parce qu'INAPORC le suit. A ecarter de la liste des
+createurs, mais utile pour la table d'alias.
+
+### Deux methodes independantes, enfin
+
+C'est le premier croisement du projet entre deux sources qui n'ont rien en
+commun : la declaration de TikTok d'un cote, les abonnements Instagram des
+vitrines de l'autre. Cette independance est exactement la condition de
+validite de l'estimation par capture-recapture (METHODOLOGIE section 9.3),
+qui reste a mettre en oeuvre.
