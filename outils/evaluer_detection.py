@@ -193,8 +193,38 @@ def voisinage_proche(description, alias, fenetre=180):
 
 
 def est_generique(alias):
-    return any(g in sans_accent(alias).lstrip("@").replace("_", " ")
-               for g in GENERIQUES)
+    """Un alias est generique s'il EST un terme courant, pas s'il en contient un.
+
+    Bug corrige le 26/08 : la comparaison par sous-chaine classait « Aimez la
+    viande, mangez-en mieux » comme generique parce qu'il contient « la
+    viande ». Or c'est un slogan, aussi specifique qu'un pseudo. La regle D
+    perdait ainsi 10 vrais cas sur INTERBEV, INAPORC et ANVOL.
+    """
+    a = sans_accent(alias).lstrip("@").replace("_", " ").strip()
+    return any(a == g for g in GENERIQUES)
+
+
+def pseudo_litteral(description, alias):
+    """Le @pseudo apparait-il TEL QUEL, arobase comprise, dans le texte ?
+
+    Distinction essentielle, trouvee le 26/08. L'appariement se fait sur une
+    forme aplatie : l'etiquette « @lesproduitslaitiers » peut avoir ete
+    declenchee par « produits laitiers » sans arobase, qui est une categorie
+    alimentaire courante.
+
+    Un « @lesproduitslaitiers » ECRIT tel quel est en revanche un identifiant
+    de compte : il ne s'ecrit pas par hasard, et c'est un signal a lui seul —
+    c'est ainsi qu'un createur cite son partenaire commercial.
+
+    La regle E confondait les deux et tombait a 43 % de precision.
+    """
+    t = sans_accent(description)
+    for a in [x.strip() for x in alias.split("|") if x.strip()]:
+        if not a.startswith("@"):
+            continue
+        if sans_accent(a) in t:
+            return True
+    return False
 
 
 def main():
@@ -251,6 +281,15 @@ def main():
         ("D. C, et alias generique exclu s'il est seul",
          lambda l: voisinage_proche(l["description"], l["alias"])
          and not (est_generique(l["alias"]) and "@" not in l["alias"])),
+        ("E. l'etiquette porte un @ ; sinon vocabulaire proche",
+         lambda l: (any(x.strip().startswith("@")
+                        for x in l["alias"].split("|") if x.strip())
+                    or (voisinage_proche(l["description"], l["alias"])
+                        and not est_generique(l["alias"])))),
+        ("F. @pseudo ECRIT tel quel ; sinon vocabulaire proche ; generique exclu",
+         lambda l: (pseudo_litteral(l["description"], l["alias"])
+                    or (voisinage_proche(l["description"], l["alias"])
+                        and not est_generique(l["alias"])))),
     ]
 
     print()

@@ -2542,3 +2542,80 @@ moissonnee, invisible faute de description complete.
 Lecon operationnelle : **la troncature a 900 caracteres coutait des
 decouvertes**, pas seulement de la lisibilite. Les descriptions completes
 devraient etre recuperees systematiquement pour tout candidat retenu.
+
+---
+
+## 48. Journal de methode — 26 aout 2026 : la regle D est une regle du CNIEL
+
+### 48.1 Ce que le detail par entite revele
+
+La regle D annoncait 83 % de precision et 85 % de rappel. **Ces chiffres
+cachaient une repartition tres inegale.** Evaluation entite par entite contre
+les jugements de Vincent :
+
+| Entite | Candidats | Vrais | Gardes par D | Dont vrais | **Vrais perdus** |
+|---|---:|---:|---:|---:|---:|
+| CNIEL | 129 | 57 | 67 | **57** | **0** |
+| CIFOG | 91 | 0 | 0 | 0 | 0 |
+| CLIPP | 10 | 0 | 0 | 0 | 0 |
+| **INTERBEV** | 31 | 7 | 2 | 0 | **7** |
+| **INAPORC** | 7 | 2 | 0 | 0 | **2** |
+| **ANVOL** | 3 | 1 | 0 | 0 | **1** |
+
+**La regle D est parfaite sur le CNIEL et aveugle sur tout le reste.** Elle
+conserve les 57 vrais cas du CNIEL et perd les 10 des trois autres
+interprofessions.
+
+Le rappel de 85 % annonce hier etait donc trompeur : les 15 % perdus n'etaient
+pas repartis au hasard, c'etaient **toutes** les entites non-CNIEL.
+
+### 48.2 Deux causes, deux corrections
+
+**Cause 1 — l'appariement des termes generiques etait fait par sous-chaine.**
+« Aimez la viande, mangez-en mieux » etait classe generique parce qu'il
+contient « la viande ». Or c'est un **slogan**, aussi specifique qu'un pseudo.
+Corrige : un alias est generique s'il **EST** un terme courant, pas s'il en
+contient un.
+
+**Cause 2 — j'ai cru qu'un @pseudo se reconnaissait a son etiquette.** La
+regle E accordait sa confiance a tout alias dont le libelle commence par `@`.
+Mais l'appariement travaille sur une forme aplatie : l'etiquette
+« @lesproduitslaitiers » peut avoir ete declenchee par « produits laitiers »
+sans arobase, qui est une categorie alimentaire.
+
+Resultat : la regle E tombe a **43 % de precision** pour 96 % de rappel.
+
+Regle F, qui teste la presence **litterale** du pseudo, arobase comprise :
+elle donne exactement les memes chiffres que D. Autrement dit, dans ce corpus,
+un pseudo ecrit tel quel est toujours accompagne de vocabulaire de
+collaboration. **Le test litteral n'apporte rien de plus.**
+
+| Regle | Retenus | Precision | Rappel |
+|---|---:|---:|---:|
+| A. l'alias suffit | 271 | 25 % | 100 % |
+| D. vocabulaire proche + generique exclu | 75 | **77 %** | **87 %** |
+| E. etiquette portant un @ | 149 | 43 % | 96 % |
+| F. pseudo litteral | 75 | 77 % | 87 % |
+
+### 48.3 La vraie cause des cas perdus : deux alias manquants
+
+En cherchant pourquoi les six cas FlorianOnAir resistaient, la reponse n'etait
+pas dans la regle mais dans la table. Leurs descriptions parlent de
+**« Made in Viande »** — les portes ouvertes annuelles d'INTERBEV.
+
+**Cette operation n'etait pas dans la feuille Alias.** La detection attrapait
+ces videos par appariement approximatif, sans savoir de quoi il s'agissait.
+Ajoutee, statut CONFIRME.
+
+C'est le deuxieme alias decouvert aujourd'hui, apres « En Mode Actif » du
+CNIEL. Tous deux etaient **deja presents dans des descriptions moissonnees**.
+
+### 48.4 Ce qu'il faut en retenir
+
+Ameliorer la regle de decision a un rendement decroissant : de A a D, la
+precision triple. De D a F, elle ne bouge pas.
+
+**Ce qui manque n'est pas une meilleure regle, c'est une meilleure table
+d'alias.** Deux campagnes trouvees en une matinee, toutes deux dans des
+donnees qu'on avait deja. La priorite est la completude de la table, pas le
+raffinement du filtre.

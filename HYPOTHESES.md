@@ -44,7 +44,10 @@ gratuits et sans authentification.
 | YT-27 | La recherche retroactive est hors de portee | **REFUTEE** | `playlistItems.list` rend 50 videos AVEC descriptions pour 1 unite. 35 612 videos moissonnees pour 806 unites. JOURNAL 33 |
 | YT-28 | Les grandes chaines generalistes portent des collaborations CNIEL non documentees | **CONFIRMEE** | 67 collaborations confirmees par Vincent sur 271 candidats. JOURNAL 38.1 |
 | YT-30 | L'appariement d'alias seul est exploitable | **REFUTEE** | Precision 25 %. CIFOG 0 %, CLIPP 0 %. Les vitrines ont des noms generiques a dessein. JOURNAL 38.2 |
-| YT-31 | Exiger du vocabulaire de collaboration pres de la mention ameliore la precision | **CONFIRMEE** | 25 % → 83 % de precision, 85 % de rappel conserve. JOURNAL 38.3 |
+| YT-31 | Exiger du vocabulaire de collaboration pres de la mention ameliore la precision | **CONFIRMEE** | 25 % → 77 %. JOURNAL 38.3 et 48.2 |
+| YT-34 | La regle D fonctionne pour toutes les interprofessions | **REFUTEE** | Parfaite sur le CNIEL (57/57 conserves), elle perd **tous** les vrais cas d'INTERBEV, INAPORC et ANVOL. JOURNAL 48.1 |
+| YT-35 | Un alias dont l'etiquette porte un @ est un signal fiable | **REFUTEE** | L'etiquette ne dit pas ce qui a matche : 43 % de precision. JOURNAL 48.2 |
+| YT-36 | Raffiner la regle de decision a un rendement croissant | **REFUTEE** | De A a D la precision triple ; de D a F elle ne bouge pas. **C'est la table d'alias qu'il faut completer, pas le filtre.** JOURNAL 48.4 |
 | YT-29 | Une marque au nom courant peut etre detectee par simple appariement | **REFUTEE** | « Marie », « Societe », « President » : 698 faux positifs. Il faut exiger un indice commercial. JOURNAL 33.4 |
 | YT-04 | SponsorBlock couvre les chaines francaises | **PARTIELLE** | Inoxtag 14/15, Squeezie 1/15. `test_croise_youtube_2026-08-24_1050.csv` |
 | YT-32 | SponsorBlock apporte une couverture utile en plus de la description | **REFUTEE** | Rappel 13 %, et 8 de ses 9 vrais cas sont deja vus par la description. Le gain total est de 1 point. JOURNAL 43.1 |

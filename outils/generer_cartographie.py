@@ -245,6 +245,12 @@ FEUILLES["Alias"] = {
          "Le sigle CNIEL n'apparait jamais dans les contenus."],
         ["Les produits laitiers, nos amis pour la vie", "slogan", "CNIEL", "CONFIRME", ""],
         ["Des sensations pures", "slogan", "CNIEL", "CONFIRME", ""],
+        ["Made in Viande", "nom d'operation", "INTERBEV", "CONFIRME",
+         "Portes ouvertes annuelles de la filiere elevage et viande. Nommee "
+         "dans les descriptions de FlorianOnAir (734 k abonnes), jugees "
+         "collaborations remunerees par Vincent. Absente de la table jusqu'au "
+         "26/08/2026 : la detection attrapait ces videos par appariement "
+         "approximatif, sans savoir ce qu'etait l'operation."],
         ["En Mode Actif", "nom de campagne", "CNIEL", "CONFIRME",
          "Campagne COFINANCEE PAR L'UNION EUROPEENNE, contre la sedentarite. "
          "Nommee par Studio Danielle (1,74 M d'abonnes) dans deux descriptions : "
