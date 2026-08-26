@@ -131,6 +131,19 @@ pas sur une difficulte technique.
 
 ---
 
+## Semences de la liste de surveillance — mesurees le 26 aout
+
+Quelle source de noms produit le plus de vraies pistes filiere, par chaine
+surveillee ?
+
+| ID | Hypothese | Statut | Preuve |
+|---|---|---|---|
+| SE-01 | Les abonnements des vitrines sont une bonne semence | **CONFIRMEE** | 2,12 preuves fortes par chaine. JOURNAL 46.2 |
+| SE-02 | Les createurs commerciaux TikTok sont une meilleure semence | **REFUTEE** | 0,16 par chaine, soit 13 fois moins. **J'avais affirme le contraire sans le tester.** JOURNAL 46.1 |
+| SE-03 | Les comptes des grandes marques ont des abonnements exploitables | **A TESTER** | Danone, Lactalis, Bel, Nestle jamais releves |
+
+---
+
 ## Sites des commanditaires — piste ouverte le 24 aout
 
 Les seuls resultats du projet qui soient des **declarations du commanditaire**

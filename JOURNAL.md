@@ -2414,3 +2414,73 @@ c'est un chantier de fond, pas une tache de nuit.
 
 Mais **le projet n'a toujours pas de population de reference complete**, et
 donc toujours pas de moyen de tirer un echantillon aleatoire.
+
+---
+
+## 46. Journal de methode — 26 aout 2026 : la semence TikTok est treize fois moins productive
+
+### 46.1 Ce que j'avais affirme
+
+Le 25 aout au soir, en lancant le croisement TikTok, j'ai ecrit que ces
+createurs etaient « **strictement meilleurs** » comme semence que les
+abonnements des vitrines, au motif que TikTok **declare** leur partenariat
+remunere la ou un abonnement ne prouve rien.
+
+Le raisonnement etait plausible. Il n'avait pas ete teste.
+
+### 46.2 La mesure
+
+Moisson du 26/08 : 426 chaines, **113 364 videos**, 2 103 unites de quota
+avant epuisement. Preuves fortes obtenues, rapportees a leur semence :
+
+| Semence | Chaines | Preuves fortes | Par chaine |
+|---|---:|---:|---:|
+| **Abonnements des vitrines → YouTube** | 126 | **267** | **2,12** |
+| Createurs TikTok → YouTube | 207 | 33 | **0,16** |
+| Liste initiale, nommee a la main | 22 | 4 | 0,18 |
+
+**La semence « abonnements des vitrines » est treize fois plus productive.**
+
+### 46.3 Pourquoi — et cette fois c'est explique par la methodologie, pas invente
+
+METHODOLOGIE section 12 le disait deja : les comptes suivis par une vitrine
+sont « un signal emis par le commanditaire lui-meme ». Ce n'est pas une
+proximite vague : c'est le lobby qui designe qui l'interesse.
+
+Un createur commercial avere sur TikTok, lui, est commercial **pour n'importe
+quel secteur** — VPN, telephones, applications. Sa probabilite de travailler
+pour la filiere viande/lait n'est pas superieure a celle d'un createur
+quelconque.
+
+J'avais confondu deux qualites : « fait du commercial » et « fait du commercial
+POUR LA FILIERE ». La premiere est plus facile a etablir ; c'est la seconde
+qui interesse le projet.
+
+### 46.4 Consequence strategique, immediate
+
+**La priorite d'elargissement n'est pas TikTok, c'est d'obtenir davantage de
+listes d'abonnements de vitrines.**
+
+Vincent en a releve quatre : `@lesproduitslaitiers`, `@la_viande_fr`,
+`@leporcfrancais`, `@volaillefrancaise`. Chacune produit environ deux preuves
+fortes par chaine derivee. Il reste a explorer :
+
+- les comptes regionaux d'INTERBEV, reperes sur leur site ;
+- les comptes de campagne (`Naturellement Flexitariens`, `Aimez la viande`) ;
+- les comptes des grandes marques (Danone, Lactalis, Bel, Nestle France) —
+  jamais releves, alors que ce sont des commanditaires directs ;
+- les memes comptes sur TikTok et YouTube, ou les abonnements different.
+
+Les 1 935 chaines TikTok restantes conservent une valeur, mais **beaucoup plus
+faible que je ne l'ai annonce**. Elles passent apres.
+
+### 46.5 Ce que cette erreur enseigne
+
+C'est le meme mecanisme que pour David Guetta et que pour le compte rendu des
+annonceurs : **une explication plausible enoncee avec l'assurance d'un
+constat**. Trois fois en deux jours.
+
+La regle ajoutee hier — toute affirmation causale porte une etiquette, et un
+constat surprenant appelle un test avant une phrase — s'applique ici
+integralement. « Strictement meilleur » etait une prediction, pas une mesure,
+et elle etait fausse.

@@ -8,6 +8,21 @@ Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemb
 
 ## Prochaine session — a faire en premier
 
+- [ ] `[V]` **RELEVER D'AUTRES LISTES D'ABONNEMENTS DE VITRINES.** Mesure du
+      26/08 : cette semence est **treize fois** plus productive que les
+      createurs TikTok (2,12 preuves fortes par chaine contre 0,16). C'est le
+      levier le plus rentable du projet.
+      A relever, par ordre d'interet :
+      - les comptes des grandes **marques** : Danone, Lactalis, Bel, Nestle
+        France, Savencia, Sodiaal, Fleury Michon, Herta — jamais releves,
+        alors que ce sont des commanditaires directs ;
+      - les comptes de **campagne** : Naturellement Flexitariens, Aimez la
+        viande ;
+      - les comptes **regionaux** d'INTERBEV ;
+      - les memes vitrines sur **TikTok et YouTube**, ou les abonnements
+        different d'Instagram.
+      Meme methode que le 24/08 : derouler jusqu'en bas, copier-coller brut.
+
 - [ ] `[C]` **Reprendre la moisson TikTok** : 45 mois sur 47 restent a
       interroger. Le quota journalier de TikTok n'en autorise qu'environ deux
       par jour — compter une vingtaine de jours. Relancer
