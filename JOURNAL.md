@@ -2484,3 +2484,61 @@ La regle ajoutee hier — toute affirmation causale porte une etiquette, et un
 constat surprenant appelle un test avant une phrase — s'applique ici
 integralement. « Strictement meilleur » etait une prediction, pas une mesure,
 et elle etait fausse.
+
+---
+
+## 47. Journal de methode — 26 aout 2026 : Studio Danielle, et une campagne inconnue
+
+### 47.1 Le classeur des nouveaux candidats
+
+33 nouvelles preuves fortes, hors des 271 deja jugees par Vincent.
+`cartographie/A_VERIFIER_2.xlsx`, avec deux nouveautes :
+
+- une colonne **« Retenu par la regle D »**, pour que l'arbitrage de Vincent
+  serve aussi a evaluer la regle sur des entites jamais testees ;
+- les **descriptions completes** recuperees par l'API (1 unite de quota), au
+  lieu des 900 caracteres tronques de la moisson. Sans cela, 30 des 33
+  extraits etaient inutilisables.
+
+La regle D n'en retient que **5 sur 33**. Elle ecarte notamment David Guetta
+(ANVOL), Lena Situations (ANVOL) et Violin Phonix (CLIPP) — trois faux
+positifs previsibles sur des alias generiques.
+
+### 47.2 Studio Danielle : quatre videos, mentions explicites
+
+**Studio Danielle, 1 740 000 abonnes.** Extraits des descriptions, verbatim :
+
+> « Cette video est en partenariat avec Les Produits Laitiers et leur campagne
+> **En Mode Actif cofinancee par l'UE**, qui vise a lutter contre la
+> sedentarite. »
+
+> « Merci aux Produits Laitiers pour l'invitation au salon et pour **la
+> sponsorisation de cette video**. »
+
+> « Merci aux Produits Laitiers d'avoir **sponsorise cette video**. »
+
+Quatre videos, dont deux portant la mention « Collaboration commerciale ».
+C'est le libelle le plus explicite rencontre depuis le debut du projet.
+
+### 47.3 « En Mode Actif » : un alias que la table ignorait
+
+La campagne **En Mode Actif** n'etait pas dans la feuille Alias. Elle y est
+ajoutee, statut CONFIRME, source primaire : la description du createur qui la
+nomme.
+
+**Et elle est declaree « cofinancee par l'Union europeenne ».** Cela relie
+directement au dossier AGRIP inscrit au TODO depuis la premiere session — les
+subventions europeennes de promotion agricole. Une campagne d'influence
+francaise financee en partie par de l'argent public europeen est exactement le
+type de fait que le registre existe pour documenter.
+
+### 47.4 Ce que ca valide
+
+C'est le premier alias decouvert **par la chaine elle-meme** plutot que saisi a
+la main. Il n'est pas venu du script de decouverte de JOURNAL 41, mais de la
+lecture d'un candidat : la mention etait dans une description qu'on avait deja
+moissonnee, invisible faute de description complete.
+
+Lecon operationnelle : **la troncature a 900 caracteres coutait des
+decouvertes**, pas seulement de la lisibilite. Les descriptions completes
+devraient etre recuperees systematiquement pour tout candidat retenu.

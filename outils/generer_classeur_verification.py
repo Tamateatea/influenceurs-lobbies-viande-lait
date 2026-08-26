@@ -19,7 +19,9 @@ Aucun script n'ecrase ce fichier : celui-ci refuse si le classeur existe.
 Usage :  python outils/generer_classeur_verification.py
 """
 
+import argparse
 import csv
+import json
 import re
 import sys
 import unicodedata
@@ -33,6 +35,7 @@ from openpyxl.worksheet.datavalidation import DataValidation
 RACINE = Path(__file__).resolve().parent.parent
 RECHERCHE = RACINE / "recherche"
 CIBLE = RACINE / "cartographie" / "A_VERIFIER.xlsx"
+DEJA = RACINE / "cartographie" / "A_VERIFIER.xlsx"
 
 VERT = PatternFill("solid", fgColor="D9EAD3")
 GRIS = PatternFill("solid", fgColor="F3F3F3")
@@ -112,7 +115,54 @@ def extrait(description, alias_reconnus):
     return avertissement + chr(10) + chr(10) + d[:260].strip()
 
 
+def deja_juges():
+    """Ce que Vincent a deja tranche : on ne le lui redemande pas."""
+    if not DEJA.exists():
+        return set()
+    import openpyxl
+    wb = openpyxl.load_workbook(DEJA, data_only=True)
+    out = {(str(r[1]), str(r[5])[:40])
+           for r in wb["a verifier"].iter_rows(min_row=2, values_only=True) if r[8]}
+    wb.close()
+    return out
+
+
+def passe_regle_d(ligne, descriptions):
+    """La regle D, mesuree a 83 % de precision (JOURNAL 38.3).
+
+    Reprend la logique de evaluer_detection.py : vocabulaire de collaboration
+    pres de la mention, et alias generique ecarte s'il est seul.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "ev", Path(__file__).resolve().parent / "evaluer_detection.py")
+    global _EV
+    try:
+        _EV
+    except NameError:
+        _EV = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(_EV)
+    desc = descriptions.get(ligne["video_id"]) or ligne.get("description", "")
+    alias = ligne.get("alias_reconnus", "")
+    if not _EV.voisinage_proche(desc, alias):
+        return "non"
+    if _EV.est_generique(alias) and "@" not in alias:
+        return "non"
+    return "OUI"
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--sortie", default=None,
+                    help="chemin du classeur ; par defaut A_VERIFIER.xlsx")
+    ap.add_argument("--nouveaux-seulement", action="store_true",
+                    help="exclut ce que Vincent a deja juge")
+    args = ap.parse_args()
+
+    global CIBLE
+    if args.sortie:
+        CIBLE = RACINE / "cartographie" / args.sortie
+
     if CIBLE.exists():
         print(f"REFUS : {CIBLE.name} existe deja et contient peut-etre tes reponses.",
               file=sys.stderr)
@@ -126,7 +176,15 @@ def main():
     with sources[-1].open(encoding="utf-8") as f:
         lignes = [l for l in csv.DictReader(f)
                   if l.get("force", "").startswith("ALIAS")]
-    lignes.sort(key=lambda l: (-(int(l["abonnes"] or 0)), l["publiee"]), reverse=False)
+    if args.nouveaux_seulement:
+        vus = deja_juges()
+        avant = len(lignes)
+        lignes = [l for l in lignes if (l["chaine"], l["titre"][:40]) not in vus]
+        print(f"{avant - len(lignes)} deja jugees, ecartees", file=sys.stderr)
+
+    cache = RACINE / "donnees" / "descriptions_completes.json"
+    descriptions = (json.loads(cache.read_text(encoding="utf-8"))
+                    if cache.exists() else {})
     lignes.sort(key=lambda l: -(int(l["abonnes"] or 0)))
 
     wb = Workbook()
@@ -134,29 +192,29 @@ def main():
     ws.title = "a verifier"
     ws.append(["N", "Chaine", "Abonnes", "Date", "Entite citee",
                "Titre de la video", "Regarder", "Ce qui est ecrit dans la description",
-               "TON VERDICT", "Ton commentaire"])
+               "Retenu par la regle D", "TON VERDICT", "Ton commentaire"])
 
     dv = DataValidation(type="list", formula1=VERDICTS, allow_blank=True)
     ws.add_data_validation(dv)
 
     for n, l in enumerate(lignes, 1):
         ab = int(l["abonnes"] or 0)
+        desc = descriptions.get(l["video_id"]) or l.get("description", "")
         ws.append([n, l["chaine"], ab, l["publiee"], l["entites_retenues"],
                    l["titre"], "ouvrir",
-                   extrait(l.get("description", ""),
-                           l.get("alias_reconnus", "") or l["entites_retenues"]),
-                   "", ""])
+                   extrait(desc, l.get("alias_reconnus", "") or l["entites_retenues"]),
+                   passe_regle_d(l, descriptions), "", ""])
         r = ws.max_row
         c = ws.cell(row=r, column=7, value="ouvrir")
         c.hyperlink = l["url"]
         c.font = Font(color="0563C1", underline="single")
         ws.cell(row=r, column=3).number_format = "# ##0"
-        dv.add(ws.cell(row=r, column=9))
-        for col in range(1, 11):
+        dv.add(ws.cell(row=r, column=10))
+        for col in range(1, 12):
             cel = ws.cell(row=r, column=col)
             cel.alignment = HAUT
             cel.border = BORD
-            if col in (9, 10):
+            if col in (10, 11):
                 cel.fill = VERT
             elif col == 8:
                 cel.fill = JAUNE          # l'extrait : c'est ce qu'on lit
@@ -169,7 +227,7 @@ def main():
         c.fill = ENTETE
         c.alignment = Alignment(vertical="center", wrap_text=True)
     ws.row_dimensions[1].height = 34
-    for i, w in enumerate([4, 17, 11, 11, 17, 40, 10, 74, 24, 32], start=1):
+    for i, w in enumerate([4, 17, 11, 11, 17, 38, 9, 70, 12, 24, 30], start=1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions

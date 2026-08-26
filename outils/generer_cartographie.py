@@ -245,6 +245,12 @@ FEUILLES["Alias"] = {
          "Le sigle CNIEL n'apparait jamais dans les contenus."],
         ["Les produits laitiers, nos amis pour la vie", "slogan", "CNIEL", "CONFIRME", ""],
         ["Des sensations pures", "slogan", "CNIEL", "CONFIRME", ""],
+        ["En Mode Actif", "nom de campagne", "CNIEL", "CONFIRME",
+         "Campagne COFINANCEE PAR L'UNION EUROPEENNE, contre la sedentarite. "
+         "Nommee par Studio Danielle (1,74 M d'abonnes) dans deux descriptions : "
+         "« en partenariat avec Les Produits Laitiers et leur campagne En Mode "
+         "Actif cofinancee par l'UE ». Decouverte le 26/08/2026, absente de la "
+         "table jusque-la. Le cofinancement europeen relie au dossier AGRIP."],
         ["Le Porc Francais", "marque filiere", "INAPORC", "A VERIFIER", ""],
         ["Volaille Francaise", "marque filiere", "ANVOL", "A VERIFIER", ""],
         ["Oeufs de France", "marque filiere", "CNPO", "A VERIFIER", ""],
