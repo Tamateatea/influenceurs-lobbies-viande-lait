@@ -119,7 +119,29 @@ TACHES = [
      "Determine la posture du projet et une partie de sa protection juridique. "
      "Aucune urgence, mais rien ne peut se publier sans que ce soit tranche."),
 
-    (10, "Decider : qui publie le registre ?",
+    (10, "Contacter Paye Ton Influence",
+     "Pas pour leurs donnees — ils n'en ont pas d'exportables — mais comme "
+     "partenaire de diffusion. Ils travaillent deja Interbev et Cniel.",
+     "~20 min",
+     "Partenaire naturel. Et ils sauront peut-etre si quelqu'un tient deja un "
+     "registre de ce type, ce qui eviterait de refaire un travail existant."),
+
+    (11, "Demander a L214 et Foodwatch si le registre existe deja",
+     "Un message a chacune. Question simple : quelqu'un tient-il deja une base "
+     "des collaborations entre createurs et industrie animale ?",
+     "~20 min",
+     "Si oui, on collabore au lieu de dupliquer. Si non, c'est une confirmation "
+     "que le creneau est libre. Inscrit depuis la premiere session, jamais fait."),
+
+    (12, "Demander a l'ARPP les donnees brutes de son Observatoire",
+     "L'Autorite de Regulation Professionnelle de la Publicite analyse de gros "
+     "volumes (13 356 contenus au 1er semestre 2024) mais ne publie que des "
+     "agregats.",
+     "~15 min",
+     "Un refus est lui-meme documentable et cite-able. Le cout est nul, le "
+     "gain potentiel eleve. METHODOLOGIE section 5."),
+
+    (13, "Decider : qui publie le registre ?",
      "Toi en nom propre, une association existante, une nouvelle structure ? "
      "Question ouverte depuis la premiere session.",
      "reflexion",

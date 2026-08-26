@@ -30,9 +30,15 @@ seulement ou sont rangees les choses.
 
 ### `cartographie/` — ce que des humains lisent et remplissent
 
-- **`A_COMPLETER.xlsx`** — le classeur que **tu** remplis. Une question par
-  ligne, une seule colonne a remplir, en vert. Aucun script ne l'ecrase :
-  celui qui le fabrique refuse de le faire s'il existe deja.
+- **`MES_TACHES.xlsx`** — **tout ce qui bloque Claude, en un fichier.** Les
+  taches, les comptes dont relever les abonnements, les sites ou chercher des
+  noms de campagne. C'est ici qu'on commence.
+- **`A_VERIFIER_2.xlsx`** — les candidats a juger. Colonne jaune : l'extrait
+  qui a declenche la detection.
+- `A_VERIFIER.xlsx` — les 271 candidats juges le 25/08. **Le jeu de
+  reference** : il sert a mesurer toute nouvelle regle de detection.
+- `A_COMPLETER.xlsx`, `PSEUDOS_A_ARBITRER.xlsx` — **acheves**. Conserves : ils
+  contiennent des reponses de Vincent, qui sont des donnees d'entree.
 - **`COMPTES.xlsx`** — **le registre des comptes.** Tous les comptes connus du
   projet, une ligne par couple (plateforme, identifiant). Fabrique par script :
   ne pas l'editer a la main, il serait ecrase.
@@ -53,11 +59,24 @@ Chacun explique en tete ce qu'il fait et comment le lancer.
 | `generer_classeur_a_completer.py` | Fabrique `A_COMPLETER.xlsx`. Refuse d'ecraser un classeur existant. |
 | `extraire_hatvp.py` | Sous-graphe viande/lait du repertoire des lobbies. |
 | `extraire_meta_adlibrary.py` | Filtre le rapport Meta Ad Library France sur la filiere. |
-| `test_croise_youtube.py` | Croise les signaux de collaboration sur des chaines francaises. |
-| `extraire_descriptions_youtube.py` | Lit les descriptions et y cherche les alias. **C'est ce script qui a trouve le premier cas.** |
+| ~~`test_croise_youtube.py`~~ | **Remplace** par `surveiller_youtube.py`. Conserve pour la tracabilite. |
+| ~~`extraire_descriptions_youtube.py`~~ | **Remplace** par `surveiller_youtube.py`. C'est lui qui a trouve le premier cas ; conserve pour la tracabilite. |
 | `extraire_comptes_suivis.py` | Sort les listes d'abonnements collees dans `A_COMPLETER.xlsx` vers des fichiers propres et dates. |
 | `fouiller_sites_lobbies.py` | Cherche des createurs dans les sites des commanditaires eux-memes. |
 | `consolider_comptes.py` | **Rassemble toutes les sources en un seul registre**, `COMPTES.xlsx`. |
+| `moissonner_videos.py` | Moissonne le catalogue complet des chaines et y cherche la filiere. |
+| `moissonner_tiktok.py` | Moissonne la bibliotheque TikTok, mois par mois. |
+| `audiences_youtube.py` | Releve le nombre d'abonnes par l'API officielle. |
+| `croiser_instagram_youtube.py` | Trouve la chaine YouTube d'un compte Instagram. |
+| `croiser_tiktok_youtube.py` | Idem pour les createurs commerciaux TikTok. |
+| `croiser_tiktok_registre.py` | Croise les createurs TikTok avec le registre. |
+| `decouvrir_alias.py` | Cherche la FORME du remerciement pour trouver des annonceurs inconnus. |
+| `nettoyer_detections.py` | Separe les preuves fortes du bruit. Aucun appel reseau. |
+| `evaluer_detection.py` | **Mesure les regles contre le jeu de reference de Vincent.** |
+| `mesurer_signaux.py` | Compare les signaux entre eux sur le jeu de reference. |
+| `balayer_annonceurs_tiktok.py` | Balaye la publicite TikTok sur les termes de la filiere. |
+| `generer_classeur_verification.py` | Fabrique les classeurs de verification. |
+| `generer_mes_taches.py` | Fabrique `MES_TACHES.xlsx`. |
 | `tester_tiktok_commercial.py` | Interroge la Commercial Content Library de TikTok (attend les identifiants). |
 | `tester_meta_adlibrary.py` | Interroge l'API Meta Ad Library (attend un jeton utilisateur). |
 | `surveiller_youtube.py` | La chaine de surveillance YouTube, quatre signaux. |

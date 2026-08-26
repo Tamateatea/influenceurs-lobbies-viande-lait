@@ -1,4 +1,16 @@
 """
+OUTIL REMPLACE — conserve pour la tracabilite, ne plus lancer.
+
+REMPLACE PAR : outils/surveiller_youtube.py, qui absorbe ses fonctions et en corrige
+les defauts (resolution des chaines, detection des echecs de
+telechargement, ralentissement).
+
+Il reste ici parce que des mesures enregistrees dans recherche/ ont
+ete produites par lui : le supprimer rendrait ces mesures
+irreproductibles.
+"""
+
+"""
 Test croise YouTube : deux signaux independants de collaboration commerciale.
 
   Signal 1 - DECLARATION : le createur a coche la case "communication
