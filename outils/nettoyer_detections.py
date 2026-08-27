@@ -62,6 +62,39 @@ INTERPROFESSIONS = {"CNIEL", "INTERBEV", "INAPORC", "ANVOL", "CNPO", "CIFOG",
 # jamais comptes comme detection de la filiere.
 HORS_PERIMETRE = {"Intercereales", "FNPSMS"}
 
+# Alias trop courts pour etre apparies sur une forme aplatie.
+#
+# L'appariement supprime les espaces, ce qui fabrique des mots qui n'existent
+# pas : « Clip para » devient « clippara », qui contient « clipp ». Et un sigle
+# court se retrouve a l'interieur de mots ordinaires : « noclippant ».
+#
+# MESURE du 27/08 : l'alias « CLIPP » a produit **31 candidats, zero vrai** —
+# pres d'un candidat sur dix de tout le projet. Vincent n'a d'ailleurs trouve
+# aucun compte vitrine pour cette interprofession.
+#
+# Regle : un alias de moins de 8 caracteres n'est pas exploitable par
+# appariement aplati. Il faut son compte reel, specifique, pour le detecter.
+LONGUEUR_MINIMALE = 8
+
+# Alias generiques dont on sait qu'ils ne designent pas la marque.
+# « Le Foie Gras » fait 12 caracteres mais designe l'aliment : 91 candidats,
+# zero vrai (JOURNAL 38.2).
+ALIAS_ECARTES = {"le foie gras", "foie gras", "clipp", "cnpo", "anvol", "cifog"}
+
+
+def alias_fiable(alias):
+    """Un alias est-il assez specifique pour etre apparie sur forme aplatie ?
+
+    On ECARTE l'ALIAS, jamais l'entite : « ANVOL » est trop court, mais
+    « Volaille Francaise » de la meme entite reste exploitable. Premiere
+    version de ce correctif : elle excluait l'entite entiere et perdait des
+    cas legitimes.
+    """
+    a = aplatir(alias)
+    if a in {aplatir(x) for x in ALIAS_ECARTES}:
+        return False
+    return len(a) >= LONGUEUR_MINIMALE
+
 
 def aplatir(t):
     t = unicodedata.normalize("NFKD", str(t or ""))
@@ -113,11 +146,19 @@ def main():
             continue
         a_un_indice = bool(l.get("indices", "").strip())
 
+        # on ne garde que les alias assez specifiques pour etre fiables
+        alias_ok = [a for a in l.get("alias_reconnus", "").split(" | ")
+                    if a.strip() and alias_fiable(a)]
+        if not alias_ok:
+            ecartees.append(l)
+            continue
+
         retenues_fortes, retenues_faibles = [], []
         for e in entites:
             f = famille(e, marques)
             if f == "hors perimetre":
                 continue
+
             if f == "interprofession":
                 retenues_fortes.append(e)
             elif a_un_indice:

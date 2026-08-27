@@ -2720,3 +2720,99 @@ campagne plutot qu'aux comptes corporate.
 - **@foiegrasfrancais** — le compte du CIFOG, enfin identifie. L'alias
   « Le Foie Gras » qui a produit 91 faux positifs pourra etre remplace par ce
   pseudo, specifique lui.
+
+---
+
+## 50. Journal de methode — 27 aout 2026 : « CLIPP », et la routine quotidienne
+
+### 50.1 Les 33 nouveaux candidats juges
+
+Vincent a juge les 33 candidats de `A_VERIFIER_2.xlsx`.
+
+| Verdict | Videos |
+|---|---:|
+| hors sujet | 21 |
+| je ne sais pas | 6 |
+| **collaboration remuneree** | **4** |
+| mention sans collaboration | 2 |
+
+Les quatre vraies sont les videos **Studio Danielle**, toutes CNIEL, toutes
+avec mention explicite : « en partenariat avec Les Produits Laitiers et leur
+campagne En Mode Actif cofinancee par l'UE ».
+
+**La regle D fait 80 % de precision et 100 % de rappel sur ce lot** : elle
+retient 5 candidats dont les 4 vrais, et n'en perd aucun. Meilleur que sur les
+271 (77 % / 87 %) — mais l'echantillon ne compte que 4 vrais cas, tous CNIEL.
+Elle reste non testee sur les autres interprofessions.
+
+### 50.2 « CLIPP » : 31 candidats, zero vrai
+
+Sur les 21 « hors sujet », l'ecrasante majorite venaient de l'alias **CLIPP**
+(interprofession du lapin). En cumulant les deux lots : **31 candidats, aucun
+vrai.**
+
+La cause, verifiee :
+
+- « no**clipp**ant » contient litteralement la chaine cherchee ;
+- l'appariement **supprime les espaces**, donc « Clip para » devient
+  « clippara », qui contient « clipp ».
+
+Un sigle de cinq lettres n'est pas exploitable par appariement sur forme
+aplatie. Vincent n'a d'ailleurs trouve **aucun compte vitrine** pour cette
+interprofession.
+
+### 50.3 Le correctif, et une erreur en le faisant
+
+Premier jet : ecarter les ENTITES trop courtes — CLIPP, CNPO, ANVOL, CIFOG.
+**Faux.** Cela supprimait aussi les cas trouves par « Volaille Francaise »,
+un alias de 17 caracteres parfaitement specifique, simplement parce que son
+entite s'appelle ANVOL.
+
+Corrige : **on ecarte l'ALIAS, jamais l'entite.** Un alias doit faire au moins
+8 caracteres, et une courte liste d'alias generiques connus est exclue
+explicitement (« Le Foie Gras », 12 caracteres mais qui designe l'aliment).
+
+MESURE apres correction, contre les 288 jugements de Vincent :
+
+| | Avant | Apres |
+|---|---:|---:|
+| Preuves fortes | 304 | **175** |
+| Vraies collaborations conservees | 71 | **71** |
+| Precision | 23 % | **41 %** |
+| Rappel | 100 % | **100 %** |
+
+**La moitie du bruit disparait sans perdre un seul vrai cas.** Et la regle D
+s'applique ensuite par-dessus.
+
+### 50.4 La routine quotidienne
+
+`outils/routine_quotidienne.py` enchaine cinq etapes : moisson YouTube,
+croisement TikTok → YouTube, moisson TikTok, consolidation du registre, tri des
+detections.
+
+Trois principes :
+
+1. **Les etapes qui consomment du quota d'abord**, les etapes locales ensuite.
+   Une journee ou le quota est epuise produit quand meme un registre a jour.
+2. **Chaque etape est isolee** : si l'une echoue, les suivantes tournent.
+3. **Un journal lisible par jour** dans `recherche/routine/`, qui dit ce qui a
+   tourne et ce que ca a produit — sans les milliers de lignes d'avancement.
+
+Elle ne juge rien. Elle prepare le materiau ; l'analyse reste une session
+humaine. C'est la repartition qui manquait : la collecte brulait du budget de
+conversation a attendre des telechargements.
+
+### 50.5 Pourquoi rien n'a repris cette nuit — hypothese corrigee
+
+J'avais avance que la session s'etait fermee. **Vincent a corrige : elle est
+restee ouverte, et le reglage « Continue automatically at usage limit » etait
+actif.**
+
+`SUPPOSE`, non verifie : ce reglage reprend probablement un **tour
+interrompu**, pas une session au repos. Le dernier tour s'etait termine
+proprement et aucune tache de fond ne tournait — il n'y avait rien a
+reprendre.
+
+Remede pratique, quel que soit le mecanisme : **laisser une tache de fond en
+cours avant de partir.** Sa fin declenche un reveil. Et desormais la routine
+planifiee rend la question secondaire.

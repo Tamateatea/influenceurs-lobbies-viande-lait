@@ -1,0 +1,49 @@
+ROUTINE QUOTIDIENNE — 2026-08-27 08:15
+
+Ce fichier dit ce qui a tourne cette nuit et ce que ca a produit.
+Il ne contient aucun jugement : la lecture des candidats reste humaine.
+
+------------------------------------------------------------------------
+[ IGNOREE ] Moisson YouTube — catalogues des chaines surveillees
+            (--sans-quota)
+
+[ IGNOREE ] Croisement TikTok → YouTube — createurs restants
+            (--sans-quota)
+
+[ IGNOREE ] Moisson TikTok — deux mois de plus
+            (--sans-quota)
+
+[    OK    ] Consolidation du registre des comptes
+            consolider_comptes.py 
+            duree : 0.2 min
+
+    surveillance_youtube_2026-08-24_1642.csv               24  chaines YouTube
+    croisement_ig_yt_2026-08-24.csv                       162  chaines YouTube derivees d'Instagram
+    croisement_tt_yt_2026-08-25.csv                      2187  chaines YouTube derivees de TikTok
+    6616 comptes distincts, cle = (plateforme, identifiant)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\cartographie\COMPTES.xlsx
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\comptes_consolides_2026-08-27.csv
+
+------------------------------------------------------------------------
+[    OK    ] Tri des detections — preuves fortes contre bruit
+            nettoyer_detections.py 
+            duree : 0.0 min
+
+    - Detections lues : **13635**
+    - **Preuves fortes (alias d'interprofession) : 175**
+    - **Ecartees comme bruit : 3023**
+    ## PREUVES FORTES — par chaine, audience decroissante
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\detections_nettoyees_2026-08-27.md
+    13635 detections lues dans moisson_videos_2026-08-26.csv
+
+------------------------------------------------------------------------
+
+Termine a 08:15 — duree totale 0 min
+
+BILAN
+
+          OK  Consolidation du registre des comptes
+          OK  Tri des detections — preuves fortes contre bruit
+
+Prochaine etape : ouvrir une session avec Claude pour lire
+les nouveaux candidats et decider quoi en faire.
