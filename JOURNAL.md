@@ -2619,3 +2619,104 @@ precision triple. De D a F, elle ne bouge pas.
 d'alias.** Deux campagnes trouvees en une matinee, toutes deux dans des
 donnees qu'on avait deja. La priorite est la completude de la table, pas le
 raffinement du filtre.
+
+---
+
+## 49. Journal de methode — 27 aout 2026 : neuf nouvelles listes, et une validation croisee
+
+Vincent a releve neuf listes d'abonnements et les a livrees en copier-coller
+brut, comme convenu. `outils/extraire_abonnements_brut.py` les traite.
+
+### 49.1 Le format brut, et pourquoi il tient
+
+Un seul fichier, neuf comptes sources a la suite, des commentaires libres, des
+noms affiches contenant des emoji et des barres verticales.
+
+Deux pieges evites :
+
+- **Les lignes `@quelquechose` ne sont pas des delimiteurs fiables** : un nom
+  affiche peut commencer par `@`, constate avec
+  « @lespetitestrouvaillesdeludi ». Ce sont les lignes
+  `From <https://www.instagram.com/X/>` qui nomment le compte source sans
+  ambiguite.
+- **Le controle de non-perte etait faux au premier essai** : il additionnait
+  les noms affiches deux fois et annoncait un ecart sur tous les blocs. Corrige,
+  les neuf blocs passent.
+
+MESURE : **1 677 nouveaux liens, 2 027 comptes Instagram distincts** contre 538
+la veille.
+
+| Compte source | Comptes suivis |
+|---|---:|
+| @charal_officiel | 332 |
+| @savencia_groupe | 254 |
+| @legaulois_officiel | 221 |
+| **@naturellementflexitariens** | **221** |
+| @lifeatdanone | 157 |
+| @nestleenfrance | 155 |
+| @fleurymichon | 140 |
+| **@enmodeactif** | **134** |
+| @herta_france | 63 |
+
+### 49.2 Les comptes de campagne se comportent comme des vitrines
+
+C'etait l'hypothese posee avant le releve, et elle etait incertaine : un compte
+corporate de multinationale n'a pas de raison de tenir une liste curatee.
+
+**@enmodeactif, la campagne CNIEL cofinancee par l'UE, suit 134 comptes et
+c'est une liste de partenaires.** On y trouve :
+
+- **@lestudiodanielle** — deja confirme par une voie totalement independante,
+  les descriptions de ses videos (JOURNAL 47.2) ;
+- **@grimkujow** — deja dans la liste de surveillance YouTube ;
+- **@hervecuisine**, **@sandquetier**, **@marinlle**, **@annedubndidu** — des
+  createurs cuisine, sport et course a pied, coherents avec une campagne
+  anti-sedentarite.
+
+**La validation croisee est le point important.** Studio Danielle a ete trouve
+deux fois, par deux chemins qui n'ont rien en commun : la lecture des
+descriptions de ses videos, et la liste d'abonnements du commanditaire. C'est
+exactement le type d'independance que la capture-recapture exige
+(METHODOLOGIE 9.3), et que le couple SponsorBlock / description n'offrait pas
+(JOURNAL 43.2).
+
+### 49.3 Les memes createurs travaillent pour plusieurs interprofessions
+
+**@naturellementflexitariens** (INTERBEV) suit **@menthe_banane**,
+**@chateau.leg0** et **@pepites2noisette** — trois des createurs dont INAPORC
+publie les recettes (JOURNAL 27.3).
+
+Ce ne sont pas des prestataires d'une filiere : ce sont des createurs que
+**plusieurs interprofessions** emploient. Le registre devra donc relier un
+createur a plusieurs commanditaires, et l'affichage par commanditaire seul
+manquerait ce fait.
+
+### 49.4 Ce que Vincent a note sur les comptes corporate
+
+Ses reponses au classeur, qui valent mesure :
+
+- **Lactalis, Sodiaal, Groupe Bel : aucun compte francais trouve.** Bel n'a
+  qu'un compte neo-zelandais, Lactalis des comptes suisse, turc, bresilien et
+  americain.
+- **Danone** n'a pas de `@danone.france` : le compte trouve est
+  `@lifeatdanone`, oriente marque employeur.
+- **Made in Viande** n'a pas de compte propre, mais plusieurs comptes
+  regionaux d'INTERBEV existent.
+
+Autrement dit, **les grandes marques laitieres francaises communiquent peu en
+direct sur Instagram**. Elles passent par les interprofessions et par les
+campagnes. C'est coherent avec toute la strategie de la vitrine decrite en
+METHODOLOGIE section 2 — et cela renforce la priorite donnee aux comptes de
+campagne plutot qu'aux comptes corporate.
+
+### 49.5 Alias reperes par Vincent sur les sites
+
+- **LAIT'FLIX** — serie de videos de divertissement du CNIEL. Le compte
+  `@laitflix` figurait deja dans les abonnements du CNIEL sans qu'on sache ce
+  que c'etait.
+- **L'Amour Boeuf** — serie de videos d'INTERBEV. Le compte `@lamourboeuf`
+  etait deja repere, juge « ressemble a un truc de lobby » par Vincent le
+  24/08. Confirme.
+- **@foiegrasfrancais** — le compte du CIFOG, enfin identifie. L'alias
+  « Le Foie Gras » qui a produit 91 faux positifs pourra etre remplace par ce
+  pseudo, specifique lui.
