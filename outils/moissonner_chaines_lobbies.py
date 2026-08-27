@@ -66,6 +66,7 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 RACINE = Path(__file__).resolve().parent.parent
 SECRETS = RACINE / "SECRETS.txt"
 RECHERCHE = RACINE / "recherche"
@@ -95,21 +96,10 @@ LONGUEUR_MINIMALE = 8      # meme regle que pour les alias (JOURNAL 27/08)
 
 # Medias et plateformes : ils apparaissent dans ces titres sans etre des
 # createurs remuneres. Meme liste que nettoyer_detections.py.
-MEDIAS = {
-    "le monde", "lemondefr", "le parisien", "le figaro", "liberation",
-    "franceinfo", "france 24", "bfmtv", "cnews", "lci", "tf1", "m6", "canal+",
-    "arte", "konbini", "brut", "vice", "l'equipe", "lequipe", "20 minutes",
-    "ouest-france", "sud ouest", "la depeche", "huffpost", "slate",
-    "top chef", "topchefm6", "c a vous", "c_a_vous", "france 2", "france 3",
-    "france 5", "rtl", "europe 1", "rmc", "cuisine actuelle", "marmiton",
-}
-
-
-def est_media(nom):
-    """Le compte est-il un media ou une emission, plutot qu'un createur ?"""
-    n = unicodedata.normalize("NFKD", str(nom or "").lower())
-    n = "".join(c for c in n if not unicodedata.combining(c)).strip()
-    return n in MEDIAS or aplatir(n) in {aplatir(m) for m in MEDIAS}
+# La liste vit dans la feuille « Medias » de cartographie_filiere.xlsx depuis
+# le 27/08 : Vincent doit pouvoir l'amender sans passer par le code. Elle etait
+# ici en dur, et en deux copies qui avaient commence a diverger.
+from medias import est_media
 
 
 # Mots qui suivent ces motifs sans etre des createurs.

@@ -16,7 +16,7 @@ Source : `moisson_videos_2026-08-27.csv`.
 - **Preuves fortes (alias d'interprofession) : 240**
 - Preuves faibles (marque + indice) : 107
 - **Ecartees comme bruit : 6792**
-  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **244**
+  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **243**
 
 Le bruit representait **27 %** des detections brutes.
 

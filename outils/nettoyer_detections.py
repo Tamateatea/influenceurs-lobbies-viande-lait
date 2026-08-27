@@ -128,22 +128,10 @@ def alias_fiable(alias):
 # Le tri reste imparfait : un media peut aussi etre remunere par un lobby, et
 # ce serait un fait interessant. Mais ce n'est pas la meme enquete, et la
 # melanger a celle des createurs noierait les deux.
-MEDIAS = {
-    "le monde", "le parisien", "le figaro", "liberation", "franceinfo",
-    "france 24", "bfmtv", "cnews", "lci", "tf1", "m6", "canal+", "arte",
-    "konbini", "brut", "vice", "l'equipe", "lequipe", "20 minutes",
-    "ouest-france", "sud ouest", "la depeche", "huffpost", "slate",
-    "national geographic", "wimbledon", "olympic games", "olympics",
-    "minecraft", "amazon prime video france", "netflix france", "disney+",
-    "prime video france", "youtube", "spotify", "deezer",
-}
-
-
-def est_media(nom):
-    """Le compte est-il un media ou une plateforme, plutot qu'un createur ?"""
-    n = unicodedata.normalize("NFKD", str(nom or "").lower())
-    n = "".join(c for c in n if not unicodedata.combining(c)).strip()
-    return n in MEDIAS
+# La liste vit dans la feuille « Medias » de cartographie_filiere.xlsx depuis
+# le 27/08 : Vincent doit pouvoir l'amender sans passer par le code. Elle etait
+# ici en dur, et en deux copies qui avaient commence a diverger.
+from medias import est_media
 
 
 def aplatir(t):
