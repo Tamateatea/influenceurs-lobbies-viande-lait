@@ -4061,3 +4061,107 @@ Deuxieme occurrence de la meme erreur. La regle : quand une procedure touche
 une interface, donner les libellés **dans la langue de l'interface**, pas dans
 celle de la conversation. Et quand c'est possible, ne pas faire cliquer du
 tout : ici, la tache a ete creee par commande, ce qui supprime la question.
+
+---
+
+## 66. Journal de methode — 27 aout 2026, 21h30 : Instagram s'ouvre
+
+### 66.1 Ce qui debloquait, et ce qui ne debloquait pas
+
+Instagram etait bloque depuis le premier jour. Deux fausses pistes ont ete
+suivies le 27/08 au soir :
+
+- **Mes instructions decrivaient un parcours de creation d'application qui
+  n'existe plus.** Meta l'a remplace par un systeme de « use cases ». Vincent
+  m'a arrete en le signalant.
+- **J'ai ensuite conclu trop vite que le blocage etait la confirmation
+  d'identite.** C'etait faux aussi.
+
+Ce qui a marche, et c'est Vincent qui l'a trouve seul : **ajouter un use case
+Marketing API a son application**. La permission `ads_read` n'apparait dans le
+Graph API Explorer qu'a cette condition — elle n'est pas offerte a une
+application sans use case.
+
+### 66.2 Une erreur de ma part qui a fausse un test
+
+Le premier test avec le nouveau jeton a rendu la **meme erreur qu'avant**.
+J'allais conclure que le jeton ne suffisait pas.
+
+En realite mon script de rangement avait cherche `META_AD_LIBRARY_TOKEN=` sans
+espaces, alors que le fichier ecrit `META_AD_LIBRARY_TOKEN = `. Il n'a donc
+rien remplace — **et il a supprime la ligne libre ou Vincent avait colle son
+jeton**. Le test a tourne sur l'ancien jeton d'application.
+
+Recupere depuis une sauvegarde faite avant l'ecriture. Deux lecons :
+
+1. **Sauvegarder avant de reecrire un fichier qu'on n'a pas ecrit soi-meme.**
+   C'est ce qui a evite de faire regenerer un jeton a 23 h.
+2. **Un test qui rend le meme resultat qu'avant doit d'abord faire douter du
+   test.** L'erreur identique aurait du alerter : elle etait trop identique.
+
+Le diagnostic qui a tranche, `debug_token` :
+
+    type       USER
+    is_valid   True
+    scopes     ['ads_read', 'public_profile']
+
+### 66.3 MESURE — l'API repond
+
+| Requete | Resultat |
+|---|---|
+| `ad_type=ALL` | **50 annonces par requete**, plafond atteint a chaque fois |
+| `ad_type=POLITICAL_AND_ISSUE_ADS` | refuse — « Political ad searches for countries in the European Union aren't available » |
+
+Le refus sur les publicites politiques n'a aucune importance : au titre du DSA,
+l'UE expose **toutes** les publicites. **IG-01 passe de « confirmee par la
+documentation » a « confirmee en pratique ».**
+
+Moisson par mots-cles : **3 809 annonces distinctes, 1 139 pages annonceuses,
+zero erreur.**
+
+### 66.4 Le mot-cle ramene du bruit, la page ne ment pas
+
+La recherche par mot-cle remonte « Edarcyishop studio » et « Lignosus » autant
+que « Bretons et Engages ». Un mot-cle ne distingue pas l'annonceur du sujet.
+
+Onze pages de la filiere ont ete reperees dans ce bruit, avec leurs
+identifiants. Interrogees directement — le **mode A** de METHODOLOGIE
+section 12 — elles rendent **403 annonces sans aucun bruit** :
+
+    Foie Gras du Perigord              169
+    Fan de Foie Gras                    81
+    La Volaille Francaise               61
+    volaillefrancaise                   36
+    Aimez la viande                     33
+    La viande                           17
+
+### 66.5 Ce qu'on y trouve
+
+**Des createurs nommes dans des annonces payees par les lobbies.**
+
+| Createur | Annonceur | Quand |
+|---|---|---|
+| **@megalowfood** | Fan de Foie Gras (CIFOG) | juillet 2025, 4 annonces |
+| **@jow_fr** | volaillefrancaise (ANVOL) | mars et avril 2026 |
+| **@davidrose1970** | La Volaille Francaise | mars 2026 |
+| **@francette_restaurant** | La Volaille Francaise | mars 2026 |
+| **@foiegrasfran** | Fan de Foie Gras | decembre 2025 |
+
+C'est **la classe de preuve la plus forte du projet**. Plus forte qu'une
+mention en description : ici le commanditaire a **paye Meta** pour diffuser un
+contenu qui nomme le createur. L'argent est demontre, pas infere — meme s'il
+reste a etablir qu'il est alle au createur et pas seulement a Meta.
+
+### 66.6 Et ca repond a la question de l'entree 64
+
+L'entree 64 constatait que le signal recent s'effondrait sur YouTube : une a
+deux preuves fortes par mois en 2026. On se demandait ou etait passee
+l'activite.
+
+**Elle est ici.** Les annonces trouvees sont de 2025 et 2026, pas de 2019. La
+filiere n'a pas arrete de payer des createurs : elle a change de canal, et le
+projet regardait le mauvais.
+
+Consequence de dimensionnement : **la publicite Meta doit devenir un canal de
+premier rang**, pas un complement. Et le mode A y est enfin possible, ce qui
+n'a jamais ete le cas sur YouTube.
