@@ -1,12 +1,17 @@
 # A faire
 
-Mis a jour le **26 aout 2026**. A relire au debut de chaque session.
+Mis a jour le **27 aout 2026 au soir**. A relire au debut de chaque session.
 
 Convention : `[V]` = pour Vincent, `[C]` = pour Claude, `[?]` = a decider ensemble.
 
-**Les taches de Vincent sont dans `cartographie/MES_TACHES.xlsx`**, avec les
-liens et les supports pour les accomplir. Ce fichier-ci en garde la trace et
-sert de memoire au projet.
+**Les taches de Vincent sont dans `cartographie/A_FAIRE.xlsx`** — trois
+feuilles : ce qu'il a a faire, les decisions qu'il est seul a pouvoir prendre,
+et ce qui avance sans lui. Ce fichier-ci sert de memoire au projet ; il ne lit
+pas les `.md`.
+
+`MES_TACHES.xlsx` contient ses reponses des 25 et 26 aout : **ne pas
+l'ecraser**. `A_FAIRE.xlsx` est regenere a volonte par
+`outils/generer_a_faire.py`, il ne contient aucune de ses reponses.
 
 ---
 
@@ -54,27 +59,38 @@ sert de memoire au projet.
 
 ## Pour Claude — au retour du quota
 
-- [ ] `[C]` **Finir la moisson YouTube** : 1 935 chaines sur 2 361. Environ
-      16 000 unites, soit deux jours de quota.
-- [ ] `[C]` **Relancer la detection avec les deux nouveaux alias** — « En Mode
-      Actif » et « Made in Viande ». Ils ouvriront des cas invisibles
-      jusqu'ici, sur des donnees deja moissonnees.
-- [ ] `[C]` **Reprendre la moisson TikTok** : 45 mois sur 47. Le quota
-      journalier TikTok n'en autorise qu'environ deux par jour — compter une
-      vingtaine de jours. `outils/moissonner_tiktok.py` reprend ou il s'arrete.
+- [x] `[C]` ~~Finir la moisson YouTube~~ **FAIT le 27/08** : 2 660 chaines sur
+      2 660, 307 191 videos. Premiere revue complete du registre.
+- [x] `[C]` ~~Evaluer les deux signaux jamais mesures~~ **FAIT le 27/08.**
+      Case de declaration 91 % / 44 % ; transcription 81 % / 49 %. Les quatre
+      signaux YouTube sont desormais tous mesures (JOURNAL 53 et 57).
+- [x] `[C]` ~~Tester la regle D sur des entites jamais vues~~ **FAIT le 27/08,
+      et le resultat est l'inverse de l'attendu** : la liste `GENERIQUES`
+      retire du signal hors CNIEL (JOURNAL 56). Remesure complete des six
+      regles en JOURNAL 61 — **la regle B, la plus simple, fait aussi bien**.
+- [x] `[C]` ~~Corriger l'appariement des marques au nom courant~~ **traite en
+      partie le 27/08** : le garde-fou de frontiere de mot retire 244
+      detections, dont 23 sur `president` et 30 sur les formes de
+      `@la_viande_fr` (JOURNAL 60). Reste le cas des marques dont le nom EST
+      un mot courant meme correctement delimite — « Marie », « Societe ».
+
+- [ ] `[C]` **Reprendre la moisson TikTok** : 42 mois sur 47. Le quota
+      journalier n'en autorise qu'environ deux par jour — compter trois
+      semaines. `outils/moissonner_tiktok.py` reprend ou il s'arrete, et un
+      mois en echec n'est PAS marque fait.
+- [ ] `[C]` **Relancer la detection avec les nouveaux alias** — « En Mode
+      Actif » et « Made in Viande ». Sur des donnees deja moissonnees, donc
+      sans quota.
 - [ ] `[C]` **Finir le croisement TikTok → YouTube** : 1 061 createurs sur
       8 061, quota epuise en cours de route.
-- [ ] `[C]` **Corriger l'appariement des marques au nom courant.** « Marie »,
-      « Societe », « President », « Le Foie Gras » produisent l'essentiel du
-      bruit. Voir JOURNAL 33.4 et 48.
-- [ ] `[C]` **Evaluer les deux signaux jamais mesures** : la case de
-      declaration YouTube et la transcription. Seules la description et
-      SponsorBlock l'ont ete.
-- [ ] `[C]` **Tester la regle D sur des entites jamais vues.** Elle est
-      parfaite sur le CNIEL et aveugle sur INTERBEV, INAPORC, ANVOL
-      (JOURNAL 48.1).
-- [ ] `[C]` **Ajouter Webedia et les agences TikTok** a la feuille Agences —
-      partiellement fait le 25/08, a completer avec le balayage complet.
+- [ ] `[C]` **Etendre le second rideau** aux chaines a preuve forte, pas
+      seulement aux 11 confirmees par Vincent. La technique a rapporte 4 liens
+      reels sur 232 transcriptions (JOURNAL 59).
+- [ ] `[C]` **Partager `charger_alias`**, recopiee dans six outils. Une
+      correction dans l'une ne se propage pas aux autres — c'est exactement ce
+      qui a laisse `moissonner_chaines_lobbies.py` avec un seuil de six
+      caracteres quand les autres etaient a huit.
+- [ ] `[C]` **Ajouter Webedia et les agences TikTok** a la feuille Agences.
 - [ ] `[C]` **Extraire les budgets de communication** des bilans annuels
       d'Interbev et du Cniel. Le chiffre de 30 M EUR vient d'une critique de
       la Confederation paysanne : inutilisable publiquement.
@@ -95,9 +111,23 @@ sert de memoire au projet.
       Proposition : le compresser (`.json.gz`, environ 4 Mo) plutot que de
       choisir entre les deux. **A trancher par Vincent.**
 
-- [ ] `[?]` **Le tirage aleatoire** (METHODOLOGIE 9.2). Les 271 cas annotes
+- [ ] `[?]` **Quelle regle de detection garder ?** MESURE du 27/08 : B, C, D
+      et F font toutes 85 % de precision, intervalles de confiance
+      entierement recouvrants, et **B a le meilleur rappel** (90 %).
+      Recommandation : **prendre B**, la seule sans liste ecrite a la main.
+      La liste `GENERIQUES` disparaitrait au lieu d'etre corrigee.
+      C'est un choix d'architecture : **il revient a Vincent** (JOURNAL 61).
+
+- [ ] `[?]` **Le CNPO (oeufs) est-il dans le perimetre ?**
+      `cartographie_filiere.xlsx` le marque « HORS PERIMETRE », alors que
+      Vincent a confirme « Oeufs de France » le 25/08. Aucun CNPO n'est retenu
+      en pratique, donc rien n'est casse — mais les deux sources se
+      contredisent (JOURNAL 60).
+
+- [ ] `[?]` **Le tirage aleatoire** (METHODOLOGIE 9.2). Les 255 cas annotes
       viennent tous d'un seul canal : ils ne disent rien de ce qu'on rate
-      entierement. C'est la seule facon de connaitre le vrai rappel.
+      entierement. C'est la seule facon de connaitre le vrai rappel — et la
+      seule mesure importante qui manque encore au projet.
       **Prealable : definir la population dans laquelle tirer.**
 - [ ] `[?]` **Qui publie le registre** : Vincent en nom propre, une association
       existante, une nouvelle structure ? Determine la posture juridique et

@@ -4,7 +4,7 @@
 toute action.** Il est fait pour ca. Il est mis a jour a la fin de chaque
 session de travail.
 
-Derniere mise a jour : **27 aout 2026, matin**.
+Derniere mise a jour : **27 aout 2026, fin de journee**.
 
 ---
 
@@ -225,28 +225,39 @@ passee de 27 chaines nommees a la main a 2 620 derivees des sources.
 audience connue. La liste de surveillance YouTube est passee de 27 chaines
 nommees a la main a **185 derivees des sources**.
 
-**Pour Vincent, par ordre de valeur :**
+**Pour Vincent : tout est dans `cartographie/A_FAIRE.xlsx`.** Trois feuilles —
+ce qu'il a a faire trie par ce que ca debloque, les decisions qu'il est seul a
+pouvoir prendre, et ce qui avance sans lui. Il ne lit pas les `.md` : ne pas
+l'y renvoyer.
 
-1. **Candidater a la Commercial Content API de TikTok** —
-   `developers.tiktok.com/application/commercial-content-api`. Gratuit,
-   ~2 jours, **pas d'affiliation universitaire requise**. C'est le meilleur
-   rapport effort/resultat de tout le projet.
-2. **Arbitrer les 26 pseudos recoltes** sur les sites des lobbies : lesquels
-   sont des createurs remuneres, lesquels sont des eleveurs ou des marques ?
-3. **Meta** : reprendre apres TikTok. Le jeton d'application est refuse, il
-   faut un jeton UTILISATEUR.
+En un mot : **trancher `CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx`** (218 noms,
+20 minutes pour les 60 premieres lignes) est la seule tache dont depend une
+mesure qu'on ne peut pas faire sans lui.
 
-**Pour Claude :**
+**Pour Claude, par ordre de valeur :**
 
-4. **Relancer `outils/surveiller_youtube.py`** sur les 24 chaines officielles
-   une fois la limitation HTTP 429 retombee. Commencer par `--videos 10`.
-5. **Verifier les chaines YouTube et Twitch de LeBouseuh et Gastronogeek**
-   pour retrouver les « best of » des lives INAPORC — un cas documente par le
-   commanditaire, donc un excellent test de bout en bout.
-6. **Resoudre Seb la Frite et Zack Nani**, dont aucune chaine verifiee ne
+1. **Le tirage aleatoire** (METHODOLOGIE 9.2). C'est la derniere mesure
+   importante qui manque. Les 255 cas annotes viennent tous du canal
+   « description » : ils ne disent rien de ce que le projet **rate
+   entierement**. Toutes les mesures de rappel actuelles sont des plafonds.
+2. **Reprendre la moisson TikTok** — 42 mois sur 47, environ deux mois de
+   quota par jour, donc trois semaines. Elle reprend toute seule.
+3. **Etendre le second rideau** aux chaines a preuve forte, pas seulement aux
+   11 confirmees. La technique a rapporte 4 liens reels sur 232 transcriptions.
+4. **Partager `charger_alias`**, recopiee dans six outils. C'est cette
+   duplication qui a laisse `moissonner_chaines_lobbies.py` a six caracteres
+   quand les autres etaient passes a huit — et de la est venue l'attribution
+   a la mauvaise personne (JOURNAL 55).
+5. **Resoudre Seb la Frite et Zack Nani**, dont aucune chaine verifiee ne
    remonte sous ce nom.
-7. **Ajouter Webedia a la feuille Agences** du classeur, avec sa source
-   primaire (le site d'INAPORC).
+6. **Verifier les chaines de LeBouseuh et Gastronogeek** pour retrouver les
+   lives INAPORC — un cas documente par le commanditaire, donc un excellent
+   test de bout en bout.
+
+**Si les taches de fond sont tuees des leur lancement** — c'est arrive quatre
+fois le 27/08 — lancer au **premier plan par tranches** de moins de dix
+minutes. Tous les outils longs reprennent ou ils s'arretent, il suffit de
+relancer la meme commande.
 
 **Ne pas oublier :** un createur a plusieurs chaines, et la collaboration
 CNIEL trouvee etait sur une chaine secondaire.
