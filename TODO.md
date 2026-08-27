@@ -22,8 +22,14 @@ sert de memoire au projet.
       Viande » (INTERBEV) — dans des donnees deja collectees. C'est le point
       faible identifie : completer la table d'alias rapporte plus que
       raffiner le filtre (JOURNAL 48.4).
-- [ ] `[V]` **Juger les 5 candidats** retenus par la regle D dans
-      `A_VERIFIER_2.xlsx`.
+- [ ] `[V]` **Trancher `CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx`** — 218 noms
+      trouves dans les videos publiees par les lobbies eux-memes. Une seule
+      question : createur, ou nom de serie ? Trie par valeur, il peut s'arreter
+      apres la 60e ligne. **C'est ce qui mesurera la voie « motif dans le
+      titre »** (YT-42), la seule des deux dont on ignore ce qu'elle vaut.
+- [ ] `[V]` **Juger `A_VERIFIER_3.xlsx`** — 72 candidats jamais vus, sortis de
+      la moisson elargie (977 chaines, 230 503 videos). Les 175 deja tranches
+      ont ete ecartes automatiquement.
 - [ ] `[V]` **Meta : obtenir un jeton UTILISATEUR.** Le jeton d'application est
       refuse. Verification d'identite sur facebook.com/ID, puis Graph API
       Explorer en mode « User token » avec la permission `ads_read`.
@@ -80,6 +86,14 @@ sert de memoire au projet.
 ---
 
 ## Decisions en attente
+
+- [ ] `[?]` **Faut-il continuer a versionner `donnees/moisson_videos.json` ?**
+      Il pese 26 Mo et atteindra ~68 Mo quand les 2 660 chaines seront faites.
+      Git en garde une copie entiere a chaque commit — le depot fait deja 40 Mo.
+      Pour : c'est la sauvegarde de trois jours de quota d'API, qu'on ne
+      rachete pas. Contre : le depot devient lourd a cloner.
+      Proposition : le compresser (`.json.gz`, environ 4 Mo) plutot que de
+      choisir entre les deux. **A trancher par Vincent.**
 
 - [ ] `[?]` **Le tirage aleatoire** (METHODOLOGIE 9.2). Les 271 cas annotes
       viennent tous d'un seul canal : ils ne disent rien de ce qu'on rate
