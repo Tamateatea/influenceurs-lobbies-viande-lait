@@ -75,7 +75,20 @@ def aplatir_avec_index(texte):
     return "".join(plat), index
 
 
-def extrait(description, alias_reconnus):
+def extrait(description, alias_reconnus, extrait_pret=""):
+    """Le passage qui a declenche la detection.
+
+    Si la moisson a deja taille l'extrait dans le texte COMPLET — colonne
+    `extrait_declencheur`, apparue le 27/08 — on l'utilise tel quel : c'est le
+    seul cas ou la preuve est garantie visible. Sinon on la cherche dans les
+    900 caracteres conservees, et on previent quand elle n'y est pas.
+    """
+    if extrait_pret and extrait_pret.strip():
+        return extrait_pret.replace(" ⏎ ", chr(10)).strip()
+    return _extrait_dans_le_tronque(description, alias_reconnus)
+
+
+def _extrait_dans_le_tronque(description, alias_reconnus):
     """Le passage du texte original autour de la premiere mention trouvee."""
     d = description.replace(" ⏎ ", chr(10)).strip()
     if not d:
@@ -230,7 +243,8 @@ def main():
         desc = descriptions.get(l["video_id"]) or l.get("description", "")
         ws.append([n, l["chaine"], ab, l["publiee"], l["entites_retenues"],
                    l["titre"], "ouvrir",
-                   extrait(desc, l.get("alias_reconnus", "") or l["entites_retenues"]),
+                   extrait(desc, l.get("alias_reconnus", "") or l["entites_retenues"],
+                           l.get("extrait_declencheur", "")),
                    passe_regle_d(l, descriptions), "", ""])
         r = ws.max_row
         c = ws.cell(row=r, column=7, value="ouvrir")

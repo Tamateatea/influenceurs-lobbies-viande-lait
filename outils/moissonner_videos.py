@@ -182,7 +182,40 @@ def analyser(texte, termes):
     t = sans_accent(texte)
     familles = [f for f, motifs in INDICES.items()
                 if any(re.search(m, t, re.I) for m in motifs)]
-    return sorted(set(alias)), sorted(set(entites)), familles
+    formes = [f for f in termes if f in plat]
+    return sorted(set(alias)), sorted(set(entites)), familles, formes
+
+
+def extrait_declencheur(texte, termes_trouves, marge=260):
+    """La fenetre de texte AUTOUR de la mention, prise dans le texte COMPLET.
+
+    Defaut corrige le 27/08 : seuls les 900 premiers caracteres de la
+    description etaient conserves, et **42 % des detections avaient leur alias
+    declencheur au-dela**. L'extrait montre a Vincent ne pouvait donc pas
+    contenir la preuve — exactement ce qu'il reprochait le 25/08 (« je ne vois
+    pas le lien avec les influenceurs pour la plupart »).
+
+    On garde toujours le debut de la description, utile pour le contexte, mais
+    on y ajoute la fenetre qui entoure la mention.
+    """
+    if not termes_trouves:
+        return ""
+    plat = aplatir(texte)
+    # correspondance entre position aplatie et position d'origine
+    index, position = [], 0
+    for c in texte:
+        if aplatir(c):
+            index.append(position)
+        position += 1
+    meilleure = None
+    for forme in termes_trouves:
+        i = plat.find(forme)
+        if i >= 0 and (meilleure is None or i < meilleure):
+            meilleure = i
+    if meilleure is None or meilleure >= len(index):
+        return ""
+    reel = index[meilleure]
+    return texte[max(0, reel - marge):reel + marge].strip()
 
 
 def main():
@@ -248,8 +281,8 @@ def main():
                     continue
                 n_chaine += 1
                 desc = s.get("description", "") or ""
-                alias, entites, familles = analyser(s.get("title", "") + " " + desc,
-                                                    termes)
+                texte_complet = s.get("title", "") + " " + desc
+                alias, entites, familles, formes = analyser(texte_complet, termes)
                 if entites or familles:
                     touchees_ici += 1
                     etat["touchees"].append({

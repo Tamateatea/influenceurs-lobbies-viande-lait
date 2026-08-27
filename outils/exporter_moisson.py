@@ -47,11 +47,25 @@ def main():
     aujourdhui = date.today().isoformat()
     csv_path = RECHERCHE / f"moisson_videos_{aujourdhui}.csv"
     RECHERCHE.mkdir(parents=True, exist_ok=True)
-    colonnes = list(touchees[0].keys())
+
+    # Le fichier de reprise melange des lignes ecrites par plusieurs versions
+    # du moissonneur : `extrait_declencheur` est apparu le 27/08 en cours de
+    # parcours. On prend donc l'UNION des colonnes, et les lignes anciennes
+    # laissent la case vide au lieu de faire echouer l'export.
+    colonnes = []
+    for ligne in touchees:
+        for k in ligne:
+            if k not in colonnes:
+                colonnes.append(k)
     with csv_path.open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=colonnes, extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=colonnes, extrasaction="ignore",
+                           restval="")
         w.writeheader()
         w.writerows(touchees)
+    anciennes = sum(1 for l in touchees if "extrait_declencheur" not in l)
+    if anciennes:
+        print(f"  {anciennes} lignes sans extrait declencheur (moissonnees "
+              f"avant la correction du 27/08)", file=sys.stderr)
 
     md = [f"# Moisson des catalogues YouTube — {aujourdhui}", "",
           "Produit par `outils/exporter_moisson.py`, depuis le fichier de",

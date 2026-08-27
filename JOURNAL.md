@@ -3159,3 +3159,211 @@ fallait resoudre un identifiant a 3 abonnes pour le trouver.
 Regle : **quand une sortie contient un identifiant opaque, le resoudre avant de
 lire le reste.** Un identifiant qu'on ne peut pas lire est un endroit ou une
 erreur peut se cacher indefiniment.
+
+---
+
+## 56. Journal de methode — 27 aout 2026 : la liste qui devait retirer du bruit retirait le signal
+
+### 56.1 Ce qu'on voulait savoir
+
+La regle D est mesuree a 83 % de precision, et c'est sur ce chiffre que repose
+le filtrage du projet. Mais elle contient une liste ecrite a la main :
+
+```python
+GENERIQUES = ["le foie gras", "produits laitiers", "le porc francais",
+              "volaille francaise", "oeufs de france", "la viande", ...]
+```
+
+Chaque terme y a ete ajoute **apres** avoir vu les cas de l'interprofession
+correspondante. Les 83 % sont donc mesures sur ce qui a servi a construire la
+regle. Ce chiffre ne dit rien de ce qui arrivera sur un commanditaire
+decouvert demain — et METHODOLOGIE 14 exige que l'outil re-derive.
+
+### 56.2 Le protocole
+
+`outils/generaliser_regle_d.py`. Pour chaque interprofession E : retirer de la
+liste les termes qui designent E, puis evaluer la regle D **sur les seuls cas
+de E**. C'est la situation d'une entite qu'on n'a jamais vue.
+
+**Prediction inscrite avant la mesure :** le rappel ne bougera pas, la
+precision tombera, et l'ampleur de la chute dira si la liste est indispensable.
+
+### 56.3 MESURE
+
+| Entite | Cas | Vrais | Terme retire | Precision avec / sans | Rappel avec / sans |
+|---|---:|---:|---|---:|---:|
+| CNIEL | 128 | 57 | — | 85 % / 85 % | 100 % / 100 % |
+| INTERBEV | 31 | 7 | — | 33 % / 33 % | 14 % / 14 % |
+| **INAPORC** | 7 | 2 | le porc francais | **0 % / 100 %** | **0 % / 100 %** |
+| ANVOL | 2 | 1 | volaille francaise | 0 % / 0 % | 0 % / 0 % |
+
+### 56.4 Les deux moities de la prediction sont fausses
+
+**Le rappel a bouge**, de 0 a 100 % sur INAPORC. Et le raisonnement qui
+annoncait le contraire etait incoherent avec lui-meme : `est_generique` ne fait
+qu'ECARTER des cas, donc en retirer un terme ne peut qu'en garder plus, donc le
+rappel ne peut que monter. Il suffisait de relire la phrase pour voir qu'elle
+se contredisait.
+
+**La precision n'est pas tombee, elle est montee**, de 0 a 100 % sur INAPORC.
+
+Le sens de la mesure est donc l'inverse de celui qu'on cherchait : ce n'est pas
+que la regle D generalise mal faute d'avoir vu l'entite. **Elle generalise
+mieux quand on ne lui a rien appris de l'entite.**
+
+L'explication tient en une ligne : « Le Porc Francais » n'est pas une categorie
+alimentaire qui traine dans une description, c'est la **signature de campagne
+d'INAPORC**. La liste, ecrite en regardant le CNIEL — ou « produits laitiers »
+est effectivement un mot courant — retire ailleurs le seul vrai cas.
+
+C'est la meme erreur que celle du 26/08 sur `est_generique` par sous-chaine
+(JOURNAL 38), a un niveau au-dessus : ce n'est plus la comparaison qui est
+fautive, c'est **l'idee meme qu'un terme puisse etre declare generique dans
+l'absolu**. Il l'est relativement a une entite.
+
+### 56.5 Un rapport qui affirmait le contraire de ses chiffres
+
+La premiere version du script ecrivait, sous le tableau :
+
+> Chute de precision moyenne : **-50 points**. Pire cas : **ANVOL**, de 0 % a
+> 0 %. Autrement dit, la regle D perd cette part de precision.
+
+Trois faussetes en trois lignes. Une chute de -50 points est un gain. « Pire
+cas » designait l'entite qui n'avait pas bouge, parce que le `max` portait sur
+une difference dont le signe etait suppose. Et la phrase de conclusion etait
+ecrite dans le gabarit, quel que soit le resultat.
+
+**Un rapport dont la conclusion est ecrite avant la mesure ne mesure rien.**
+Le script lit desormais le signe au lieu de le supposer, et bifurque entre
+trois conclusions selon ce qu'il trouve — dont « le resultat est mixte, cela ne
+tranche rien ».
+
+### 56.6 Ce qui reste a trancher
+
+Deux voies, et c'est a Vincent :
+
+- **restreindre `est_generique` au CNIEL**, la seule entite ou la liste aide ;
+- **l'abandonner pour la regle F**, qui exige un `@pseudo` ecrit tel quel et ne
+  depend d'aucune liste manuelle — donc qui re-derive vraiment.
+
+### 56.7 Reserve
+
+Sept cas INAPORC dont deux vrais, deux cas ANVOL dont un vrai. **Ces
+pourcentages ne sont pas des taux** : 0 % et 100 % decrivent ici deux videos.
+Le tableau montre un SENS, pas des valeurs, et le sens ne sera confirme qu'avec
+plus de cas juges hors CNIEL.
+
+---
+
+## 57. Journal de methode — 27 aout 2026 : le quatrieme signal, et une contamination cherchee puis non trouvee
+
+### 57.1 La case de declaration, enfin mesuree
+
+`outils/mesurer_declaration.py`. 175 videos jugees, **175 pages lues, zero
+echec** — le rythme d'une page toutes les 1,5 seconde suffit a eviter le
+HTTP 429 qui avait fait derailler la journee du 24/08.
+
+MESURE :
+
+| Signal | Retenus | Vrais | Precision | Rappel |
+|---|---:|---:|---:|---:|
+| **Case de declaration** | 34 | 31 | **91 %** | **44 %** |
+
+Les quatre signaux YouTube sont donc tous mesures :
+
+| Signal | Precision | Rappel |
+|---|---:|---:|
+| Transcription | 81 % | 49 % |
+| Description | 78 % | 100 % |
+| **Case de declaration** | **91 %** | **44 %** |
+| SponsorBlock | 69 % | 13 % |
+
+La prediction inscrite avant la mesure tient : precision la plus haute des
+quatre, rappel faible.
+
+### 57.2 Le chiffre qui justifie le projet
+
+**40 vraies collaborations sur 71 ne sont pas declarees. 56 %.**
+
+Un outil qui se contenterait de lire la case officielle en manquerait plus de
+la moitie. C'est la reponse chiffree a la question « a quoi sert ce projet ».
+
+### 57.3 Ce que la case ne dit pas
+
+Trois videos declarees ont ete jugees hors sujet. En les regardant :
+
+- **Inoxtag, « KAIZEN : 1 an pour gravir l'Everest »** ;
+- **Madrange, « Mes Knacks Madrange 2019 »** — chaine de marque, pas un
+  createur ;
+- **Poisson Fecond, « 1 an a boire que du lait »**.
+
+La case dit « cette video contient une communication commerciale ». Elle ne dit
+**pas par qui**. Une video peut etre sponsorisee par un VPN et citer les
+produits laitiers pour une tout autre raison.
+
+**Consequence pour METHODOLOGIE 1 :** la case seule ne peut pas porter le degre
+« remuneration confirmee » pour un commanditaire donne. Elle etablit qu'un
+partenariat paye existe dans la video ; c'est la conjonction avec l'alias qui
+designe lequel.
+
+En sens inverse, la conjonction est forte. Quatre videos d'Inoxtag portent des
+formulations sans ambiguite dans leur description :
+
+> « Merci a mes partenaires air up, Nike, Deezer, Fitness Park, Erborian,
+> **Les Produits Laitiers**, Orange, et Therm-a-Rest »
+>
+> « **Merci aux Produits Laitiers d'etre le partenaire de cette video** »
+>
+> « **Merci aux Produits Laitiers pour nous avoir finance le voyage !** »
+
+### 57.4 Une contamination cherchee — et non trouvee
+
+En instruisant le point precedent, un defaut est apparu : la moisson ne garde
+que les **900 premiers caracteres** de chaque description.
+
+MESURE — sur 362 detections nettoyees : **153, soit 42 %, ont leur alias
+declencheur au-dela de la coupure.** Pour ces cas, le texte enregistre ne
+contient pas la preuve.
+
+Hypothese immediate, et inquietante : Vincent aurait juge 42 % des cas sans
+voir ce qui les avait declenches, donc les aurait rabattus sur « hors sujet »,
+donc les 216 « hors sujet » du jeu de reference seraient contamines — et avec
+eux toutes les precisions mesurees depuis, dont les 83 % de la regle D.
+
+MESURE :
+
+| Description | Jugees | Collaboration remuneree | Hors sujet |
+|---|---:|---:|---:|
+| entiere | 126 | 41 (**33 %**) | 83 |
+| **coupee** | 49 | 30 (**61 %**) | 18 |
+
+**L'hypothese est refutee, et dans le sens inverse.** Sur les descriptions
+coupees, le taux de vrais est presque le double.
+
+L'explication est dans le code : `generer_classeur_verification.py` detecte
+deja le cas et affiche, a la place d'un extrait trompeur :
+
+> [La mention est au-dela de ce qui a ete enregistre. Ouvrir la video pour lire
+> la description complete.]
+
+Vincent est donc alle voir les videos, et les a jugees sur piece. Le garde-fou
+pose apres son reproche du 25/08 — « je ne vois pas le lien avec les
+influenceurs pour la plupart » — a fait exactement son travail.
+
+**Le jeu de reference n'est pas contamine.** C'est une bonne nouvelle qui ne
+valait que parce qu'on a cherche a la contredire.
+
+### 57.5 Corrige quand meme
+
+Le defaut de donnees reste : 42 % des extraits demandent un aller-retour vers
+YouTube. La moisson taille desormais l'extrait **dans le texte complet**, avant
+de tronquer, et le range dans une colonne `extrait_declencheur`. Le classeur
+l'utilise quand elle existe et retombe sur l'ancien comportement sinon.
+
+L'export prend l'**union** des colonnes : le fichier de reprise melange
+maintenant des lignes ecrites avant et apres la correction, et une ligne
+ancienne doit laisser la case vide plutot que faire echouer l'export.
+
+Les 22 000 detections deja moissonnees gardent l'avertissement : leur texte
+complet n'a pas ete conserve, et le re-moissonner couterait un quota qu'on a
+mieux a faire de depenser.
