@@ -62,6 +62,9 @@ gratuits et sans authentification.
 | YT-37 | La transcription est redondante avec la description | **REFUTEE** | 1 video sur 37 sans signal en description porte une mention orale. Inoxtag 2.0 : « comme d'habitude les produits laitiers qui nous accompagnent partout ». JOURNAL 53.3 |
 | YT-38 | La transcription est plus precise que la description | **CONFIRMEE** | 81 % contre 78 % sur le jeu de reference. JOURNAL 53.1 |
 | YT-39 | La transcription est applicable a grande echelle | **REFUTEE** | Plusieurs secondes par video : hors de portee sur 2 600 chaines. A employer en second rideau, sur les chaines deja identifiees. JOURNAL 53.4 |
+| YT-40 | Rapprocher un titre de lobby des comptes connus suffit a nommer un createur | **REFUTEE** | Six caracteres declenchaient, et la valeur rendue etait l'identifiant du PREMIER compte ayant revendique la forme : « Morgan VS » attribue a morganabbou. 30 % des formes sont partagees. Corrige. JOURNAL 55.2 |
+| YT-41 | Les chaines des lobbies nomment des createurs identifiables | **CONFIRMEE** | Apres correction : Pierre Chomet, Morgan VS, L'Amour Boeuf, Fabrice Mignot, Mister V, Brigitte Lecordier. 42 noms par compte connu. JOURNAL 55.3 |
+| YT-42 | La voie « motif dans le titre » nomme des createurs | **A MESURER** | 176 noms, dont beaucoup de series a l'oeil (Milk Check, Generation XYZ). CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx tranche. JOURNAL 55.4 |
 | YT-12 | Le segment SponsorBlock correspond a l'annonceur cite en description | **REFUTEE** | Trois annonceurs distincts dans une meme video. JOURNAL 20.2 |
 | YT-13 | Un motif regulier sur la transcription suffit a identifier un annonceur | **REFUTEE** | Faux positif sur une blague. JOURNAL 20.4 |
 | YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **CONFIRMEE, avec reserve** | 42 videos contre 18. Mais « remerciement » melange sponsors et amis. JOURNAL 21.5 |

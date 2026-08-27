@@ -3057,3 +3057,105 @@ qu'on a regarde ses autres videos, et qu'on a trouve « comme d'habitude ».
   passage du premier terme de la table, pas celui qui avait declenche. Verifie
   a la main avant d'ecrire cette entree — sans quoi j'aurais rapporte un
   resultat en citant un texte sans rapport.
+
+---
+
+## 55. Journal de methode — 27 aout 2026 : l'outil accusait la mauvaise personne
+
+### 55.1 Ce qui a ete trouve
+
+`moissonner_chaines_lobbies.py` rapportait, en tete de liste :
+
+| Createur | Videos | Commanditaire |
+|---|---:|---|
+| UC8tyTUppXI6PhWeU6CKOBEQ | 52 | CNIEL, INTERBEV |
+| UCOkKpH6tIRaNKPsNB7a3r3w | 51 | CNIEL |
+| volaillefrancaise | 36 | ANVOL |
+
+Trois defauts visibles d'emblee : des identifiants bruts illisibles, et
+`volaillefrancaise` qui est **la chaine ANVOL elle-meme** se reconnaissant
+dans ses propres titres.
+
+En resolvant les identifiants, un quatrieme, invisible et bien plus grave :
+
+- `UCOkKpH6tIRaNKPsNB7a3r3w` = **Produits Laitiers**, la chaine du CNIEL.
+- `UC8tyTUppXI6PhWeU6CKOBEQ` = **@salondelagriculture, 3 abonnes**.
+
+Ce dernier n'a aucune raison d'apparaitre 52 fois. En cherchant quelle forme
+declenchait, sur le titre « CHAUD! - Episode final (avec Morgan VS, GMK et
+Ragnar Le Breton) » :
+
+```
+'morganvs' -> renvoie morgan.niquet  | nom reel : Morgan VS
+'morgan'   -> renvoie morganabbou    | nom reel : Morgan
+```
+
+### 55.2 Le mecanisme
+
+`comptes_connus()` construisait un dictionnaire `forme aplatie -> identifiant`,
+en premier arrive premier servi :
+
+```python
+out.setdefault(a, l.get("identifiant", cle))   # 5 caracteres minimum
+...
+if len(a) >= 6 and a in plat:                  # 6 pour declencher
+```
+
+Deux consequences qui se composent :
+
+1. Six caracteres suffisent, donc un **prenom** declenche — « morgan ».
+2. La valeur rendue est l'identifiant du **premier compte** ayant revendique
+   cette forme, qui n'est pas celui qu'on vient de lire.
+
+Une video ou INTERBEV nomme « Morgan VS » etait donc versee au dossier de
+`morganabbou`. **Ce n'est pas du bruit : c'est une mise en cause de la mauvaise
+personne**, dans la source la plus autoritaire du projet — celle ou l'on ecrit
+« le commanditaire lui-meme le nomme ».
+
+C'est exactement le risque que la section 10 de METHODOLOGIE decrit, arrive par
+un chemin qu'elle ne prevoyait pas : non pas un faux positif sur l'existence
+d'une collaboration, mais **une vraie collaboration attribuee a autrui**.
+
+### 55.3 Ce qui a ete corrige
+
+1. **Huit caracteres minimum**, la regle deja retenue pour les alias le matin
+   meme. Un prenom ne declenche plus.
+2. **Toute forme revendiquee par plusieurs comptes est jetee.** C'est la
+   correction qui compte : la longueur seule n'aurait pas empeche une collision
+   entre deux comptes longs et homonymes.
+3. **Le nom lisible est affiche**, plus jamais l'identifiant seul, et une
+   colonne « reconnu par » donne **la chaine exacte qui a declenche**. Un humain
+   peut contredire l'outil sans lire le code.
+4. Les comptes des lobbies et les medias sont exclus en amont.
+
+MESURE — **2 357 formes ecartees comme partagees, sur 7 920. Soit 30 % de la
+table.** Ce n'etait pas un cas limite.
+
+Apres correction, la tete de liste devient : Pierre Chomet (31 videos, CIFOG et
+CNIEL), Morgan VS (12, CNIEL), L'Amour Boeuf (10, INTERBEV), Fabrice Mignot
+(6, INTERBEV), Mister V (3, CNIEL), Brigitte Lecordier (3, CNIEL).
+
+### 55.4 Ce qui reste ouvert, et qui tranchera
+
+Il reste deux voies de reconnaissance, dont on ignore la valeur respective :
+
+- **compte connu** — 42 noms. A l'oeil : des personnes.
+- **motif dans le titre** (« feat X », « avec X ») — 176 noms. A l'oeil : des
+  noms de series, « Interview Metiers », « Milk Check », « Generation XYZ ».
+
+**« A l'oeil » n'est pas une mesure**, et la regle 13.1 interdit de trancher
+la-dessus. `cartographie/CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx` pose la
+question a Vincent, une seule colonne verte, les lignes triees par valeur avec
+mention explicite qu'il peut s'arreter apres la soixantieme.
+
+Ses reponses diront s'il faut garder la seconde voie, la durcir ou l'abandonner.
+
+### 55.5 La lecon a retenir
+
+Les trois defauts visibles — identifiants bruts, lobby qui se reconnait, noms
+de series — etaient **cosmetiques**. Celui qui comptait ne se voyait pas : il
+fallait resoudre un identifiant a 3 abonnes pour le trouver.
+
+Regle : **quand une sortie contient un identifiant opaque, le resoudre avant de
+lire le reste.** Un identifiant qu'on ne peut pas lire est un endroit ou une
+erreur peut se cacher indefiniment.
