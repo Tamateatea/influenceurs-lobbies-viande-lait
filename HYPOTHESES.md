@@ -75,6 +75,8 @@ gratuits et sans authentification.
 | YT-50 | La regle des huit caracteres suffit contre les artefacts d'aplatissement | **REFUTEE** | « la viande frerot » aplati contient `laviandefr`, dix caracteres. Il faut verifier la frontiere de mot dans le texte d'origine. JOURNAL 59.4 |
 | YT-51 | Les artefacts d'aplatissement sont anecdotiques | **REFUTEE** | 10 % des detections nettoyees mordent sur un mot voisin. Formes fautives : `president`, `viandefr`, `entremont`. JOURNAL 60.4 |
 | YT-52 | Le garde-fou de frontiere de mot detruit des vrais cas | **REFUTEE** | Sur les 175 videos jugees : 12 artefacts retires, tous « hors sujet », zero vrai cas perdu. JOURNAL 60.5 |
+| YT-53 | La regle D vaut mieux que la regle B, plus simple | **REFUTEE** | 85 % / 87 % contre 85 % / 90 %. Les intervalles de confiance se recouvrent entierement ; B a le meilleur rappel et n'a aucune liste manuelle. JOURNAL 61.3 |
+| YT-54 | Exiger le vocabulaire commercial PRES de la mention ameliore la precision | **REFUTEE** | La regle C retient exactement les memes 71 lignes que la regle B. La proximite n'apporte rien sur ce corpus. JOURNAL 61.3 |
 | YT-12 | Le segment SponsorBlock correspond a l'annonceur cite en description | **REFUTEE** | Trois annonceurs distincts dans une meme video. JOURNAL 20.2 |
 | YT-13 | Un motif regulier sur la transcription suffit a identifier un annonceur | **REFUTEE** | Faux positif sur une blague. JOURNAL 20.4 |
 | YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **CONFIRMEE, avec reserve** | 42 videos contre 18. Mais « remerciement » melange sponsors et amis. JOURNAL 21.5 |

@@ -3632,3 +3632,81 @@ voisinage commercial, puis a un humain.
 Autrement dit, cette mesure ameliore la **precision d'appariement**, pas la
 precision de detection. Les deux se confondent facilement, et il vaut mieux les
 tenir distinctes.
+
+---
+
+## 61. Journal de methode — 27 aout 2026 : la regle la plus simple fait aussi bien
+
+### 61.1 Pourquoi remesurer
+
+Le garde-fou de frontiere de mot (entree 60) a retire 244 detections du corpus.
+Toutes les mesures de regles anterieures ont ete faites sur un vivier qui les
+contenait. Il fallait recommencer.
+
+Et une decision est en attente de Vincent : que faire de la liste `GENERIQUES`,
+mesuree comme nuisible hors CNIEL (entree 56). Autant lui donner un chiffre a
+jour.
+
+### 61.2 MESURE — les six regles, sur 240 candidats et 67 vrais
+
+| Regle | Retenus | Vrais | Precision | Rappel |
+|---|---:|---:|---:|---:|
+| A. l'alias suffit | 157 | 67 | 43 % | **100 %** |
+| **B. + vocabulaire commercial dans la description** | 71 | 60 | **85 %** | **90 %** |
+| C. + vocabulaire PRES de la mention | 71 | 60 | 85 % | 90 % |
+| D. C, et alias generique exclu s'il est seul | 68 | 58 | 85 % | 87 % |
+| E. l'etiquette porte un @ ; sinon vocabulaire proche | 134 | 64 | 48 % | 96 % |
+| F. @pseudo litteral ; sinon vocabulaire proche ; generique exclu | 68 | 58 | 85 % | 87 % |
+
+### 61.3 Ce que ca dit
+
+**B, C, D et F sont indiscernables en precision — et B a le meilleur rappel.**
+
+C donne exactement les memes 71 lignes que B : sur ce corpus, exiger que le
+vocabulaire commercial soit **pres** de la mention ne change rien. D et F
+retirent 3 lignes de plus, dont **2 vraies pour 1 fausse** — c'est un mauvais
+echange.
+
+Intervalles de confiance a 95 % sur la precision :
+
+    B  85 %   [76 – 93]
+    C  85 %   [76 – 93]
+    D  85 %   [77 – 94]
+    F  85 %   [77 – 94]
+    E  48 %   [39 – 56]
+    A  43 %   [35 – 50]
+
+Les quatre premiers se recouvrent entierement. **On ne peut pas les
+departager sur ce jeu**, et pretendre le contraire serait lire du bruit.
+
+En revanche l'ecart avec A et E est net et hors de doute : le vocabulaire
+commercial vaut plus de quarante points de precision, et le simple fait qu'une
+etiquette porte un « @ » n'en vaut aucun.
+
+### 61.4 La recommandation
+
+**Prendre B**, la plus simple des quatre.
+
+Ce n'est pas qu'elle soit meilleure — elle ne l'est pas de facon mesurable.
+C'est qu'a performance egale, elle n'a **ni liste ecrite a la main, ni notion
+de proximite a regler**. Elle ne demande aucun entretien, elle ne peut pas se
+perimer quand un nouveau commanditaire arrive, et elle n'a pas la dette
+identifiee a l'entree 56.
+
+C'est aussi la reponse a la question laissee ouverte ce matin : **la liste
+`GENERIQUES` peut disparaitre**, plutot que d'etre restreinte au CNIEL. B ne
+l'utilise pas.
+
+Cela reste **une proposition, pas une decision** : le choix de la regle est
+une decision d'architecture, elle revient a Vincent.
+
+### 61.5 Reserves
+
+- **67 vrais cas.** C'est peu. Les intervalles ci-dessus le disent : tout ecart
+  de moins de dix points est illisible.
+- **Le corpus est deseque vers le CNIEL** — 128 des 240 candidats. Une regle
+  qui plairait au CNIEL et deplairait ailleurs passerait inapercue.
+- **Le rappel de 100 % de la regle A est un artefact de mesure** : les vrais
+  cas ont ete trouves PAR l'appariement d'alias, donc A ne peut pas en manquer.
+  Le vrai rappel, celui qui compte les collaborations que le projet ne voit pas
+  du tout, demande un tirage aleatoire. Il n'a toujours pas ete fait.
