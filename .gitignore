@@ -19,3 +19,8 @@ __pycache__/
 
 # Secrets : jetons d API, mots de passe. JAMAIS versionne.
 SECRETS.txt
+
+# Fichiers temporaires des ecritures atomiques (outils/ecriture_sure.py).
+# Ils existent une fraction de seconde entre l ecriture et le renommage, ce qui
+# suffit a faire echouer un "git add -A" lance au meme moment.
+*.tmp
