@@ -57,6 +57,13 @@ ETAPES = [
     ("Moisson TikTok — deux mois de plus",
      "moissonner_tiktok.py", [], True),
 
+    # Sans quota, seulement du temps : c'est le travail ideal pour la nuit.
+    # La transcription trouve ce qu'aucune description ne porte — « j'etais en
+    # tournage pour les produits laitiers » (JOURNAL 59).
+    ("Transcription en second rideau — chaines deja identifiees",
+     "second_rideau_transcription.py", ["--videos", "400", "--par-chaine", "80", "--preuves-fortes"],
+     False),
+
     ("Export de la moisson depuis le fichier de reprise",
      "exporter_moisson.py", [], False),
 

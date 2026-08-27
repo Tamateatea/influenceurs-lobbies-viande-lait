@@ -35,6 +35,18 @@ l'ecraser**. `A_FAIRE.xlsx` est regenere a volonte par
 - [ ] `[V]` **Juger `A_VERIFIER_3.xlsx`** — 72 candidats jamais vus, sortis de
       la moisson elargie (977 chaines, 230 503 videos). Les 175 deja tranches
       ont ete ecartes automatiquement.
+- [ ] `[V]` **Sortir le projet de OneDrive ET retirer le `&` du nom.** Deux
+      problemes, un seul geste.
+      - OneDrive : un verrou de synchronisation a interrompu une moisson le
+        27/08 (JOURNAL 54). Le dossier n'a aucune raison d'etre synchronise.
+      - Le `&` : `cmd.exe` le lit comme un separateur de commandes. Il a fait
+        echouer la tache planifiee au premier essai (JOURNAL 65).
+      **Nouveau nom propose :** `C:\Users\Vincent\veille-filiere`
+      **Ordre des operations :** couper-coller le dossier, PUIS recreer la
+      tache planifiee — elle enregistre un chemin absolu et le renommage la
+      casse. La commande de recreation est dans JOURNAL 65.
+      **Ne pas le faire pendant qu'une moisson tourne.**
+
 - [ ] `[V]` **Meta : obtenir un jeton UTILISATEUR.** Le jeton d'application est
       refuse. Verification d'identite sur facebook.com/ID, puis Graph API
       Explorer en mode « User token » avec la permission `ads_read`.

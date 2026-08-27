@@ -135,8 +135,17 @@ def appel(endpoint, params, cle):
         return None, str(e)[:120]
 
 
-def chaines_confirmees():
-    """Les chaines ou Vincent a confirme au moins une collaboration remuneree."""
+def chaines_confirmees(inclure_preuves_fortes=False):
+    """Les chaines ou une collaboration est etablie.
+
+    Par defaut : celles ou Vincent a confirme une collaboration remuneree —
+    11 chaines, le noyau le plus sur.
+
+    Avec `inclure_preuves_fortes` : on y ajoute les chaines portant une preuve
+    forte non encore jugee — 36 en tout. Moins sur, mais c'est le bon reglage
+    pour un tour de nuit : la transcription ne coute que du temps, et une nuit
+    entiere sur 11 chaines serait du gachis.
+    """
     import openpyxl
     juges = {}
     for f in sorted(CARTO.glob("A_VERIFIER*.xlsx")):
@@ -156,10 +165,18 @@ def chaines_confirmees():
     fichiers = sorted(RECHERCHE.glob("moisson_videos_*.csv"))
     if not fichiers:
         return {}
+    fortes = set()
+    if inclure_preuves_fortes:
+        nettoyees = sorted(RECHERCHE.glob("detections_nettoyees_*.csv"))
+        if nettoyees:
+            with nettoyees[-1].open(encoding="utf-8") as fh:
+                fortes = {l["chaine"] for l in csv.DictReader(fh)
+                          if l.get("force", "").startswith("ALIAS")}
     out = {}
     with fichiers[-1].open(encoding="utf-8") as fh:
         for l in csv.DictReader(fh):
-            if juges.get((l["chaine"], l["titre"][:40])) == "collaboration remuneree":
+            confirmee = juges.get((l["chaine"], l["titre"][:40])) ==                 "collaboration remuneree"
+            if confirmee or l["chaine"] in fortes:
                 out[l["channel_id"]] = l["chaine"]
     return out
 
@@ -169,6 +186,9 @@ def main():
     ap.add_argument("--videos", type=int, default=250,
                     help="plafond de videos a transcrire ; c'est le temps qui")
     ap.add_argument("--par-chaine", type=int, default=100)
+    ap.add_argument("--preuves-fortes", action="store_true",
+                    help="elargir aux chaines a preuve forte non encore jugees ; "
+                         "reglage du tour de nuit")
     args = ap.parse_args()
 
     mt = charger("mesurer_transcriptions")
@@ -200,7 +220,7 @@ def main():
         print("YOUTUBE_API_KEY absente.", file=sys.stderr)
         return 1
 
-    cibles = chaines_confirmees()
+    cibles = chaines_confirmees(args.preuves_fortes)
     if not cibles:
         print("Aucune chaine confirmee — rien a faire.", file=sys.stderr)
         return 1
