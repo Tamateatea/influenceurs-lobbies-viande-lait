@@ -18,6 +18,29 @@ Il les trouve par deux voies, et **on ne sait pas encore ce que chacune vaut** :
 « A l'oeil » n'est pas une mesure. Ce classeur la produit : Vincent tranche,
 et on saura s'il faut garder la seconde voie, la durcir, ou l'abandonner.
 
+CE QUE LA SECONDE COLONNE DECIDE
+
+Une seconde question a ete ajoutee le 27/08 : **quel type de personne** ?
+
+Elle sert a une mesure qui n'a rien a voir avec la premiere. Le projet cherche
+a savoir quelle part des collaborations il voit — et le tirage aleatoire
+prescrit par METHODOLOGIE 9.2 s'est revele arithmetiquement impraticable : a
+0,023 % de prevalence, il faudrait faire juger 130 000 videos.
+
+La voie de rechange est la capture-recapture entre deux sources distinctes :
+l'appariement de descriptions (36 createurs) et les chaines des lobbies
+(42 createurs). **Elles n'ont qu'UN nom en commun.**
+
+Deux lectures possibles, et les donnees ne les separent pas :
+
+  1. la couverture du projet est mauvaise, chaque methode ne voyant qu'un coin ;
+  2. les deux sources ne tirent pas dans la meme population — auquel cas la
+     capture-recapture ne s'applique pas du tout.
+
+Si les 42 noms sont surtout des chefs et des eleveurs, c'est la lecture 2. Si
+ce sont des createurs de contenu comparables, c'est la lecture 1, et il faut
+le savoir.
+
 Un tri est deja fait en amont : les comptes des lobbies eux-memes et les
 medias sont ecartes avant d'arriver ici.
 
@@ -50,6 +73,18 @@ CHOIX = [
     "non, c'est un nom de serie ou de campagne",
     "non, c'est une marque ou un label",
     "non, c'est un media",
+    "je ne sais pas",
+]
+
+# Seconde question, ajoutee le 27/08. Elle tranche une ambiguite que rien
+# d'autre ne tranche : voir l'en-tete « CE QUE LA SECONDE COLONNE DECIDE ».
+CHOIX_TYPE = [
+    "createur de contenu (youtubeur, tiktokeur, instagrameur)",
+    "chef ou restaurateur",
+    "eleveur ou agriculteur",
+    "personnalite de television ou de radio",
+    "sportif",
+    "autre",
     "je ne sais pas",
 ]
 
@@ -101,8 +136,11 @@ def main():
         "",
         "CE QU'ON TE DEMANDE",
         "",
-        "Une seule question, colonne verte : est-ce un createur de contenu, ou "
-        "autre chose ?",
+        "Deux questions, colonnes vertes.",
+        "",
+        "  1. Est-ce un createur de contenu, ou autre chose ?",
+        "  2. Quel type de personne ? (createur, chef, eleveur, personnalite "
+        "TV...)",
         "Beaucoup de ces noms sont des titres de series (« Milk Check ») ou des "
         "labels (« Label Rouge »). L'outil ne sait pas les distinguer.",
         "",
@@ -112,6 +150,15 @@ def main():
         "« Comment on l'a trouve ».",
         "Tes reponses mesureront ce que chacune vaut. Si « motif dans le titre » "
         "ne donne que des series, on l'abandonne.",
+        "",
+        "La SECONDE question sert a tout autre chose : savoir quelle part des "
+        "collaborations le projet voit.",
+        "Nos deux methodes trouvent 36 et 42 createurs, et n'ont qu'UN nom en "
+        "commun. Soit on rate enormement, soit les deux methodes cherchent des "
+        "gens differents.",
+        "Si ces 42 noms sont surtout des chefs et des eleveurs, c'est la "
+        "seconde explication. S'ils ressemblent aux youtubeurs qu'on trouve "
+        "par ailleurs, c'est la premiere — et notre couverture est mauvaise.",
         "Les lignes sur fond gris viennent de cette voie-la, les blanches de "
         "l'autre.",
         "",
@@ -136,7 +183,8 @@ def main():
         ("N", 5), ("Nom trouve", 34), ("Commanditaire", 20),
         ("Comment on l'a trouve", 40), ("Videos", 8), ("Date", 11),
         ("Titre de la video", 52), ("Regarder", 13),
-        ("EST-CE UN CREATEUR ?", 34), ("Ton commentaire", 34),
+        ("EST-CE UN CREATEUR ?", 34), ("QUEL TYPE DE PERSONNE ?", 32),
+        ("Ton commentaire", 30),
     ]
     for j, (titre, largeur) in enumerate(colonnes, 1):
         c = ws.cell(row=depart, column=j, value=titre)
@@ -149,16 +197,19 @@ def main():
     dv = DataValidation(type="list", formula1='"' + ",".join(CHOIX) + '"',
                         allow_blank=True)
     ws.add_data_validation(dv)
+    dv2 = DataValidation(type="list", formula1='"' + ",".join(CHOIX_TYPE) + '"',
+                         allow_blank=True)
+    ws.add_data_validation(dv2)
 
     for i, (nom, d) in enumerate(lignes, 1):
         r = depart + i
         connu = d["via"].startswith("compte connu")
         valeurs = [i, nom, ", ".join(sorted(d["entites"])), d["via"], d["n"],
-                   d["date"], d["exemple"][:150], "", "", ""]
+                   d["date"], d["exemple"][:150], "", "", "", ""]
         for j, v in enumerate(valeurs, 1):
             c = ws.cell(row=r, column=j, value=v)
             c.alignment = Alignment(vertical="top", wrap_text=(j in (2, 4, 7)))
-            if j in (9, 10):
+            if j in (9, 10, 11):
                 c.fill = VERT
             elif not connu:
                 c.fill = GRIS
@@ -167,6 +218,7 @@ def main():
             lien.hyperlink = d["url"]
         lien.font = Font(color="1155CC", underline="single")
         dv.add(ws.cell(row=r, column=9))
+        dv2.add(ws.cell(row=r, column=10))
         ws.row_dimensions[r].height = 30
 
     ws.freeze_panes = ws.cell(row=depart + 1, column=1)

@@ -124,10 +124,14 @@ l'ecraser**. `A_FAIRE.xlsx` est regenere a volonte par
       en pratique, donc rien n'est casse — mais les deux sources se
       contredisent (JOURNAL 60).
 
-- [ ] `[?]` **Le tirage aleatoire** (METHODOLOGIE 9.2). Les 255 cas annotes
-      viennent tous d'un seul canal : ils ne disent rien de ce qu'on rate
-      entierement. C'est la seule facon de connaitre le vrai rappel — et la
-      seule mesure importante qui manque encore au projet.
+- [ ] `[?]` **Reecrire METHODOLOGIE 9.2 ?** La section prescrit un tirage
+      aleatoire de createurs, annotes exhaustivement. **MESURE du 27/08 : c'est
+      arithmetiquement impossible.** A 1,35 % de chaines portant une preuve
+      forte, il en faudrait annoter **739 a la main pour en obtenir dix**, et
+      2 217 pour trente. Une note d'avertissement a ete posee dans la section.
+      Recommandation : passer a la capture-recapture (section 9.3), pour
+      laquelle les chaines des lobbies fournissent enfin une seconde source
+      independante. **A trancher par Vincent** (JOURNAL 62).
       **Prealable : definir la population dans laquelle tirer.**
 - [ ] `[?]` **Qui publie le registre** : Vincent en nom propre, une association
       existante, une nouvelle structure ? Determine la posture juridique et

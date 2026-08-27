@@ -3710,3 +3710,113 @@ une decision d'architecture, elle revient a Vincent.
   cas ont ete trouves PAR l'appariement d'alias, donc A ne peut pas en manquer.
   Le vrai rappel, celui qui compte les collaborations que le projet ne voit pas
   du tout, demande un tirage aleatoire. Il n'a toujours pas ete fait.
+
+---
+
+## 62. Journal de methode — 27 aout 2026 : la mesure prescrite est impossible
+
+### 62.1 Ce que METHODOLOGIE 9.2 demande
+
+Toutes les mesures de rappel du projet sont des **plafonds**. Les cas juges
+par Vincent ont ete trouves par l'appariement de descriptions : une
+collaboration que ce canal ne voit pas n'a jamais eu de raison d'entrer dans
+le jeu de reference.
+
+METHODOLOGIE 9.2 prescrit donc un **tirage aleatoire de createurs**, annotes
+ensuite exhaustivement a la main, pour connaitre le rappel vrai. C'est inscrit
+au TODO depuis le debut, et jamais fait.
+
+### 62.2 D'abord, une erreur de lecture de ma part
+
+Mon premier calcul portait sur un tirage de **videos**. Or 9.2 prescrit un
+tirage de **createurs**, chacun annote ensuite exhaustivement. Je repondais a
+cote, et j'ai failli publier une critique d'une prescription que j'avais mal
+lue. Refait au bon niveau.
+
+### 62.3 MESURE — pourquoi ce n'etait pas de la paresse
+
+`outils/estimer_couverture.py`. Sur les **2 660 chaines** moissonnees :
+
+- **36 portent une preuve forte** — 1,35 %
+- **11 une collaboration confirmee** par Vincent — 0,41 %
+
+| Pour obtenir | Il faudrait annoter | Soit |
+|---|---:|---:|
+| 10 chaines a preuve forte | 739 chaines | **28 % du registre** |
+| 30 chaines a preuve forte | 2 217 chaines | **83 %** |
+| 10 chaines confirmees | 2 418 chaines | **91 %** |
+| 30 chaines confirmees | 7 255 chaines | plus que le registre entier |
+
+Et « annoter exhaustivement, par tous les moyens » veut dire parcourir tout le
+catalogue d'une chaine a la main. Sept cent trente-neuf fois.
+
+Ce n'est pas une difficulte d'organisation, c'est une impossibilite
+arithmetique. Une tache portee au TODO pendant quatre jours ne pouvait pas
+etre faite, et personne ne s'en etait avise parce que personne n'avait pose
+l'operation.
+
+C'est le meme raisonnement que la section 9 du reste : **a faible prevalence,
+l'intuition se trompe de plusieurs ordres de grandeur.** La section le disait
+des detecteurs ; elle vaut aussi de sa propre prescription.
+
+### 62.4 La voie de rechange, et ses limites
+
+La capture-recapture : si deux methodes trouvent chacune une partie de la
+population, la taille du recouvrement dit quelque chose de la taille totale.
+
+Une tentative anterieure avait echoue — SponsorBlock et description ne sont
+pas independants, ils lisent la meme page. **Les chaines des lobbies, elles,
+sont une source veritablement distincte** : c'est le commanditaire qui publie.
+
+MESURE :
+
+| Source | Createurs |
+|---|---:|
+| A — la description cite un alias | 36 |
+| B — un lobby le nomme dans ses propres videos | 42 |
+| **Recouvrement** | **1** (LeStream) |
+
+Estimateur de Chapman : 794 createurs, contre 77 trouves.
+
+### 62.5 Pourquoi ce 794 ne doit pas etre cite
+
+**Un recouvrement de 1 ne permet aucune estimation.** Faire passer le
+recouvrement de 1 a 2 ferait tomber l'estimation de 794 a 529. Le chiffre est
+arithmetiquement correct et statistiquement creux.
+
+Ce qui est solide, c'est le **sens** : deux methodes ont trouve 36 et 42
+createurs et n'en partagent qu'un seul. Elles ne voient presque pas les memes
+gens.
+
+Et la, deux lectures que les donnees ne separent pas :
+
+1. **La couverture est mauvaise.** Chaque methode n'attrape qu'un coin d'un
+   ensemble bien plus grand.
+2. **Les deux populations different.** Les chaines des lobbies mettent en
+   avant des chefs, des eleveurs, des personnalites de television ;
+   l'appariement de descriptions trouve des youtubeurs a sponsors. Si ce sont
+   deux mondes, la capture-recapture **ne s'applique pas** : elle exige que
+   les deux sources tirent dans la meme population.
+
+La lecture 1 sert le projet — elle justifie d'en faire plus. C'est
+precisement pour ca qu'il faut se retenir de la presenter seule.
+
+### 62.6 Ce qui trancherait, et qui est deja demande
+
+Savoir **quel type de personne** est chacun des 42 noms. Une colonne de plus
+dans `CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx`, ajoutee aujourd'hui, a cote de
+la question qui y etait deja.
+
+Si ces noms sont majoritairement des chefs et des eleveurs : lecture 2, et la
+capture-recapture est a abandonner. S'ils ressemblent aux createurs trouves
+par le canal description : lecture 1, et **la couverture du projet est
+mauvaise**, ce qu'il vaut mieux savoir.
+
+Une seule tache de vingt minutes debloque donc deux mesures independantes :
+la valeur de la voie « motif dans le titre », et la couverture du projet.
+
+### 62.7 Consequence pour METHODOLOGIE
+
+La section 9.2 prescrit une methode impraticable. Elle demande a etre revue —
+mais c'est une decision de methode, donc elle revient a Vincent. Une note y
+renvoie desormais a cette entree.

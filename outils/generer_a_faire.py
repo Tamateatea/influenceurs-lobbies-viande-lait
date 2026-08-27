@@ -50,10 +50,15 @@ TACHES = [
      "Trancher CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx",
      "cartographie/CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx",
      "20 min pour les 60 premieres lignes",
-     "218 noms tires des videos publiees par les lobbies EUX-MEMES. Une seule "
-     "question : createur, ou nom de serie ? Tes reponses mesureront la voie "
-     "« motif dans le titre », 176 noms dont on ignore ce qu'elle vaut. Si "
-     "elle ne donne que des series, on l'abandonne."),
+     "218 noms tires des videos publiees par les lobbies EUX-MEMES. DEUX "
+     "questions, et elles debloquent deux mesures independantes. (1) Createur "
+     "ou nom de serie ? — cela mesure la voie « motif dans le titre », 176 noms "
+     "dont on ignore ce qu'elle vaut. (2) Quel TYPE de personne ? — cela "
+     "tranche la question de la couverture du projet : nos deux methodes "
+     "trouvent 36 et 42 createurs et n'ont qu'UN nom en commun. Soit on rate "
+     "enormement, soit les deux methodes cherchent des gens differents. Si ces "
+     "noms sont surtout des chefs et des eleveurs, c'est la seconde "
+     "explication. Voir JOURNAL 62."),
 
     ("2",
      "Juger A_VERIFIER_3.xlsx",
@@ -146,6 +151,17 @@ DECISIONS = [
      "Aucun CNPO n'est retenu en pratique aujourd'hui, donc rien n'est casse, "
      "mais les deux sources ne disent pas la meme chose. Voir JOURNAL 60."),
 
+    ("METHODOLOGIE 9.2 prescrit une mesure impossible. La reecrire ?",
+     "Oui — remplacer le tirage aleatoire par la capture-recapture.",
+     "La section demande de tirer des createurs au hasard et de les annoter "
+     "exhaustivement, pour savoir ce que le projet rate. MESURE du 27/08 : "
+     "1,35 % des chaines portent une preuve forte, donc il faudrait en annoter "
+     "739 A LA MAIN pour en obtenir dix, soit 28 % du registre. Et 83 % pour en "
+     "obtenir trente. Ce n'est pas un manque de temps, c'est arithmetiquement "
+     "impossible. La voie de rechange existe deja en section 9.3 — et les "
+     "chaines des lobbies sont la seconde source independante qui manquait. "
+     "Voir JOURNAL 62."),
+
     ("Qui publie le registre, et sous quel nom ?",
      "Question ouverte, sans urgence technique.",
      "Elle devient urgente le jour ou le premier nom sort. Rien ne se publie "
@@ -166,6 +182,14 @@ FAIT_SANS_TOI = [
     ("Artefacts d'aplatissement", "MESURES ET CORRIGES",
      "10 % des candidats etaient des mots colles a leurs voisins — « viande, "
      "frites » declenchait @la_viande_fr. 244 retires, aucun vrai cas perdu."),
+    ("Le tirage aleatoire de METHODOLOGIE 9.2", "MESURE IMPOSSIBLE",
+     "Il faudrait annoter 739 chaines a la main pour en obtenir dix qui portent "
+     "une preuve. La prescription doit etre revue — c'est une decision de "
+     "methode, elle est dans l'onglet DECISIONS."),
+    ("Les six regles de detection", "REMESUREES",
+     "B, C, D et F font toutes 85 % de precision. B a le meilleur rappel et "
+     "n'a aucune liste ecrite a la main. Recommandation dans l'onglet "
+     "DECISIONS."),
     ("Moisson TikTok", "BLOQUEE JUSQU'A DEMAIN",
      "Quota journalier epuise a 5 mois sur 47. Reprend toute seule, les 42 "
      "mois restants ne sont pas marques faits."),
@@ -238,8 +262,9 @@ def main():
         "",
         "Ouvre CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx et juge les soixante "
         "premieres lignes.",
-        "C'est la seule tache dont depend une mesure qu'on ne peut pas faire "
-        "sans toi.",
+        "C'est la seule tache dont dependent DEUX mesures qu'on ne peut pas "
+        "faire sans toi : ce que vaut une de nos deux methodes de detection, "
+        "et quelle part des collaborations le projet voit.",
         "",
         "CE QUI A CHANGE AUJOURD'HUI",
         "",

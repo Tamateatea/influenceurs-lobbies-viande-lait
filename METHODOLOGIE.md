@@ -410,6 +410,19 @@ n'existe nulle part.
 
 ### 9.2 Le jeu de reference
 
+> **⚠ Cette prescription s'est revelee impraticable. Mesure du 27/08,
+> JOURNAL 62.** A 1,35 % de chaines portant une preuve forte, il faudrait en
+> annoter exhaustivement **739 pour en obtenir dix**, soit 28 % du registre —
+> et 83 % pour en obtenir trente. La section decrit la bonne methode ; elle ne
+> tient pas compte de la prevalence reelle.
+>
+> La voie de rechange est la capture-recapture de la section 9.3, avec les
+> chaines des lobbies comme seconde source — la seule veritablement
+> independante de l'appariement de descriptions.
+>
+> **Reecrire cette section est une decision de methode : elle revient a
+> Vincent.** Elle est portee au TODO.
+
 Premiere brique. Tirer un echantillon **aleatoire** de createurs dans une
 population definie, puis annoter a la main, exhaustivement, toutes leurs
 collaborations viande/lait sur une fenetre de temps fixee — en y passant le
@@ -632,6 +645,31 @@ seule.**
 
 ---
 
+## 14. L'outil re-derive, il ne fige jamais
+
+Pose par Vincent le 24 aout 2026, en reaction a un tableau decrivant le profil
+des comptes suivis par chaque lobby.
+
+Une observation du type « le CNIEL suit des createurs generalistes, INTERBEV
+suit des bouchers » est **une photographie datee**, pas une propriete du monde.
+L'industrie peut changer de strategie ; un outil bati sur cette photographie
+deviendrait aveugle sans prevenir, et sans que personne s'en apercoive.
+
+Consequences fermes :
+
+- **Aucun profil, aucune liste de createurs, aucune categorie n'est ecrite en
+  dur dans le code.** La liste de surveillance se **re-derive** a chaque
+  passage, depuis les sources.
+- Toute observation de ce genre porte sa date et son fichier, et vaut comme
+  aide a la priorisation du moment — jamais comme regle.
+- Ce qui est stable et donc codable : les **mecanismes** (une interprofession
+  communique via un compte vitrine, une collaboration laisse des traces
+  textuelles). Ce qui est instable et donc a re-mesurer : **qui**, **ou**,
+  **combien**.
+
+
+---
+
 ## 14bis. Cinq orientations posees par Vincent le 25 aout 2026
 
 Formulees pendant qu'il annotait les 271 candidats. Elles repondent toutes a
@@ -752,25 +790,3 @@ signalement public, qui attire le bruit et la mauvaise foi ; hebergement d'un
 service de reception ; publication sur les magasins d'extensions.
 
 ---
-
-## 14. L'outil re-derive, il ne fige jamais
-
-Pose par Vincent le 24 aout 2026, en reaction a un tableau decrivant le profil
-des comptes suivis par chaque lobby.
-
-Une observation du type « le CNIEL suit des createurs generalistes, INTERBEV
-suit des bouchers » est **une photographie datee**, pas une propriete du monde.
-L'industrie peut changer de strategie ; un outil bati sur cette photographie
-deviendrait aveugle sans prevenir, et sans que personne s'en apercoive.
-
-Consequences fermes :
-
-- **Aucun profil, aucune liste de createurs, aucune categorie n'est ecrite en
-  dur dans le code.** La liste de surveillance se **re-derive** a chaque
-  passage, depuis les sources.
-- Toute observation de ce genre porte sa date et son fichier, et vaut comme
-  aide a la priorisation du moment — jamais comme regle.
-- Ce qui est stable et donc codable : les **mecanismes** (une interprofession
-  communique via un compte vitrine, une collaboration laisse des traces
-  textuelles). Ce qui est instable et donc a re-mesurer : **qui**, **ou**,
-  **combien**.
