@@ -4003,3 +4003,61 @@ soumis a un jugement humain.
 3. **Ne pas conclure que la detection se degrade.** Elle ne se degrade pas ;
    c'est la composition du terrain qui change, les marques prenant la place
    des interprofessions dans les descriptions.
+
+---
+
+## 65. Journal de methode — 27 aout 2026 au soir : le « & » du nom de dossier
+
+### 65.1 Le tour de nuit, et pourquoi il a d'abord echoue
+
+Vincent voulait que la collecte tourne pendant la nuit. Un fichier
+`TOUR_DE_NUIT.bat` a ete ecrit, teste a la main, puis confie au planificateur
+de taches Windows.
+
+Code retour **2** — fichier introuvable. Alors que le fichier existait.
+
+En le lancant directement :
+
+```
+'C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat' is not recognized as an
+internal or external command
+```
+
+**Le chemin est coupe a `InfluencersxMeat`.** Le nom du dossier contient un
+`&`, et `cmd.exe` le lit comme un separateur de commandes. Aucun jeu de
+guillemets ne le sauve de maniere fiable.
+
+### 65.2 La correction
+
+La tache n'appelle plus de `.bat`. Elle appelle **`python.exe` directement**,
+avec le script en argument et le dossier du projet en repertoire de travail.
+PowerShell et le planificateur gerent le `&` sans probleme ; c'est `cmd` qui ne
+sait pas.
+
+Verifie de bout en bout : six etapes sur six, code retour 0, compte rendu ecrit
+dans `recherche/routine/`.
+
+Le `.bat` a ete supprime — le garder aurait invite quelqu'un a le relancer.
+
+### 65.3 Un argument de plus pour renommer le dossier
+
+Le `&` avait deja co-cause un plantage indirect : c'est aussi lui qui oblige a
+citer le chemin dans chaque commande shell. Il cassera encore.
+
+Le deplacement hors OneDrive est deja prevu — pour le verrou de
+synchronisation qui a interrompu une moisson le matin meme. **Autant en
+profiter pour retirer le `&` du nom.** Deux problemes, un seul geste.
+
+A faire APRES la tache planifiee, jamais avant : elle enregistre un chemin
+absolu, et le renommage la casserait.
+
+### 65.4 Une erreur d'interface a ne plus refaire
+
+Les instructions donnees a Vincent nommaient les boutons **en francais** —
+« Planificateur de taches », « Creer une tache ». **Son Windows est en
+anglais**, et il l'avait deja signale une fois.
+
+Deuxieme occurrence de la meme erreur. La regle : quand une procedure touche
+une interface, donner les libellés **dans la langue de l'interface**, pas dans
+celle de la conversation. Et quand c'est possible, ne pas faire cliquer du
+tout : ici, la tache a ete creee par commande, ce qui supprime la question.
