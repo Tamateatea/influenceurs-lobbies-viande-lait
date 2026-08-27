@@ -60,7 +60,19 @@ INTERPROFESSIONS = {"CNIEL", "INTERBEV", "INAPORC", "ANVOL", "CNPO", "CIFOG",
 
 # Termes hors perimetre viande/lait : gardes pour le groupe temoin, mais
 # jamais comptes comme detection de la filiere.
+# Ecrite ici comme filet de securite, mais la source de verite est le classeur :
+# `perimetre.py` lit les lignes annotees « HORS PERIMETRE » et l'union des deux
+# est utilisee. Sans cela, une entite ajoutee au classeur par Vincent resterait
+# invisible du code — c'etait deja le cas du CNPO, marque hors perimetre dans
+# `cartographie_filiere.xlsx` et absent de cette liste.
 HORS_PERIMETRE = {"Intercereales", "FNPSMS"}
+
+try:
+    from perimetre import entites_hors_perimetre
+    HORS_PERIMETRE = HORS_PERIMETRE | entites_hors_perimetre()
+except Exception as _e:          # classeur absent ou illisible : on garde le filet
+    print(f"  perimetre.py indisponible ({type(_e).__name__}), "
+          f"liste codee en dur utilisee", file=sys.stderr)
 
 # Alias trop courts pour etre apparies sur une forme aplatie.
 #
