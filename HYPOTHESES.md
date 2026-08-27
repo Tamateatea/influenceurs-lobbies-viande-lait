@@ -147,6 +147,20 @@ surveillee ?
 
 ---
 
+## Chaines YouTube des lobbies — ouverte le 27 aout
+
+La seule source ou **le commanditaire publie lui-meme** et nomme le createur.
+
+| ID | Hypothese | Statut | Preuve |
+|---|---|---|---|
+| CL-01 | Les interprofessions ont leurs propres chaines YouTube | **CONFIRMEE** | 6 chaines, 737 videos. JOURNAL 51.2 |
+| CL-02 | Leurs titres nomment les createurs invites | **CONFIRMEE** | 429 videos, 285 createurs distincts |
+| CL-03 | On y trouve des createurs a tres forte audience | **CONFIRMEE** | Norman 11,2 M, Inoxtag 9,47 M, Mister V 6,53 M |
+| CL-04 | Un createur ne travaille que pour une interprofession | **REFUTEE** | Norman apparait chez le CNIEL **et** INTERBEV |
+| CL-05 | Cette source etablit la remuneration | **REFUTEE par principe** | Elle etablit la collaboration ; l'invitation et le contrat ne se distinguent pas |
+
+---
+
 ## Sites des commanditaires — piste ouverte le 24 aout
 
 Les seuls resultats du projet qui soient des **declarations du commanditaire**

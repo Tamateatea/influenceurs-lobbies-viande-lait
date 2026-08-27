@@ -2816,3 +2816,89 @@ reprendre.
 Remede pratique, quel que soit le mecanisme : **laisser une tache de fond en
 cours avant de partir.** Sa fin declenche un reveil. Et desormais la routine
 planifiee rend la question secondaire.
+
+---
+
+## 51. Journal de methode — 27 aout 2026 : les chaines YouTube des lobbies
+
+### 51.1 Vincent trouve LAIT'FLIX
+
+En parcourant produits-laitiers.com, Vincent repere **LAIT'FLIX**, une serie de
+videos de divertissement du CNIEL, avec des playlists nommees :
+
+- « ON DEVIENT FERMIER 48H DANS LES MONTAGNES **Feat Inoxtag** »
+- « **Mister V** : les copains au lait »
+- « **Billy et Amine** decouvrent les specialites de nos regions »
+- « La ferme des celebrites », « La Carotte d'Avner », « Morgane decouvre les AOP »
+
+Sa reaction dit l'enjeu : « Certaines de ces series sont des videos que je
+connaissais et qui ont ete beaucoup vues, **et je ne savais pas qu'elles
+avaient ete financees par le lobby du lait**. »
+
+Il identifie au passage les chaines YouTube officielles des interprofessions,
+que le projet ignorait completement.
+
+### 51.2 Une source d'un autre statut
+
+Toutes les methodes precedentes partent du contenu d'un createur et
+**inferent** qu'un lobby l'a paye. Ici **c'est le lobby qui publie**. Un
+createur nomme dans le titre d'une video du CNIEL n'est pas une hypothese :
+c'est le commanditaire qui l'annonce.
+
+`outils/moissonner_chaines_lobbies.py`. MESURE — 20 unites de quota :
+
+| Chaine du lobby | Abonnes | Videos | Nommant un createur |
+|---|---:|---:|---:|
+| Produits Laitiers (CNIEL) | 101 000 | 132 | 98 |
+| Aimez la viande (INTERBEV) | 79 500 | 292 | 163 |
+| LE FOIE GRAS (CIFOG) | 788 | 197 | 101 |
+| Volaille Francaise (ANVOL) | 236 | 40 | 36 |
+| Naturellement Flexitariens | 379 | 39 | 14 |
+| INTERBEV Nouvelle-Aquitaine | 32 | 37 | 17 |
+
+**429 videos nomment un createur ; 285 createurs distincts.**
+
+### 51.3 Les createurs a forte audience
+
+| Createur | Abonnes | Videos | Commanditaire |
+|---|---:|---:|---|
+| **Norman** | **11 200 000** | 3 | **CNIEL + INTERBEV** |
+| **Inoxtag** | 9 470 000 | 1 | CNIEL |
+| **Mister V** | 6 530 000 | **8** | CNIEL |
+| L'EQUIPE | 2 040 000 | 2 | INTERBEV |
+| Doigby | 1 390 000 | 1 | CNIEL |
+| Kameto | 496 000 | 1 | CNIEL |
+| LeStream | 206 000 | 1 | INTERBEV |
+| Legend | 179 000 | 1 | CIFOG |
+| YassEncore | 129 000 | 1 | CNIEL |
+| MYRIAMANHATTAN | 128 000 | 4 | CNIEL |
+| Charlot | 78 000 | 3 | CNIEL |
+
+**Norman — le plus gros createur de nos donnees — apparait dans des videos du
+CNIEL ET d'INTERBEV.** Les huit videos de Mister V correspondent a la serie
+« les copains au lait » reperee par Vincent.
+
+### 51.4 Ce que cette source etablit, et ce qu'elle n'etablit pas
+
+**Elle etablit la collaboration** : le commanditaire publie la video et nomme
+le createur. Aucune inference.
+
+**Elle n'etablit pas la remuneration.** Apparaitre dans une video du CNIEL peut
+resulter d'un contrat, d'un partenariat de tournage, ou d'une invitation. C'est
+exactement le champ `degre de certitude` de METHODOLOGIE section 1 : « lien
+commercial documente », pas « remuneration confirmee ».
+
+**Et elle ne dit rien du contenu diffuse par le createur sur SA chaine.** Une
+video publiee par le CNIEL avec Mister V ne prouve pas que Mister V ait publie
+quelque chose de son cote. Les deux faits sont distincts et tous deux
+interessants.
+
+### 51.5 Pourquoi personne n'y avait pense
+
+Le projet cherchait les lobbies dans le contenu des createurs, et les
+createurs dans les sites des lobbies (JOURNAL 24). **Personne n'avait regarde
+les chaines YouTube des lobbies** — alors que c'est la source la plus directe
+et la moins chere : 20 unites de quota pour 429 videos exploitables.
+
+Elle a ete trouvee non par une idee de methode, mais parce que Vincent
+parcourait un site a la main.
