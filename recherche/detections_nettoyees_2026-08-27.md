@@ -12,12 +12,12 @@ Source : `moisson_videos_2026-08-27.csv`.
 
 ## Resultat
 
-- Detections lues : **21911**
-- **Preuves fortes (alias d'interprofession) : 247**
-- Preuves faibles (marque + indice) : 115
-- **Ecartees comme bruit : 5468**
+- Detections lues : **25394**
+- **Preuves fortes (alias d'interprofession) : 257**
+- Preuves faibles (marque + indice) : 128
+- **Ecartees comme bruit : 6743**
 
-Le bruit representait **25 %** des detections brutes.
+Le bruit representait **27 %** des detections brutes.
 
 ## PREUVES FORTES — par chaine, audience decroissante
 
@@ -269,11 +269,31 @@ Le bruit representait **25 %** des detections brutes.
 |---|---|---|---|
 | 2026-05-11 | **CNIEL** | le mensonge de la margarine 🧈 | https://www.youtube.com/watch?v=ex7rE0ojBYk |
 
+### Coopérative U — 11 800 abonnes — 2 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2026-02-20 | **CNIEL** | PRODUITS U | Origine France | Lait Français | Pas de | https://www.youtube.com/watch?v=4W12AjgIazY |
+| 2026-02-20 | **CNIEL** | PRODUITS U | Origine France | Lait Français | Les fi | https://www.youtube.com/watch?v=2vziaxV7HLM |
+
+### Claire Sauzel — 9 860 abonnes — 2 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2021-06-10 | **CNIEL** | une journée dans mon assiette! 🦋 RECETTES HEALTHY et | https://www.youtube.com/watch?v=7ln21GYN2cY |
+| 2021-06-04 | **CNIEL** | une journée dans mon assiette + RECETTES D'ETE HEALT | https://www.youtube.com/watch?v=f8mnSMox1qU |
+
 ### TasteFrance Magazine — 5 340 abonnes — 1 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2021-11-04 | **INTERBEV** | MEAT AND CHEESE LOVERS:  The Unexpected French Tour  | https://www.youtube.com/watch?v=C8-MxuimQ0M |
+
+### Margaux Lifestyle | Running  SOPK & Lipœdème — 4 570 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2025-10-26 | **CNIEL** | Mon petit déjeuner SOPK friendly : un chia porridge  | https://www.youtube.com/watch?v=xW9ydrJQxY4 |
 
 ### AgenceBio — 2 670 abonnes — 3 video(s)
 
@@ -288,6 +308,12 @@ Le bruit representait **25 %** des detections brutes.
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2022-03-11 | **CNIEL** | Weekly #VLOG n°1: PARIS FASHION WEEK, ÉVÈNEMENTS, UN | https://www.youtube.com/watch?v=WrXyCPlltGU |
+
+### My Boucherie — 1 350 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2024-06-13 | **INTERBEV** | Rumsteck persillé 😍 #legrascestlavie #jaimelaviande  | https://www.youtube.com/watch?v=3polHUuOSL0 |
 
 ### Marché de Rungis — 1 320 abonnes — 5 video(s)
 
@@ -324,6 +350,20 @@ Le bruit representait **25 %** des detections brutes.
 | 2021-01-15 | **INAPORC** | MADRANGE Les stars du quotidien 2021 - L'étudiante | https://www.youtube.com/watch?v=Q6JHmP7muUo |
 | 2021-01-15 | **INAPORC** | MADRANGE Mon jambon blanc Conservation sans nitrite | https://www.youtube.com/watch?v=71Ff2LmoqPI |
 | 2019-10-31 | **INAPORC** | Mes Knacks Madrange 2019 | https://www.youtube.com/watch?v=Nj7tWy8H8do |
+
+### Toscane Lucas — 168 abonnes — 3 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2025-06-10 | **INTERBEV** | Babe veut une côte de veau à la Milanaise 🥩🇮🇹🍝 Yesss | https://www.youtube.com/watch?v=rq_QTSbwJKw |
+| 2025-06-10 | **INTERBEV** | Babe veut une côte de veau à la Milanaise 🥩🇮🇹🍝 Yesss | https://www.youtube.com/watch?v=IzEh8cJsosU |
+| 2025-06-09 | **INTERBEV** | Babe veut des tacos 🌮🇲🇽🪅 Yessss chef ! @Andy Cooks   | https://www.youtube.com/watch?v=_cJJNStMU8A |
+
+### Oh! La vie Est belle — 38 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2023-02-02 | **CNIEL** | Crêpes sarrasin | https://www.youtube.com/watch?v=fn2gJagJtzk |
 
 ## PREUVES FAIBLES — marque citee avec un indice commercial
 

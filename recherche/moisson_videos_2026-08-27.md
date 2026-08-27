@@ -3,10 +3,10 @@
 Produit par `outils/exporter_moisson.py`, depuis le fichier de
 reprise. Aucun quota consomme : c'est une relecture.
 
-- Chaines moissonnees : **977**
-- Videos examinees : **230 503**
-- Videos portant un signal commercial : **21911**
-- **Videos citant la filiere viande/lait : 5830**
+- Chaines moissonnees : **2157**
+- Videos examinees : **306 630**
+- Videos portant un signal commercial : **25394**
+- **Videos citant la filiere viande/lait : 7128**
 
 Une citation n'est pas une collaboration : ces lignes passent par
 `nettoyer_detections.py` puis par une verification humaine.
@@ -18,6 +18,7 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | FabienOlicard | 2 330 000 | 391 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
 | Leblogdeneroli | 74 500 | 301 | ANVOL  CLIPP  Elivia (Terrena)  Gervais (Danone)  Marie (LDC)  Societe |
 | EnjoyPhoenix - Marie Lopez | 3 710 000 | 280 | Broceliande (Cooperl)  Marie (LDC)  Societe (Lactalis)  Veloute (Danon |
+| mariendn | 1 350 | 242 | Marie (LDC) |
 | Enzoetcharlotte | 33 400 | 228 | Societe (Lactalis) |
 | Maître CoQ | 5 080 | 183 | Intercereales  Maitre Coq (LDC)  Marie (LDC)  Soignon (Eurial / Agrial |
 | IÉSEG School of Management | 48 200 | 155 | Marie (LDC)  Societe (Lactalis) |
@@ -30,6 +31,7 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | Marie andMood | 16 600 | 87 | Marie (LDC)  President (Lactalis) |
 | LES AUDACES D' ÉLI | 28 300 | 76 | Herta (Nestle / Casa Tarradellas)  Lactel (Lactalis)  Soignon (Eurial  |
 | Aimez la viande | 79 500 | 75 | CNIEL  INTERBEV  La Laitiere (Lactalis (licence Nestle))  Marie (LDC)  |
+| Hey Basilou | 12 500 | 71 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
 | Studio Bagel | 3 860 000 | 70 | Intercereales  Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
 | Produits Laitiers | 101 000 | 69 | CNIEL  Candia (Sodiaal)  Intercereales  La Laitiere (Lactalis (licence |
 | Les Food'Cuisine | 63 900 | 69 | Boursin (Groupe Bel)  CIFOG  Intercereales  La Vache qui rit (Groupe B |
@@ -40,6 +42,7 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | 20 Minutes France | 237 000 | 51 | Lactel (Lactalis)  Marie (LDC)  President (Lactalis)  Societe (Lactali |
 | Hervé Cuisine | 1 600 000 | 51 | CNIEL  Danette (Danone)  FNPSMS  Intercereales  La Laitiere (Lactalis  |
 | Naptunix  | 13 500 | 49 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
+| Microsoft France | 6 390 | 49 | Bridel (Lactalis)  CLIPP  Fleury Michon (Fleury Michon)  La Laitiere ( |
 | Le Parisien | 2 100 000 | 47 | Lactel (Lactalis)  Marie (LDC)  President (Lactalis)  Societe (Lactali |
 | SQUEEZIE | 20 200 000 | 46 | Aoste (Groupe Aoste)  Marie (LDC)  President (Lactalis) |
 | Joladiete  | 34 800 | 46 | Marie (LDC)  Saint Moret (Savencia)  Salakis (Lactalis)  Soignon (Euri |
@@ -52,26 +55,23 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | Lefooding | 681 | 39 | CIFOG  Marie (LDC)  Tartare (Savencia) |
 | Emmanuel Macron | 399 000 | 38 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
 | Pluriel | 261 000 | 38 | Lactel (Lactalis)  Marie (LDC)  Societe (Lactalis) |
+| Alex & Laura ☀️ | 10 000 | 38 | Babybel (Groupe Bel)  CIFOG  Intercereales  La Laitiere (Lactalis (lic |
+| Activia France | 5 310 | 38 | Activia (Danone)  Intercereales |
 | David Guetta | 27 900 000 | 37 | ANVOL  Gervais (Danone)  Marie (LDC)  President (Lactalis) |
 | franceinfo | 1 000 000 | 37 | Charal (Bigard)  Gervais (Danone)  Lactel (Lactalis)  Marie (LDC)  Pre |
 | Cuisine actuelle | 37 000 | 37 | Boursin (Groupe Bel)  CIFOG  Gastronome (Terrena)  Intercereales  La V |
 | Demotivateur | 34 300 | 37 | Intercereales  La Laitiere (Lactalis (licence Nestle))  Lactel (Lactal |
 | LORIS GIULIANO | 1 920 000 | 36 | CNIEL  Soignon (Eurial / Agrial) |
 | ChesterFoodies | 66 600 | 36 | CIFOG  Danette (Danone)  Saint Moret (Savencia)  Soignon (Eurial / Agr |
+| Lune Robin | 3 470 | 36 | Le Gaulois (LDC)  Marie (LDC)  Societe (Lactalis) |
 | One Young World | 61 400 | 33 | Herta (Nestle / Casa Tarradellas)  Marie (LDC)  President (Lactalis) |
+| Fédération Française Handi | 3 670 | 32 | Aoste (Groupe Aoste)  Le Gaulois (LDC)  Marie (LDC)  President (Lactal |
+| IDRISS TDJ | 3 580 | 32 | President (Lactalis) |
 | Doctor JFK | 13 700 | 31 | CNIEL  Intercereales  La Laitiere (Lactalis (licence Nestle))  Lactel  |
+| Guillaumine Therond | 10 600 | 31 | Boursin (Groupe Bel)  CIFOG  Danette (Danone)  Marie (LDC)  Soignon (E |
 | BATZAIR | 3 930 000 | 30 | Gervais (Danone)  Marie (LDC)  Societe (Lactalis) |
 | EMMA FITNESSGOAL | 36 200 | 28 | CIFOG  Intercereales  Saint Moret (Savencia)  Soignon (Eurial / Agrial |
 | Marché de Rungis | 1 320 | 27 | CIFOG  CNIEL  Marie (LDC)  President (Lactalis)  Societe (Lactalis)  T |
 | Benoit Chevalier | 2 910 000 | 27 | CLIPP  Marie (LDC)  President (Lactalis) |
+| Marie Rach Anna | 9 140 | 27 | Marie (LDC) |
 | Encuisineaugustine | 33 300 | 26 | Intercereales  Le Gaulois (LDC)  Marie (LDC)  Soignon (Eurial / Agrial |
-| Le Paris d'Alexis | 71 100 | 25 | CIFOG  Elivia (Terrena)  Herta (Nestle / Casa Tarradellas)  INTERBEV   |
-| L'atelier de Roxane | 4 520 000 | 25 | Boursin (Groupe Bel)  Bridel (Lactalis)  Herta (Nestle / Casa Tarradel |
-| Eva | 1 670 000 | 25 | Herta (Nestle / Casa Tarradellas)  Marie (LDC)  Societe (Lactalis) |
-| Nestlé | 65 000 | 25 | President (Lactalis) |
-| Bonne Pitance | 349 000 | 23 | CIFOG  INTERBEV  Marie (LDC)  President (Lactalis)  Soignon (Eurial /  |
-| Whoogy ́s | 390 000 | 22 | Intercereales  Marie (LDC)  Soignon (Eurial / Agrial)  Tartare (Savenc |
-| Sirha Lyon | 3 980 | 22 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
-| Romain Lanéry | 1 060 000 | 22 | President (Lactalis)  Societe (Lactalis) |
-| Orange | 259 000 | 22 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
-| Faiza Cooking | 45 100 | 22 | Boursin (Groupe Bel)  Danette (Danone)  La Vache qui rit (Groupe Bel)  |

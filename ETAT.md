@@ -92,9 +92,15 @@ grande echelle. Voir JOURNAL 53 et 57.
 declare sur YouTube, identifie par la table d'alias.
 
 **La recherche retroactive fonctionne.** L'API rend 50 videos avec leurs
-descriptions pour 1 unite de quota. Au 27/08 : **plus de 1 800 chaines et
-300 000 videos** moissonnees. Le flux RSS, limite a 15 videos, n'est plus la
-contrainte.
+descriptions pour 1 unite de quota. Au 27/08 au soir : **2 157 chaines sur
+2 660 et 306 630 videos** moissonnees. Le flux RSS, limite a 15 videos, n'est
+plus la contrainte.
+
+> **Ou reprendre :** `python outils/moissonner_videos.py --budget 4000` reprend
+> tout seul a la 2 158e chaine — l'etat est dans `donnees/moisson_videos.json`.
+> Puis `exporter_moisson.py`, `nettoyer_detections.py`, et le classeur.
+> `exporter_moisson.py` peut tourner a tout moment, meme pendant la moisson :
+> il relit l'etat, sans reseau.
 
 **247 videos citent un alias d'interprofession** apres nettoyage. 175 sont
 deja tranchees ; les **72 nouvelles** attendent dans `A_VERIFIER_3.xlsx`.
