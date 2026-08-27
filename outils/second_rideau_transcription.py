@@ -60,6 +60,57 @@ from ecriture_sure import ecrire_sur
 from perimetre import entites_hors_perimetre
 
 
+def aplatir_avec_index(texte):
+    """Texte aplati, et la correspondance vers les positions d'origine.
+
+    `aplatir` supprime accents, espaces et ponctuation. Une position dans le
+    texte aplati ne designe donc PAS la meme chose dans le texte d'origine, et
+    l'ecart grandit a mesure qu'on avance. Couper l'extrait a la position
+    aplatie affiche un passage sans rapport — fait deux fois le 27/08, dont une
+    fois en presentant le resultat a Vincent.
+    """
+    import unicodedata
+    plat, index = [], []
+    for position, caractere in enumerate(texte):
+        c = unicodedata.normalize("NFKD", caractere)
+        c = "".join(x for x in c if not unicodedata.combining(x)).lower()
+        for lettre in c:
+            if lettre.isalnum():
+                plat.append(lettre)
+                index.append(position)
+    return "".join(plat), index
+
+
+def coupe_un_mot(texte, index, debut_plat, longueur):
+    """La correspondance s'arrete-t-elle au milieu d'un mot du texte d'origine ?
+
+    MESURE du 27/08 : « je te ramene du charbon et de **la viande frerot** »
+    a declenche l'alias `laviandefr` — l'aplatissement colle les mots, et
+    « la viande frerot » devient « laviandefrerot », qui contient « laviandefr ».
+
+    Le texte aplati a perdu les espaces, donc on ne peut pas y voir la coupure.
+    Mais l'index rend les positions d'origine : il suffit de regarder le
+    caractere qui suit immediatement la correspondance dans le texte VRAI. S'il
+    est alphanumerique, la correspondance mord sur le mot suivant, et c'est un
+    artefact.
+
+    Meme raisonnement en amont, pour un alias qui commencerait au milieu d'un
+    mot.
+    """
+    if debut_plat >= len(index):
+        return True
+    fin_plat = debut_plat + longueur - 1
+    if fin_plat >= len(index):
+        return True
+    apres = index[fin_plat] + 1
+    if apres < len(texte) and texte[apres].isalnum():
+        return True
+    avant = index[debut_plat] - 1
+    if avant >= 0 and texte[avant].isalnum():
+        return True
+    return False
+
+
 def charger(nom):
     spec = importlib.util.spec_from_file_location(
         nom, RACINE / "outils" / f"{nom}.py")
@@ -195,18 +246,31 @@ def main():
         texte = cache[t["video_id"]]
         if not texte:
             continue
-        plat = mt.aplatir(texte)
+        plat, index = aplatir_avec_index(texte)
         # On cherche la position de CHAQUE forme reconnue, pas de la premiere
         # de la table : l'erreur du 27/08 affichait un extrait sans rapport.
-        touches = [(plat.find(f), f, e) for f, (_a, e) in termes.items()
-                   if f in plat]
+        touches = []
+        for f, (_a, e) in termes.items():
+            depart = plat.find(f)
+            while depart >= 0:
+                if not coupe_un_mot(texte, index, depart, len(f)):
+                    touches.append((depart, f, e))
+                    break
+                depart = plat.find(f, depart + 1)
         if not touches:
             continue
         touches.sort()
-        i0 = touches[0][0]
+        i0, forme, _e = touches[0]
+        # La position est celle du texte APLATI. Le convertir avant de couper :
+        # l'aplatissement supprime des caracteres, donc les deux index divergent
+        # d'autant plus qu'on avance. Sans cette conversion, l'extrait affiche
+        # un passage sans rapport — l'erreur commise deux fois le 27/08.
+        reel = index[i0] if i0 < len(index) else 0
+        fin = index[min(i0 + len(forme), len(index) - 1)]
         entites = sorted({e for _i, _f, e in touches})
         trouves.append(dict(t, entites=" | ".join(entites),
-                            extrait=texte[max(0, i0 - 200):i0 + 300].strip()))
+                            forme_reconnue=forme,
+                            extrait=texte[max(0, reel - 220):fin + 260].strip()))
     ecrire_sur(CACHE, json.dumps(cache, ensure_ascii=False))
 
     avec = sum(1 for t in temoins if cache.get(t["video_id"]))
@@ -239,7 +303,7 @@ def main():
         for t in sorted(trouves, key=lambda x: x["chaine"]):
             md += [f"| {t['chaine'][:20]} | **{t['entites'][:26]}** | "
                    f"{t['publiee']} | {t['titre'][:34]} | "
-                   f"{t['extrait'][:200].replace('|', ' ')} |"]
+                   f"{t['extrait'][:260].replace('|', ' ')} |"]
     else:
         md += ["## Aucune", "",
                "Sur cet echantillon, l'oral ne cite jamais la filiere quand la",

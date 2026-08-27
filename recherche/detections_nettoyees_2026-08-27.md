@@ -12,10 +12,10 @@ Source : `moisson_videos_2026-08-27.csv`.
 
 ## Resultat
 
-- Detections lues : **25394**
+- Detections lues : **25411**
 - **Preuves fortes (alias d'interprofession) : 257**
 - Preuves faibles (marque + indice) : 128
-- **Ecartees comme bruit : 6743**
+- **Ecartees comme bruit : 6754**
 
 Le bruit representait **27 %** des detections brutes.
 

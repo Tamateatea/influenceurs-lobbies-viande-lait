@@ -3451,3 +3451,91 @@ Ce qui a change, c'est le nombre de createurs : **429 videos et 285 noms**
 annonces le matin deviennent **218 noms** apres correction, dont 42 seulement
 par la voie fiable. Et 176 des 218 restent a trancher — ce sont peut-etre des
 noms de series.
+
+---
+
+## 59. Journal de methode — 27 aout 2026 : le second rideau produit, et le catalogue est complet
+
+### 59.1 La moisson est terminee
+
+MESURE — **2 660 chaines sur 2 660. 307 191 videos examinees.** C'est la
+premiere fois que le catalogue complet du registre est passe en revue.
+
+25 411 videos portent un signal commercial, 7 139 citent la filiere, et apres
+nettoyage il reste **257 preuves fortes**, dont **82 jamais jugees** —
+`A_VERIFIER_3.xlsx`.
+
+La moisson a ete interrompue **cinq fois** dans la journee : une fois par une
+`OSError` sur l'ecriture (entree 54), quatre fois par l'environnement qui a tue
+les taches de fond. **Aucune n'a rien coute** : la reprise a chaque fois
+retrouve son point exact. C'etait le but de la correction du matin, verifie
+cinq fois plutot qu'une.
+
+Note pratique pour une session suivante : quand les taches de fond sont tuees,
+lancer au **premier plan par tranches** de moins de dix minutes fonctionne. Les
+503 dernieres chaines sont passees comme ca.
+
+### 59.2 Le second rideau
+
+Strategie decidee le matin meme (entree 53.4) : ne pas transcrire au hasard,
+transcrire les chaines ou une collaboration est **deja confirmee**.
+
+MESURE — 11 chaines, 260 videos **sans aucun signal en description**,
+232 transcriptions obtenues, 31 unites de quota. **5 videos citent la filiere.**
+
+Quatre concernent Inoxtag et le CNIEL :
+
+| Date | Ce qui est dit a l'oral | Lecture |
+|---|---|---|
+| 12/01/2024 | « parce que **j'etais en tournage pour les produits laitiers**, je suis alle faire du fromage » | **Aveu explicite d'un tournage commande.** |
+| 23/02/2025 | « demain je serai au salon de l'agriculture […] **je serai sur le stand des produits laitiers** » | Presence sur le stand du commanditaire. |
+| 20/05/2023 | « **Adrien des Produits Laitiers** » — au salon | Relation de travail nommee. |
+| 13/01/2024 | « produits laitiers **sont nos amis pour la vie** » | Le slogan du CNIEL, cite dans du bavardage. Ambigu : blague ou placement. |
+
+Et un faux positif : **Michou**, « vous lui avez offert un beau petit **foie
+gras** » — un cadeau de pot de depart, le CIFOG n'a rien a y voir.
+
+**Aucune de ces cinq videos n'a le moindre signal dans sa description.** Le
+tournage du 12/01/2024 en particulier : rien, nulle part, sauf a l'oral.
+
+### 59.3 Ce que ca etablit
+
+La strategie du second rideau fonctionne, et le rendement le justifie : 4 liens
+reels pour 232 transcriptions, sur des videos que **rien d'autre ne voyait**.
+
+Elle confirme aussi ce que la phrase « comme d'habitude » laissait entendre
+(entree 53.3) : **la relation Inoxtag x CNIEL est suivie, pas ponctuelle** —
+2023, 2024 et 2025, avec un tournage, un stand et un salon.
+
+Reserve, qui vaut pour tout ce paragraphe : une mention orale n'etablit pas la
+remuneration. « J'etais en tournage pour les produits laitiers » est ce qui
+s'en approche le plus — on ne tourne pas gratuitement pour une interprofession
+— mais le degre reste **lien commercial documente**, pas plus.
+
+### 59.4 Deux defauts corriges en chemin
+
+**L'extrait pointait encore au mauvais endroit.** Troisieme fois dans la
+journee. La cause est toujours la meme : `aplatir` supprime accents, espaces et
+ponctuation, donc une position dans le texte aplati ne designe pas la meme
+chose dans le texte d'origine, et l'ecart grandit a mesure qu'on avance.
+
+`aplatir_avec_index` rend desormais les deux, et la conversion est faite avant
+de couper. C'est la meme fonction que celle ajoutee a `moissonner_videos.py` le
+matin — elle aurait du etre partagee des le debut.
+
+**Une correspondance a cheval sur un mot.** « je te ramene du charbon et de
+**la viande frerot** » aplati devient « laviandefrerot », qui contient l'alias
+`laviandefr`. INTERBEV se retrouvait credite d'une partie de Minecraft.
+
+Le texte aplati a perdu les espaces, donc la coupure n'y est pas visible. Mais
+l'index rend les positions d'origine : il suffit de regarder le caractere qui
+suit la correspondance **dans le texte vrai**. S'il est alphanumerique, la
+correspondance mord sur le mot suivant.
+
+MESURE — le garde-fou retire exactement ce cas et aucun autre : 6 detections
+deviennent 5.
+
+C'est la troisieme fois que l'aplatissement fabrique un faux positif — apres
+« noclippant » qui contenait « clipp » et « Clip para » devenu « clippara »
+(entree 45). **La regle des huit caracteres ne suffit pas** : `laviandefr` en
+fait dix. C'est la frontiere de mot qui manquait.

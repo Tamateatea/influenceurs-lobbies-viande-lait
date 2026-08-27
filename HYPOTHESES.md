@@ -70,6 +70,9 @@ gratuits et sans authentification.
 | YT-45 | La case de declaration designe le commanditaire | **REFUTEE** | Elle dit qu'un partenariat paye existe, pas par qui. Seule la conjonction avec l'alias designe l'entite. JOURNAL 57.3 |
 | YT-46 | La regle D generalise a une entite jamais vue | **REFUTEE, mais a l'envers** | Retirer les termes d'INAPORC fait passer precision ET rappel de 0 a 100 %. La liste des generiques, ecrite en regardant le CNIEL, retire du signal ailleurs. JOURNAL 56.4 |
 | YT-47 | Le jeu de reference est contamine par la troncature a 900 caracteres | **REFUTEE** | 42 % des detections ont leur alias au-dela de la coupure, mais le taux de vrais y est de 61 % contre 33 % ailleurs : Vincent est alle voir les videos, l'avertissement du classeur a fonctionne. JOURNAL 57.4 |
+| YT-48 | La transcription en second rideau trouve ce que rien d'autre ne voit | **CONFIRMEE** | 232 transcriptions de videos sans signal en description, 4 liens reels. Dont « j'etais en tournage pour les produits laitiers ». JOURNAL 59.2 |
+| YT-49 | La relation Inoxtag x CNIEL est ponctuelle | **REFUTEE** | Traces orales en 2023, 2024 et 2025 : un tournage, un stand au salon, une personne du CNIEL nommee. JOURNAL 59.3 |
+| YT-50 | La regle des huit caracteres suffit contre les artefacts d'aplatissement | **REFUTEE** | « la viande frerot » aplati contient `laviandefr`, dix caracteres. Il faut verifier la frontiere de mot dans le texte d'origine. JOURNAL 59.4 |
 | YT-12 | Le segment SponsorBlock correspond a l'annonceur cite en description | **REFUTEE** | Trois annonceurs distincts dans une meme video. JOURNAL 20.2 |
 | YT-13 | Un motif regulier sur la transcription suffit a identifier un annonceur | **REFUTEE** | Faux positif sur une blague. JOURNAL 20.4 |
 | YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **CONFIRMEE, avec reserve** | 42 videos contre 18. Mais « remerciement » melange sponsors et amis. JOURNAL 21.5 |
