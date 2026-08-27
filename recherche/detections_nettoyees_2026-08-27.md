@@ -1,7 +1,7 @@
 # Detections nettoyees — 2026-08-27
 
 Produit par `outils/nettoyer_detections.py`, sans aucun appel reseau.
-Source : `moisson_videos_2026-08-26.csv`.
+Source : `moisson_videos_2026-08-27.csv`.
 
 ## Regle appliquee
 
@@ -12,12 +12,12 @@ Source : `moisson_videos_2026-08-26.csv`.
 
 ## Resultat
 
-- Detections lues : **13635**
-- **Preuves fortes (alias d'interprofession) : 175**
-- Preuves faibles (marque + indice) : 84
-- **Ecartees comme bruit : 3023**
+- Detections lues : **21911**
+- **Preuves fortes (alias d'interprofession) : 247**
+- Preuves faibles (marque + indice) : 115
+- **Ecartees comme bruit : 5468**
 
-Le bruit representait **22 %** des detections brutes.
+Le bruit representait **25 %** des detections brutes.
 
 ## PREUVES FORTES — par chaine, audience decroissante
 
@@ -49,6 +49,12 @@ Le bruit representait **22 %** des detections brutes.
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2022-11-25 | **CNIEL** | 1 An à Boire Que du Lait : ÇA FAIT QUOI ?! | https://www.youtube.com/watch?v=a6OL2yeJQHs |
+
+### Pierre Croce — 3 790 000 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2021-10-11 | **CNIEL** | Le premier qui monte les plus hauts escaliers du mon | https://www.youtube.com/watch?v=NhFqiEtt1jY |
 
 ### Valouzz — 3 280 000 abonnes — 1 video(s)
 
@@ -88,6 +94,13 @@ Le bruit representait **22 %** des detections brutes.
 | 2023-01-02 | **CNIEL** | Danielle piégée pendant 6 mois (feat Joyca, Jimmy La | https://www.youtube.com/watch?v=mLZEJLHeJYI |
 | 2020-03-06 | **CNIEL** | ELLE A FINI LA JOURNÉE EN TITUBANT | https://www.youtube.com/watch?v=Z62qEUXOuh4 |
 | 2019-10-09 | **CNIEL** | DANIELLE VS 60 VACHES | https://www.youtube.com/watch?v=XSxogxQcAik |
+
+### Hervé Cuisine — 1 600 000 abonnes — 2 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2025-09-19 | **CNIEL** | La meilleure tarte au citron sans œufs ni lait 🍋 Bie | https://www.youtube.com/watch?v=JXptlEqWYkQ |
+| 2025-03-31 | **CNIEL** | Le flan pâtissier vanille et caramel facile et inrat | https://www.youtube.com/watch?v=J98c6pMVdrc |
 
 ### Juste Zoé — 1 560 000 abonnes — 1 video(s)
 
@@ -176,6 +189,37 @@ Le bruit representait **22 %** des detections brutes.
 | 2020-09-08 | **CNIEL** | Milk Check : Consommer les produits laitiers après l | https://www.youtube.com/watch?v=V8jvr6gfhyI |
 | … | | 50 autres dans le CSV | |
 
+### PumbaTheLion — 82 700 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2025-03-16 | **INTERBEV** | Peut-on aimer les animaux et manger de la viande ? | https://www.youtube.com/watch?v=iB2fJRt14Z8 |
+
+### Aimez la viande — 79 500 abonnes — 60 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2026-07-24 | **INTERBEV** | Bien manger pour bien bouger - LIVE Voiron | https://www.youtube.com/watch?v=7JSeiwKMWoI |
+| 2026-07-17 | **INTERBEV** | Bien manger pour bien bouger - LIVE Bordeaux | https://www.youtube.com/watch?v=G5CY_0TgnnY |
+| 2026-03-10 | **INTERBEV** | Aimez la viande Mangez-en mieux | https://www.youtube.com/watch?v=fO8OxFAV2uE |
+| 2022-12-08 | **INTERBEV** | Les Rencontres MADE in VIANDE – les professionnels d | https://www.youtube.com/watch?v=H-c1pNtsdcI |
+| 2022-12-08 | **INTERBEV** | Les Rencontres MADE in VIANDE – les professionnels d | https://www.youtube.com/watch?v=Df_hqyS4OIo |
+| 2021-06-03 | **INTERBEV** | MIV 2021 - Dominique, chef en restauration scolaire | https://www.youtube.com/watch?v=tdP184q-KrE |
+| 2021-06-03 | **INTERBEV** | MIV 2021 - Thomas, boucher | https://www.youtube.com/watch?v=fRINpFrPrIk |
+| 2021-06-03 | **INTERBEV** | MIV 2021 - M. Lemière, directeur d'un atelier de déc | https://www.youtube.com/watch?v=W2_R98ZVEVs |
+| 2021-06-03 | **INTERBEV** | MIV 2021 - Alexandre, commerçant en bestiaux | https://www.youtube.com/watch?v=irLE3ROb2so |
+| 2021-06-03 | **INTERBEV** | MIV 2021 - Laure, éleveuse d'ovins | https://www.youtube.com/watch?v=yp9Bs8eqF4c |
+| 2021-06-03 | **INTERBEV** | MIV 2021 - Élise et sa famille, éleveurs de bovins | https://www.youtube.com/watch?v=UMA9mo09mIc |
+| 2017-09-26 | **INTERBEV** | Rencontres #MADEinVIANDE 2017 | https://www.youtube.com/watch?v=hiXSzQ2aGSQ |
+| … | | 48 autres dans le CSV | |
+
+### Sosa Ingredients — 72 400 abonnes — 2 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2021-02-24 | **CNIEL** | ¿Cómo elaborar cremas congelables y estables en frío | https://www.youtube.com/watch?v=dPl6pAsRzG8 |
+| 2020-03-20 | **CNIEL** | La Révolution des Mousses: Revue + Évolution des Mou | https://www.youtube.com/watch?v=tB5O_kmEyoQ |
+
 ### Le Paris d'Alexis — 71 100 abonnes — 2 video(s)
 
 | Date | Entite | Titre | URL |
@@ -183,11 +227,47 @@ Le bruit representait **22 %** des detections brutes.
 | 2026-07-19 | **INTERBEV** | Ce smash burger dont tout le monde parle !! | https://www.youtube.com/watch?v=iJQ9UNilkP0 |
 | 2026-05-18 | **CIFOG** | Ce resto est une institution parisienne | https://www.youtube.com/watch?v=aBBNlxBAVMc |
 
+### Elise Gilmor 🌞 — 36 300 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2024-11-10 | **CNIEL** | MON RÉÉQUILIBRAGE ANTI-INFLAMMATOIRE  - THYROIDE - É | https://www.youtube.com/watch?v=PYFQQkBQ1Ik |
+
 ### Cuisinons En Couleurs — 33 100 abonnes — 1 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2025-06-16 | **ANVOL** | Shawarma maison, la recette facile | https://www.youtube.com/watch?v=frp-4gQv5WU |
+
+### Le Chat Toqué — 32 900 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2025-01-29 | **CNIEL** | Les Crêpes SANS GLUTEN, SANS SUCRE, ET SANS PRODUITS | https://www.youtube.com/watch?v=GH8IA1b2ZZI |
+
+### Anne Dubndidu — 32 000 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2019-03-27 | **ANVOL** | L'île de la Réunion, entre montagne et océan 🌴 | https://www.youtube.com/watch?v=A4lD-ZyqC14 |
+
+### Viande Suisse — 21 300 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2024-11-04 | **CNIEL** | C'est l'élevage de chèvres en Valais | https://www.youtube.com/watch?v=_gSwuTmLLqU |
+
+### Yuka — 16 700 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2025-12-17 | **CNIEL** | #BalanceTonAdditif - Phosphates partout, santé nulle | https://www.youtube.com/watch?v=f1nF-kQn8_E |
+
+### Doctor JFK — 13 700 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2026-05-11 | **CNIEL** | le mensonge de la margarine 🧈 | https://www.youtube.com/watch?v=ex7rE0ojBYk |
 
 ### TasteFrance Magazine — 5 340 abonnes — 1 video(s)
 
@@ -249,6 +329,7 @@ Le bruit representait **22 %** des detections brutes.
 
 | Chaine | Abonnes | Marque | Titre | URL |
 |---|---:|---|---|---|
+| Amixem | 9 500 000 | President (Lactalis) | ON VIT 24H COMME DES PRÉSIDENTS | https://www.youtube.com/watch?v=rKRAkNc4OKw |
 | Inoxtag | 9 470 000 | Gervais (Danone) | Marie (LDC) | Qui Perdra son Job ?! (ft. Byilhan  Nico | https://www.youtube.com/watch?v=ig-_3_-9wu4 |
 | Mcfly et Carlito | 7 660 000 | Gervais (Danone) | Marie (LDC) | P | MÉLI-MÉLO 4 (tout simplement) | https://www.youtube.com/watch?v=LvPzscrOVdc |
 | MichouOff | 5 550 000 | Le Gaulois (LDC) | Marie (LDC) | J’AI ORGANISÉ UNE FÊTE GÉANTE POUR VOIR  | https://www.youtube.com/watch?v=Ip3pBfl2ipM |
@@ -261,6 +342,7 @@ Le bruit representait **22 %** des detections brutes.
 | Poisson Fécond | 3 840 000 | President (Lactalis) | Societe (La | Les 3 Pires Hôpitaux du Monde ! | https://www.youtube.com/watch?v=Dnk7xlrhnLg |
 | Poisson Fécond | 3 840 000 | President (Lactalis) | Ce Jour où l'Amérique Fut Traumatisée ! | https://www.youtube.com/watch?v=2XLzuKD4JVM |
 | Poisson Fécond | 3 840 000 | President (Lactalis) | Le Président le Plus Perché de l'Histoir | https://www.youtube.com/watch?v=O7-SutrhyvI |
+| Pierre Croce | 3 790 000 | President (Lactalis) | On a acheté un journal de chaque année d | https://www.youtube.com/watch?v=3cjKd62dwy8 |
 | EnjoyPhoenix - Marie | 3 710 000 | Broceliande (Cooperl) | Marie (LDC | J'enquête dans le manoir le plus hanté d | https://www.youtube.com/watch?v=hLjeqSWRHJU |
 | Sananas | 3 010 000 | Maitre Coq (LDC) | LES FAVORIS D' OCTOBRE ! Trop de trucs à | https://www.youtube.com/watch?v=whcgWZ42MEw |
 | Nota Bene | 2 770 000 | President (Lactalis) | Les présidents des USA et le Groenland # | https://www.youtube.com/watch?v=Pxzv6sTD52k |
@@ -277,6 +359,8 @@ Le bruit representait **22 %** des detections brutes.
 | FabienOlicard | 2 330 000 | President (Lactalis) | Societe (La | Peut-on décrypter le président E. Macron | https://www.youtube.com/watch?v=cG4irtSXfZ8 |
 | Studio Danielle | 1 740 000 | President (Lactalis) | UNE NUIT DANS LA SUITE LA PLUS CHÈRE DE  | https://www.youtube.com/watch?v=R4t8kq3zK60 |
 | Studio Danielle | 1 740 000 | La Laitiere (Lactalis (licence Nes | NE SURTOUT PAS RIGOLER | https://www.youtube.com/watch?v=R0RYmOZUx-8 |
+| Aypierre | 1 450 000 | President (Lactalis) | Un débat présidentiel explosif - QSMP #3 | https://www.youtube.com/watch?v=t7xSV0bXL9c |
+| Aypierre | 1 450 000 | President (Lactalis) | L'enveloppe des présidentielles - QSMP # | https://www.youtube.com/watch?v=RGQjjjea0UY |
 | Tristan | 1 280 000 | President (Lactalis) | J'ai Crée Un Disque d'Or GÉANT Pour McFl | https://www.youtube.com/watch?v=np0anSNmHfQ |
 | Léonard | 1 280 000 | President (Lactalis) | J'affronte 3 Expériences Extrêmes (se fa | https://www.youtube.com/watch?v=cW04250Msx4 |
 | AVRE (Explore Media) | 1 260 000 | President (Lactalis) | Un ex-garde du corps analyse des films | | https://www.youtube.com/watch?v=y6vj6kga9lE |
@@ -305,8 +389,4 @@ Le bruit representait **22 %** des detections brutes.
 | FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | Un BURGER en AVOCAT à AMSTERDAM - VLOG # | https://www.youtube.com/watch?v=gkGHr0CWPU0 |
 | FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | Une enseigne FAST FOOD de WOK à AMSTERD | https://www.youtube.com/watch?v=zqnXB7lFh8E |
 | FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | AMSTERDAM : Des DISTRIBUTEURS de NOURRIT | https://www.youtube.com/watch?v=LXeEctS_ypc |
-| Bruno Maltor | 708 000 | Entremont (Sodiaal) | Ce pays incroyable que les Français évit | https://www.youtube.com/watch?v=H1Ge2vcYWIE |
-| Pêcheur De Trésors | 677 000 | President (Lactalis) | On trouve un énorme coffre fort en pêche | https://www.youtube.com/watch?v=6d8o6GlC1wQ |
-| Ben Névert | 618 000 | President (Lactalis) | ENTRE MECS - HYPERSENSIBILITÉ - ARGENT ( | https://www.youtube.com/watch?v=VJc1HcDfckc |
-| Iconoclaste | 591 000 | President (Lactalis) | La Face Sombre de Habbo Hotel (crimes  v | https://www.youtube.com/watch?v=6nxg4OssocU |
 

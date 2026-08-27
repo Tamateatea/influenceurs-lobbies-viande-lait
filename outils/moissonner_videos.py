@@ -51,6 +51,9 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ecriture_sure import ecrire_sur
+
 RACINE = Path(__file__).resolve().parent.parent
 SECRETS = RACINE / "SECRETS.txt"
 RECHERCHE = RACINE / "recherche"
@@ -268,11 +271,11 @@ def main():
         marque = f"  <-- {touchees_ici} video(s) citant la filiere" if touchees_ici else ""
         print(f"  {i:>3d}/{len(chaines)} {nom[:26]:28s} {n_chaine:>5d} videos "
               f"| quota {depense:>5d}{marque}", file=sys.stderr)
-        ETAT.write_text(json.dumps(etat, ensure_ascii=False), encoding="utf-8")
+        ecrire_sur(ETAT, json.dumps(etat, ensure_ascii=False))
         if arret:
             break
 
-    ETAT.write_text(json.dumps(etat, ensure_ascii=False), encoding="utf-8")
+    ecrire_sur(ETAT, json.dumps(etat, ensure_ascii=False))
 
     # --- sorties ---
     aujourdhui = date.today().isoformat()

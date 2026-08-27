@@ -116,14 +116,42 @@ def extrait(description, alias_reconnus):
 
 
 def deja_juges():
-    """Ce que Vincent a deja tranche : on ne le lui redemande pas."""
-    if not DEJA.exists():
-        return set()
+    """Ce que Vincent a deja tranche : on ne le lui redemande pas.
+
+    Parcourt TOUS les classeurs de verification, pas seulement le premier.
+    Corrige le 27/08 : la version precedente ne lisait que `A_VERIFIER.xlsx`
+    et aurait redemande les 33 cas tranches dans `A_VERIFIER_2.xlsx`.
+
+    La colonne du verdict est reperee par son EN-TETE, jamais par son rang :
+    les deux classeurs ne l'ont pas au meme endroit (colonne 8 dans le premier,
+    9 dans le second, qui a gagne une colonne « Retenu par la regle D »).
+    """
     import openpyxl
-    wb = openpyxl.load_workbook(DEJA, data_only=True)
-    out = {(str(r[1]), str(r[5])[:40])
-           for r in wb["a verifier"].iter_rows(min_row=2, values_only=True) if r[8]}
-    wb.close()
+    out = set()
+    for f in sorted((RACINE / "cartographie").glob("A_VERIFIER*.xlsx")):
+        try:
+            wb = openpyxl.load_workbook(f, data_only=True)
+            ws = wb["a verifier"]
+        except Exception as e:
+            print(f"  {f.name} illisible ({type(e).__name__}) — ignore",
+                  file=sys.stderr)
+            continue
+        entetes = [str(c.value or "") for c in ws[1]]
+        try:
+            col = next(i for i, h in enumerate(entetes)
+                       if "VERDICT" in h.upper())
+        except StopIteration:
+            print(f"  {f.name} : pas de colonne de verdict — ignore",
+                  file=sys.stderr)
+            wb.close()
+            continue
+        n = 0
+        for r in ws.iter_rows(min_row=2, values_only=True):
+            if col < len(r) and r[col]:
+                out.add((str(r[1]), str(r[5])[:40]))
+                n += 1
+        print(f"  {f.name} : {n} cas deja tranches", file=sys.stderr)
+        wb.close()
     return out
 
 
