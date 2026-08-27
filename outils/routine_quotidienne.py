@@ -64,6 +64,16 @@ ETAPES = [
      "second_rideau_transcription.py", ["--videos", "400", "--par-chaine", "80", "--preuves-fortes"],
      False),
 
+    # Sans quota non plus : la case de declaration ne vit que dans la page
+    # publique. 175 des 240 preuves fortes sont lues ; la nuit finit le reste.
+    ("Case de declaration — lecture des pages publiques",
+     "mesurer_declaration.py", ["--max", "400", "--pause", "2.0"], False),
+
+    # Idem pour les createurs nommes dans les annonces Meta : relecture des
+    # CSV deja moissonnes, aucun appel reseau.
+    ("Createurs nommes dans les annonces payees",
+     "createurs_dans_annonces.py", [], False),
+
     ("Export de la moisson depuis le fichier de reprise",
      "exporter_moisson.py", [], False),
 

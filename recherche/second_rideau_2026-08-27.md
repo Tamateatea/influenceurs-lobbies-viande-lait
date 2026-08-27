@@ -7,10 +7,10 @@ ou une collaboration est deja confirmee. Ce que trouve la
 transcription ici, rien d'autre ne le voyait.
 
 - Chaines examinees : **36**
-- Videos temoins : **3**
-- Transcriptions obtenues : **3**
+- Videos temoins : **0**
+- Transcriptions obtenues : **0**
 - **Videos citant la filiere : 0**
-- Quota depense : 41 unites
+- Quota depense : 36 unites
 
 **Une mention orale n'etablit pas la remuneration.** Degre de
 certitude au plus « lien commercial documente ». Et le faux positif
