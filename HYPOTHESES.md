@@ -59,6 +59,9 @@ gratuits et sans authentification.
 | YT-09 | Les sous-titres sont telechargeables par requete HTTP simple | **REFUTEE** | HTTP 200, corps vide. **Ne pas reessayer ainsi.** JOURNAL 17.3 |
 | YT-10 | Les sous-titres sont accessibles via yt-dlp | **CONFIRMEE** | 37 733 caracteres. JOURNAL 20.1 |
 | YT-11 | La table d'alias fonctionne aussi sur le contenu parle | **CONFIRMEE** | 1 cas. JOURNAL 20.3 |
+| YT-37 | La transcription est redondante avec la description | **REFUTEE** | 1 video sur 37 sans signal en description porte une mention orale. Inoxtag 2.0 : « comme d'habitude les produits laitiers qui nous accompagnent partout ». JOURNAL 53.3 |
+| YT-38 | La transcription est plus precise que la description | **CONFIRMEE** | 81 % contre 78 % sur le jeu de reference. JOURNAL 53.1 |
+| YT-39 | La transcription est applicable a grande echelle | **REFUTEE** | Plusieurs secondes par video : hors de portee sur 2 600 chaines. A employer en second rideau, sur les chaines deja identifiees. JOURNAL 53.4 |
 | YT-12 | Le segment SponsorBlock correspond a l'annonceur cite en description | **REFUTEE** | Trois annonceurs distincts dans une meme video. JOURNAL 20.2 |
 | YT-13 | Un motif regulier sur la transcription suffit a identifier un annonceur | **REFUTEE** | Faux positif sur une blague. JOURNAL 20.4 |
 | YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **CONFIRMEE, avec reserve** | 42 videos contre 18. Mais « remerciement » melange sponsors et amis. JOURNAL 21.5 |

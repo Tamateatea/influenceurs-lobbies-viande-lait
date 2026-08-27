@@ -2972,3 +2972,88 @@ fortes par chaine que les semences corporate.
 
 Depuis le 24 aout, la population de surveillance est passee de 27 chaines
 YouTube nommees a la main a **2 620 derivees des sources**.
+
+---
+
+## 53. Journal de methode — 27 aout 2026 : la transcription voit ce que la description tait
+
+### 53.1 Une premiere mesure qui ne pouvait pas repondre
+
+`outils/mesurer_transcriptions.py`, sur les 175 videos jugees par Vincent :
+
+| Signal | Retenus | Vrais | Precision | Rappel |
+|---|---:|---:|---:|---:|
+| Transcription | 37 | 30 | **81 %** | 49 % |
+| Description | 78 | 61 | 78 % | 100 % |
+
+Vraies collaborations vues par la transcription **seule : zero**.
+
+**Ce zero ne prouve rien**, et la limite avait ete inscrite avant la mesure :
+l'echantillon est fait de videos trouvees PAR la description. Une
+collaboration annoncee uniquement a l'oral n'avait aucune chance d'y figurer.
+Le protocole mesurait une tautologie.
+
+Ce qui reste informatif : la transcription est **plus precise** que la
+description, 81 % contre 78 %.
+
+### 53.2 L'experience correcte
+
+`outils/experience_transcription.py`. On prend des videos **sans aucun signal
+en description**, sur six chaines dont une collaboration filiere est etablie —
+Inoxtag, Inoxtag 2.0, Michou, Mister V, Valouzz, Norman.
+
+MESURE — 40 videos temoins, 37 transcriptions obtenues, 12 unites de quota.
+
+**Une video sur 37 contient une mention de la filiere que la description ne
+porte pas.**
+
+### 53.3 Le cas
+
+**Inoxtag 2.0**, 3 140 000 abonnes, « On a dormi au sommet d'une montagne ! ».
+Description : aucun signal. Transcription automatique, verbatim :
+
+> « ... comme d'habitude **les produits laitiers qui nous accompagnent
+> partout**, ca fait plaisir. **Tomme de Savoie**, mon fromage prefere, on
+> change pas des bonnes habitudes, on va gouter le potentiel de ce fromage... »
+
+Deux choses en une phrase :
+
+1. **« comme d'habitude »** — le createur signale une relation **suivie**, pas
+   une operation isolee.
+2. **« Tomme de Savoie »** — precisement le produit de la collaboration
+   Inoxtag x Cniel documentee par la presse, et que le projet cherchait depuis
+   le 24 aout sans la retrouver (JOURNAL 16.5 : le flux RSS ne remontait pas
+   assez loin).
+
+**Aucun autre signal du projet ne voyait cette video.** Ni la description, ni
+la case de declaration, ni SponsorBlock.
+
+### 53.4 Ce que ca decide
+
+**La transcription n'est pas redondante.** Elle atteint un registre que rien
+d'autre n'atteint : la mention orale, non declaree, non ecrite.
+
+Et c'est le cas le plus interessant pour le plaidoyer — une collaboration que
+le createur mentionne en passant, sans mention legale, sur une chaine de trois
+millions d'abonnes.
+
+Cout : plusieurs secondes par video, sans quota d'API. Sur 2 600 chaines et
+500 videos chacune, c'est hors de portee. **La bonne strategie est donc de
+l'appliquer en second rideau** : sur les chaines dont une collaboration est
+deja etablie, pour trouver les autres videos de la meme relation.
+
+Le cas ci-dessus l'illustre : c'est parce qu'Inoxtag etait deja identifie
+qu'on a regarde ses autres videos, et qu'on a trouve « comme d'habitude ».
+
+### 53.5 Reserves
+
+- **Une video sur 37 n'est pas une frequence.** Les chaines ont ete choisies
+  la ou il y avait le plus de chances de trouver. Un tirage aleatoire donnerait
+  un tout autre chiffre, probablement bien plus bas.
+- **La mention orale n'etablit pas la remuneration.** « Qui nous accompagnent »
+  est ambigu : partenariat, dotation en produits, ou simple habitude.
+  `degre de certitude` : lien commercial documente.
+- **Mon extrait etait faux au premier affichage** : le script montrait le
+  passage du premier terme de la table, pas celui qui avait declenche. Verifie
+  a la main avant d'ecrire cette entree — sans quoi j'aurais rapporte un
+  resultat en citant un texte sans rapport.

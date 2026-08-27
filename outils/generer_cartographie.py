@@ -245,6 +245,37 @@ FEUILLES["Alias"] = {
          "Le sigle CNIEL n'apparait jamais dans les contenus."],
         ["Les produits laitiers, nos amis pour la vie", "slogan", "CNIEL", "CONFIRME", ""],
         ["Des sensations pures", "slogan", "CNIEL", "CONFIRME", ""],
+        ["LAITFLIX", "nom de serie", "CNIEL", "CONFIRME",
+         "Serie de videos de divertissement du CNIEL, hebergee sur "
+         "produits-laitiers.com. Playlists nommant des createurs : « ON DEVIENT "
+         "FERMIER 48H DANS LES MONTAGNES Feat Inoxtag », « Mister V : les copains "
+         "au lait », « Billy et Amine decouvrent les specialites de nos regions », "
+         "« La ferme des celebrites ». Trouvee par Vincent le 27/08/2026."],
+        ["Les copains au lait", "nom de serie", "CNIEL", "CONFIRME",
+         "Serie LAIT'FLIX avec Mister V (6,53 M d'abonnes). Huit videos reperees "
+         "sur la chaine YouTube du CNIEL."],
+        ["L'Amour Boeuf", "nom de serie", "INTERBEV", "CONFIRME",
+         "Serie de videos sur la filiere, hebergee sur la-viande.fr. Compte "
+         "@lamourboeuf deja repere dans les abonnements d'INTERBEV."],
+        ["@foiegrasfrancais", "compte vitrine", "CIFOG", "CONFIRME",
+         "Instagram, 20 900 abonnes. Trouve par Vincent le 27/08. **Doit "
+         "remplacer l'alias « Le Foie Gras »**, qui designe l'aliment et a "
+         "produit 91 candidats pour zero vrai (JOURNAL 38.2)."],
+        ["Produits Laitiers", "chaine YouTube", "CNIEL", "CONFIRME",
+         "Chaine officielle du CNIEL, 101 000 abonnes, 132 videos. "
+         "UCOkKpH6tIRaNKPsNB7a3r3w"],
+        ["Aimez la viande", "chaine YouTube", "INTERBEV", "CONFIRME",
+         "Chaine officielle d'INTERBEV, 79 500 abonnes, 292 videos. "
+         "UCGVLdT9d5MIDrqiiMDht-jg"],
+        ["@volaillefrancaise8086", "chaine YouTube", "ANVOL", "CONFIRME",
+         "Chaine officielle d'ANVOL, 236 abonnes, 40 videos. Lien avec "
+         "FlorianOnAir signale par Vincent."],
+        ["@LeFoieGrasFrance", "chaine YouTube", "CIFOG", "CONFIRME",
+         "Chaine officielle du CIFOG, 788 abonnes, 197 videos."],
+        ["INTERBEV Nouvelle-Aquitaine", "chaine YouTube regionale", "INTERBEV",
+         "CONFIRME",
+         "Une des structures regionales. D'autres existent : Occitanie, Grand "
+         "Est, Pays de la Loire — leurs comptes restent a relever."],
         ["Made in Viande", "nom d'operation", "INTERBEV", "CONFIRME",
          "Portes ouvertes annuelles de la filiere elevage et viande. Nommee "
          "dans les descriptions de FlorianOnAir (734 k abonnes), jugees "

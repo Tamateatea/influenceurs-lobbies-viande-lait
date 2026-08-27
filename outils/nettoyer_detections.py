@@ -96,6 +96,39 @@ def alias_fiable(alias):
     return len(a) >= LONGUEUR_MINIMALE
 
 
+# Comptes qui ne sont pas des createurs au sens du projet.
+#
+# METHODOLOGIE section 8 definit l'influenceur comme « une personne, pas un
+# compte de marque ni un media ». Ces comptes etaient pourtant entres dans la
+# liste de surveillance par les croisements automatiques : une vitrine de lobby
+# suit Le Monde ou Wimbledon comme n'importe quel compte institutionnel.
+#
+# Ils produisent un bruit massif parce qu'ils parlent legitimement de viande et
+# de lait : Le Monde a rendu 92 detections, Le Parisien 52, sur un seul
+# passage. Ce ne sont pas des faux positifs de l'appariement — ce sont des
+# comptes hors perimetre.
+#
+# Le tri reste imparfait : un media peut aussi etre remunere par un lobby, et
+# ce serait un fait interessant. Mais ce n'est pas la meme enquete, et la
+# melanger a celle des createurs noierait les deux.
+MEDIAS = {
+    "le monde", "le parisien", "le figaro", "liberation", "franceinfo",
+    "france 24", "bfmtv", "cnews", "lci", "tf1", "m6", "canal+", "arte",
+    "konbini", "brut", "vice", "l'equipe", "lequipe", "20 minutes",
+    "ouest-france", "sud ouest", "la depeche", "huffpost", "slate",
+    "national geographic", "wimbledon", "olympic games", "olympics",
+    "minecraft", "amazon prime video france", "netflix france", "disney+",
+    "prime video france", "youtube", "spotify", "deezer",
+}
+
+
+def est_media(nom):
+    """Le compte est-il un media ou une plateforme, plutot qu'un createur ?"""
+    n = unicodedata.normalize("NFKD", str(nom or "").lower())
+    n = "".join(c for c in n if not unicodedata.combining(c)).strip()
+    return n in MEDIAS
+
+
 def aplatir(t):
     t = unicodedata.normalize("NFKD", str(t or ""))
     t = "".join(c for c in t if not unicodedata.combining(c)).lower()
@@ -145,6 +178,10 @@ def main():
         if not entites:
             continue
         a_un_indice = bool(l.get("indices", "").strip())
+
+        if est_media(l.get("chaine", "")):
+            ecartees.append(l)
+            continue
 
         # on ne garde que les alias assez specifiques pour etre fiables
         alias_ok = [a for a in l.get("alias_reconnus", "").split(" | ")
