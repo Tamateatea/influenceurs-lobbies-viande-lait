@@ -51,6 +51,7 @@ HAUT = Alignment(vertical="top", wrap_text=True)
 VERDICTS = [
     "collaboration remuneree",
     "mention sans collaboration",
+    "auto-promotion",
     "hors sujet",
     "je ne sais pas",
 ]
