@@ -49,6 +49,24 @@ DEPOT = RACINE / "donnees" / "comptes_vitrines"
 SORTIE = RACINE / "recherche"
 
 PSEUDO = re.compile(r"^[a-z0-9._]{1,30}$")
+
+# A quelle entite appartient chaque compte vitrine. Sans cette table, les
+# comptes releves arrivent sans commanditaire et le registre ne sait pas qui
+# suit qui — defaut constate le 27/08 apres le premier releve de marques.
+ENTITES = {
+    "lesproduitslaitiers": "CNIEL", "laitflix": "CNIEL",
+    "enmodeactif": "CNIEL (campagne En Mode Actif, cofinancee UE)",
+    "la_viande_fr": "INTERBEV", "lamourboeuf": "INTERBEV",
+    "naturellementflexitariens": "INTERBEV (campagne)",
+    "leporcfrancais": "INAPORC", "volaillefrancaise": "ANVOL",
+    "ouefsdefrance": "CNPO", "foiegrasfrancais": "CIFOG",
+    "lifeatdanone": "Danone", "nestleenfrance": "Nestle France",
+    "savencia_groupe": "Savencia", "fleurymichon": "Fleury Michon",
+    "herta_france": "Herta (Nestle)", "legaulois_officiel": "LDC",
+    "charal_officiel": "Bigard", "charal_france": "Bigard",
+    "lescereales": "Intercereales (HORS PERIMETRE)",
+    "cetepimepate": "FNPSMS (HORS PERIMETRE)",
+}
 DELIMITEUR = re.compile(r"From\s*<https://www\.instagram\.com/([^/>]+)/?>")
 
 # Un compte source qui se suit lui-meme n'apprend rien.
@@ -132,7 +150,8 @@ def main():
                 encoding="utf-8")
         for p, n in comptes.items():
             tout.append({"plateforme": "instagram", "compte_vitrine": compte,
-                         "entite_vitrine": "", "compte_suivi": p,
+                         "entite_vitrine": ENTITES.get(compte.lower(), ""),
+                         "compte_suivi": p,
                          "nom_affiche": n, "releve_le": aujourdhui})
         resume.append((compte, n_lignes, len(comptes), noms, len(autres)))
 

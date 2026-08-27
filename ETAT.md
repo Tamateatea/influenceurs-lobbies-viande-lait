@@ -4,7 +4,7 @@
 toute action.** Il est fait pour ca. Il est mis a jour a la fin de chaque
 session de travail.
 
-Derniere mise a jour : **24 aout 2026, fin de la 2e session** (nuit).
+Derniere mise a jour : **27 aout 2026, matin**.
 
 ---
 
@@ -179,7 +179,18 @@ fichier `.md`.
 
 ## 6. Prochaine session — a faire en premier
 
-**Etat du registre au 24/08 au soir :** `cartographie/COMPTES.xlsx` —
+**La source la plus directe du projet, trouvee le 27/08 :** les
+interprofessions ont **leurs propres chaines YouTube**, ou elles publient des
+videos nommant les createurs invites. 429 videos, 285 createurs — dont
+**Norman** (11,2 M, CNIEL *et* INTERBEV), **Inoxtag** (9,47 M) et **Mister V**
+(6,53 M, huit videos). Ici le commanditaire annonce lui-meme la collaboration :
+plus aucune inference. Voir JOURNAL 51.
+
+**Etat du registre au 27/08 : 6 875 comptes** — 2 620 YouTube, 2 187 TikTok,
+2 039 Instagram. 39 % avec audience connue. La population de surveillance est
+passee de 27 chaines nommees a la main a 2 620 derivees des sources.
+
+**Ancien etat au 24/08 au soir :** `cartographie/COMPTES.xlsx` —
 **766 comptes** (552 Instagram, 185 YouTube, 29 indetermines), dont 26 % avec
 audience connue. La liste de surveillance YouTube est passee de 27 chaines
 nommees a la main a **185 derivees des sources**.

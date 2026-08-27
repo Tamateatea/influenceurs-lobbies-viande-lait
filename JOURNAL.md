@@ -2902,3 +2902,73 @@ et la moins chere : 20 unites de quota pour 429 videos exploitables.
 
 Elle a ete trouvee non par une idee de methode, mais parce que Vincent
 parcourait un site a la main.
+
+---
+
+## 52. Journal de methode — 27 aout 2026 : 488 chaines de plus, et une distinction a mesurer
+
+### 52.1 Le croisement
+
+Les 2 027 comptes Instagram releves par Vincent, essayes un par un contre
+YouTube. MESURE : **488 chaines trouvees**, 1 489 unites de quota, 0 erreur.
+
+Un defaut corrige au passage : l'extracteur de listes brutes n'attribuait
+**aucune entite** aux comptes releves. Le registre savait qu'un compte etait
+suivi, sans savoir par qui. Une table `ENTITES` relie desormais chaque compte
+vitrine a son commanditaire, et les 1 677 lignes deja produites ont ete
+completees.
+
+### 52.2 Chaines YouTube derivees, par commanditaire
+
+| Commanditaire | Chaines |
+|---|---:|
+| CNIEL | 66 |
+| INTERBEV — campagne Naturellement Flexitariens | 62 |
+| Bigard / Charal | 59 |
+| Danone | 56 |
+| INTERBEV | 53 |
+| LDC | 50 |
+| Nestle France, Savencia | 44 |
+| Fleury Michon | 38 |
+| INAPORC | 35 |
+| **CNIEL — campagne En Mode Actif** | 33 |
+| ANVOL | 15 |
+
+### 52.3 Une distinction visible, a confirmer par la mesure
+
+`SUPPOSE`, non encore mesure : **les comptes de campagne et les comptes
+corporate ne se valent pas comme semence.**
+
+Ce que montrent les abonnements des campagnes :
+
+- **@enmodeactif** (CNIEL) suit Pierre Croce (3,79 M), FabienOlicard (2,33 M),
+  Herve Cuisine (1,6 M) — des createurs francais generalistes.
+- **@naturellementflexitariens** (INTERBEV) suit FastGoodCuisine (8,77 M),
+  Juju Fitcats (3,18 M), Herve Cuisine.
+
+Ce que montrent les comptes corporate :
+
+- **Danone** suit Olympic Games (16,6 M), Wimbledon (2,64 M), Konbini.
+- **Nestle France** suit Minecraft (22,5 M), Amazon Prime Video, CANAL+.
+- **Bigard** suit Zach Choi (33,7 M, americain), Tasty (21,2 M, americain),
+  Guga Foods (americain).
+
+Les premiers ressemblent a des listes de partenaires ; les seconds a des
+abonnements d'interet general et de sponsoring sportif international.
+
+**Mais ce n'est qu'une impression de lecture.** La mesure qui tranchera est
+celle deja utilisee le 26/08 : combien de preuves fortes par chaine derivee,
+semence par semence. Elle demande d'avoir moissonne ces 488 chaines, ce qui
+coutera environ 4 500 unites de quota.
+
+Prediction posee **avant** la mesure, pour qu'elle soit refutable : les
+semences de campagne devraient produire au moins deux fois plus de preuves
+fortes par chaine que les semences corporate.
+
+### 52.4 Etat du registre
+
+`cartographie/COMPTES.xlsx` : **6 875 comptes** — 2 620 YouTube, 2 187 TikTok,
+2 039 Instagram, 29 indetermines. **39 % avec audience connue.**
+
+Depuis le 24 aout, la population de surveillance est passee de 27 chaines
+YouTube nommees a la main a **2 620 derivees des sources**.
