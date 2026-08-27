@@ -3900,3 +3900,106 @@ second rideau a multiplie le bruit par onze.
 
 Les deux ont ete rattrapees parce qu'il y avait un chiffre a regarder avant de
 conclure. Sans mesure, les deux seraient passees pour du menage.
+
+---
+
+## 64. Journal de methode — 27 aout 2026 : ce que coute une veille continue, et ou est le gisement
+
+### 64.1 La question que la reformulation du but rend centrale
+
+Vincent, le 27/08 : ce qu'on livre est **un outil de veille continue**, pas un
+jeu de donnees. Le jeu de donnees sert a savoir si l'outil marche.
+
+Cela deplace le chiffre decisif. Ce n'est plus « quelle precision sur le
+corpus », c'est **« combien de candidats faut-il verifier a la main chaque
+semaine pour que la veille tourne »**. Ce chiffre n'avait jamais ete calcule.
+
+### 64.2 MESURE — la cadence
+
+Sur les 240 preuves fortes, par annee de publication :
+
+    2011 : 19    2019 : 35    2023 : 14
+    2014 : 29    2020 : 22    2024 :  7
+    2016 : 13    2021 : 38    2025 : 10
+    2018 :  5    2022 : 16    2026 :  8
+
+**12 preuves fortes sur les douze derniers mois.** Environ une par mois.
+
+Premiere lecture, alarmante : la detection ne marcherait plus sur le contenu
+recent.
+
+### 64.3 Le controle qui refute cette lecture
+
+La moisson couvre-t-elle le recent ? Sur les 25 411 videos a signal commercial :
+
+    2023 :  2 484  ( 9,8 %)
+    2024 :  3 939  (15,5 %)
+    2025 :  5 510  (21,7 %)
+    2026 :  5 346  (21,0 %)
+
+**43 % du corpus est de 2025-2026.** Le recent est massivement represente —
+normal, `playlistItems` rend les videos les plus recentes d'abord.
+
+Et la part de videos citant la filiere est **stable** : 25,6 % en 2019, 33,1 %
+en 2021, 30,9 % en 2026. Le phenomene ne decline pas.
+
+### 64.4 Ou passent les citations recentes
+
+Decomposition des citations de filiere, interprofession contre marque :
+
+| Annee | Interprofession | Marque | Part interpro |
+|---|---:|---:|---:|
+| 2019 | 42 | 305 | 12,1 % |
+| 2021 | 61 | 487 | 11,1 % |
+| 2023 | 51 | 706 | 6,7 % |
+| 2025 | 100 | 1 138 | 8,1 % |
+| **2026** | **60** | **1 635** | **3,5 %** |
+
+Les citations d'interprofession sont **stables en valeur absolue**. Ce sont les
+citations de **marques** qui explosent — multipliees par cinq depuis 2019.
+
+Et le sort des 60 citations d'interprofession de 2026 :
+
+    33  hors perimetre  (Intercereales, CNPO, FNPSMS — le groupe temoin)
+    21  RETENUES
+     4  artefact d'aplatissement
+     1  chaine media
+     1  alias trop court
+
+**Plus de la moitie du signal « interprofession » recent est le groupe
+temoin cerealier.** Le signal viande/lait reel de 2026 est de 21 videos.
+
+### 64.5 Ce que ca etablit
+
+**Bonne nouvelle pour la faisabilite.** Le cout de verification d'une veille
+continue est de l'ordre de **une a deux videos par mois** sur le canal
+interprofession. C'est tenable indefiniment par une personne. La crainte
+implicite — « Vincent va devoir valider des centaines de cas par semaine » —
+est levee par la mesure.
+
+**Mauvaise nouvelle pour la couverture.** Une a deux par mois, c'est aussi
+tres peu pour un registre de plaidoyer. Sur ce seul canal, le site publierait
+une quinzaine de cas par an.
+
+**Et le gisement est ailleurs.** 1 635 citations de marques en 2026 contre 60
+d'interprofession. Le canal « marque » est vingt-sept fois plus volumineux, et
+il est aujourd'hui traite en seconde classe : une marque ne produit une
+« preuve faible » que si un indice commercial l'accompagne, et ces preuves
+faibles ne sont jamais montrees a Vincent.
+
+C'est la ou il faut chercher, et c'est la que la mesure manque : **on ignore
+la precision du canal marque**, parce qu'aucun de ses candidats n'a jamais ete
+soumis a un jugement humain.
+
+### 64.6 Ce qui en decoule, a trancher
+
+1. **Constituer un jeu de reference pour le canal marque.** Meme protocole que
+   pour les interprofessions : un classeur, des verdicts, une precision
+   mesuree. Sans ca, on ne sait pas si ces 1 635 citations valent quelque
+   chose.
+2. **Sortir le groupe temoin des comptages.** Intercereales represente plus de
+   la moitie du signal interprofession recent et fausse toute lecture de
+   tendance. Il est deja ecarte des candidats, mais pas des statistiques.
+3. **Ne pas conclure que la detection se degrade.** Elle ne se degrade pas ;
+   c'est la composition du terrain qui change, les marques prenant la place
+   des interprofessions dans les descriptions.
