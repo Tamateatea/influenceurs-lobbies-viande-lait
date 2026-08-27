@@ -2860,6 +2860,13 @@ c'est le commanditaire qui l'annonce.
 
 ### 51.3 Les createurs a forte audience
 
+> **⚠ CE TABLEAU EST FAUX. Corrige le 27/08 — voir l'entree 58.**
+> Il a ete produit par un rapprochement defectueux qui attribuait un titre au
+> premier compte revendiquant une forme de six caracteres. « Norman » etait
+> « e-Boucherie **norman**de » ; Inoxtag et Doigby ne resistent pas a la
+> correction. **Mister V, lui, est confirme.** Le tableau est conserve tel
+> quel : le journal enregistre ce qui a ete cru, pas seulement ce qui est vrai.
+
 | Createur | Abonnes | Videos | Commanditaire |
 |---|---:|---:|---|
 | **Norman** | **11 200 000** | 3 | **CNIEL + INTERBEV** |
@@ -2877,6 +2884,9 @@ c'est le commanditaire qui l'annonce.
 **Norman — le plus gros createur de nos donnees — apparait dans des videos du
 CNIEL ET d'INTERBEV.** Les huit videos de Mister V correspondent a la serie
 « les copains au lait » reperee par Vincent.
+
+> **Faux pour Norman** (voir 58) : la reconnaissance portait sur
+> « e-Boucherie normande ». La phrase sur Mister V, elle, tient.
 
 ### 51.4 Ce que cette source etablit, et ce qu'elle n'etablit pas
 
@@ -3367,3 +3377,77 @@ ancienne doit laisser la case vide plutot que faire echouer l'export.
 Les 22 000 detections deja moissonnees gardent l'avertissement : leur texte
 complet n'a pas ete conserve, et le re-moissonner couterait un quota qu'on a
 mieux a faire de depenser.
+
+---
+
+## 58. Journal de methode — 27 aout 2026 : ce que le defaut avait deja fait croire
+
+### 58.1 Pourquoi cette entree existe
+
+L'entree 55 decrit le defaut de rapprochement de
+`moissonner_chaines_lobbies.py` : six caracteres suffisaient a declencher, et
+l'identifiant rendu etait celui du **premier compte** ayant revendique la
+forme.
+
+Corriger le code ne suffit pas. Ce defaut avait deja produit des affirmations,
+et ces affirmations avaient deja ete ecrites dans les documents que lisent les
+sessions suivantes. Il fallait aller les chercher.
+
+### 58.2 MESURE — ce qui survit a la correction
+
+En relancant l'outil corrige et en cherchant les noms mis en avant :
+
+| Nom annonce le 27/08 au matin | Apres correction |
+|---|---|
+| **Norman**, 11,2 M, CNIEL + INTERBEV | **N'EXISTE PAS.** La reconnaissance portait sur « e-Boucherie **norman**de », une boucherie citee dans une video INTERBEV sur des eleveurs du Label Rouge. |
+| **Inoxtag**, 9,47 M, CNIEL | **Absent.** |
+| Squeezie | **Absent.** |
+| Michou | **Absent.** |
+| **Mister V**, 6,53 M, CNIEL, 8 videos | **CONFIRME.** « PETIT CAFE BRIOCHE 2 AVEC MISTER V, AMINE, CEDRIC DOUMBE... », publie par le CNIEL. |
+
+Deux des trois noms mis en avant etaient des artefacts. Le troisieme tient.
+
+### 58.3 Ce qui avait ete ecrit, et ou
+
+- **`JOURNAL.md` 51.3**, un tableau « les createurs a forte audience » ouvert
+  par « Norman — le plus gros createur de nos donnees ».
+- **`ETAT.md` section 6**, « prochaine session — a faire en premier », donc la
+  premiere chose que lit une session neuve.
+
+Le journal etant en ajout seul, le tableau de 51.3 est **conserve tel quel**,
+avec un renvoi vers cette entree. Un journal qui se reecrit ne sert plus a
+rien : il doit garder ce qui a ete cru, sinon on ne peut plus comprendre
+pourquoi telle decision a ete prise. `ETAT.md`, lui, decrit l'etat present —
+il a ete corrige.
+
+### 58.4 La lecon, qui n'est pas celle du code
+
+L'entree 55 concluait : « quand une sortie contient un identifiant opaque, le
+resoudre avant de lire le reste ». C'est vrai mais insuffisant.
+
+Le vrai enchainement est celui-ci : un outil produit un chiffre, le chiffre
+entre dans un rapport, le rapport entre dans `ETAT.md`, et `ETAT.md` devient ce
+que la session suivante tient pour acquis. **A la troisieme etape, plus
+personne ne peut remonter a l'outil.**
+
+D'ou la regle : **corriger un outil oblige a rouvrir ce qu'il a fait ecrire.**
+Pas seulement le code, pas seulement le dernier rapport — tous les documents ou
+son resultat a ete recopie.
+
+Et une raison de plus de ne jamais mettre un nom de personne dans un document
+sans la chaine qui y mene. « Norman, 11,2 M, CNIEL + INTERBEV » ne portait
+aucune trace de ce qui l'avait produit ; il a fallu relancer l'outil corrige
+pour decouvrir qu'il s'agissait d'une boucherie. La colonne « reconnu par »,
+ajoutee le 27/08, existe pour ca.
+
+### 58.5 Ce qui reste vrai de l'entree 51
+
+La source elle-meme est intacte, et c'est toujours la meilleure du projet : les
+interprofessions publient des videos ou elles nomment les createurs. Les
+comptages de videos par chaine de lobby (132 pour le CNIEL, 292 pour INTERBEV,
+197 pour le CIFOG) n'ont jamais dependu du rapprochement fautif.
+
+Ce qui a change, c'est le nombre de createurs : **429 videos et 285 noms**
+annonces le matin deviennent **218 noms** apres correction, dont 42 seulement
+par la voie fiable. Et 176 des 218 restent a trancher — ce sont peut-etre des
+noms de series.

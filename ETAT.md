@@ -69,26 +69,40 @@ minutes.
 3. la description publique,
 4. la transcription automatique, via `yt-dlp`.
 
-**Aucun n'est suffisant seul, et c'est mesure.** La case de declaration ne
-capte que 2 collaborations sur 14 chez Inoxtag. SponsorBlock est precis mais
-inegal selon les chaines. La description rate l'oral. La transcription atteint
-tout mais produit des faux positifs qu'aucun motif automatique ne rattrape.
+**Les quatre sont mesures contre les jugements de Vincent** (27/08) :
+
+| Signal | Precision | Rappel |
+|---|---:|---:|
+| Case de declaration | **91 %** | 44 % |
+| Transcription | 81 % | 49 % |
+| Description | 78 % | **100 %** |
+| SponsorBlock | 69 % | 13 % |
+
+**Aucun n'est suffisant seul.** Le chiffre qui justifie le projet : **40 vraies
+collaborations sur 71 ne sont pas declarees**. Et la case dit qu'un partenariat
+paye existe, **pas par qui** — seule la conjonction avec l'alias designe le
+commanditaire.
+
+La transcription atteint l'oral que rien d'autre ne voit — un cas sur 37 videos
+sans signal en description — mais coute plusieurs secondes par video. Elle est
+donc employee **en second rideau**, sur les chaines deja identifiees, jamais a
+grande echelle. Voir JOURNAL 53 et 57.
 
 **Premier cas reel trouve** : Inoxtag x CNIEL (`@lesproduitslaitiers`), non
 declare sur YouTube, identifie par la table d'alias.
 
 **La recherche retroactive fonctionne.** L'API rend 50 videos avec leurs
-descriptions pour 1 unite de quota : 185 chaines et **35 612 videos** ont ete
-moissonnees le 24/08 pour 806 unites sur ~10 000. Le flux RSS, limite a 15
-videos, n'est plus la contrainte.
+descriptions pour 1 unite de quota. Au 27/08 : **plus de 1 800 chaines et
+300 000 videos** moissonnees. Le flux RSS, limite a 15 videos, n'est plus la
+contrainte.
 
-**271 videos citent un alias d'interprofession** et attendent une verification
-humaine — dont Michou (11 M d'abonnes) et le documentaire Everest d'Inoxtag,
-tous deux remerciant Les Produits Laitiers.
+**247 videos citent un alias d'interprofession** apres nettoyage. 175 sont
+deja tranchees ; les **72 nouvelles** attendent dans `A_VERIFIER_3.xlsx`.
 
-**Ce qui reste a faire :** instruire ces 271 videos, et corriger l'appariement
-des marques au nom courant (« Marie », « Societe », « President » produisent
-698 faux positifs).
+**Ce qui reste a faire :** instruire ces 72 videos, trancher
+`CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx`, et decider du sort de la liste
+`GENERIQUES` de la regle D — mesuree le 27/08 comme **nuisible hors CNIEL**
+(JOURNAL 56).
 
 ### Instagram — bloquee sur l'acces
 
@@ -181,10 +195,20 @@ fichier `.md`.
 
 **La source la plus directe du projet, trouvee le 27/08 :** les
 interprofessions ont **leurs propres chaines YouTube**, ou elles publient des
-videos nommant les createurs invites. 429 videos, 285 createurs — dont
-**Norman** (11,2 M, CNIEL *et* INTERBEV), **Inoxtag** (9,47 M) et **Mister V**
-(6,53 M, huit videos). Ici le commanditaire annonce lui-meme la collaboration :
-plus aucune inference. Voir JOURNAL 51.
+videos nommant les createurs invites. Ici le commanditaire annonce lui-meme la
+collaboration : plus aucune inference.
+
+**218 noms** apres correction du rapprochement (JOURNAL 55 et 58), dont **42
+par la voie fiable** — Pierre Chomet (31 videos, CIFOG et CNIEL), Morgan VS
+(12, CNIEL), L'Amour Boeuf (10, INTERBEV), **Mister V** (CNIEL), Brigitte
+Lecordier (CNIEL). Les 176 autres viennent d'une voie non mesuree et sont
+peut-etre des noms de series : `CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx` attend
+le jugement de Vincent.
+
+> Une version anterieure de cette section annoncait **Norman (11,2 M)** et
+> **Inoxtag** en tete. **C'etait faux** : « Norman » etait « e-Boucherie
+> normande », reconnu sur six caracteres. Voir JOURNAL 58. Mister V, lui, est
+> confirme.
 
 **Etat du registre au 27/08 : 6 875 comptes** — 2 620 YouTube, 2 187 TikTok,
 2 039 Instagram. 39 % avec audience connue. La population de surveillance est
