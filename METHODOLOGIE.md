@@ -37,6 +37,15 @@ quelques campagnes par an : l'ensemble est fini et donc traitable. Partir des
 influenceurs, c'est un crawl infini.
 
 **Contrats remuneres.** Les envois de produits gratuits ne sont pas l'objet.
+
+**Une cinquieme, posee le 27 aout 2026 : ce qu'on livre est un outil de veille,
+pas un jeu de donnees.** Le registre initial sert a mesurer si la methode
+marche. Deux criteres passent donc devant la precision sur un corpus fige : le
+**cout d'un tour de veille** — quota, temps machine, et surtout heures de
+verification humaine — et la **resistance au changement**, c'est-a-dire ce qui
+se passe quand un commanditaire nouveau apparait et que personne n'a mis
+l'outil a jour. Une regle qui demande un entretien manuel est une regle qui
+cessera d'etre entretenue.
 Voir la section 4 : ce choix n'est pas encore traduisible en regle technique.
 
 **Precision de Vincent, 24 aout 2026 — le registre publie ce qu'il sait, avec

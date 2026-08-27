@@ -21,6 +21,31 @@ un humain avant toute publication, au service du **plaidoyer animaliste**.
 Perimetre de depart : la France. Le pays est un champ de donnees, jamais une
 hypothese cablee.
 
+### Le jeu de donnees est un MOYEN, pas la livraison
+
+Precision de Vincent le 27 aout 2026, apres avoir lu un resume qui disait
+« construire le registre » :
+
+> « ce qu'on veut, c'est construire un outil qui pourrait surveiller
+> semi-automatiquement les reseaux sociaux en continu. Si pour l'instant on
+> explore et qu'on essaie de constituer un premier jeu de donnees complet, ce
+> but ultime ne doit pas etre oublie. »
+
+Le premier jeu de donnees sert a savoir **si l'outil marche**. Il n'est pas la
+chose a livrer.
+
+Consequence concrete sur ce qu'on optimise. Deux criteres passent devant la
+precision brute sur un corpus fige :
+
+- **le cout d'un tour de veille** — ce qui se paie a chaque passage, en quota,
+  en temps machine et surtout en heures de verification humaine ;
+- **la resistance au changement** — un nouveau commanditaire, un nouvel alias,
+  une plateforme qui modifie ses pages. Une regle qui exige qu'on l'entretienne
+  a la main se perime le jour ou personne ne l'entretient.
+
+C'est ce qui departage deux regles a performance egale : voir JOURNAL 61, et la
+recommandation de la regle B.
+
 ### Quatre choses a ne pas confondre
 
 1. **Le but n'est pas de cartographier la filiere.** La cartographie est un
