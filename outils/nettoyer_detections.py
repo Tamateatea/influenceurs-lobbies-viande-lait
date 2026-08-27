@@ -65,6 +65,11 @@ INTERPROFESSIONS = {"CNIEL", "INTERBEV", "INAPORC", "ANVOL", "CNPO", "CIFOG",
 # est utilisee. Sans cela, une entite ajoutee au classeur par Vincent resterait
 # invisible du code — c'etait deja le cas du CNPO, marque hors perimetre dans
 # `cartographie_filiere.xlsx` et absent de cette liste.
+ARTICLES_ALIAS = ("les", "le", "la", "l", "des", "de", "du")
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from appariement import aplatir_avec_index, coupe_un_mot
+
 HORS_PERIMETRE = {"Intercereales", "FNPSMS"}
 
 try:
@@ -160,6 +165,34 @@ def marques_connues():
     return noms
 
 
+def artefact_partout(ligne, alias_ok):
+    """Toutes les occurrences visibles mordent-elles sur un mot voisin ?
+
+    Rend False si le terme n'est pas visible dans le texte conserve : une
+    absence n'est pas une preuve. Voir `appariement.py` pour le detail.
+    """
+    texte = (ligne.get("titre", "") + " "
+             + ligne.get("description", "").replace(" ⏎ ", chr(10)))
+    plat, index = aplatir_avec_index(texte)
+    vu = False
+    for a in alias_ok:
+        base = aplatir(a)
+        if len(base) < 5:
+            continue
+        formes = [base]
+        for art in ARTICLES_ALIAS:
+            if base.startswith(art) and len(base) - len(art) >= 5:
+                formes.append(base[len(art):])
+        for forme in formes:
+            depart = plat.find(forme)
+            while depart >= 0:
+                vu = True
+                if not coupe_un_mot(texte, index, depart, len(forme)):
+                    return False          # une occurrence propre suffit
+                depart = plat.find(forme, depart + 1)
+    return vu
+
+
 def famille(entite, marques):
     """« interprofession », « marque », ou « hors perimetre »."""
     base = entite.split(" (")[0].strip()
@@ -185,6 +218,7 @@ def main():
     print(f"{len(lignes)} detections lues dans {source.name}", file=sys.stderr)
 
     fortes, faibles, ecartees = [], [], []
+    n_artefacts = 0
     for l in lignes:
         entites = [e for e in l["entites_filiere"].split(" | ") if e]
         if not entites:
@@ -199,6 +233,20 @@ def main():
         alias_ok = [a for a in l.get("alias_reconnus", "").split(" | ")
                     if a.strip() and alias_fiable(a)]
         if not alias_ok:
+            ecartees.append(l)
+            continue
+
+        # Frontiere de mot. L'appariement aplati colle les mots voisins :
+        # « viande, frites » devient « viandefr » et declenche @la_viande_fr.
+        #
+        # MESURE du 27/08 sur les 175 videos jugees : le garde-fou retire
+        # 12 candidats, **tous juges « hors sujet » par Vincent, aucun vrai**.
+        #
+        # On n'ecarte que si le terme est VISIBLE et mord partout sur un mot.
+        # La description conservee est tronquee a 900 caracteres : quand le
+        # terme est au-dela, son absence ne prouve rien et la ligne passe.
+        if artefact_partout(l, alias_ok):
+            n_artefacts += 1
             ecartees.append(l)
             continue
 
@@ -255,6 +303,8 @@ def main():
           f"- **Preuves fortes (alias d'interprofession) : {len(fortes)}**",
           f"- Preuves faibles (marque + indice) : {len(faibles)}",
           f"- **Ecartees comme bruit : {len(ecartees)}**",
+          f"  - dont artefacts d'aplatissement (« viande, frites » -> "
+          f"`viandefr`) : **{n_artefacts}**",
           "", ]
     if lignes:
         md += [f"Le bruit representait **{100*len(ecartees)/len(lignes):.0f} %** "

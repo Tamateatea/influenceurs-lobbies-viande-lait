@@ -3539,3 +3539,96 @@ C'est la troisieme fois que l'aplatissement fabrique un faux positif — apres
 « noclippant » qui contenait « clipp » et « Clip para » devenu « clippara »
 (entree 45). **La regle des huit caracteres ne suffit pas** : `laviandefr` en
 fait dix. C'est la frontiere de mot qui manquait.
+
+---
+
+## 60. Journal de methode — 27 aout 2026 : l'aplatissement, mesure et borne
+
+### 60.1 Trois fois le meme mecanisme
+
+Le projet apparie sur du texte **aplati** — sans accents, sans espaces, sans
+ponctuation. C'est indispensable : « Les Produits Laitiers »,
+« lesproduitslaitiers » et « @LesProduits-Laitiers » doivent se reconnaitre.
+
+Mais l'aplatissement colle les mots voisins et fabrique des chaines absentes du
+texte reel. Trois faux positifs avaient ete trouves un par un :
+
+    « no clippant »   -> « noclippant »   contient « clipp »        (entree 45)
+    « Clip para »     -> « clippara »     contient « clipp »        (entree 45)
+    « la viande frerot » -> « laviandefrerot » contient « laviandefr » (entree 59)
+
+Trois anecdotes ne disent pas l'ampleur. Cette entree la mesure.
+
+### 60.2 La parade qui ne marchait pas
+
+La reponse retenue le 27/08 au matin etait une **longueur minimale de huit
+caracteres**. Elle n'attrape pas `laviandefr`, qui en fait dix. Elle ecarte du
+bruit sans traiter la cause.
+
+### 60.3 La parade qui marche
+
+Le texte aplati a perdu ses espaces : la coupure n'y est plus visible. Mais si
+l'on garde, pour chaque caractere aplati, **sa position dans le texte
+d'origine**, il suffit de regarder le caractere qui suit la correspondance dans
+le texte VRAI. S'il est alphanumerique, la correspondance mord sur le mot
+suivant. Idem en amont.
+
+`outils/appariement.py` porte ces trois fonctions — `aplatir_avec_index`,
+`coupe_un_mot`, `trouver` — et remplace les copies eparpillees.
+
+### 60.4 MESURE — l'ampleur
+
+`outils/mesurer_artefacts_aplatissement.py`, sur les 385 detections nettoyees :
+
+| | | |
+|---|---:|---:|
+| Frontiere de mot respectee | 284 | 74 % |
+| **A cheval sur un mot — artefact** | **38** | **10 %** |
+| Terme absent du texte conserve, inverifiable | 63 | 16 % |
+
+Les 16 % d'inverifiables sont comptes a part, et c'est essentiel : la moisson
+ne garde que 900 caracteres de description, alors que l'appariement a
+travaille sur le texte complet. Quand le terme est au-dela, son absence ici ne
+prouve rien. **Les compter comme artefacts multiplierait le chiffre par
+quatre** — exactement le raccourci que le projet s'interdit.
+
+Les formes fautives, par frequence : `president` (23), `viandefr` (20),
+`laviandefr` (5), `aviandefr` (5), `entremont` (4), `erdammer` (4).
+
+Deux enseignements. **Le decoupage par article fabrique des formes absurdes** :
+`@la_viande_fr` engendre `viandefr`, huit caracteres qui attrapent « viande,
+frites », « viande fraiche », « viande francaise ». Et **`president` est un mot
+francais courant** — la marque de Lactalis paie le prix de son nom.
+
+### 60.5 MESURE — le garde-fou detruit-il du signal ?
+
+C'est la seule question qui compte. Croisement avec les 175 videos tranchees
+par Vincent :
+
+| | Collaboration remuneree | Hors sujet |
+|---|---:|---:|
+| Propre | **67** | 83 |
+| **Artefact** | **0** | **12** |
+| Inverifiable | 4 | 6 |
+
+**Zero vrai cas perdu. Douze faux positifs retires.** Le garde-fou est branche
+dans `nettoyer_detections.py`.
+
+Effet sur le corpus complet : **244 detections ecartees comme artefacts**. Les
+preuves fortes passent de 257 a **240**, les faibles de 128 a 107.
+`A_VERIFIER_3.xlsx` passe de 82 a **78 candidats** — quatre de moins a
+instruire, tous du bruit.
+
+### 60.6 Ce que ca ne regle pas
+
+Le garde-fou verifie qu'une correspondance est un vrai mot du texte. Il ne dit
+rien de ce que ce mot **fait la**.
+
+« Vous lui avez offert un beau petit **foie gras** » pour un pot de depart
+passe la frontiere de mot sans probleme : c'est une occurrence authentique du
+terme, dans un contexte sans aucun rapport commercial. Ce tri-la revient au
+voisinage commercial, puis a un humain.
+
+Autrement dit, cette mesure ameliore la **precision d'appariement**, pas la
+precision de detection. Les deux se confondent facilement, et il vaut mieux les
+tenir distinctes.

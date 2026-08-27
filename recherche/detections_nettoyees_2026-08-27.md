@@ -13,9 +13,10 @@ Source : `moisson_videos_2026-08-27.csv`.
 ## Resultat
 
 - Detections lues : **25411**
-- **Preuves fortes (alias d'interprofession) : 257**
-- Preuves faibles (marque + indice) : 128
-- **Ecartees comme bruit : 6754**
+- **Preuves fortes (alias d'interprofession) : 240**
+- Preuves faibles (marque + indice) : 107
+- **Ecartees comme bruit : 6792**
+  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **244**
 
 Le bruit representait **27 %** des detections brutes.
 
@@ -116,14 +117,11 @@ Le bruit representait **27 %** des detections brutes.
 | 2022-02-26 | **CNIEL** | Ma première fois avec Amine au ski | https://www.youtube.com/watch?v=zZ11xl-SnXA |
 | 2021-12-18 | **CNIEL** | On a visité le fin fond de la France avec Amine | https://www.youtube.com/watch?v=nv5_ZPF0WVA |
 
-### FlorianOnAir — 734 000 abonnes — 15 video(s)
+### FlorianOnAir — 734 000 abonnes — 10 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
-| 2026-05-18 | **INTERBEV** | LE KEBAB LE PLUS MAISON DE FRANCE ? 😳 | https://www.youtube.com/watch?v=Xay9j8ik-xY |
-| 2026-01-30 | **INTERBEV** | CES 2 FAST-FOODS DU 93 JOUENT EN LIGUE DES CHAMPIONS | https://www.youtube.com/watch?v=2_khBomtwtE |
 | 2025-03-06 | **ANVOL** | Mars , c'est le mois de la Volaille Française ! | https://www.youtube.com/watch?v=2Xigk6PNknE |
-| 2023-08-21 | **INTERBEV** | Un FAST FOOD SOCIAL dans un ANCIEN MC DO à MARSEILLE | https://www.youtube.com/watch?v=oIgkWxgh_jY |
 | 2021-12-22 | **CIFOG** | Le + GROS REPAS de 2021 de la BRIGADE ? MENU de LUXE | https://www.youtube.com/watch?v=OfHUijjGqo8 |
 | 2021-05-28 | **INTERBEV** | Je fais des PÂTES BOLOGNAISE pour les élèves d'un ly | https://www.youtube.com/watch?v=aV_m2lmjWjo |
 | 2021-05-27 | **INTERBEV** | On m'embauche dans une BOUCHERIE... et je KIFFE ! | https://www.youtube.com/watch?v=-cXraEfY9-I |
@@ -131,22 +129,8 @@ Le bruit representait **27 %** des detections brutes.
 | 2021-05-25 | **INTERBEV** | J'achète des VACHES avec un COMMERÇANT en BESTIAUX! | https://www.youtube.com/watch?v=iUF2Duowqow |
 | 2021-05-24 | **INTERBEV** | Je vis la vie d'un ELEVEUR d'OVINS ! | https://www.youtube.com/watch?v=HUJAmqKEuwk |
 | 2021-05-23 | **INTERBEV** | Ce TAUREAU me fait FLIPPER ! J'aide un éleveur de BO | https://www.youtube.com/watch?v=aEtOTdyWtqs |
-| 2020-10-30 | **INTERBEV** | Elle veut RÉVOLUTIONNER le FAST FOOD avec ce NOUVEAU | https://www.youtube.com/watch?v=-AknX1Fq9SE |
-| … | | 3 autres dans le CSV | |
-
-### Bonne Pitance — 349 000 abonnes — 2 video(s)
-
-| Date | Entite | Titre | URL |
-|---|---|---|---|
-| 2024-03-01 | **INTERBEV** | Épisode 23 : Coq au Vin Jaune ! Partie 2 #food #rece | https://www.youtube.com/watch?v=qmw7pnr2b2A |
-| 2024-03-01 | **INTERBEV** | Épisode 23 : Coq au Vin Jaune ! Partie 1 #food #rece | https://www.youtube.com/watch?v=8EXx_AuULwA |
-
-### C'est meilleur quand c'est bon — 233 000 abonnes — 2 video(s)
-
-| Date | Entite | Titre | URL |
-|---|---|---|---|
-| 2025-05-30 | **INTERBEV** | Une boucherie bar discothèque | https://www.youtube.com/watch?v=D8nRftQ9_XQ |
-| 2025-02-07 | **INTERBEV** | Burgers au boeuf d'Aubrac | https://www.youtube.com/watch?v=7rFtCk5nKUM |
+| 2018-10-25 | **INAPORC** | Ce soir, c'est moi qui prépare l'APERO !! -  VLOG # | https://www.youtube.com/watch?v=UXC8PGoEULg |
+| 2018-05-18 | **INAPORC** | DEGUSTATION : Un PLAT EXQUIS par un GRAND CHEF dans  | https://www.youtube.com/watch?v=WCG8jN-i8ZQ |
 
 ### LeStream — 206 000 abonnes — 1 video(s)
 
@@ -220,13 +204,6 @@ Le bruit representait **27 %** des detections brutes.
 | 2021-02-24 | **CNIEL** | ¿Cómo elaborar cremas congelables y estables en frío | https://www.youtube.com/watch?v=dPl6pAsRzG8 |
 | 2020-03-20 | **CNIEL** | La Révolution des Mousses: Revue + Évolution des Mou | https://www.youtube.com/watch?v=tB5O_kmEyoQ |
 
-### Le Paris d'Alexis — 71 100 abonnes — 2 video(s)
-
-| Date | Entite | Titre | URL |
-|---|---|---|---|
-| 2026-07-19 | **INTERBEV** | Ce smash burger dont tout le monde parle !! | https://www.youtube.com/watch?v=iJQ9UNilkP0 |
-| 2026-05-18 | **CIFOG** | Ce resto est une institution parisienne | https://www.youtube.com/watch?v=aBBNlxBAVMc |
-
 ### Elise Gilmor 🌞 — 36 300 abonnes — 1 video(s)
 
 | Date | Entite | Titre | URL |
@@ -244,12 +221,6 @@ Le bruit representait **27 %** des detections brutes.
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2025-01-29 | **CNIEL** | Les Crêpes SANS GLUTEN, SANS SUCRE, ET SANS PRODUITS | https://www.youtube.com/watch?v=GH8IA1b2ZZI |
-
-### Anne Dubndidu — 32 000 abonnes — 1 video(s)
-
-| Date | Entite | Titre | URL |
-|---|---|---|---|
-| 2019-03-27 | **ANVOL** | L'île de la Réunion, entre montagne et océan 🌴 | https://www.youtube.com/watch?v=A4lD-ZyqC14 |
 
 ### Viande Suisse — 21 300 abonnes — 1 video(s)
 
@@ -309,12 +280,6 @@ Le bruit representait **27 %** des detections brutes.
 |---|---|---|---|
 | 2022-03-11 | **CNIEL** | Weekly #VLOG n°1: PARIS FASHION WEEK, ÉVÈNEMENTS, UN | https://www.youtube.com/watch?v=WrXyCPlltGU |
 
-### My Boucherie — 1 350 abonnes — 1 video(s)
-
-| Date | Entite | Titre | URL |
-|---|---|---|---|
-| 2024-06-13 | **INTERBEV** | Rumsteck persillé 😍 #legrascestlavie #jaimelaviande  | https://www.youtube.com/watch?v=3polHUuOSL0 |
-
 ### Marché de Rungis — 1 320 abonnes — 5 video(s)
 
 | Date | Entite | Titre | URL |
@@ -342,21 +307,17 @@ Le bruit representait **27 %** des detections brutes.
 | 2020-08-31 | **INTERBEV** | Aimez la viande, mangez-en mieux. | https://www.youtube.com/watch?v=D5aGD-cse2k |
 | 2019-02-18 | **INTERBEV** | Aimez la viande, mangez-en mieux. - 2019 | https://www.youtube.com/watch?v=u2lizGnqhTE |
 
-### Madrange — 221 abonnes — 4 video(s)
+### Madrange — 221 abonnes — 2 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2026-07-28 | **INAPORC** | Les jambons origine France Madrange | https://www.youtube.com/watch?v=DFTiz3SdXpY |
-| 2021-01-15 | **INAPORC** | MADRANGE Les stars du quotidien 2021 - L'étudiante | https://www.youtube.com/watch?v=Q6JHmP7muUo |
-| 2021-01-15 | **INAPORC** | MADRANGE Mon jambon blanc Conservation sans nitrite | https://www.youtube.com/watch?v=71Ff2LmoqPI |
 | 2019-10-31 | **INAPORC** | Mes Knacks Madrange 2019 | https://www.youtube.com/watch?v=Nj7tWy8H8do |
 
-### Toscane Lucas — 168 abonnes — 3 video(s)
+### Toscane Lucas — 168 abonnes — 1 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
-| 2025-06-10 | **INTERBEV** | Babe veut une côte de veau à la Milanaise 🥩🇮🇹🍝 Yesss | https://www.youtube.com/watch?v=rq_QTSbwJKw |
-| 2025-06-10 | **INTERBEV** | Babe veut une côte de veau à la Milanaise 🥩🇮🇹🍝 Yesss | https://www.youtube.com/watch?v=IzEh8cJsosU |
 | 2025-06-09 | **INTERBEV** | Babe veut des tacos 🌮🇲🇽🪅 Yessss chef ! @Andy Cooks   | https://www.youtube.com/watch?v=_cJJNStMU8A |
 
 ### Oh! La vie Est belle — 38 abonnes — 1 video(s)
@@ -369,7 +330,6 @@ Le bruit representait **27 %** des detections brutes.
 
 | Chaine | Abonnes | Marque | Titre | URL |
 |---|---:|---|---|---|
-| Amixem | 9 500 000 | President (Lactalis) | ON VIT 24H COMME DES PRÉSIDENTS | https://www.youtube.com/watch?v=rKRAkNc4OKw |
 | Inoxtag | 9 470 000 | Gervais (Danone) | Marie (LDC) | Qui Perdra son Job ?! (ft. Byilhan  Nico | https://www.youtube.com/watch?v=ig-_3_-9wu4 |
 | Mcfly et Carlito | 7 660 000 | Gervais (Danone) | Marie (LDC) | P | MÉLI-MÉLO 4 (tout simplement) | https://www.youtube.com/watch?v=LvPzscrOVdc |
 | MichouOff | 5 550 000 | Le Gaulois (LDC) | Marie (LDC) | J’AI ORGANISÉ UNE FÊTE GÉANTE POUR VOIR  | https://www.youtube.com/watch?v=Ip3pBfl2ipM |
@@ -385,7 +345,6 @@ Le bruit representait **27 %** des detections brutes.
 | Pierre Croce | 3 790 000 | President (Lactalis) | On a acheté un journal de chaque année d | https://www.youtube.com/watch?v=3cjKd62dwy8 |
 | EnjoyPhoenix - Marie | 3 710 000 | Broceliande (Cooperl) | Marie (LDC | J'enquête dans le manoir le plus hanté d | https://www.youtube.com/watch?v=hLjeqSWRHJU |
 | Sananas | 3 010 000 | Maitre Coq (LDC) | LES FAVORIS D' OCTOBRE ! Trop de trucs à | https://www.youtube.com/watch?v=whcgWZ42MEw |
-| Nota Bene | 2 770 000 | President (Lactalis) | Les présidents des USA et le Groenland # | https://www.youtube.com/watch?v=Pxzv6sTD52k |
 | Nota Bene | 2 770 000 | President (Lactalis) | USA et Venezuela : comprendre la doctrin | https://www.youtube.com/watch?v=Z6V73lW2tsI |
 | Nota Bene | 2 770 000 | President (Lactalis) | Badinter et la fin de la peine capitale  | https://www.youtube.com/watch?v=TW0Ue8bAQUs |
 | Nota Bene | 2 770 000 | Le Gaulois (LDC) | Pourquoi il y a des tensions entre Wallo | https://www.youtube.com/watch?v=kPOwnW5Xz-c |
@@ -397,27 +356,17 @@ Le bruit representait **27 %** des detections brutes.
 | FabienOlicard | 2 330 000 | President (Lactalis) | Peng Shuai  la Joueuse de tennis que la  | https://www.youtube.com/watch?v=HCvpvO7KpCo |
 | FabienOlicard | 2 330 000 | President (Lactalis) | Societe (La | Analyse d'E. Macron après la Motion de C | https://www.youtube.com/watch?v=dTOKmnyoiN4 |
 | FabienOlicard | 2 330 000 | President (Lactalis) | Societe (La | Peut-on décrypter le président E. Macron | https://www.youtube.com/watch?v=cG4irtSXfZ8 |
-| Studio Danielle | 1 740 000 | President (Lactalis) | UNE NUIT DANS LA SUITE LA PLUS CHÈRE DE  | https://www.youtube.com/watch?v=R4t8kq3zK60 |
 | Studio Danielle | 1 740 000 | La Laitiere (Lactalis (licence Nes | NE SURTOUT PAS RIGOLER | https://www.youtube.com/watch?v=R0RYmOZUx-8 |
-| Aypierre | 1 450 000 | President (Lactalis) | Un débat présidentiel explosif - QSMP #3 | https://www.youtube.com/watch?v=t7xSV0bXL9c |
-| Aypierre | 1 450 000 | President (Lactalis) | L'enveloppe des présidentielles - QSMP # | https://www.youtube.com/watch?v=RGQjjjea0UY |
 | Tristan | 1 280 000 | President (Lactalis) | J'ai Crée Un Disque d'Or GÉANT Pour McFl | https://www.youtube.com/watch?v=np0anSNmHfQ |
 | Léonard | 1 280 000 | President (Lactalis) | J'affronte 3 Expériences Extrêmes (se fa | https://www.youtube.com/watch?v=cW04250Msx4 |
 | AVRE (Explore Media) | 1 260 000 | President (Lactalis) | Un ex-garde du corps analyse des films | | https://www.youtube.com/watch?v=y6vj6kga9lE |
-| AVRE (Explore Media) | 1 260 000 | President (Lactalis) | Un historien de la Seconde Guerre mondia | https://www.youtube.com/watch?v=E69QpAsqOVs |
 | Romain Lanéry | 1 060 000 | President (Lactalis) | Ferrari : 20 minutes avec le Directeur d | https://www.youtube.com/watch?v=uckQWf3H1UY |
-| Romain Lanéry | 1 060 000 | President (Lactalis) | "Notre système de santé va bientôt mouri | https://www.youtube.com/watch?v=fKcZ7R1RC6c |
-| Romain Lanéry | 1 060 000 | President (Lactalis) | Il a racheté le nom Entrepreneurs.com !  | https://www.youtube.com/watch?v=7bhKh7ly7OM |
 | Romain Lanéry | 1 060 000 | President (Lactalis) | Societe (La | "Je joue au Monopoly dans la vraie vie"  | https://www.youtube.com/watch?v=X2D_CktOXzE |
-| Romain Lanéry | 1 060 000 | President (Lactalis) | "99% des crypto vont s'effondrer" | 20 m | https://www.youtube.com/watch?v=wKEVI3rzVs0 |
-| Romain Lanéry | 1 060 000 | President (Lactalis) | "On ne peut plus prévoir le monde" | 20  | https://www.youtube.com/watch?v=J0MwHFZaiSU |
 | Romain Lanéry | 1 060 000 | President (Lactalis) | De 250 millions à 11 milliards : La méth | https://www.youtube.com/watch?v=QrW6o8ScJis |
 | Romain Lanéry | 1 060 000 | President (Lactalis) | "Aujourd'hui tu peux créer ton entrepris | https://www.youtube.com/watch?v=gU6zIelMEj8 |
 | Romain Lanéry | 1 060 000 | President (Lactalis) | Societe (La | « Patron du CAC40 »｜20 minutes avec le D | https://www.youtube.com/watch?v=1xauZAPND2c |
-| Romain Lanéry | 1 060 000 | President (Lactalis) | "Mon job tient sur ce post-it" | 20 minu | https://www.youtube.com/watch?v=bJYSrnQjQnQ |
 | Romain Lanéry | 1 060 000 | President (Lactalis) | Comment investir en immobilier quand on  | https://www.youtube.com/watch?v=-qWK5sTyR_4 |
 | Domingo | 1 030 000 | Marie (LDC) | President (Lactalis) | UNE JOURNÉE POUR FAIRE LES PIRES ÉPREUVE | https://www.youtube.com/watch?v=_H5O4_Nph24 |
-| YanissaXoxo | 1 020 000 | President (Lactalis) | J'AI TUÉ MES CHEVEUX ? LE LISSAGE BRESIL | https://www.youtube.com/watch?v=M0nLJt7lopg |
 | ZACK | 974 000 | President (Lactalis) | Pablo Longoria  Un Recruteur devenu Prés | https://www.youtube.com/watch?v=fX1XX1VBcSc |
 | La Compagnie | 968 000 | President (Lactalis) | Policier Contre Voleur  Qui Gagnera ? (e | https://www.youtube.com/watch?v=i8SoH5PE2nU |
 | Le Vendeur Automobil | 899 000 | President (Lactalis) | TOUS les SECRETS de Bugatti dévoilés par | https://www.youtube.com/watch?v=8ccCfwc7XGM |
@@ -425,8 +374,20 @@ Le bruit representait **27 %** des detections brutes.
 | FlorianOnAir | 734 000 | President (Lactalis) | Soignon (Eu | 🍔 À la recherche des MEILLEURS BURGERS d | https://www.youtube.com/watch?v=ga_wYKIDE_w |
 | FlorianOnAir | 734 000 | La Laitiere (Lactalis (licence Nes | PROJET DINGUE! Ces JEUNES m'emmènent du  | https://www.youtube.com/watch?v=kkKEAkJcRaE |
 | FlorianOnAir | 734 000 | Marie (LDC) | President (Lactalis) | Il RÉVOLUTIONNE la GAUFRE BURGER? La BRI | https://www.youtube.com/watch?v=23DFMPBQbxw |
-| FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | Un REPAS INDONESIEN à AMSTERDAM  - VLOG | https://www.youtube.com/watch?v=ntQga6--H0M |
-| FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | Un BURGER en AVOCAT à AMSTERDAM - VLOG # | https://www.youtube.com/watch?v=gkGHr0CWPU0 |
-| FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | Une enseigne FAST FOOD de WOK à AMSTERD | https://www.youtube.com/watch?v=zqnXB7lFh8E |
-| FlorianOnAir | 734 000 | Leerdammer (Groupe Bel) | AMSTERDAM : Des DISTRIBUTEURS de NOURRIT | https://www.youtube.com/watch?v=LXeEctS_ypc |
+| Pêcheur De Trésors | 677 000 | President (Lactalis) | On trouve un énorme coffre fort en pêche | https://www.youtube.com/watch?v=6d8o6GlC1wQ |
+| Ben Névert | 618 000 | President (Lactalis) | ENTRE MECS - HYPERSENSIBILITÉ - ARGENT ( | https://www.youtube.com/watch?v=VJc1HcDfckc |
+| Iconoclaste | 591 000 | President (Lactalis) | La Face Sombre de Habbo Hotel (crimes  v | https://www.youtube.com/watch?v=6nxg4OssocU |
+| Kameto | 496 000 | President (Lactalis) | KOTEI OUBLIE DE RÉPONDRE À MACRON ... -  | https://www.youtube.com/watch?v=WCpcbfEUocc |
+| Kevin Bukkart | 301 000 | President (Lactalis) | THUNDERBOLTS* - Le Guide Ultime de Tout  | https://www.youtube.com/watch?v=WhTVp8RumOo |
+| Le Guide Ultime | 294 000 | Fleury Michon (Fleury Michon) | Une DJ party dans une boulangerie à 11h  | https://www.youtube.com/watch?v=74FUuv_zaqo |
+| Meltingcurlz | 290 000 | La Laitiere (Lactalis (licence Nes | JE RETESTE ZAFUL À FOND ET SANS FILTRE ! | https://www.youtube.com/watch?v=S3ZP7HcRxgk |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 8 - "Le plus gros s | https://www.youtube.com/watch?v=xerlfESzRwk |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 7 - "DREAM TRACK !" | https://www.youtube.com/watch?v=Qj90KnWfBFY |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 6 - "J'ai perdu le  | https://www.youtube.com/watch?v=uRw81emm4DY |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 5 - "Toujours bien  | https://www.youtube.com/watch?v=YynAW5xeK2Y |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 4 - "Le camping de  | https://www.youtube.com/watch?v=eCL-XF1H0xQ |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 3 - "Boulot  boulot | https://www.youtube.com/watch?v=OW_fC5MNQk4 |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 2 - "J'ai pas peur  | https://www.youtube.com/watch?v=I1iEtzMmguQ |
+| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 1 - "La main qui s' | https://www.youtube.com/watch?v=6_qccxPFOOc |
+| C'est meilleur quand | 233 000 | President (Lactalis) | Le rôle des chefs pour bien manger | https://www.youtube.com/watch?v=vJN3sGu_IuE |
 
