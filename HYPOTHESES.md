@@ -77,6 +77,8 @@ gratuits et sans authentification.
 | YT-52 | Le garde-fou de frontiere de mot detruit des vrais cas | **REFUTEE** | Sur les 175 videos jugees : 12 artefacts retires, tous « hors sujet », zero vrai cas perdu. JOURNAL 60.5 |
 | YT-53 | La regle D vaut mieux que la regle B, plus simple | **REFUTEE** | 85 % / 87 % contre 85 % / 90 %. Les intervalles de confiance se recouvrent entierement ; B a le meilleur rappel et n'a aucune liste manuelle. JOURNAL 61.3 |
 | YT-54 | Exiger le vocabulaire commercial PRES de la mention ameliore la precision | **REFUTEE** | La regle C retient exactement les memes 71 lignes que la regle B. La proximite n'apporte rien sur ce corpus. JOURNAL 61.3 |
+| YT-55 | Aligner tous les outils sur huit caracteres est une amelioration | **REFUTEE** | Cela retire 43 formes de la moisson, dont Actimel, Activia, Babybel, Boursin, Candia, Aoste. C'est la frontiere de mot qui traite la cause, pas la longueur. JOURNAL 63.2 |
+| YT-56 | Le second rideau gagnerait a voir les marques | **REFUTEE** | Sur les 236 memes transcriptions : 5 detections deviennent 57, presque toutes sur « marie », « societe », « president ». Des mots ordinaires du francais parle, contre lesquels la frontiere de mot ne peut rien. JOURNAL 63.3 |
 | YT-12 | Le segment SponsorBlock correspond a l'annonceur cite en description | **REFUTEE** | Trois annonceurs distincts dans une meme video. JOURNAL 20.2 |
 | YT-13 | Un motif regulier sur la transcription suffit a identifier un annonceur | **REFUTEE** | Faux positif sur une blague. JOURNAL 20.4 |
 | YT-14 | Un code promo ou un lien d'affiliation est un meilleur indice que la mention legale | **CONFIRMEE, avec reserve** | 42 videos contre 18. Mais « remerciement » melange sponsors et amis. JOURNAL 21.5 |

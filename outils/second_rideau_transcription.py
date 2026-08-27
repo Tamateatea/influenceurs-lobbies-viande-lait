@@ -57,7 +57,7 @@ API = "https://www.googleapis.com/youtube/v3/"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ecriture_sure import ecrire_sur
-from perimetre import entites_hors_perimetre
+import table_alias
 
 
 def aplatir_avec_index(texte):
@@ -172,18 +172,29 @@ def main():
     args = ap.parse_args()
 
     mt = charger("mesurer_transcriptions")
-    termes = mt.charger_alias()
 
-    # Le classeur porte des entites deliberement hors sujet — Intercereales est
-    # un groupe temoin. Le premier essai du 27/08 a remonte une conversation
-    # sur du fromage blanc comme « detection Intercereales ». On les retire.
-    hors = entites_hors_perimetre()
-    avant = len(termes)
-    termes = {f: v for f, v in termes.items() if v[1].split(" (")[0].strip()
-              not in hors}
-    if avant != len(termes):
-        print(f"{avant - len(termes)} formes retirees : entites hors perimetre "
-              f"({', '.join(sorted(hors))})", file=sys.stderr)
+    # PAS DE MARQUES ICI — et c'est desormais un choix mesure.
+    #
+    # Le chargeur herite jusqu'au 27/08 ne lisait pas la feuille `Marques`, sans
+    # que personne ne l'ait decide. En centralisant les chargeurs, les marques
+    # ont ete ajoutees ici : cela paraissait une correction.
+    #
+    # MESURE, sur les 236 memes transcriptions : **5 detections deviennent 57**,
+    # et la quasi-totalite du surplus porte sur « marie », « societe »,
+    # « president », « gaulois », « veloute », « tartare ». Ce sont des mots
+    # ordinaires du francais parle, pas des mentions de marque.
+    #
+    # La frontiere de mot n'y peut rien : ce SONT des mots entiers. Et le
+    # garde-fou qui protege les descriptions — exiger un indice commercial a
+    # cote de la marque — n'existe pas pour l'oral, ou personne ne dit
+    # « communication commerciale ».
+    #
+    # Les interprofessions, elles, ont des noms qu'on ne prononce pas par
+    # hasard : « les produits laitiers », « le porc francais ».
+    termes = table_alias.charger(seuil=8, avec_marques=False,
+                                 avec_hors_perimetre=False)
+    print(f"{len(termes)} formes d'alias, interprofessions seules",
+          file=sys.stderr)
     cle = lire_cle()
     if not cle:
         print("YOUTUBE_API_KEY absente.", file=sys.stderr)

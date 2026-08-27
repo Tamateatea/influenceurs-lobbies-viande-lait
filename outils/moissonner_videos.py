@@ -53,6 +53,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ecriture_sure import ecrire_sur
+import table_alias
 
 RACINE = Path(__file__).resolve().parent.parent
 SECRETS = RACINE / "SECRETS.txt"
@@ -94,36 +95,22 @@ def sans_accent(t):
 
 
 def charger_alias():
-    """La table d'alias, source de verite du rattachement a la filiere."""
-    import openpyxl
-    wb = openpyxl.load_workbook(CARTO / "cartographie_filiere.xlsx",
-                                read_only=True, data_only=True)
-    termes = {}
+    """La table d'alias, via le chargeur partage `table_alias.py`.
 
-    def ajouter(alias, entite):
-        if not alias or not entite:
-            return
-        base = aplatir(alias)
-        if len(base) < 5:
-            return
-        formes = {base}
-        for art in ARTICLES:
-            if base.startswith(art) and len(base) - len(art) >= 5:
-                formes.add(base[len(art):])
-        for f in formes:
-            termes.setdefault(f, (str(alias).strip(), str(entite).strip()))
+    Deux choix explicites, la ou ils etaient implicites avant :
 
-    for l in wb["Alias"].iter_rows(min_row=2, values_only=True):
-        ajouter(l[0], l[2])
-    for l in wb["Interprofessions"].iter_rows(min_row=2, values_only=True):
-        ajouter(l[0], l[0]); ajouter(l[1], l[0]); ajouter(l[3], l[0])
-    # Les MARQUES productrices comptent autant que les interprofessions :
-    # precision de Vincent le 24/08. Une collaboration payee par un producteur
-    # de yaourts est dans le sujet au meme titre qu'une campagne du CNIEL.
-    for l in wb["Marques"].iter_rows(min_row=2, values_only=True):
-        ajouter(l[0], f"{l[0]} ({l[1]})" if l[1] else l[0])
-    wb.close()
-    return termes
+    **Seuil 5, pas 8.** Passer a 8 retirerait 43 formes, dont de vraies
+    marques — Actimel, Activia, Babybel, Boursin, Bridel, Candia, Aoste. La
+    regle des huit caracteres etait un pis-aller contre les artefacts
+    d'aplatissement ; c'est le garde-fou de frontiere de mot d'`appariement.py`
+    qui les traite vraiment, et il permet de garder les noms courts.
+
+    **Hors perimetre inclus.** La moisson collecte large, le nettoyage filtre.
+    Ainsi, changer le perimetre — la question du CNPO est ouverte — ne demande
+    pas de re-moissonner 307 000 videos.
+    """
+    return table_alias.charger(seuil=5, avec_marques=True,
+                               avec_hors_perimetre=True)
 
 
 def appel(endpoint, params, cle):

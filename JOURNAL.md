@@ -3820,3 +3820,83 @@ la valeur de la voie « motif dans le titre », et la couverture du projet.
 La section 9.2 prescrit une methode impraticable. Elle demande a etre revue —
 mais c'est une decision de methode, donc elle revient a Vincent. Une note y
 renvoie desormais a cette entree.
+
+---
+
+## 63. Journal de methode — 27 aout 2026 : quatre copies d'une meme fonction, quatre reglages differents
+
+### 63.1 La duplication, mesuree
+
+`charger_alias` etait recopiee dans quatre outils. Les copies avaient diverge :
+
+| Outil | Seuil | Feuilles lues |
+|---|---:|---|
+| `moissonner_videos.py` | **5** | Alias, Interprofessions, **Marques** |
+| `mesurer_transcriptions.py` | **8** | Alias, Interprofessions |
+| `surveiller_youtube.py` | aucun | Alias, Interprofessions |
+| `extraire_descriptions_youtube.py` | aucun | Alias, Interprofessions |
+
+Personne n'avait decide ces ecarts. C'est la meme duplication qui avait laisse
+`moissonner_chaines_lobbies.py` apparier a six caracteres quand les autres
+etaient a huit — d'ou l'attribution de videos a la mauvaise personne
+(entree 55).
+
+`outils/table_alias.py` centralise, et **chaque appelant declare ce qu'il
+veut** au lieu d'en heriter en silence.
+
+### 63.2 Le seuil de huit caracteres aurait coute cher
+
+Premiere idee : aligner tout le monde sur huit, la regle du projet.
+
+MESURE — passer la moisson de 5 a 8 retire **43 formes**, dont : `actimel`,
+`activia`, `babybel`, `boursin`, `bridel`, `candia`, `aoste`. Ce sont de
+vraies marques, pas du bruit.
+
+**La regle des huit caracteres etait un pis-aller** contre les artefacts
+d'aplatissement. Le garde-fou de frontiere de mot (entree 60) traite la cause,
+et permet donc de garder les noms courts. La moisson reste a 5.
+
+### 63.3 Une amelioration qui n'en etait pas
+
+Seconde idee : le second rideau n'avait pas acces aux marques, puisqu'il
+heritait du chargeur des transcriptions. Cela ressemblait a un oubli.
+
+MESURE, sur les **236 memes transcriptions**, en ajoutant les marques :
+
+    5 detections  ->  57 detections
+
+Le surplus, presque en entier : « marie », « societe », « president »,
+« gaulois », « veloute », « tartare ». Ce sont des mots ordinaires du francais
+parle.
+
+La frontiere de mot n'y peut rien — **ce sont des mots entiers**. Et le
+garde-fou qui protege les descriptions — exiger un indice commercial a cote de
+la marque — n'a pas d'equivalent a l'oral : personne ne dit « communication
+commerciale » en parlant.
+
+Les interprofessions, elles, ont des noms qu'on ne prononce pas par hasard :
+« les produits laitiers », « le porc francais ».
+
+**Revenu en arriere.** Le comportement est identique a ce matin, mais ce qui
+etait un heritage accidentel est devenu un choix mesure et ecrit.
+
+### 63.4 Un choix d'architecture, pose au passage
+
+La moisson charge desormais les entites **hors perimetre incluses**, alors que
+le nettoyage les ecarte.
+
+C'est deliberer : **collecter large, filtrer au portillon**. Le perimetre est
+une question ouverte — celle du CNPO n'est pas tranchee — et il ne faut pas
+qu'un changement d'avis oblige a re-moissonner 307 000 videos.
+
+Le filtrage reste visible et documente la ou il se fait, dans
+`nettoyer_detections.py`.
+
+### 63.5 Ce que cette entree illustre
+
+Deux corrections evidentes ont ete tentees, et **les deux etaient fausses** :
+aligner les seuils aurait perdu sept marques reelles, donner les marques au
+second rideau a multiplie le bruit par onze.
+
+Les deux ont ete rattrapees parce qu'il y avait un chiffre a regarder avant de
+conclure. Sans mesure, les deux seraient passees pour du menage.
