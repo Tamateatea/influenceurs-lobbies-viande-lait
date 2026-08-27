@@ -44,8 +44,16 @@ ENTETE = PatternFill("solid", fgColor="38761D")
 BORD = Border(*[Side(style="thin", color="CCCCCC")] * 4)
 HAUT = Alignment(vertical="top", wrap_text=True)
 
-VERDICTS = ('"collaboration remuneree,mention sans collaboration,'
-            'auto-promotion,je ne sais pas,hors sujet"')
+# ATTENTION AUX VIRGULES : Excel s'en sert comme separateur dans une liste
+# deroulante ecrite en ligne. Les intitules n'en contiennent donc aucune, et la
+# liste est rangee dans une feuille masquee puis referencee par plage — voir
+# generer_classeur_lobbies.py pour le detail du defaut signale le 27/08.
+VERDICTS = [
+    "collaboration remuneree",
+    "mention sans collaboration",
+    "hors sujet",
+    "je ne sais pas",
+]
 
 
 def sans_accent(t):
@@ -235,7 +243,12 @@ def main():
                "Titre de la video", "Regarder", "Ce qui est ecrit dans la description",
                "Retenu par la regle D", "TON VERDICT", "Ton commentaire"])
 
-    dv = DataValidation(type="list", formula1=VERDICTS, allow_blank=True)
+    lst = wb.create_sheet("listes")
+    for _i, _v in enumerate(VERDICTS, 1):
+        lst.cell(row=_i, column=1, value=_v)
+    lst.sheet_state = "hidden"
+    dv = DataValidation(type="list", allow_blank=True,
+                        formula1=f"=listes!$A$1:$A${len(VERDICTS)}")
     ws.add_data_validation(dv)
 
     for n, l in enumerate(lignes, 1):

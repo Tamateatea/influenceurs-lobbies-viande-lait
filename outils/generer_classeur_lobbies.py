@@ -68,18 +68,27 @@ VERT = PatternFill("solid", fgColor="D9EAD3")
 GRIS = PatternFill("solid", fgColor="EFEFEF")
 ENTETE = PatternFill("solid", fgColor="434343")
 
+# ATTENTION AUX VIRGULES. Excel utilise la virgule comme separateur dans une
+# liste deroulante ecrite en ligne : « non, c'est un nom de serie » devenait
+# DEUX options, « non » et « c'est un nom de serie ». Vincent l'a signale le
+# 27/08 — « des menus deroulant defectueux, passage a la ligne au milieu d'une
+# seule option ».
+#
+# Deux parades appliquees : plus aucune virgule dans les intitules, et la liste
+# est rangee dans une feuille a part puis referencee par plage. La reference
+# par plage n'a ni limite de longueur ni probleme de separateur.
 CHOIX = [
-    "oui, c'est un createur",
-    "non, c'est un nom de serie ou de campagne",
-    "non, c'est une marque ou un label",
-    "non, c'est un media",
+    "oui — c'est un createur",
+    "non — nom de serie ou de campagne",
+    "non — marque ou label",
+    "non — media",
     "je ne sais pas",
 ]
 
 # Seconde question, ajoutee le 27/08. Elle tranche une ambiguite que rien
 # d'autre ne tranche : voir l'en-tete « CE QUE LA SECONDE COLONNE DECIDE ».
 CHOIX_TYPE = [
-    "createur de contenu (youtubeur, tiktokeur, instagrameur)",
+    "createur de contenu (youtube / tiktok / instagram)",
     "chef ou restaurateur",
     "eleveur ou agriculteur",
     "personnalite de television ou de radio",
@@ -194,11 +203,21 @@ def main():
         ws.column_dimensions[get_column_letter(j)].width = largeur
     ws.row_dimensions[depart].height = 32
 
-    dv = DataValidation(type="list", formula1='"' + ",".join(CHOIX) + '"',
-                        allow_blank=True)
+    # Les listes vivent dans une feuille dediee et sont referencees par plage.
+    # Voir le commentaire sur CHOIX : une liste ecrite en ligne se casse sur la
+    # premiere virgule d'un intitule.
+    lst = wb.create_sheet("listes")
+    for i, v in enumerate(CHOIX, 1):
+        lst.cell(row=i, column=1, value=v)
+    for i, v in enumerate(CHOIX_TYPE, 1):
+        lst.cell(row=i, column=2, value=v)
+    lst.sheet_state = "hidden"
+
+    dv = DataValidation(type="list", allow_blank=True,
+                        formula1=f"=listes!$A$1:$A${len(CHOIX)}")
     ws.add_data_validation(dv)
-    dv2 = DataValidation(type="list", formula1='"' + ",".join(CHOIX_TYPE) + '"',
-                         allow_blank=True)
+    dv2 = DataValidation(type="list", allow_blank=True,
+                         formula1=f"=listes!$B$1:$B${len(CHOIX_TYPE)}")
     ws.add_data_validation(dv2)
 
     for i, (nom, d) in enumerate(lignes, 1):

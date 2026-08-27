@@ -57,6 +57,9 @@ ETAPES = [
     ("Moisson TikTok — deux mois de plus",
      "moissonner_tiktok.py", [], True),
 
+    ("Export de la moisson depuis le fichier de reprise",
+     "exporter_moisson.py", [], False),
+
     ("Consolidation du registre des comptes",
      "consolider_comptes.py", [], False),
 

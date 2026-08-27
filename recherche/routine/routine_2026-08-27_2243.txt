@@ -1,0 +1,60 @@
+ROUTINE QUOTIDIENNE — 2026-08-27 22:43
+
+Ce fichier dit ce qui a tourne cette nuit et ce que ca a produit.
+Il ne contient aucun jugement : la lecture des candidats reste humaine.
+
+------------------------------------------------------------------------
+[ IGNOREE ] Moisson YouTube — catalogues des chaines surveillees
+            (--sans-quota)
+
+[ IGNOREE ] Croisement TikTok → YouTube — createurs restants
+            (--sans-quota)
+
+[ IGNOREE ] Moisson TikTok — deux mois de plus
+            (--sans-quota)
+
+[    OK    ] Export de la moisson depuis le fichier de reprise
+            exporter_moisson.py 
+            duree : 0.0 min
+
+    reprise. Aucun quota consomme : c'est une relecture.
+    - Chaines moissonnees : **2660**
+    - Videos examinees : **307 191**
+    Ecrit : moisson_videos_2026-08-27.csv et moisson_videos_2026-08-27.md
+
+------------------------------------------------------------------------
+[    OK    ] Consolidation du registre des comptes
+            consolider_comptes.py 
+            duree : 0.4 min
+
+    surveillance_youtube_2026-08-24_1642.csv               24  chaines YouTube
+    croisement_ig_yt_2026-08-27.csv                       488  chaines YouTube derivees d'Instagram
+    croisement_tt_yt_2026-08-25.csv                      2187  chaines YouTube derivees de TikTok
+    6916 comptes distincts, cle = (plateforme, identifiant)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\cartographie\COMPTES.xlsx
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\comptes_consolides_2026-08-27.csv
+
+------------------------------------------------------------------------
+[    OK    ] Tri des detections — preuves fortes contre bruit
+            nettoyer_detections.py 
+            duree : 0.0 min
+
+    - Detections lues : **25411**
+    - **Preuves fortes (alias d'interprofession) : 240**
+    - **Ecartees comme bruit : 6792**
+    ## PREUVES FORTES — par chaine, audience decroissante
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\detections_nettoyees_2026-08-27.md
+    25411 detections lues dans moisson_videos_2026-08-27.csv
+
+------------------------------------------------------------------------
+
+Termine a 22:44 — duree totale 0 min
+
+BILAN
+
+          OK  Export de la moisson depuis le fichier de reprise
+          OK  Consolidation du registre des comptes
+          OK  Tri des detections — preuves fortes contre bruit
+
+Prochaine etape : ouvrir une session avec Claude pour lire
+les nouveaux candidats et decider quoi en faire.
