@@ -121,9 +121,9 @@ Bloquee sur l'acces. Aucune methode de collecte validee a ce jour.
 
 | ID | Hypothese | Statut | Preuve |
 |---|---|---|---|
-| IG-01 | L'API Ad Library renvoie les publicites commerciales ordinaires pour la France | **CONFIRMEE (documentation)** | Doc officielle `ads_archive` : la restriction aux pubs politiques ne vise que le hors-UE |
+| IG-01 | L'API Ad Library renvoie les publicites commerciales ordinaires pour la France | **CONFIRMEE (documentation, revue le 27/08)** | Doc officielle `ads_archive` : « Ads that did not reach any location in the EU will only return if they are about social issues, elections or politics ». La couverture commerciale existe **pour l'UE et le Royaume-Uni seulement**, au titre du DSA. La France est couverte |
 | IG-02 | L'API Ad Library expose les **contenus de marque** (post de createur etiquete partenariat) | **A TESTER** | **La question la plus importante pour Instagram.** Bloquee sur le jeton |
-| IG-03 | Un jeton d'API s'obtient sans verification d'identite | **A TESTER** | Sources secondaires : verification requise, non confirmee en pratique |
+| IG-03 | Un jeton d'API s'obtient sans verification d'identite | **REFUTEE** | Documentation Meta, verifiee le 27/08 : la confirmation d'identite sur facebook.com/ID — celle exigee pour les publicites politiques — est un prealable a TOUT appel a `ads_archive`. Piece d'identite officielle, 1 a 3 jours ouvres. Le HTTP 400 du 24/08 s'explique par la. JOURNAL 65 |
 | IG-04 | La Meta Content Library est accessible sans affiliation universitaire | **REFUTEE** | Affiliation requise. Celle de Vincent (UCD) n'est plus active |
 | IG-05 | Les comptes suivis par une vitrine contiennent les createurs ayant collabore | **PARTIELLE** | Les 3 cas CNIEL documentes y figurent. `comptes_suivis_2026-08-24.csv`. **Un abonnement ne prouve rien** — voir JOURNAL 19 |
 | IG-06 | Les Stories sont collectables retroactivement | **REFUTEE** | 24 h de duree de vie. Compensable par le signalement citoyen seulement |
@@ -224,3 +224,6 @@ plutot que des inferences sur du contenu.
 | Observatoire Citoyen de la Publicite | Pas de donnees publiques. Code source utile, modele repris | JOURNAL 7 |
 | ARPP | Organe d'autoregulation finance par les annonceurs, publie des agregats seulement | METHODOLOGIE.md section 5 |
 | Dump complet SponsorBlock | Telechargement en masse desactive (rsync uniquement) | JOURNAL 7 |
+
+| IG-08 | L'acces a l'Ad Library passe par un « use case » d'application | **REFUTEE** | Aucun des use cases proposes par Meta ne concerne l'Ad Library. L'acces est gate sur la confirmation d'identite, pas sur la configuration de l'app. Mes instructions du 27/08 decrivaient un parcours de creation d'app qui n'existe plus. JOURNAL 65 |
+| IG-09 | Le quota de l'Ad Library permet un balayage large | **A TESTER** | Environ 200 appels par heure d'apres les sources secondaires. A verifier des que le jeton fonctionne — cela dimensionne toute la strategie Instagram |
