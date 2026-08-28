@@ -79,6 +79,7 @@ REPONSES_CONNUES = {
     "arpp": ("en cours", "Pas sur de l'aspect officiel, ca ressemble a un "
              "potentiel meta-lobby. Je demande l'avis a un collegue."),
     "onedrive": ("pas encore", ""),
+    "twitch": ("", ""),
     "annonces": ("pas encore", ""),
     "laitflix": ("pas encore", "produits-laitiers.com/laitflix/divertissement "
                  "est une mine d'or. Je peux lister les creatures des series "
@@ -230,6 +231,18 @@ DECISIONS = [
      "temps, c'est arithmetiquement impossible. La question est : "
      "m'autorises-tu a reecrire cette section pour y mettre la "
      "capture-recapture a la place ? JOURNAL 62."),
+
+    ("twitch", "Faut-il couvrir Twitch ?",
+     "Oui, mais en dernier — apres les classeurs a juger.",
+     "MESURE du 29/08, qui tranche une question ouverte depuis le 24. On "
+     "croyait Twitch couvert indirectement, parce que l'INAPORC ecrit sur son "
+     "site que les best-of de ses lives migrent vers YouTube. Verification sur "
+     "le catalogue COMPLET de Lebouseuh (1 773 videos) et 300 de Gastronogeek : "
+     "ZERO mention d'INAPORC ou du Porc Francais. Les best-of n'y sont pas. "
+     "Twitch est donc un angle mort reel. Ce que ca coute : l'API Twitch est "
+     "gratuite et expose les CLIPS, qui sont permanents. Les VOD expirent en 14 "
+     "a 60 jours — on verrait le present, jamais l'archive. Il faudrait creer "
+     "un compte developpeur Twitch, comme pour Meta. JOURNAL 70."),
 
     ("publication", "Qui publie le registre, et sous quel nom ?",
      "Sans urgence — tu as deja repondu et j'ai note.",

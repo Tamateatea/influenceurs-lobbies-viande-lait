@@ -98,7 +98,50 @@ CHOIX_TYPE = [
 ]
 
 
+def jugements_existants():
+    """Ce que Vincent a deja repondu, pour ne pas l'ecraser en regenerant.
+
+    ERREUR COMMISE LE 29/08 : regenerer ce classeur apres l'ajout de la chaine
+    INAPORC a efface 36 jugements. Recuperes depuis git. Un generateur qui
+    detruit le travail de l'utilisateur est un generateur casse, meme s'il
+    produit un beau fichier.
+
+    Les reponses sont indexees par NOM de createur : c'est la seule cle stable
+    quand le nombre de lignes change.
+    """
+    if not CIBLE.exists():
+        return {}
+    import openpyxl
+    try:
+        ws = openpyxl.load_workbook(CIBLE, data_only=True)["createurs"]
+    except Exception:
+        return {}
+    entete = None
+    for r in range(1, 60):
+        for c in range(1, 14):
+            if str(ws.cell(row=r, column=c).value or "").startswith("EST-CE"):
+                entete = r
+                break
+        if entete:
+            break
+    if not entete:
+        return {}
+    out = {}
+    for r in range(entete + 1, ws.max_row + 1):
+        nom = ws.cell(row=r, column=2).value
+        if not nom:
+            continue
+        reponses = [ws.cell(row=r, column=c).value for c in (9, 10, 11)]
+        if any(reponses):
+            out[str(nom).strip()] = reponses
+    return out
+
+
 def main():
+    anciens = jugements_existants()
+    if anciens:
+        print(f"{len(anciens)} jugements existants seront preserves",
+              file=sys.stderr)
     fichiers = sorted(RECHERCHE.glob("chaines_lobbies_*.csv"))
     if not fichiers:
         print("Aucun chaines_lobbies_*.csv — lancer d'abord "
@@ -223,8 +266,10 @@ def main():
     for i, (nom, d) in enumerate(lignes, 1):
         r = depart + i
         connu = d["via"].startswith("compte connu")
+        garde = anciens.get(nom, [None, None, None])
         valeurs = [i, nom, ", ".join(sorted(d["entites"])), d["via"], d["n"],
-                   d["date"], d["exemple"][:150], "", "", "", ""]
+                   d["date"], d["exemple"][:150], "",
+                   garde[0] or "", garde[1] or "", garde[2] or ""]
         for j, v in enumerate(valeurs, 1):
             c = ws.cell(row=r, column=j, value=v)
             c.alignment = Alignment(vertical="top", wrap_text=(j in (2, 4, 7)))
