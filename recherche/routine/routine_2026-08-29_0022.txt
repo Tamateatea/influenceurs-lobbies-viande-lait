@@ -1,0 +1,91 @@
+ROUTINE QUOTIDIENNE — 2026-08-29 00:22
+
+Ce fichier dit ce qui a tourne cette nuit et ce que ca a produit.
+Il ne contient aucun jugement : la lecture des candidats reste humaine.
+
+------------------------------------------------------------------------
+[ IGNOREE ] Transcription en second rideau — chaines deja identifiees
+            (--sans-quota)
+
+[ IGNOREE ] Chaines des lobbies — createurs qu'ils nomment eux-memes
+            (--sans-quota)
+
+[ IGNOREE ] Moisson YouTube — catalogues des chaines surveillees
+            (--sans-quota)
+
+[ IGNOREE ] Croisement TikTok → YouTube — createurs restants
+            (--sans-quota)
+
+[ IGNOREE ] Moisson TikTok — deux mois de plus
+            (--sans-quota)
+
+[    OK    ] Case de declaration — lecture des pages publiques
+            mesurer_declaration.py --max 400 --pause 2.0
+            duree : 0.0 min
+
+    Produit par `outils/mesurer_declaration.py`. Aucun quota d'API.
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\mesure_declaration_2026-08-29.md
+
+------------------------------------------------------------------------
+[    OK    ] Createurs nommes dans les annonces payees
+            createurs_dans_annonces.py 
+            duree : 0.3 min
+
+    Ecrit : createurs_annonces_2026-08-29.md
+
+------------------------------------------------------------------------
+[    OK    ] Export de la moisson depuis le fichier de reprise
+            exporter_moisson.py 
+            duree : 0.0 min
+
+    reprise. Aucun quota consomme : c'est une relecture.
+    - Chaines moissonnees : **2714**
+    - Videos examinees : **311 106**
+    Ecrit : moisson_videos_2026-08-29.csv et moisson_videos_2026-08-29.md
+
+------------------------------------------------------------------------
+[    OK    ] Consolidation du registre des comptes
+            consolider_comptes.py 
+            duree : 0.4 min
+
+    surveillance_youtube_2026-08-24_1642.csv               24  chaines YouTube
+    croisement_ig_yt_2026-08-27.csv                       488  chaines YouTube derivees d'Instagram
+    croisement_tt_yt_2026-08-28.csv                      2425  chaines YouTube derivees de TikTok
+    7405 comptes distincts, cle = (plateforme, identifiant)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\cartographie\COMPTES.xlsx
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\comptes_consolides_2026-08-29.csv
+
+------------------------------------------------------------------------
+[    OK    ] Couverture mesuree sur le jeu de la presse
+            mesurer_couverture_presse.py 
+            duree : 0.0 min
+
+    Ecrit : couverture_presse_2026-08-29.md
+
+------------------------------------------------------------------------
+[    OK    ] Tri des detections — preuves fortes contre bruit
+            nettoyer_detections.py 
+            duree : 0.0 min
+
+    - Detections lues : **25464**
+    - **Preuves fortes (alias d'interprofession) : 254**
+    - **Ecartees comme bruit : 6902**
+    ## PREUVES FORTES — par chaine, audience decroissante
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\detections_nettoyees_2026-08-29.md
+    25464 detections lues dans moisson_videos_2026-08-29.csv
+
+------------------------------------------------------------------------
+
+Termine a 00:23 — duree totale 1 min
+
+BILAN
+
+          OK  Case de declaration — lecture des pages publiques
+          OK  Createurs nommes dans les annonces payees
+          OK  Export de la moisson depuis le fichier de reprise
+          OK  Consolidation du registre des comptes
+          OK  Couverture mesuree sur le jeu de la presse
+          OK  Tri des detections — preuves fortes contre bruit
+
+Prochaine etape : ouvrir une session avec Claude pour lire
+les nouveaux candidats et decider quoi en faire.

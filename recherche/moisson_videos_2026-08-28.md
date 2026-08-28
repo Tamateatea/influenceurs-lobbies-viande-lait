@@ -3,10 +3,10 @@
 Produit par `outils/exporter_moisson.py`, depuis le fichier de
 reprise. Aucun quota consomme : c'est une relecture.
 
-- Chaines moissonnees : **2661**
-- Videos examinees : **307 391**
-- Videos portant un signal commercial : **25421**
-- **Videos citant la filiere viande/lait : 7238**
+- Chaines moissonnees : **2714**
+- Videos examinees : **311 106**
+- Videos portant un signal commercial : **25464**
+- **Videos citant la filiere viande/lait : 7265**
 
 Une citation n'est pas une collaboration : ces lignes passent par
 `nettoyer_detections.py` puis par une verification humaine.

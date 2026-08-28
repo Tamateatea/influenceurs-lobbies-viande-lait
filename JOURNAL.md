@@ -4331,3 +4331,75 @@ seconde.
 
 Et : ne pas renverser une hypothese ancienne sur une observation nouvelle sans
 verifier que l'observation porte bien sur ce que l'hypothese affirmait.
+
+---
+
+## 70. Journal de methode — 29 aout 2026 : le test Twitch, enfin fait
+
+### 70.1 L'hypothese qui n'avait jamais ete testee
+
+TR-06 disait : Twitch ne merite pas d'etre collecte directement, parce que les
+VOD sont ephemeres et que **les best-of migrent vers YouTube**. L'INAPORC
+l'ecrit lui-meme sur son site, a propos des lives de LeBouseuh et Gastronogeek.
+
+Le raisonnement etait fonde sur une source. Mais il reposait sur une
+affirmation qu'on n'avait jamais verifiee dans les donnees, et deux entrees du
+journal ont tranche sans elle — dans un sens le 24/08, dans l'autre le 28/08
+(JOURNAL 69.5).
+
+### 70.2 MESURE — catalogues complets
+
+| Chaine | Videos examinees | Mentions « INAPORC » ou « Porc Francais » |
+|---|---:|---:|
+| **Lebouseuh** | **1 773** (catalogue entier) | **0** |
+| Gastronogeek | 300 sur 386 annoncees | **0** |
+
+42 unites de quota au total.
+
+**Zero.** Le best-of annonce par l'INAPORC n'est pas trouvable sur leurs
+chaines YouTube — ni par le nom du commanditaire, ni par « le porc francais »,
+ni par « leporc.com », ni par « filiere porcine ».
+
+Reserve honnete : pour Gastronogeek, l'API n'a rendu que 300 videos sur les
+386 annoncees par la chaine. Le test est complet pour Lebouseuh, partiel pour
+l'autre.
+
+### 70.3 Ce que ca tranche
+
+**TR-06 est REFUTEE.** Les best-of ne migrent pas vers YouTube de facon
+repérable. Deux explications possibles, qu'on ne peut pas separer : soit ils
+n'y ont jamais ete publies, soit ils y sont sans aucune mention du
+commanditaire — ce qui, pour notre outil, revient au meme.
+
+**Twitch est donc un angle mort reel**, et SE-06 devient refutee pour de bon,
+avec une mesure derriere cette fois.
+
+Ce que ca coute de le combler : l'API Twitch officielle est gratuite et expose
+les **clips**, qui sont permanents (TR-07, jamais testee). Les VOD, elles,
+expirent en 14 a 60 jours. Une collecte Twitch ne verrait donc que le present
+et les clips — pas l'archive.
+
+### 70.4 Ce que le test a trouve en cherchant autre chose
+
+Quatre videos de **Lebouseuh** portent **Nature de Breton**, une marque
+beurriere bretonne :
+
+    2023-06-03  24H A LA FERME !                    visite de ferme et beurrerie
+    2023-08-03  24H DANS UN DES PLUS GRANDS FESTIVALS
+    2023-11-07  ROADTRIP DANS LA MEILLEURE REGION DE FRANCE
+    2023-12-23  MA PREMIERE FOIS DANS UNE CUISINE
+
+C'est une collaboration laitiere documentee, sur une chaine que la presse
+associe a l'INAPORC. **Le createur travaille avec plusieurs filieres**, et
+notre registre ne connaissait ni la marque ni la collaboration.
+
+Nature de Breton est ajoutee a la table d'alias.
+
+### 70.5 La lecon
+
+Le cout de ce test : **42 unites de quota et dix minutes**. Il etait au TODO
+depuis le 24 aout, et deux entrees du journal ont tranche a sa place — l'une
+pour ecarter Twitch, l'autre pour l'y ramener.
+
+Quand une decision repose sur une affirmation verifiable, le cout de la
+verifier est presque toujours inferieur au cout de se tromper deux fois.

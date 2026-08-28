@@ -57,7 +57,13 @@ ETAPES = [
     # Une etape peu gourmande mais bloquante passe avant une etape vorace.
     ("Transcription en second rideau — chaines deja identifiees",
      "second_rideau_transcription.py",
-     ["--videos", "400", "--par-chaine", "80", "--preuves-fortes"], True),
+     ["--videos", "1200", "--par-chaine", "150", "--preuves-fortes"], True),
+
+    # MESURE du 28/08 : c'est le deuxieme canal le plus efficace (32 % des cas
+    # documentes par la presse), et il coute une trentaine d'unites. Il doit
+    # tourner chaque jour, pas une fois par semaine.
+    ("Chaines des lobbies — createurs qu'ils nomment eux-memes",
+     "moissonner_chaines_lobbies.py", [], True),
 
     ("Moisson YouTube — catalogues des chaines surveillees",
      "moissonner_videos.py", ["--budget", "8000", "--max-videos", "600"], True),
@@ -83,6 +89,12 @@ ETAPES = [
 
     ("Consolidation du registre des comptes",
      "consolider_comptes.py", [], False),
+
+    # Sans reseau. C'est la seule mesure du projet construite sur des cas
+    # qu'on n'a pas trouves nous-memes : elle doit etre refaite a chaque tour
+    # pour qu'on voie la couverture bouger.
+    ("Couverture mesuree sur le jeu de la presse",
+     "mesurer_couverture_presse.py", [], False),
 
     ("Tri des detections — preuves fortes contre bruit",
      "nettoyer_detections.py", [], False),

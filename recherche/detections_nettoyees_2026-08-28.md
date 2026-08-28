@@ -12,11 +12,11 @@ Source : `moisson_videos_2026-08-28.csv`.
 
 ## Resultat
 
-- Detections lues : **25421**
-- **Preuves fortes (alias d'interprofession) : 253**
+- Detections lues : **25464**
+- **Preuves fortes (alias d'interprofession) : 254**
 - Preuves faibles (marque + indice) : 109
-- **Ecartees comme bruit : 6876**
-  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **243**
+- **Ecartees comme bruit : 6902**
+  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **244**
 
 Le bruit representait **27 %** des detections brutes.
 
@@ -263,6 +263,12 @@ Le bruit representait **27 %** des detections brutes.
 |---|---|---|---|
 | 2021-06-10 | **CNIEL** | une journée dans mon assiette! 🦋 RECETTES HEALTHY et | https://www.youtube.com/watch?v=7ln21GYN2cY |
 | 2021-06-04 | **CNIEL** | une journée dans mon assiette + RECETTES D'ETE HEALT | https://www.youtube.com/watch?v=f8mnSMox1qU |
+
+### Emeline Franque — 6 260 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2023-02-28 | **CNIEL** | Les produits laitiers sont nos amis pour la vie ! #b | https://www.youtube.com/watch?v=iOQ5AQIk_zk |
 
 ### TasteFrance Magazine — 5 340 abonnes — 1 video(s)
 

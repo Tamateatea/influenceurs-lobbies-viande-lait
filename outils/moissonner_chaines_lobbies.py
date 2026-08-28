@@ -80,6 +80,13 @@ CHAINES = {
     "volaillefrancaise": ("ANVOL", "volaillefrancaise8086"),
     "lefoiegras": ("CIFOG", "LeFoieGrasFrance"),
     "interbevnouvelleaquitaine": ("INTERBEV", "interbevnouvelle-aquitaine7800"),
+
+    # Trouvees le 29/08 en testant des pseudonymes plausibles un par un.
+    # @inaporc porte 97 videos et n'etait pas surveillee : c'est la chaine
+    # officielle de l'INAPORC, sous le nom « Le Porc Francais ».
+    "inaporc": ("INAPORC", "inaporc"),
+    "interbevgrandest": ("INTERBEV", "interbevgrandest"),
+    "bleublanccoeur": ("Bleu-Blanc-Coeur", "bleublanccoeur"),
 }
 
 # Motifs qui nomment un createur dans un titre de video.
@@ -228,6 +235,14 @@ def main():
         it = d["items"][0]
         up = it["contentDetails"]["relatedPlaylists"]["uploads"]
         titre_chaine = it["snippet"]["title"]
+
+        # Le TITRE de la chaine doit rejoindre l'exclusion, pas seulement son
+        # pseudonyme. La chaine @inaporc s'appelle « Le Porc Francais » et se
+        # nommait elle-meme 56 fois dans ses propres titres — ajoutee le 29/08.
+        comptes_lobby.add(aplatir(titre_chaine))
+        for mot in titre_chaine.split():
+            if len(aplatir(mot)) >= 8:
+                comptes_lobby.add(aplatir(mot))
         abonnes = it.get("statistics", {}).get("subscriberCount", "")
 
         page, n = None, 0

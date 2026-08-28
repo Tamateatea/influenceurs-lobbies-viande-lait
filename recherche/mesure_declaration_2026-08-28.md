@@ -6,7 +6,7 @@ YouTube affiche « Comprend une communication commerciale » quand le
 createur a coche une case. C'est le seul signal **declaratif** du
 projet : quand il est la, il n'y a rien a interpreter.
 
-- Videos jugees et lues : **240**
+- Videos jugees et lues : **243**
 - Vraies collaborations dedans : **79**
 - Pages non lues, exclues du calcul : 0
 

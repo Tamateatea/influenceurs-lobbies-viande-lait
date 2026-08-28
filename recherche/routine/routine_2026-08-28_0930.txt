@@ -1,0 +1,154 @@
+ROUTINE QUOTIDIENNE — 2026-08-28 09:30
+
+Ce fichier dit ce qui a tourne cette nuit et ce que ca a produit.
+Il ne contient aucun jugement : la lecture des candidats reste humaine.
+
+------------------------------------------------------------------------
+[    OK    ] Transcription en second rideau — chaines deja identifiees
+            second_rideau_transcription.py --videos 400 --par-chaine 80 --preuves-fortes
+            duree : 10.5 min
+
+    Videos **sans aucun signal en description**, prises sur les chaines
+    - Chaines examinees : **39**
+    - Quota depense : 115 unites
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\second_rideau_2026-08-28.md
+    39 chaines avec une collaboration confirmee | 112 formes d'alias
+    400 videos a transcrire | 115 unites de quota
+    280/400 � 5 trouvees
+    290/400 � 5 trouvees
+    300/400 � 5 trouvees
+    310/400 � 6 trouvees
+    320/400 � 6 trouvees
+    330/400 � 6 trouvees
+    340/400 � 6 trouvees
+    350/400 � 6 trouvees
+    360/400 � 6 trouvees
+    370/400 � 6 trouvees
+    380/400 � 7 trouvees
+    390/400 � 7 trouvees
+    400/400 � 7 trouvees
+
+------------------------------------------------------------------------
+[    OK    ] Moisson YouTube — catalogues des chaines surveillees
+            moissonner_videos.py --budget 8000 --max-videos 600
+            duree : 1.6 min
+
+    1786/2714 EpicSkiRide \u26f7\ufe0f                  16 videos | quota   118
+    1805/2714 chacocars \U0001f3ce\ufe0f                     0 videos | quota   120
+    1815/2714 Safiadhair                       0 videos | quota   122
+    1899/2714 Qenoa - Soins Naturels          11 videos | quota   124
+    1916/2714 Pierre-Luigi Detourbe            2 videos | quota   126
+    1926/2714 Mariana Oliveira                 0 videos | quota   128
+    2010/2714 Le j steuplai \U0001f64f\U0001f3ff                 2 videos | quota   130
+    2059/2714 Storytale                       14 videos | quota   132
+    2070/2714 FruitCinema                      6 videos | quota   134
+    2095/2714 TOTALementGaming                 3 videos | quota   136
+    2096/2714 Yayouchiekhibra                  1 videos | quota   138
+    2245/2714 AZ\u0130Z FUTBOL                      1 videos | quota   140
+    2275/2714 yvonne 18                        1 videos | quota   142
+    2307/2714 Horror_Devil_Hell                2 videos | quota   144
+    2420/2714 Yacine Kessab                    0 videos | quota   146
+    2446/2714 Georgel Cenusa                   0 videos | quota   148
+    2509/2714 DidotKnife                       0 videos | quota   150
+    2535/2714 Jose Gomes                       0 videos | quota   152
+    2618/2714 Pauline Inspirations             0 videos | quota   154
+    2627/2714 Charlene Chery                   1 videos | quota   156
+    2637/2714 Creziy                           1 videos | quota   158
+    2643/2714 lovebeauty153                    0 videos | quota   160
+    2687/2714 NuXe                             0 videos | quota   162
+    2690/2714 Alaedine                         1 videos | quota   164
+    2703/2714 PerfectLady88                    0 videos | quota   166
+
+------------------------------------------------------------------------
+[    OK    ] Croisement TikTok → YouTube — createurs restants
+            croiser_tiktok_youtube.py --budget 1500
+            duree : 1.2 min
+
+    - **Chaines YouTube trouvees : 2425**
+    - Quota depense ce lancement : **859 unites**
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\croisement_tt_yt_2026-08-28.md
+    ... 200 unites, 35 chaines trouvees
+    ... 400 unites, 83 chaines trouvees
+    ... 600 unites, 135 chaines trouvees
+    ... 800 unites, 178 chaines trouvees
+
+------------------------------------------------------------------------
+[    OK    ] Moisson TikTok — deux mois de plus
+            moissonner_tiktok.py 
+            duree : 0.0 min
+
+    - Contenus commerciaux : **108 581**
+    - Contenus avec `brand_names` renseigne : **20** (0.02 %)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\tiktok_population_2026-08-28.md
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\tiktok_population_2026-08-28.csv
+    47 mois a couvrir | 7 deja faits | 108581 contenus en cache
+    20230301 : ERREUR HTTP 429 � {"data":{},"error":{"code":"daily_quota_limit_exceeded","message":"The API dail
+    quota TikTok epuise pour aujourd'hui, arret propre a 2023-03
+
+------------------------------------------------------------------------
+[    OK    ] Case de declaration — lecture des pages publiques
+            mesurer_declaration.py --max 400 --pause 2.0
+            duree : 0.2 min
+
+    Produit par `outils/mesurer_declaration.py`. Aucun quota d'API.
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\mesure_declaration_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Createurs nommes dans les annonces payees
+            createurs_dans_annonces.py 
+            duree : 0.9 min
+
+    Ecrit : createurs_annonces_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Export de la moisson depuis le fichier de reprise
+            exporter_moisson.py 
+            duree : 0.0 min
+
+    reprise. Aucun quota consomme : c'est une relecture.
+    - Chaines moissonnees : **2714**
+    - Videos examinees : **311 106**
+    Ecrit : moisson_videos_2026-08-28.csv et moisson_videos_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Consolidation du registre des comptes
+            consolider_comptes.py 
+            duree : 0.9 min
+
+    surveillance_youtube_2026-08-24_1642.csv               24  chaines YouTube
+    croisement_ig_yt_2026-08-27.csv                       488  chaines YouTube derivees d'Instagram
+    croisement_tt_yt_2026-08-28.csv                      2425  chaines YouTube derivees de TikTok
+    7405 comptes distincts, cle = (plateforme, identifiant)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\cartographie\COMPTES.xlsx
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\comptes_consolides_2026-08-28.csv
+
+------------------------------------------------------------------------
+[    OK    ] Tri des detections — preuves fortes contre bruit
+            nettoyer_detections.py 
+            duree : 0.1 min
+
+    - Detections lues : **25464**
+    - **Preuves fortes (alias d'interprofession) : 254**
+    - **Ecartees comme bruit : 6902**
+    ## PREUVES FORTES � par chaine, audience decroissante
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\detections_nettoyees_2026-08-28.md
+    25464 detections lues dans moisson_videos_2026-08-28.csv
+
+------------------------------------------------------------------------
+
+Termine a 09:45 — duree totale 15 min
+
+BILAN
+
+          OK  Transcription en second rideau — chaines deja identifiees
+          OK  Moisson YouTube — catalogues des chaines surveillees
+          OK  Croisement TikTok → YouTube — createurs restants
+          OK  Moisson TikTok — deux mois de plus
+          OK  Case de declaration — lecture des pages publiques
+          OK  Createurs nommes dans les annonces payees
+          OK  Export de la moisson depuis le fichier de reprise
+          OK  Consolidation du registre des comptes
+          OK  Tri des detections — preuves fortes contre bruit
+
+Prochaine etape : ouvrir une session avec Claude pour lire
+les nouveaux candidats et decider quoi en faire.

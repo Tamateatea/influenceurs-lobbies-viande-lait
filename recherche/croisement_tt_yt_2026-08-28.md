@@ -7,12 +7,12 @@ Les createurs de la Commercial Content Library sont des createurs
 C'est une meilleure semence que les abonnements des vitrines, qui ne
 prouvent rien.
 
-- Createurs TikTok essayes : **7202** sur 8061
-- **Chaines YouTube trouvees : 2241**
-- dont au moins 100 000 abonnes : **375**
-- Quota depense ce lancement : **1 unites**
+- Createurs TikTok essayes : **8061** sur 8061
+- **Chaines YouTube trouvees : 2425**
+- dont au moins 100 000 abonnes : **392**
+- Quota depense ce lancement : **859 unites**
 
-Arret : quota YouTube epuise
+
 
 **Le rattachement est une HYPOTHESE** : un meme pseudo sur deux
 plateformes ne prouve pas la meme personne.
@@ -43,6 +43,7 @@ plateformes ne prouve pas la meme personne.
 | @violin_phonix | Violin Phonix | 3 160 000 | 1 |
 | @sananas | Sananas | 3 010 000 | 7 |
 | @benoit_chevalier | Benoit Chevalier | 2 910 000 | 7 |
+| @jojol | Jojol | 2 730 000 | 1 |
 | @leotechmaker | Léo - TechMaker | 2 590 000 | 1 |
 | @konbini | Konbini | 2 490 000 | 8 |
 | @superboumj | SUPERBOUMJ | 2 480 000 | 15 |
@@ -57,6 +58,7 @@ plateformes ne prouve pas la meme personne.
 | @aziatomik | Aziatomik | 2 050 000 | 1 |
 | @lequipe | L'ÉQUIPE | 2 040 000 | 2 |
 | @jigme | JIGMÉ | 2 030 000 | 1 |
+| @redhajr | Redha Jr | 2 020 000 | 1 |
 | @baggydessine | Baggy Dessine  | 2 010 000 | 4 |
 | @mishaetalex | Misha et Alex | 1 940 000 | 6 |
 | @canalplus | CANAL+ | 1 760 000 | 2 |
@@ -80,6 +82,7 @@ plateformes ne prouve pas la meme personne.
 | @tsukuytb | TSUKU | 1 330 000 | 2 |
 | @resfeezy | Resfeezy | 1 310 000 | 1 |
 | @cyrilschr | Cyril Schreiner | 1 300 000 | 4 |
+| @kodanimation | Koda | 1 290 000 | 1 |
 | @sundyjules | Sundy Jules | 1 280 000 | 8 |
 | @leonardberducat | Léonard | 1 280 000 | 3 |
 | @tristandefeuilletvang | Tristan | 1 280 000 | 1 |
@@ -113,9 +116,11 @@ plateformes ne prouve pas la meme personne.
 | @lacompagnieoff | La Compagnie | 968 000 | 1 |
 | @fililala | Fililala | 948 000 | 2 |
 | @familleenxl | familleenxl | 935 000 | 4 |
+| @theobabac | TheoBabac | 927 000 | 1 |
 | @levendeurautomobiles | Le Vendeur Automobiles | 899 000 | 2 |
 | @mllexchloe | Mllex Chloé | 887 000 | 1 |
 | @waythes | Waythes | 885 000 | 7 |
+| @maniraj_officiel | Maniraj_officiel | 875 000 | 1 |
 | @dindin.inparis | dindin.inparis  | 874 000 | 1 |
 | @leopoldlemarchand | Léopold | 865 000 | 1 |
 | @poopiblh | Poopi blh | 860 000 | 28 |
@@ -147,9 +152,11 @@ plateformes ne prouve pas la meme personne.
 | @skinra | Skinra | 675 000 | 2 |
 | @auborddelassiette | Au Bord de l'Assiette | 672 000 | 3 |
 | @sarahschwabofficiel | Sarah Schwab | 670 000 | 2 |
+| @dobbyelfe_ | Dobby | 667 000 | 1 |
 | @jonathanclnt | Jonathan CLNT  | 660 000 | 1 |
 | @battells | BATTELLS | 640 000 | 1 |
 | @bennevert | Ben Névert | 618 000 | 1 |
+| @gqfrance | GQ France | 611 000 | 1 |
 | @bordasofficiel | BORDAS | 610 000 | 1 |
 | @ninaliuba | Nina liuba | 609 000 | 2 |
 | @raphaellelamaman | Raphaëlle la Maman | 605 000 | 9 |
@@ -162,10 +169,3 @@ plateformes ne prouve pas la meme personne.
 | @nobuo_ | NOBUO & CO | 560 000 | 5 |
 | @marsha_du_ | Marsha Dunkel | 559 000 | 5 |
 | @annasdecade | Anna's Decade | 556 000 | 10 |
-| @imperatricewu | Imperatrice Wu | 556 000 | 8 |
-| @drmustafaadel10 |  DR.Mustafa Adel د.مصطفي عادل | 554 000 | 8 |
-| @aghrabmimmatatakhayal | أغرب مما تتخيل | 552 000 | 3 |
-| @val_lienard | Val Lienard | 548 000 | 2 |
-| @mohachew | Electro momed | 543 000 | 2 |
-| @julgane | Julgane | 539 000 | 1 |
-| @miraliszt | MIRA | 534 000 | 1 |
