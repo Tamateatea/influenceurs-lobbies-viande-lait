@@ -13,9 +13,9 @@ Source : `moisson_videos_2026-08-28.csv`.
 ## Resultat
 
 - Detections lues : **25421**
-- **Preuves fortes (alias d'interprofession) : 240**
-- Preuves faibles (marque + indice) : 107
-- **Ecartees comme bruit : 6792**
+- **Preuves fortes (alias d'interprofession) : 252**
+- Preuves faibles (marque + indice) : 109
+- **Ecartees comme bruit : 6877**
   - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **243**
 
 Le bruit representait **27 %** des detections brutes.
@@ -96,12 +96,14 @@ Le bruit representait **27 %** des detections brutes.
 | 2020-03-06 | **CNIEL** | ELLE A FINI LA JOURNÉE EN TITUBANT | https://www.youtube.com/watch?v=Z62qEUXOuh4 |
 | 2019-10-09 | **CNIEL** | DANIELLE VS 60 VACHES | https://www.youtube.com/watch?v=XSxogxQcAik |
 
-### Hervé Cuisine — 1 600 000 abonnes — 2 video(s)
+### Hervé Cuisine — 1 600 000 abonnes — 4 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
+| 2026-07-24 | **CNIEL** | Quiche sans pâte ultra moelleuse aux légumes d’été e | https://www.youtube.com/watch?v=ti3-2AoKNEg |
 | 2025-09-19 | **CNIEL** | La meilleure tarte au citron sans œufs ni lait 🍋 Bie | https://www.youtube.com/watch?v=JXptlEqWYkQ |
 | 2025-03-31 | **CNIEL** | Le flan pâtissier vanille et caramel facile et inrat | https://www.youtube.com/watch?v=J98c6pMVdrc |
+| 2024-05-24 | **CNIEL** | Clafoutis aux tomates et thon et mozzarella, recette | https://www.youtube.com/watch?v=LnHX1TLAI_M |
 
 ### Juste Zoé — 1 560 000 abonnes — 1 video(s)
 
@@ -138,6 +140,12 @@ Le bruit representait **27 %** des detections brutes.
 |---|---|---|---|
 | 2023-05-29 | **INAPORC** | RENCONTRE AVEC SOPHIE | https://www.youtube.com/watch?v=RBsbxIGJP-U |
 
+### MYRIAMANHATTAN — 128 000 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2017-11-12 | **CNIEL** | RECETTE DE LA HESS : BARRE LION 🦁🍫! | https://www.youtube.com/watch?v=NSden3Wlpe0 |
+
 ### Check — 122 000 abonnes — 12 video(s)
 
 | Date | Entite | Titre | URL |
@@ -155,10 +163,11 @@ Le bruit representait **27 %** des detections brutes.
 | 2019-03-07 | **CNIEL** | Gaëlle Garcia Diaz & KIKESA #CheckFood | https://www.youtube.com/watch?v=38vtxSjzi9Y |
 | 2019-02-08 | **CNIEL** | Gaëlle Garcia Diaz & Alkpote #CheckFood | https://www.youtube.com/watch?v=Yc4r1SzVb4Y |
 
-### Produits Laitiers — 101 000 abonnes — 62 video(s)
+### Produits Laitiers — 101 000 abonnes — 66 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
+| 2026-02-24 | **CNIEL** | CHAUD! - Épisode 4 (avec Jeffrey Cagnes) | https://www.youtube.com/watch?v=uwyDo-NNCD8 |
 | 2023-05-31 | **CNIEL** | Pub Les Produits Laitiers Manga - Filière Laitière | https://www.youtube.com/watch?v=3QvRInOnfqo |
 | 2023-02-15 | **CNIEL** | Pub TV - Les Produits Laitiers Manga - Environnement | https://www.youtube.com/watch?v=MRgD8nhPyvE |
 | 2023-02-15 | **CNIEL** | Pub TV - Les Produits Laitiers Manga - Y a quoi dans | https://www.youtube.com/watch?v=xjsrqaP-sHQ |
@@ -170,8 +179,7 @@ Le bruit representait **27 %** des detections brutes.
 | 2021-03-01 | **CNIEL** | DANS NOS ASSIETTES - TARA | https://www.youtube.com/watch?v=pRbQ4khqWSk |
 | 2021-02-22 | **CNIEL** | Les vaches, ça pollue ? | https://www.youtube.com/watch?v=nrV7gX2uWCM |
 | 2020-09-08 | **CNIEL** | Et si on en parlait : Les jus végétaux | https://www.youtube.com/watch?v=3vmnwH0WSMU |
-| 2020-09-08 | **CNIEL** | Milk Check : Consommer les produits laitiers après l | https://www.youtube.com/watch?v=V8jvr6gfhyI |
-| … | | 50 autres dans le CSV | |
+| … | | 54 autres dans le CSV | |
 
 ### PumbaTheLion — 82 700 abonnes — 1 video(s)
 
@@ -216,10 +224,12 @@ Le bruit representait **27 %** des detections brutes.
 |---|---|---|---|
 | 2025-06-16 | **ANVOL** | Shawarma maison, la recette facile | https://www.youtube.com/watch?v=frp-4gQv5WU |
 
-### Le Chat Toqué — 32 900 abonnes — 1 video(s)
+### Le Chat Toqué — 32 900 abonnes — 3 video(s)
 
 | Date | Entite | Titre | URL |
 |---|---|---|---|
+| 2026-06-17 | **CNIEL** | Il fait beau, il fait chaud... Un Fresh Dwich' ? 🥪 | https://www.youtube.com/watch?v=OszBX9XWurc |
+| 2025-03-10 | **CNIEL** | Le Naan Fromage ! 🫓🧀 #naan | https://www.youtube.com/watch?v=lZgXNi2n0NM |
 | 2025-01-29 | **CNIEL** | Les Crêpes SANS GLUTEN, SANS SUCRE, ET SANS PRODUITS | https://www.youtube.com/watch?v=GH8IA1b2ZZI |
 
 ### Viande Suisse — 21 300 abonnes — 1 video(s)
@@ -259,6 +269,14 @@ Le bruit representait **27 %** des detections brutes.
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2021-11-04 | **INTERBEV** | MEAT AND CHEESE LOVERS:  The Unexpected French Tour  | https://www.youtube.com/watch?v=C8-MxuimQ0M |
+
+### Maître CoQ — 5 080 abonnes — 3 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2024-02-09 | **CNIEL** | Sandwich japonais au Poulet | https://www.youtube.com/watch?v=o4BYYuzdB7U |
+| 2014-03-15 | **CNIEL** | Jérémie Beyou : les raisons d'une victoire - Solo Ma | https://www.youtube.com/watch?v=NaAOz6YAgQU |
+| 2013-11-24 | **CNIEL** | Transat Jacques Vabre : un passage de ligne très trè | https://www.youtube.com/watch?v=0yjPelwpyBY |
 
 ### Margaux Lifestyle | Running  SOPK & Lipœdème — 4 570 abonnes — 1 video(s)
 
@@ -357,6 +375,7 @@ Le bruit representait **27 %** des detections brutes.
 | FabienOlicard | 2 330 000 | President (Lactalis) | Societe (La | Analyse d'E. Macron après la Motion de C | https://www.youtube.com/watch?v=dTOKmnyoiN4 |
 | FabienOlicard | 2 330 000 | President (Lactalis) | Societe (La | Peut-on décrypter le président E. Macron | https://www.youtube.com/watch?v=cG4irtSXfZ8 |
 | Studio Danielle | 1 740 000 | La Laitiere (Lactalis (licence Nes | NE SURTOUT PAS RIGOLER | https://www.youtube.com/watch?v=R0RYmOZUx-8 |
+| Aypierre | 1 450 000 | Charal (Bigard) | Le Buildboard Challenge minecraft de Cha | https://www.youtube.com/watch?v=rDLzwma0-K4 |
 | Tristan | 1 280 000 | President (Lactalis) | J'ai Crée Un Disque d'Or GÉANT Pour McFl | https://www.youtube.com/watch?v=np0anSNmHfQ |
 | Léonard | 1 280 000 | President (Lactalis) | J'affronte 3 Expériences Extrêmes (se fa | https://www.youtube.com/watch?v=cW04250Msx4 |
 | AVRE (Explore Media) | 1 260 000 | President (Lactalis) | Un ex-garde du corps analyse des films | | https://www.youtube.com/watch?v=y6vj6kga9lE |
@@ -389,5 +408,4 @@ Le bruit representait **27 %** des detections brutes.
 | MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 3 - "Boulot  boulot | https://www.youtube.com/watch?v=OW_fC5MNQk4 |
 | MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 2 - "J'ai pas peur  | https://www.youtube.com/watch?v=I1iEtzMmguQ |
 | MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 1 - "La main qui s' | https://www.youtube.com/watch?v=6_qccxPFOOc |
-| C'est meilleur quand | 233 000 | President (Lactalis) | Le rôle des chefs pour bien manger | https://www.youtube.com/watch?v=vJN3sGu_IuE |
 
