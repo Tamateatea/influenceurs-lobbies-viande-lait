@@ -3,7 +3,7 @@
 Produit par `outils/rescanner_moisson.py`. Aucun quota.
 
 - Videos relues : **25421**
-- Videos gagnant une entite : **150**
+- Videos gagnant une entite : **1**
 
 **Limite :** seules les videos portant deja un signal sont dans le
 fichier de reprise. Un alias nouveau ne peut pas faire apparaitre une
@@ -11,5 +11,4 @@ video qui n'en portait aucun — il faudrait re-moissonner.
 
 | Entite gagnee | Videos |
 |---|---:|
-| CNIEL | 149 |
-| Nestle France | 1 |
+| ANVOL | 1 |

@@ -75,6 +75,40 @@ Et une contrainte : **budget zero euro.** Toute source payante est hors jeu.
 
 ---
 
+## 1bis. Ce que le jeu de donnees doit contenir
+
+Formule par Vincent le 27 aout 2026, en reponse a la question « qui publie le
+registre » :
+
+> « On est a l'etape de creer une methode de scrapping robuste et resiliente.
+> Le but est de creer un dataset solide avec **nom des influenceurs**,
+> **lobby / vitrine / marque qui remunere**, **date de la collaboration
+> commerciale**, eventuellement le **montant**, la **forme** (le type et le
+> nombre de contenus), les **plateformes**. Une fois qu'on aura ce dataset et
+> une methode efficace pour le mettre a jour regulierement, on reflechira a la
+> forme du site. »
+
+Les colonnes cibles, donc :
+
+| Champ | Etat au 28/08 | Ce qui manque |
+|---|---|---|
+| nom du createur | **acquis** | rien |
+| commanditaire | **acquis** | rien |
+| plateformes | **acquis** | rien |
+| date de la collaboration | **acquis** | rien |
+| forme du contenu | partiel | le TYPE est souvent lisible (video, reel, post) ; le NOMBRE demande de regrouper les contenus d'une meme campagne, ce qui n'est pas fait |
+| degre de certitude | **acquis** | rien — voir section 1 |
+| **montant** | **absent** | aucune source ne le donne. La Meta Ad Library rend des **paliers** de depense, et seulement pour les publicites politiques. Pour le reste, rien. |
+
+**Le montant est le seul champ sans source identifiee.** Il faut le dire
+clairement plutot que le laisser en suspens : a moins qu'un createur ou un
+lobby ne le publie, ou qu'une source institutionnelle ne s'ouvre, ce champ
+restera vide dans la plupart des lignes. Le registre doit etre concu pour que
+ce vide ne le disqualifie pas.
+
+Consequence de conception : le champ existe, il est facultatif, et son absence
+ne doit jamais empecher la publication d'une ligne par ailleurs documentee.
+
 ## 2. L'idee centrale : la table d'alias
 
 C'est le seul element de methode qui nous distingue reellement de l'existant,

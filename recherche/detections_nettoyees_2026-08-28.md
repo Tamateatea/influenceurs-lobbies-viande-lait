@@ -13,9 +13,9 @@ Source : `moisson_videos_2026-08-28.csv`.
 ## Resultat
 
 - Detections lues : **25421**
-- **Preuves fortes (alias d'interprofession) : 252**
+- **Preuves fortes (alias d'interprofession) : 253**
 - Preuves faibles (marque + indice) : 109
-- **Ecartees comme bruit : 6877**
+- **Ecartees comme bruit : 6876**
   - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **243**
 
 Le bruit representait **27 %** des detections brutes.
@@ -307,6 +307,12 @@ Le bruit representait **27 %** des detections brutes.
 | 2023-07-03 | **CNIEL** | RUNGIS CHEESE CHALLENGE | https://www.youtube.com/watch?v=2ePeGzu8LWM |
 | 2021-10-26 | **CNIEL** | RUNGIS CHEESE CHALLENGE | https://www.youtube.com/watch?v=5CFBRpwEuwU |
 | 2020-12-23 | **CNIEL** | Les Paniers Marché de Rungis x Christophe Saintagne | https://www.youtube.com/watch?v=WAYbZ91iVU4 |
+
+### Volailles Fermières des Landes — 681 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2021-06-30 | **ANVOL** | Bernard TAUZIA - Président de l'Association des Vola | https://www.youtube.com/watch?v=LP4Rwu094rc |
 
 ### Naturellement Flexitariens — 379 abonnes — 12 video(s)
 
