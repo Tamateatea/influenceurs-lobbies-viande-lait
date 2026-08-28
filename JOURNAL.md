@@ -4230,3 +4230,104 @@ vraie.
 
 A corriger : une etape devrait pouvoir se declarer **« passee sans effet »**,
 distinct de « OK ». Sans quoi le compte rendu du matin rassure a tort.
+
+---
+
+## 69. Journal de methode — 28 aout 2026 : mon propre chiffre etait faux
+
+### 69.1 Ce que j'ai annonce, et pourquoi c'etait trop severe
+
+L'entree 68 annoncait : « le projet rate trois cas documentes sur quatre ».
+Vincent a demande si cela voulait dire que tous nos outils etaient mauvais.
+
+La question etait la bonne, et la reponse est non — parce que **mon chiffre ne
+mesurait qu'un seul canal**.
+
+« Preuve forte » designe, dans tout le projet, un resultat du canal
+**description**. En croisant les douze createurs documentes par la presse avec
+les seules preuves fortes, je mesurais donc la couverture de la description, et
+je l'ai presentee comme la couverture du projet.
+
+### 69.2 MESURE — la couverture reelle, tous canaux confondus
+
+| Createur | description | chaines des lobbies | publicites Meta | sites | vu ? |
+|---|---|---|---|---|---|
+| Mister V | X | X | | X | **oui** |
+| Inoxtag | X | | | X | **oui** |
+| Valouzz | X | | | | **oui** |
+| Kameto | | X | | | **oui** |
+| Amine | | X | X | X | **oui** |
+| Jiraya | | X | | | **oui** |
+| Doigby | | X | | | **oui** |
+| Billy | | | | X | **oui** |
+| Squeezie | | | | | non |
+| Lebouseuh | | | | | non |
+| Gastronogeek | | | | | non |
+| FitClaire | | | | | non |
+
+    canal description seul   3 sur 12   25 %
+    TOUS canaux confondus    8 sur 12   **67 %**
+
+L'estimation de population de l'entree 68 — 119 createurs — reposait sur le
+mauvais chiffre et **ne doit pas etre citee**.
+
+### 69.3 Ce que ca dit vraiment des outils
+
+Ils ne sont pas mauvais : ils sont **specialises**, et chacun couvre un
+territoire different. C'est meme la demonstration la plus nette qu'on ait de
+l'interet d'avoir plusieurs canaux : quatre createurs sur douze ne sont vus
+QUE par les chaines des lobbies, un seul QUE par les sites.
+
+Ce qui est faux, c'est de resumer le projet a son canal principal. Et c'est ce
+que j'ai fait.
+
+### 69.4 Les quatre qu'on rate vraiment
+
+**Squeezie.** La video citee par la presse, « 1990 VS 2000 », **figure dans le
+catalogue LAIT'FLIX qu'on a releve ce matin** — mais la page ne nomme pas
+Squeezie. La video est dans nos donnees, l'attribution manque. C'est un
+probleme d'appariement, pas de collecte.
+
+**Lebouseuh et Gastronogeek.** Lives Twitch pour l'INAPORC. Voir ci-dessous.
+
+**FitClaire.** Absente du registre de surveillance. Correction sans cout.
+
+### 69.5 Twitch — j'ai eu tort deux fois, dans deux sens opposes
+
+Vincent demande si j'avais ete sur-confiant en ecartant Twitch.
+
+**La position d'origine n'etait pas de la sur-confiance.** TR-06 disait :
+Twitch ne merite pas d'etre collecte directement, parce que les VOD sont
+ephemeres et que **les best-of migrent vers YouTube** — l'INAPORC l'ecrit
+lui-meme sur son site. C'est un raisonnement fonde sur une source.
+
+**Mais l'entree 68 a saute a l'inverse.** J'y ai ecrit « SE-06 : Twitch est
+hors sujet — REFUTEE », au seul motif qu'on ne trouvait pas ces deux
+createurs. C'etait aussi rapide dans un sens que dans l'autre.
+
+Car la question decisive n'a jamais ete posee : **le best-of existe-t-il sur
+leurs chaines YouTube, et l'avons-nous vu ?**
+
+Verification faite : leurs deux chaines **sont** dans le registre et **ont
+ete** moissonnees. Mais la moisson n'enregistre que les videos **portant deja
+un signal**. Une video vue et jugee sans signal n'est nulle part. **On ne peut
+donc pas savoir, avec les donnees actuelles, si le best-of a ete vu et rejete,
+ou jamais vu.**
+
+TR-06 n'est ni confirmee ni refutee : **elle n'a jamais ete testee.** SE-06 est
+ramenee a « non tranchee ».
+
+Le test tient en une requete, au retour du quota : lister les catalogues de
+Lebouseuh et Gastronogeek et chercher le best-of INAPORC par son titre. Si on
+le trouve, TR-06 tient et Twitch reste secondaire. Si on ne le trouve pas,
+Twitch devient un canal a couvrir.
+
+### 69.6 La lecon
+
+Un chiffre de couverture doit toujours dire **de quoi** il est la couverture.
+« Le projet rate 75 % » et « le canal description rate 75 % » sont deux
+phrases tres differentes, et j'ai publie la premiere en ayant mesure la
+seconde.
+
+Et : ne pas renverser une hypothese ancienne sur une observation nouvelle sans
+verifier que l'observation porte bien sur ce que l'hypothese affirmait.

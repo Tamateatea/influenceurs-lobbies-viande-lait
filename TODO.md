@@ -86,6 +86,17 @@ l'ecraser**. `A_FAIRE.xlsx` est regenere a volonte par
       `@la_viande_fr` (JOURNAL 60). Reste le cas des marques dont le nom EST
       un mot courant meme correctement delimite — « Marie », « Societe ».
 
+- [ ] `[C]` **TESTER TR-06 : le best-of Twitch est-il sur YouTube ?** Lister les
+      catalogues de Lebouseuh (`UCUl7mwOyySfZzUkq4H29nug`) et Gastronogeek
+      (`UCfI1q93ZYNR_mJYKFEqxfrA`) et chercher le best-of INAPORC par son
+      titre. **C'est ce test qui decide s'il faut couvrir Twitch.** Il n'a
+      jamais ete fait, et deux entrees du journal ont tranche sans lui
+      (JOURNAL 69.5). Cout : environ 15 unites de quota.
+- [ ] `[C]` **Ajouter FitClaire au registre** — documentee par la presse comme
+      collaboratrice d'INTERBEV, absente de la surveillance.
+- [ ] `[C]` **Rattacher Squeezie a « 1990 VS 2000 »** — la video est dans le
+      catalogue LAIT'FLIX releve le 28/08, mais la page ne la lui attribue pas.
+
 - [ ] `[C]` **Reprendre la moisson TikTok** : 42 mois sur 47. Le quota
       journalier n'en autorise qu'environ deux par jour — compter trois
       semaines. `outils/moissonner_tiktok.py` reprend ou il s'arrete, et un
