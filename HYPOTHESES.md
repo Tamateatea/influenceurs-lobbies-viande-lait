@@ -227,3 +227,6 @@ plutot que des inferences sur du contenu.
 
 | IG-08 | L'acces a l'Ad Library passe par un « use case » d'application | **REFUTEE** | Aucun des use cases proposes par Meta ne concerne l'Ad Library. L'acces est gate sur la confirmation d'identite, pas sur la configuration de l'app. Mes instructions du 27/08 decrivaient un parcours de creation d'app qui n'existe plus. JOURNAL 65 |
 | IG-09 | Le quota de l'Ad Library permet un balayage large | **A TESTER** | Environ 200 appels par heure d'apres les sources secondaires. A verifier des que le jeton fonctionne — cela dimensionne toute la strategie Instagram |
+| SE-04 | Le projet voit la majorite des collaborations existantes | **REFUTEE** | Croisement avec 12 createurs documentes par la presse : 3 seulement ont une preuve forte chez nous. 25 %. Chapman estime 119 createurs pour 36 trouves. JOURNAL 68 |
+| SE-05 | Le journalisme est une source independante utilisable | **CONFIRMEE, avec reserve** | Il n'apparie pas de chaines de caracteres, il enquete. Mais il trouve les cas les plus visibles, comme nous : les 119 sont un plancher. JOURNAL 68.7 |
+| SE-06 | Twitch est hors sujet pour le projet | **REFUTEE** | Lebouseuh et Gastronogeek ont fait des lives Twitch pour l'INAPORC, dont le site porte une rubrique « Les eleveurs de porcs sur Twitch ». Strategie assumee. JOURNAL 68.5 |
