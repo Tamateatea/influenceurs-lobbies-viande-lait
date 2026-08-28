@@ -53,6 +53,10 @@ SECRETS = RACINE / "SECRETS.txt"
 RECHERCHE = RACINE / "recherche"
 CARTO = RACINE / "cartographie"
 CACHE = RACINE / "donnees" / "transcriptions_second_rideau.json"
+# La liste des videos a transcrire est elle aussi mise en cache. Voir
+# `liste_temoins` : sans cela, ce script ne peut rien faire quand le quota
+# YouTube est epuise, alors que transcrire n'en consomme aucun.
+TEMOINS = RACINE / "donnees" / "temoins_second_rideau.json"
 API = "https://www.googleapis.com/youtube/v3/"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -228,12 +232,27 @@ def main():
           f"{len(termes)} formes d'alias", file=sys.stderr)
 
     # --- 1) lister leurs videos SANS signal en description ---
-    temoins, depense = [], 0
+    #
+    # DEFAUT CORRIGE LE 28/08. Lister un catalogue coute du quota, alors que
+    # transcrire n'en coute aucun. La nuit du 27 au 28, la moisson avait epuise
+    # le quota avant que ce script ne tourne : il n'a pu lister aucune chaine,
+    # donc n'a transcrit aucune video. Le travail de nuit le plus utile — le
+    # seul gratuit — n'a rien produit.
+    #
+    # La liste est desormais conservee. Une fois etablie, les nuits suivantes
+    # transcrivent sans toucher a l'API.
+    deja = json.loads(TEMOINS.read_text(encoding="utf-8")) if TEMOINS.exists() else []
+    cache_liste = {t["video_id"]: t for t in deja}
+
+    temoins, depense = list(deja), 0
     for cid, nom in cibles.items():
         d, err = appel("channels", {"part": "contentDetails", "id": cid}, cle)
         depense += 1
         if err or not d.get("items"):
-            print(f"  {nom} : catalogue introuvable ({err})", file=sys.stderr)
+            # Quota epuise : on continue avec la liste deja connue plutot que
+            # de ne rien faire. C'est tout l'interet de l'avoir conservee.
+            print(f"  {nom} : catalogue non liste ({str(err)[:50]})",
+                  file=sys.stderr)
             continue
         up = d["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
         page, pris = None, 0
@@ -251,9 +270,12 @@ def main():
                 texte = s.get("title", "") + " " + (s.get("description", "") or "")
                 if not vid or any(f in mt.aplatir(texte) for f in termes):
                     continue        # la description parle deja : rien a gagner
-                temoins.append({"video_id": vid, "chaine": nom,
-                                "titre": s.get("title", "")[:120],
-                                "publiee": (s.get("publishedAt") or "")[:10]})
+                if vid not in cache_liste:
+                    fiche = {"video_id": vid, "chaine": nom,
+                             "titre": s.get("title", "")[:120],
+                             "publiee": (s.get("publishedAt") or "")[:10]}
+                    temoins.append(fiche)
+                    cache_liste[vid] = fiche
                 pris += 1
             page = d.get("nextPageToken")
             if not page:

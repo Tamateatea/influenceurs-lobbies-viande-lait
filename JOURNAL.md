@@ -4165,3 +4165,68 @@ projet regardait le mauvais.
 Consequence de dimensionnement : **la publicite Meta doit devenir un canal de
 premier rang**, pas un complement. Et le mode A y est enfin possible, ce qui
 n'a jamais ete le cas sur YouTube.
+
+---
+
+## 67. Journal de methode — 28 aout 2026 : la premiere nuit, et l'ordre des etapes
+
+### 67.1 Ce que la nuit a produit
+
+Les neuf etapes ont tourne, de 3h00 a 3h40, sans intervention.
+
+| Etape | Resultat |
+|---|---|
+| Moisson TikTok | **deux mois de plus** — 2023-04 et 2023-05. 7 mois sur 47, **108 581 contenus** |
+| Case de declaration | **240 videos lues** contre 175 la veille — le jeu complet |
+| Croisement TikTok -> YouTube | 2 241 chaines |
+| Consolidation | **7 024 comptes** distincts |
+
+La case de declaration, mesuree sur l'ensemble : **91 % de precision, 41 % de
+rappel. 47 vraies collaborations sur 79 ne sont pas declarees.** Le chiffre
+tient quand l'echantillon grandit.
+
+### 67.2 Ce qui n'a rien produit, et pourquoi
+
+**La transcription en second rideau : zero video.** C'etait le travail le plus
+utile de la nuit — le seul gratuit, et le seul qui atteigne ce qu'aucune
+description ne porte.
+
+La cause n'est pas dans le script mais dans **l'ordre des etapes**. La moisson
+YouTube passait en premier avec un budget de 8 000 unites. Elle a epuise le
+quota. Le second rideau, qui a besoin de quota pour **lister** les catalogues —
+meme si transcrire n'en coute aucun — n'a rien pu lister.
+
+Il a depense 44 unites en tentatives infructueuses, puis rendu zero.
+
+### 67.3 Deux corrections
+
+**L'ordre.** Une etape peu gourmande mais bloquante passe avant une etape
+vorace. Lister 36 catalogues coute une centaine d'unites ; la moisson en
+depense 8 000. Le second rideau passe desormais en tete.
+
+C'est une regle generale, pas un rustine : dans une chaine ou une ressource
+commune s'epuise, **ce qui coute peu et debloque beaucoup doit passer en
+premier**.
+
+**Le cache de la liste.** Meme bien ordonne, le script restera dependant du
+quota pour lister. La liste des videos temoins est desormais conservee dans
+`donnees/temoins_second_rideau.json`. Une fois etablie, les nuits suivantes
+transcrivent sans toucher a l'API.
+
+Et la priorite passe aux videos **jamais transcrites** : sans cela chaque nuit
+relit les memes et le travail plafonne.
+
+### 67.4 Ce que ca dit du dispositif
+
+La routine a bien tenu : neuf etapes, aucune erreur fatale, chaque echec isole
+et journalise. Une etape qui echoue n'empeche pas les suivantes — c'est ce qui
+a permis a TikTok de faire ses 39 minutes de travail utile pendant que le
+second rideau echouait a cote.
+
+Mais **le journal disait « OK » pour une etape qui n'avait rien produit.** Zero
+video transcrite n'est pas une erreur au sens technique : le script s'est
+termine proprement. C'est une reussite vide, et rien ne la distinguait d'une
+vraie.
+
+A corriger : une etape devrait pouvoir se declarer **« passee sans effet »**,
+distinct de « OK ». Sans quoi le compte rendu du matin rassure a tort.

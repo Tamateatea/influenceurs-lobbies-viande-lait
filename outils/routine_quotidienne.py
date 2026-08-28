@@ -48,6 +48,17 @@ JOURNAL = RACINE / "recherche" / "routine"
 
 # (nom lisible, script, arguments, consomme du quota ?)
 ETAPES = [
+    # EN TETE, ET C'EST DELIBERE. Lister les catalogues de 36 chaines coute
+    # une centaine d'unites ; la moisson en depense 8 000. Le 28/08 la moisson
+    # est passee d'abord, a epuise le quota, et le second rideau n'a rien pu
+    # lister — donc rien transcrit, alors que transcrire est gratuit et que
+    # c'est le seul signal atteignant ce qu'aucune description ne porte.
+    #
+    # Une etape peu gourmande mais bloquante passe avant une etape vorace.
+    ("Transcription en second rideau — chaines deja identifiees",
+     "second_rideau_transcription.py",
+     ["--videos", "400", "--par-chaine", "80", "--preuves-fortes"], True),
+
     ("Moisson YouTube — catalogues des chaines surveillees",
      "moissonner_videos.py", ["--budget", "8000", "--max-videos", "600"], True),
 
@@ -56,13 +67,6 @@ ETAPES = [
 
     ("Moisson TikTok — deux mois de plus",
      "moissonner_tiktok.py", [], True),
-
-    # Sans quota, seulement du temps : c'est le travail ideal pour la nuit.
-    # La transcription trouve ce qu'aucune description ne porte — « j'etais en
-    # tournage pour les produits laitiers » (JOURNAL 59).
-    ("Transcription en second rideau — chaines deja identifiees",
-     "second_rideau_transcription.py", ["--videos", "400", "--par-chaine", "80", "--preuves-fortes"],
-     False),
 
     # Sans quota non plus : la case de declaration ne vit que dans la page
     # publique. 175 des 240 preuves fortes sont lues ; la nuit finit le reste.

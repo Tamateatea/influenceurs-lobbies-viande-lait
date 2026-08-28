@@ -1,0 +1,123 @@
+ROUTINE QUOTIDIENNE — 2026-08-28 03:00
+
+Ce fichier dit ce qui a tourne cette nuit et ce que ca a produit.
+Il ne contient aucun jugement : la lecture des candidats reste humaine.
+
+------------------------------------------------------------------------
+[    OK    ] Moisson YouTube — catalogues des chaines surveillees
+            moissonner_videos.py --budget 8000 --max-videos 600
+            duree : 0.1 min
+
+    1 unite de quota par tranche de 50 videos.
+    - Chaines moissonnees : **2661** sur 2714
+    - Videos examinees : **42 189**
+    - Quota depense ce lancement : **6 unites**
+    Arret : QUOTA:The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\moisson_videos_2026-08-28.md
+    124 formes d'alias | 2714 chaines a moissonner
+    104/2714 Resfeezy                       200 videos | quota     6  <-- 10 video(s) citant la filiere
+
+------------------------------------------------------------------------
+[    OK    ] Croisement TikTok → YouTube — createurs restants
+            croiser_tiktok_youtube.py --budget 1500
+            duree : 0.0 min
+
+    - **Chaines YouTube trouvees : 2241**
+    - Quota depense ce lancement : **1 unites**
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\croisement_tt_yt_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Moisson TikTok — deux mois de plus
+            moissonner_tiktok.py 
+            duree : 39.0 min
+
+    - Contenus commerciaux : **108 581**
+    - Contenus avec `brand_names` renseigne : **20** (0.02 %)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\tiktok_population_2026-08-28.md
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\tiktok_population_2026-08-28.csv
+    47 mois a couvrir | 5 deja faits | 60625 contenus en cache
+    20230301 : ERREUR HTTP 504 � <HTML><HEAD><TITLE>Error</TITLE></HEAD><BODY>
+    2023-04 :  16262 contenus | total   76885
+    2023-05 :  23108 contenus | total   99992
+    20230601 : ERREUR HTTP 429 � {"data":{},"error":{"code":"daily_quota_limit_exceeded","message":"The API dail
+    quota TikTok epuise pour aujourd'hui, arret propre a 2023-06
+
+------------------------------------------------------------------------
+[    OK    ] Transcription en second rideau — chaines deja identifiees
+            second_rideau_transcription.py --videos 400 --par-chaine 80 --preuves-fortes
+            duree : 0.1 min
+
+    Videos **sans aucun signal en description**, prises sur les chaines
+    - Chaines examinees : **36**
+    - Quota depense : 44 unites
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\second_rideau_2026-08-28.md
+    36 chaines avec une collaboration confirmee | 48 formes d'alias
+    0 videos a transcrire | 44 unites de quota
+
+------------------------------------------------------------------------
+[    OK    ] Case de declaration — lecture des pages publiques
+            mesurer_declaration.py --max 400 --pause 2.0
+            duree : 0.4 min
+
+    Produit par `outils/mesurer_declaration.py`. Aucun quota d'API.
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\mesure_declaration_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Createurs nommes dans les annonces payees
+            createurs_dans_annonces.py 
+            duree : 0.4 min
+
+    Ecrit : createurs_annonces_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Export de la moisson depuis le fichier de reprise
+            exporter_moisson.py 
+            duree : 0.0 min
+
+    reprise. Aucun quota consomme : c'est une relecture.
+    - Chaines moissonnees : **2661**
+    - Videos examinees : **307 391**
+    Ecrit : moisson_videos_2026-08-28.csv et moisson_videos_2026-08-28.md
+
+------------------------------------------------------------------------
+[    OK    ] Consolidation du registre des comptes
+            consolider_comptes.py 
+            duree : 0.3 min
+
+    surveillance_youtube_2026-08-24_1642.csv               24  chaines YouTube
+    croisement_ig_yt_2026-08-27.csv                       488  chaines YouTube derivees d'Instagram
+    croisement_tt_yt_2026-08-28.csv                      2241  chaines YouTube derivees de TikTok
+    7024 comptes distincts, cle = (plateforme, identifiant)
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\cartographie\COMPTES.xlsx
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\comptes_consolides_2026-08-28.csv
+
+------------------------------------------------------------------------
+[    OK    ] Tri des detections — preuves fortes contre bruit
+            nettoyer_detections.py 
+            duree : 0.0 min
+
+    - Detections lues : **25421**
+    - **Preuves fortes (alias d'interprofession) : 240**
+    - **Ecartees comme bruit : 6792**
+    ## PREUVES FORTES � par chaine, audience decroissante
+    Ecrit : C:\Users\Vincent\OneDrive\Bureau\InfluencersxMeat&MilkLobbyTracker\recherche\detections_nettoyees_2026-08-28.md
+    25421 detections lues dans moisson_videos_2026-08-28.csv
+
+------------------------------------------------------------------------
+
+Termine a 03:40 — duree totale 40 min
+
+BILAN
+
+          OK  Moisson YouTube — catalogues des chaines surveillees
+          OK  Croisement TikTok → YouTube — createurs restants
+          OK  Moisson TikTok — deux mois de plus
+          OK  Transcription en second rideau — chaines deja identifiees
+          OK  Case de declaration — lecture des pages publiques
+          OK  Createurs nommes dans les annonces payees
+          OK  Export de la moisson depuis le fichier de reprise
+          OK  Consolidation du registre des comptes
+          OK  Tri des detections — preuves fortes contre bruit
+
+Prochaine etape : ouvrir une session avec Claude pour lire
+les nouveaux candidats et decider quoi en faire.
