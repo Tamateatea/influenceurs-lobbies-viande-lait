@@ -1,14 +1,21 @@
 """
-Fabrique cartographie/LAITFLIX_A_VERIFIER.xlsx.
+Fabrique cartographie/CREATEURS_SUR_LES_SITES.xlsx.
 
 CE QUE C'EST
 
-Le catalogue LAIT'FLIX du CNIEL, releve sur produits-laitiers.com le 28/08 —
-la page que Vincent avait signalee comme « une mine d'or » le 26, et que je
-n'avais pas ouverte.
+Les createurs que les commanditaires nomment **sur leurs propres supports** —
+leurs sites, et les publicites qu'ils ont payees. Ce n'est pas une inference :
+c'est le commanditaire qui l'annonce.
 
-107 videos, 12 series, des dizaines de createurs nommes. Le CNIEL les publie
-lui-meme : ce n'est pas une inference.
+Quatre sources, relevees le 28/08 :
+
+  CNIEL     produits-laitiers.com/laitflix — 107 videos en 12 series. La page
+            que Vincent avait signalee comme « une mine d'or » le 26, et que
+            je n'avais pas ouverte.
+  INTERBEV  la-viande.fr — L'Amour Boeuf avec Loic Ballet, Blind Dates avec
+            Cyril Lignac, Made in Viande avec FlorianOnAir.
+  CIFOG     publicites Facebook payees — @megalowfood, quatre annonces.
+  ANVOL     publicites Facebook payees — @jow_fr, @davidrose1970.
 
 POURQUOI IL FAUT LE VERIFIER
 
@@ -23,7 +30,7 @@ qu'on avait moissonnee. Moissonner la chaine officielle d'un lobby ne suffit
 donc pas : il diffuse aussi par les chaines des createurs qu'il paie, et la, il
 n'y a aucune trace cote commanditaire — sauf sur son propre site.
 
-Usage :  python outils/generer_classeur_laitflix.py
+Usage :  python outils/generer_classeur_sites.py
 """
 
 import sys
@@ -36,7 +43,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
 RACINE = Path(__file__).resolve().parent.parent
-CIBLE = RACINE / "cartographie" / "LAITFLIX_A_VERIFIER.xlsx"
+CIBLE = RACINE / "cartographie" / "CREATEURS_SUR_LES_SITES.xlsx"
 
 VERT = PatternFill("solid", fgColor="D9EAD3")
 ENTETE = PatternFill("solid", fgColor="434343")
@@ -70,7 +77,9 @@ CATALOGUE = [
       "Pierre Chomet", "TOKOU"]),
     ("Le Tour du Monde de Loris", 10, ["Loris (LORIS GIULIANO)"]),
     ("Le Tour de France de Loris", 20, ["Loris (LORIS GIULIANO)"]),
-    ("Frere !", 15, ["TOKOU", "Vinz"]),
+    ("Frere !", 15, ["TOKOU", "Vinz"]),   # Vincent, 28/08 : « les createurs
+                                          # qui ont fait ces videos sont des
+                                          # influenceurs connus »
     ("Check Food", 10,
      ["Gaelle Garcia Diaz", "Alkpote", "KIKESA", "Jok'air", "Roi Heenok",
       "Philippe Katerine", "Caballero & JeanJass", "Mehdi Maizi", "Mister V",
@@ -78,26 +87,43 @@ CATALOGUE = [
       "Youssoupha", "Lino", "Oxmo Puccino", "Remy", "Pirate", "S.Pri Noir",
       "Still Fresh", "Chef Pincemin"]),
     ("Myriam met du beurre dans tes epinards", 5, ["Myriam", "Sido Cuisto"]),
+
+    # --- INTERBEV, la-viande.fr, releve le 28/08 ---
+    ("L'Amour Boeuf (INTERBEV)", 0, ["Loic Ballet", "Joannes Richard",
+                                     "Helene Doussot"]),
+    ("Blind Dates avec Cyril Lignac (INTERBEV)", 0, ["Cyril Lignac"]),
+    ("Made in Viande (INTERBEV)", 0, ["FlorianOnAir"]),
+
+    # --- CIFOG, lefoiegras.fr ---
+    ("Publicites Facebook du CIFOG", 0, ["@megalowfood", "@foiegrasfran"]),
+
+    # --- ANVOL, publicites Facebook ---
+    ("Publicites Facebook d'ANVOL", 0, ["@jow_fr", "@davidrose1970",
+                                        "@francette_restaurant"]),
 ]
 
 INTRO = [
     "CE QUE TU AS SOUS LES YEUX",
     "",
-    "Le catalogue LAIT'FLIX du CNIEL, releve sur la page que TU m'avais "
-    "signalee le 26/08 et que je n'avais pas ouverte.",
-    "107 videos, 12 series. Le CNIEL les publie lui-meme : ce n'est pas une "
-    "inference, c'est le commanditaire qui l'annonce.",
+    "Les createurs que les commanditaires nomment SUR LEURS PROPRES SUPPORTS : "
+    "leurs sites, et les publicites qu'ils ont payees.",
+    "Ce n'est pas une inference — c'est le commanditaire qui l'annonce.",
+    "",
+    "Quatre sources : le catalogue LAIT'FLIX du CNIEL (107 videos en 12 series, "
+    "la page que TU m'avais signalee et que je n'avais pas ouverte),",
+    "la-viande.fr pour INTERBEV (Cyril Lignac, Loic Ballet), et les publicites "
+    "Facebook payees par le CIFOG et ANVOL.",
     "",
     "POURQUOI IL FAUT VERIFIER",
     "",
-    "Cette liste vient d'une LECTURE AUTOMATIQUE de la page. Elle peut mal "
+    "Cette liste vient d'une LECTURE AUTOMATIQUE des pages. Elle peut mal "
     "decouper un nom, en fusionner deux, ou en inventer un.",
     "Aucune ligne n'entrera dans le registre sans ton passage.",
     "",
     "CE QUE CETTE SOURCE A REVELE",
     "",
-    "Neuf des douze series sont ABSENTES de la chaine YouTube du CNIEL qu'on "
-    "avait moissonnee.",
+    "Neuf des douze series LAIT'FLIX sont ABSENTES de la chaine YouTube du "
+    "CNIEL qu'on avait moissonnee.",
     "Moissonner la chaine officielle d'un lobby ne suffit donc pas : il "
     "diffuse aussi par les chaines des createurs qu'il paie.",
     "",
@@ -155,7 +181,11 @@ def main():
 
     lg = wb.create_sheet("d'ou ca vient")
     provenance = [
-        "Source : https://www.produits-laitiers.com/laitflix/divertissement/",
+        "Sources, relevees le 28/08 par lecture automatique :",
+        "  produits-laitiers.com/laitflix/divertissement/   (CNIEL)",
+        "  la-viande.fr                                     (INTERBEV)",
+        "  lefoiegras.fr et ses publicites Facebook         (CIFOG)",
+        "  volaille-francaise.fr et ses publicites Facebook (ANVOL)",
         f"Releve le {date.today().isoformat()} par lecture automatique",
         "Signale par Vincent le 26/08 : « Le site est une mine d'or »",
         "",

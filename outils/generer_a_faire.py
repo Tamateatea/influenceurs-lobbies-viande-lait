@@ -127,13 +127,16 @@ TACHES = [
      "l'annonceur a paye pour diffuser. Trois voies de detection a mesurer."),
 
     ("laitflix", "3",
-     "Verifier les createurs LAIT'FLIX",
-     "cartographie/LAITFLIX_A_VERIFIER.xlsx",
+     "Verifier les createurs nommes sur les sites des lobbies",
+     "cartographie/CREATEURS_SUR_LES_SITES.xlsx",
      "20 min",
-     "107 videos en 12 series sur produits-laitiers.com, que TU as reperees. "
-     "Neuf des douze series sont ABSENTES de la chaine YouTube du CNIEL : "
-     "moissonner la chaine officielle d'un lobby ne suffit donc pas. La liste "
-     "vient d'une lecture automatique de la page et doit etre verifiee."),
+     "Quatre sources relevees le 28/08 : le catalogue LAIT'FLIX du CNIEL "
+     "(107 videos, 12 series — la page que TU avais signalee), la-viande.fr "
+     "pour INTERBEV (Cyril Lignac, Loic Ballet), et les publicites Facebook "
+     "payees par le CIFOG et ANVOL. Neuf des douze series LAIT'FLIX sont "
+     "ABSENTES de la chaine YouTube du CNIEL : moissonner la chaine officielle "
+     "d'un lobby ne suffit pas. Liste issue d'une lecture automatique, a "
+     "verifier."),
 
     ("meta_jeton", "4 — a refaire chaque fois",
      "Regenerer le jeton Meta",
@@ -429,7 +432,7 @@ def main():
             ("CREATEURS_DANS_LES_ANNONCES.xlsx",
              "Createurs nommes dans les publicites payees"),
             ("A_VERIFIER_4.xlsx", "Candidats issus de la moisson YouTube"),
-            ("LAITFLIX_A_VERIFIER.xlsx", "Createurs des series LAIT'FLIX")]:
+            ("CREATEURS_SUR_LES_SITES.xlsx", "Createurs nommes sur les sites et dans les pubs des lobbies")]:
         total, faits = lignes_restantes(nom)
         if total is None:
             classeurs.append([nom, quoi, "pas encore genere", "", ""])
