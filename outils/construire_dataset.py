@@ -61,7 +61,8 @@ from appariement import aplatir
 from medias import est_media
 
 COLONNES = [
-    "lobby_institutionnel", "vitrine", "alias_observe",
+    "commanditaire", "type_de_commanditaire", "secteur", "groupe_parent",
+    "vitrine", "alias_observe",
     "contenu_url", "date_publication", "nombre_de_vues",
     "statut_collaboration",
     "nom_influenceur", "plateforme", "alias_influenceur",
@@ -77,12 +78,53 @@ LOBBIES = {
 }
 
 
-def lobby_de(entite, table):
-    """Remonte de la vitrine ou de la marque a l'interprofession."""
+def marques_connues():
+    """marque aplatie -> (secteur, groupe parent), depuis la feuille Marques."""
+    import openpyxl
+    f = CARTO / "cartographie_filiere.xlsx"
+    if not f.exists():
+        return {}
+    wb = openpyxl.load_workbook(f, read_only=True, data_only=True)
+    out = {}
+    if "Marques" in wb.sheetnames:
+        for r in wb["Marques"].iter_rows(min_row=2, values_only=True):
+            if r[0]:
+                out[aplatir(r[0])] = (str(r[2] or ""), str(r[1] or ""))
+    wb.close()
+    return out
+
+
+def qualifier(entite, table, marques):
+    """Qui est ce commanditaire : interprofession ou marque, et de quel secteur ?
+
+    ON N'ECRIT PAS « lobby = INTERBEV » QUAND C'EST CHARAL QUI PAIE. Une marque
+    est un commanditaire a part entiere — precision de Vincent le 24/08 — et
+    lui attribuer l'interprofession de son secteur serait une inference fausse :
+    Charal ne paie pas au nom d'INTERBEV.
+
+    Le secteur est donne separement, comme contexte, sans jamais se substituer
+    a l'identite du payeur.
+
+    Rend (nom, type, secteur, groupe parent).
+    """
     base = str(entite or "").split(" (")[0].strip()
+    if not base:
+        return "", "", "", ""
     if base in LOBBIES:
-        return base
-    return table.get(aplatir(base), "")
+        return base, "interprofession", "", ""
+    plat = aplatir(base)
+    if plat in marques:
+        secteur, groupe = marques[plat]
+        return base, "marque", secteur, groupe
+    # certaines vitrines portent le nom du groupe entre parentheses
+    dedans = re.search(r"\(([^)]+)\)", str(entite or ""))
+    if dedans and aplatir(dedans.group(1)) in marques:
+        secteur, groupe = marques[aplatir(dedans.group(1))]
+        return base, "marque", secteur, groupe
+    rattache = table.get(plat, "")
+    if rattache:
+        return base, "vitrine", "", rattache
+    return base, "non qualifie", "", ""
 
 
 def table_des_entites():
@@ -167,19 +209,29 @@ def statut_collaboration(date_debut, date_fin=""):
 
 def main():
     table = table_des_entites()
+    marques = marques_connues()
     fiches = fiches_createurs()
+    print(f"{len(marques)} marques rattachees a un secteur", file=sys.stderr)
     print(f"{len(fiches)} fiches de createurs etablies par Vincent",
           file=sys.stderr)
 
     lignes = []
 
-    def ajouter(lobby, vitrine, alias, url, date_pub, nom, plateforme,
+    def ajouter(entite, vitrine, alias, url, date_pub, nom, plateforme,
                 canal, certitude, titre="", fin=""):
         if not nom or est_media(nom):
             return
+        commanditaire, type_c, secteur, groupe = qualifier(entite, table, marques)
+        # Un commanditaire qu'on ne sait pas qualifier n'entre pas : c'est ce
+        # qui laissait « Time Out Paris » et « Stardusttv » dans le jeu.
+        if type_c == "non qualifie":
+            return
         fiche = fiches.get(aplatir(nom), {})
         lignes.append({
-            "lobby_institutionnel": lobby or "",
+            "commanditaire": commanditaire,
+            "type_de_commanditaire": type_c,
+            "secteur": secteur,
+            "groupe_parent": groupe,
             "vitrine": vitrine or "",
             "alias_observe": alias or "",
             "contenu_url": url or "",
@@ -207,7 +259,7 @@ def main():
                 for e in l.get("entites_retenues", "").split(" | "):
                     if not e:
                         continue
-                    ajouter(lobby_de(e, table), e, l.get("alias_reconnus", ""),
+                    ajouter(e, e, l.get("alias_reconnus", ""),
                             l.get("url", ""), l.get("publiee", ""),
                             l.get("chaine", ""), "YouTube",
                             "description du createur",
@@ -223,7 +275,7 @@ def main():
                 for i, nom in enumerate(noms):
                     if i >= len(vias) or not vias[i].startswith("compte connu"):
                         continue
-                    ajouter(lobby_de(l["entite"], table), l.get("chaine_lobby", ""),
+                    ajouter(l["entite"], l.get("chaine_lobby", ""),
                             "", l.get("url", ""), l.get("publiee", ""),
                             nom, "YouTube", "chaine du commanditaire",
                             "lien commercial documente", l.get("titre", ""))
@@ -239,7 +291,7 @@ def main():
                 plat = ("Instagram" if "instagram" in plateformes.lower()
                         else "Facebook" if "facebook" in plateformes.lower()
                         else "")
-                ajouter(lobby_de(l.get("commanditaire", ""), table),
+                ajouter(l.get("page_annonceuse", ""),
                         l.get("page_annonceuse", ""), "",
                         l.get("page_facebook", ""), l.get("debut_diffusion", ""),
                         l["createur"], plat, "publicite payee",
@@ -261,7 +313,7 @@ def main():
 
     from collections import Counter
     par_canal = Counter(l["canal_de_detection"] for l in lignes)
-    par_lobby = Counter(l["lobby_institutionnel"] or "(non rattache)"
+    par_lobby = Counter(f"{l['commanditaire']} ({l['type_de_commanditaire']})"
                         for l in lignes)
     avec_fiche = sum(1 for l in lignes if l["verifie_par_humain"] == "oui")
     createurs = len({aplatir(l["nom_influenceur"]) for l in lignes})
@@ -277,7 +329,7 @@ def main():
           "| Canal de detection | Lignes |", "|---|---:|"]
     for c, n in par_canal.most_common():
         md += [f"| {c} | {n} |"]
-    md += ["", "| Lobby | Lignes |", "|---|---:|"]
+    md += ["", "| Commanditaire | Lignes |", "|---|---:|"]
     for c, n in par_lobby.most_common(12):
         md += [f"| {c} | {n} |"]
     md += ["", "## Ce qui manque encore", "",
