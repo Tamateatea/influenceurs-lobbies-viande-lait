@@ -4403,3 +4403,91 @@ pour ecarter Twitch, l'autre pour l'y ramener.
 
 Quand une decision repose sur une affirmation verifiable, le cout de la
 verifier est presque toujours inferieur au cout de se tromper deux fois.
+
+---
+
+## 71. Journal de methode — 29 aout 2026 : diagnostic demande par Vincent
+
+### 71.1 La question
+
+> « Plus on travaille sur ce projet, moins je suis confiant qu'on va dans la
+> bonne direction. En plus d'une semaine de travail [...] nous ne sommes
+> toujours pas capables d'avoir un premier jet de dataset [...] avec une
+> colonne influenceurs fiable. La plupart des trucs que tu ressors viennent
+> directement de comptes de lobbies ou de marque, et j'ai recemment vu tres peu
+> d'influenceurs nouveaux identifies. »
+
+### 71.2 MESURE — le canal des publicites ne vaut rien
+
+Ses 60 jugements sur `ANNONCES_A_JUGER.xlsx` :
+
+| Methode de detection | Juges | Vrais | Precision |
+|---|---:|---:|---:|
+| pseudo ecrit tel quel | 30 | **0** | **0 %** |
+| compte connu du registre | 30 | **0** | **0 %** |
+
+23 des 30 premiers et 26 des 30 seconds sont des **marques**, malgre le
+filtrage. Le canal qui fournissait 610 des 1 039 lignes du jeu de donnees a une
+precision mesuree de **zero**.
+
+Ce n'est pas un reglage a corriger. C'est un canal a retirer.
+
+### 71.3 MESURE — ce que chaque canal a reellement produit
+
+Createurs confirmes par Vincent, hors commanditaires, en un peu plus d'une
+semaine :
+
+| Canal | Createurs | Ce qu'il a fallu pour l'obtenir |
+|---|---:|---|
+| **sites des lobbies** | **42** | lire 5 pages web, environ une heure |
+| description YouTube | 13 | 2 897 chaines, **332 119 videos**, six jours |
+| chaines des lobbies | 7 | 9 chaines, environ 40 unites de quota |
+| publicites payees | **0** | 7 148 annonces, une soiree |
+
+**Total : 56 createurs, dont 50 que la presse n'avait jamais documentes.**
+
+### 71.4 Ce que ces chiffres disent, et que je n'avais pas vu
+
+Vincent a raison sur le ressenti et se trompe sur la conclusion.
+
+**Il a raison** : le gros de la machine ne produit presque rien. 332 000 videos
+moissonnees ont donne treize createurs. Une page web qu'il m'avait signalee en
+a donne quarante-deux. Le rapport est de un a soixante en faveur de la lecture
+manuelle de sites.
+
+**Il se trompe sur un point** : le projet a bien produit **50 createurs que
+personne n'avait documentes**, contre 19 pour l'ensemble de la presse
+francaise sur le sujet. Ce n'est pas rien. Mais ils viennent d'ou il ne
+regardait pas.
+
+**Et l'erreur est la mienne, pas la sienne.** J'ai construit une infrastructure
+lourde — moisson, transcription, croisements, garde-fous — avant de mesurer
+quel canal meritait qu'on construise pour lui. La mesure de couverture par
+canal (JOURNAL 68 puis 69) n'est arrivee qu'au sixieme jour. Elle disait deja
+que les sites etaient le meilleur canal ; je ne l'ai pas traitee comme une
+consigne de priorite.
+
+### 71.5 Ce qui explique l'echec du canal publicitaire
+
+Une annonce Meta est ecrite **par le commanditaire**. Il y parle de lui, de ses
+produits, de ses comptes. Le nom qui domine le texte est donc le sien.
+
+Chercher un createur dans une annonce, c'est chercher l'invite dans un texte
+ecrit par l'hote. La ou les chaines YouTube des lobbies nomment le createur
+dans le TITRE — parce que c'est lui qui attire — la publicite le nomme
+rarement, et jamais de facon distinguable.
+
+C'etait previsible et je ne l'ai pas prevu.
+
+### 71.6 Ce que le diagnostic change
+
+Le classement des canaux par rendement reel :
+
+    sites des lobbies      42 createurs / 1 heure     <- a poursuivre
+    chaines des lobbies     7 createurs / 40 unites   <- a poursuivre
+    description YouTube    13 createurs / 6 jours     <- a garder, sans plus
+    publicites payees       0 createurs / 1 soiree    <- a retirer
+
+Il reste des sites non lus : les regionaux d'INTERBEV, les marques (Charal,
+Fleury Michon, Herta, Le Gaulois ont toutes un site), et les vitrines d'ANVOL.
+C'est la que sont les prochains createurs.
