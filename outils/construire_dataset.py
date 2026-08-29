@@ -58,6 +58,7 @@ CARTO = RACINE / "cartographie"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from appariement import aplatir
+from createurs import est_un_commanditaire, noms_de_commanditaires
 from medias import est_media
 
 COLONNES = [
@@ -67,6 +68,7 @@ COLONNES = [
     "statut_collaboration",
     "nom_influenceur", "plateforme", "alias_influenceur",
     "nombre_abonnes", "type_de_createur",
+    "nature_de_la_ligne",
     "canal_de_detection", "degre_de_certitude", "verifie_par_humain",
     "titre_du_contenu",
 ]
@@ -210,6 +212,7 @@ def statut_collaboration(date_debut, date_fin=""):
 def main():
     table = table_des_entites()
     marques = marques_connues()
+    commanditaires = noms_de_commanditaires()
     fiches = fiches_createurs()
     print(f"{len(marques)} marques rattachees a un secteur", file=sys.stderr)
     print(f"{len(fiches)} fiches de createurs etablies par Vincent",
@@ -226,8 +229,21 @@ def main():
         # qui laissait « Time Out Paris » et « Stardusttv » dans le jeu.
         if type_c == "non qualifie":
             return
+        # LA COLONNE LA PLUS IMPORTANTE DU JEU, ET CELLE QUI ETAIT FAUSSE.
+        # Vincent, 29/08 : « la colonne influenceur est remplie d'erreurs, de
+        # noms de marques comme Maitre CoQ, Justin Bridou ». MESURE : 373
+        # lignes sur 1 039, soit 36 %.
+        #
+        # On etiquette au lieu de jeter — Vincent, le meme jour : « c'est bien
+        # de ne pas exclure au cas ou ». Une video publiee par la chaine d'une
+        # marque reste un fait : c'est du contenu de marque, pas une
+        # collaboration remuneree avec un tiers.
+        nature = ("contenu de marque"
+                  if est_un_commanditaire(nom, commanditaires)
+                  else "collaboration avec un tiers")
         fiche = fiches.get(aplatir(nom), {})
         lignes.append({
+            "nature_de_la_ligne": nature,
             "commanditaire": commanditaire,
             "type_de_commanditaire": type_c,
             "secteur": secteur,
@@ -313,6 +329,7 @@ def main():
 
     from collections import Counter
     par_canal = Counter(l["canal_de_detection"] for l in lignes)
+    par_nature = Counter(l["nature_de_la_ligne"] for l in lignes)
     par_lobby = Counter(f"{l['commanditaire']} ({l['type_de_commanditaire']})"
                         for l in lignes)
     avec_fiche = sum(1 for l in lignes if l["verifie_par_humain"] == "oui")
@@ -326,7 +343,16 @@ def main():
           f"- Createurs distincts : **{createurs}**",
           f"- Lignes dont le createur a une fiche etablie par Vincent : "
           f"**{avec_fiche}**", "",
-          "| Canal de detection | Lignes |", "|---|---:|"]
+          "| Nature de la ligne | Lignes |", "|---|---:|"]
+    for c, n in par_nature.most_common():
+        md += [f"| {c} | {n} |"]
+    md += ["",
+           "**« Contenu de marque » signifie que le nom trouve dans la colonne",
+           "influenceur est celui d'un commanditaire, pas d'un createur tiers.**",
+           "Ces lignes ne sont pas fausses — une marque qui publie sur sa propre",
+           "chaine est un fait — mais elles ne documentent pas une collaboration",
+           "remuneree avec un influenceur.", "",
+           "| Canal de detection | Lignes |", "|---|---:|"]
     for c, n in par_canal.most_common():
         md += [f"| {c} | {n} |"]
     md += ["", "| Commanditaire | Lignes |", "|---|---:|"]

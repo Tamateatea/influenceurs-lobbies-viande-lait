@@ -43,6 +43,7 @@ JAUNE = PatternFill("solid", fgColor="FFF2CC")
 
 # (colonne du CSV, intitule lisible, largeur)
 COLONNES = [
+    ("nature_de_la_ligne", "Nature de la ligne", 26),
     ("commanditaire", "Commanditaire", 22),
     ("type_de_commanditaire", "Type", 15),
     ("secteur", "Secteur", 10),
@@ -115,7 +116,11 @@ def main():
                 c = ws.cell(row=i, column=j, value=valeur)
                 c.alignment = Alignment(vertical="top",
                                         wrap_text=(cle == "titre_du_contenu"))
-            if not verifie:
+            if l.get("nature_de_la_ligne") == "contenu de marque":
+                # Ces lignes ne documentent PAS une collaboration avec un tiers :
+                # le nom trouve est celui du commanditaire lui-meme.
+                c.fill = JAUNE
+            elif not verifie:
                 c.fill = GRIS
             elif cle == "verifie_par_humain":
                 c.fill = VERT
@@ -179,6 +184,10 @@ def main():
         "",
         "LEGENDE",
         "",
+        "  Fond JAUNE = « contenu de marque » : le nom de la colonne "
+        "Influenceur est celui du commanditaire lui-meme.",
+        "               Ce n'est pas une collaboration avec un tiers. 373 "
+        "lignes sur 1 039, defaut trouve par Vincent le 29/08.",
         "  Fond gris  = le createur n'a pas de fiche verifiee par toi.",
         "  Fond vert  = tu as etabli son pseudo, son audience ou son type.",
     ]
