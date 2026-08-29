@@ -52,7 +52,8 @@ COLONNES = [
     ("contenu_url", "Contenu", 11),
     ("titre_du_contenu", "Titre du contenu", 44),
     ("date_publication", "Date", 11),
-    ("nombre_de_vues", "Vues", 10),
+    ("nombre_de_vues", "Vues", 12),
+    ("date_releve_des_vues", "Vues relevees le", 14),
     ("statut_collaboration", "Statut", 11),
     ("nom_influenceur", "Influenceur", 24),
     ("plateforme", "Plateforme", 12),
@@ -105,6 +106,11 @@ def main():
                 if valeur:
                     c.hyperlink = valeur
                     c.font = Font(color="1155CC", underline="single")
+            elif cle == "nombre_de_vues" and str(valeur).isdigit():
+                # en nombre, pas en texte : sinon le tri d'Excel est alphabetique
+                # et 9 000 passe devant 34 000 000
+                c = ws.cell(row=i, column=j, value=int(valeur))
+                c.number_format = "# ##0"
             else:
                 c = ws.cell(row=i, column=j, value=valeur)
                 c.alignment = Alignment(vertical="top",

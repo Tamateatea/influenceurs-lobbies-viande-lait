@@ -20,8 +20,18 @@ ici.
 Quatre decisions prises par Vincent le 22 aout 2026.
 
 **Perimetre etroit, extensible.** Interprofessions et marques productrices de
-viande et de lait. La restauration rapide, les complements proteines et l'oeuf
-sont exclus pour l'instant. Le secteur est un champ du modele de donnees, pas
+viande et de lait. La restauration rapide et les complements proteines sont
+exclus pour l'instant.
+
+> **L'oeuf est entre dans le perimetre le 29 aout 2026**, sur decision de
+> Vincent : « elargissons notre scope aux oeufs ». Il etait exclu depuis le
+> 22/08. Le declencheur : la decouverte de `@fans_doeufs`, compte Instagram de
+> la vitrine Oeufs de France, 16 700 abonnes — une vitrine grand public active,
+> donc un commanditaire potentiel comme les autres.
+>
+> Le CNPO passe de « hors perimetre » a « dans le perimetre » dans
+> `cartographie_filiere.xlsx`. Intercereales et la FNPSMS restent dehors : ce
+> sont des groupes temoins, et ils le restent. Le secteur est un champ du modele de donnees, pas
 une constante : elargir plus tard ne demandera pas de tout refaire.
 
 **Registre factuel, plaidoyer separe.** Le site public enonce des faits sourcés
