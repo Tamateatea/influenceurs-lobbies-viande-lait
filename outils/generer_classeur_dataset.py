@@ -36,6 +36,10 @@ RACINE = Path(__file__).resolve().parent.parent
 RECHERCHE = RACINE / "recherche"
 CIBLE = RACINE / "cartographie" / "DATASET.xlsx"
 
+# Le jeu VALIDE est prioritaire s'il existe : c'est celui dont la colonne
+# influenceur ne contient que des personnes (voir dataset_valide.py).
+PREFERE = "dataset_valide_*.csv"
+
 ENTETE = PatternFill("solid", fgColor="434343")
 GRIS = PatternFill("solid", fgColor="F3F3F3")
 VERT = PatternFill("solid", fgColor="D9EAD3")
@@ -68,7 +72,7 @@ COLONNES = [
 
 
 def main():
-    fichiers = sorted(RECHERCHE.glob("dataset_*.csv"))
+    fichiers = sorted(RECHERCHE.glob(PREFERE)) or         sorted(RECHERCHE.glob("dataset_2*.csv"))
     if not fichiers:
         print("Aucun dataset_*.csv — lancer d'abord construire_dataset.py",
               file=sys.stderr)
