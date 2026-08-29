@@ -1,23 +1,36 @@
 """
-Fabrique cartographie/CREATEURS_DANS_LES_ANNONCES.xlsx.
+Fabrique cartographie/ANNONCES_A_JUGER.xlsx — le canal jamais mesure.
 
-CE QUE CE CLASSEUR MESURE
+CE QU'IL FAUT MESURER, ET POURQUOI C'EST URGENT
 
-`createurs_dans_annonces.py` trouve des createurs nommes dans des annonces
-payees par les commanditaires. Il les trouve par TROIS voies, et on ignore ce
-que chacune vaut :
+Le canal « publicite payee » fournit la plus grosse part du jeu de donnees, et
+c'est **le seul des trois dont la precision n'a jamais ete etablie**. Un jeu de
+donnees domine par le canal dont on ignore la fiabilite n'est pas solide.
 
-    pseudo ecrit tel quel        le plus sur a priori
-    compte connu du registre     sur, mais peut confondre des homonymes
-    vocabulaire de collaboration douteux — « avec X » attrape des mots courants
+Il trouve les createurs par trois voies, qu'il faut departager :
 
-C'est la meme situation que pour les chaines YouTube des lobbies (JOURNAL 55),
-et elle se tranche de la meme facon : Vincent juge, on mesure.
+    pseudo ecrit tel quel        un @pseudo apparait dans le texte de l'annonce
+    compte connu du registre     le nom correspond a un compte deja repere
+    vocabulaire de collaboration « avec X », « merci a X » — la plus douteuse
 
-L'ordre des lignes suit cette hierarchie presumee, et Vincent peut s'arreter
-quand il veut : les premieres lignes sont les plus informatives.
+CE QUI A ETE CORRIGE AVANT DE REDEMANDER SON TEMPS A VINCENT
 
-Colonnes vertes = a remplir.
+Le 29/08 il a ouvert la premiere version et l'a jugee sans detour : « c'est de
+la merde ». Il avait raison sur deux points, tous deux reels :
+
+**Les liens etaient tous morts.** Ils pointaient vers `ad_snapshot_url`, qui
+n'est consultable que par le detenteur du jeton l'ayant generee — et le jeton
+expire en deux heures. Ils portaient d'ailleurs ce jeton en clair, ce qui l'a
+fait fuiter dans sept fichiers pousses sur GitHub.
+
+Ce classeur utilise la **bibliotheque publicitaire publique** :
+`facebook.com/ads/library/?id=<ad_id>`. Aucun jeton, consultable par tout le
+monde, et c'est la meme page que celle qu'un journaliste citerait.
+
+**Des marques etaient presentees comme des createurs** — `@justinbridou_fr`,
+`@legaulois_officiel`, `@regilaitfr`. Le test d'auto-mention ne regardait que
+dans un sens : « regilaitfr » n'est pas contenu dans « Regilait ». Corrige, et
+la regle est desormais partagee dans `createurs.py`.
 
 Usage :  python outils/generer_classeur_annonces.py
 """
@@ -35,7 +48,11 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 RACINE = Path(__file__).resolve().parent.parent
 RECHERCHE = RACINE / "recherche"
-CIBLE = RACINE / "cartographie" / "CREATEURS_DANS_LES_ANNONCES.xlsx"
+CIBLE = RACINE / "cartographie" / "ANNONCES_A_JUGER.xlsx"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from appariement import aplatir
+from createurs import est_un_commanditaire
 
 VERT = PatternFill("solid", fgColor="D9EAD3")
 GRIS = PatternFill("solid", fgColor="EFEFEF")
@@ -44,15 +61,19 @@ ENTETE = PatternFill("solid", fgColor="434343")
 # Sans virgule : Excel s'en sert comme separateur dans une liste en ligne.
 CHOIX = [
     "oui — createur remunere par ce commanditaire",
-    "oui — createur mais lien non commercial",
-    "non — c'est la marque elle-meme",
+    "oui — createur mais le lien n'est pas commercial",
+    "non — c'est la marque ou le commanditaire",
     "non — mot courant ou faux positif",
     "non — c'est un media",
     "je ne sais pas",
 ]
 
+# L'ordre de fiabilite presumee. Vincent juge du plus sur au plus douteux, et
+# peut s'arreter quand il veut : les premieres lignes sont les plus utiles.
 RANG = {"pseudo ecrit tel quel": 0, "compte connu du registre": 1,
         "vocabulaire de collaboration": 2}
+
+PAR_VOIE = 30      # combien de lignes par voie — assez pour mesurer, pas plus
 
 
 def main():
@@ -61,54 +82,70 @@ def main():
         print("Aucun createurs_annonces_*.csv.", file=sys.stderr)
         return 1
 
-    par = defaultdict(lambda: {"n": 0, "pages": set(), "voie": "", "date": "",
-                               "extrait": "", "url": "", "plateformes": ""})
+    # une ligne par createur, en gardant l'annonce la plus parlante
+    par_createur = {}
     with fichiers[-1].open(encoding="utf-8") as fh:
         for l in csv.DictReader(fh):
-            d = par[l["createur"]]
+            nom = l["createur"].strip()
+            if not nom or est_un_commanditaire(nom):
+                continue
+            cle = aplatir(nom)
+            d = par_createur.setdefault(cle, {"nom": nom, "n": 0, "pages": set(),
+                                              "voie": "", "extrait": "",
+                                              "ad_id": "", "date": ""})
             d["n"] += 1
             d["pages"].add(l["page_annonceuse"])
-            if not d["voie"] or RANG.get(l["voie"], 9) < RANG.get(d["voie"], 9):
-                d["voie"] = l["voie"]
-                d["extrait"] = l["extrait"]
-                d["url"] = l["url_apercu"]
-                d["date"] = l["debut_diffusion"]
-                d["plateformes"] = l["plateformes"]
+            # on garde l'annonce dont l'extrait est le plus long : c'est celle
+            # qui donne le plus de contexte pour juger
+            if (RANG.get(l["voie"], 9) < RANG.get(d["voie"], 9)
+                    or len(l.get("extrait", "")) > len(d["extrait"])):
+                if RANG.get(l["voie"], 9) <= RANG.get(d["voie"], 9):
+                    d["voie"] = l["voie"]
+                    d["extrait"] = l.get("extrait", "")
+                    d["ad_id"] = l.get("ad_id", "")
+                    d["date"] = l.get("debut_diffusion", "")
 
-    lignes = sorted(par.items(),
-                    key=lambda x: (RANG.get(x[1]["voie"], 9), -x[1]["n"],
-                                   x[0].lower()))
+    # echantillon equilibre : les trois voies doivent etre mesurables
+    par_voie = defaultdict(list)
+    for d in par_createur.values():
+        par_voie[d["voie"]].append(d)
+    lignes = []
+    for voie in sorted(par_voie, key=lambda v: RANG.get(v, 9)):
+        lot = sorted(par_voie[voie], key=lambda d: -d["n"])[:PAR_VOIE]
+        lignes.extend(lot)
 
     wb = Workbook()
     ws = wb.active
-    ws.title = "createurs"
+    ws.title = "annonces"
 
     intro = [
         "CE QUE TU AS SOUS LES YEUX",
         "",
-        "Chaque ligne est un nom trouve dans une PUBLICITE PAYEE par un "
-        "commanditaire de la filiere.",
-        "C'est la preuve la plus forte du projet : l'annonceur a paye Meta pour "
-        "diffuser un contenu qui nomme ce createur.",
+        "Des createurs nommes dans des PUBLICITES PAYEES par la filiere.",
+        "L'annonceur a paye Meta pour diffuser un contenu qui porte ce nom : "
+        "c'est la preuve la plus forte du projet.",
         "",
-        "CE QUE CA N'ETABLIT PAS",
+        "POURQUOI CE CLASSEUR EXISTE",
         "",
-        "Que l'argent soit alle AU CREATEUR. Une marque peut promouvoir un "
-        "contenu sans avoir remunere celui qui y figure.",
+        "Ce canal fournit la plus grosse part du jeu de donnees, et c'est le "
+        "SEUL des trois dont la precision n'a jamais ete mesuree.",
+        "Tant qu'elle ne l'est pas, le jeu de donnees n'est pas solide.",
+        "",
+        "CE QUI A ETE CORRIGE DEPUIS TA DERNIERE LECTURE",
+        "",
+        "  Les liens : ils pointaient vers une page qui exige le jeton d'acces, "
+        "expire au bout de deux heures. Tous morts.",
+        "     Ils utilisent maintenant la BIBLIOTHEQUE PUBLICITAIRE PUBLIQUE de "
+        "Meta — aucun jeton, consultable par tous.",
+        "  Les marques : @justinbridou_fr, @legaulois_officiel et @regilaitfr "
+        "sont ecartes. Le test ne regardait que dans un sens.",
         "",
         "CE QU'ON TE DEMANDE",
         "",
-        "Une question par ligne. Les lignes sont triees par fiabilite presumee "
-        "de la methode de detection.",
-        "Juger les 80 premieres suffit a mesurer les trois voies.",
-        "",
-        "LES TROIS VOIES",
-        "",
-        "  pseudo ecrit tel quel        — un @pseudo apparait dans l'annonce",
-        "  compte connu du registre     — le nom correspond a un compte deja "
-        "repere",
-        "  vocabulaire de collaboration — « avec X » ou « merci a X » (fond "
-        "gris : le plus douteux)",
+        "Une question par ligne. Les lignes sont groupees par METHODE de "
+        "detection, de la plus sure a la plus douteuse.",
+        "Juger les 30 premieres de chaque groupe suffit a mesurer les trois.",
+        "Le fond gris signale la methode la plus douteuse.",
         "",
     ]
     for i, l in enumerate(intro, 1):
@@ -116,10 +153,10 @@ def main():
         c.font = Font(bold=bool(l) and l.isupper(), size=11)
     depart = len(intro) + 2
 
-    colonnes = [("N", 5), ("Createur trouve", 30), ("Annonceur(s)", 34),
-                ("Comment on l'a trouve", 30), ("Annonces", 9), ("Date", 11),
-                ("Plateformes", 20), ("Ce que dit l'annonce", 62),
-                ("Voir", 10), ("TON VERDICT", 38), ("Ton commentaire", 30)]
+    colonnes = [("N", 5), ("Createur trouve", 28), ("Annonceur(s)", 30),
+                ("Methode de detection", 26), ("Annonces", 9), ("Date", 11),
+                ("CE QUE DIT L'ANNONCE", 74), ("Voir l'annonce", 16),
+                ("TON VERDICT", 40), ("Ton commentaire", 34)]
     for j, (titre, largeur) in enumerate(colonnes, 1):
         c = ws.cell(row=depart, column=j, value=titre)
         c.fill = ENTETE
@@ -136,54 +173,60 @@ def main():
                         formula1=f"=listes!$A$1:$A${len(CHOIX)}")
     ws.add_data_validation(dv)
 
-    for i, (nom, d) in enumerate(lignes, 1):
+    for i, d in enumerate(lignes, 1):
         r = depart + i
         douteux = d["voie"] == "vocabulaire de collaboration"
-        valeurs = [i, nom, ", ".join(sorted(d["pages"]))[:120], d["voie"],
-                   d["n"], d["date"], d["plateformes"], d["extrait"][:300],
-                   "", "", ""]
+        valeurs = [i, d["nom"], ", ".join(sorted(d["pages"]))[:90], d["voie"],
+                   d["n"], d["date"], d["extrait"][:400], "", "", ""]
         for j, v in enumerate(valeurs, 1):
             c = ws.cell(row=r, column=j, value=v)
-            c.alignment = Alignment(vertical="top", wrap_text=(j in (2, 3, 8)))
-            if j in (10, 11):
+            c.alignment = Alignment(vertical="top", wrap_text=(j in (2, 3, 7)))
+            if j in (9, 10):
                 c.fill = VERT
             elif douteux:
                 c.fill = GRIS
-        lien = ws.cell(row=r, column=9, value="voir l'annonce")
-        if d["url"]:
-            lien.hyperlink = d["url"]
-        lien.font = Font(color="1155CC", underline="single")
-        dv.add(ws.cell(row=r, column=10))
-        ws.row_dimensions[r].height = 46
+        lien = ws.cell(row=r, column=8, value="ouvrir")
+        if d["ad_id"]:
+            # Bibliotheque publicitaire PUBLIQUE : pas de jeton, pas
+            # d'expiration, et c'est la page qu'un journaliste citerait.
+            lien.hyperlink = f"https://www.facebook.com/ads/library/?id={d['ad_id']}"
+            lien.font = Font(color="1155CC", underline="single")
+        dv.add(ws.cell(row=r, column=9))
+        ws.row_dimensions[r].height = 74
 
     ws.freeze_panes = ws.cell(row=depart + 1, column=1)
 
     lg = wb.create_sheet("d'ou ca vient")
     compte = defaultdict(int)
-    for _n, d in lignes:
+    for d in lignes:
         compte[d["voie"]] += 1
-    for i, l in enumerate([
-            f"Source : {fichiers[-1].name}",
-            f"Genere le {date.today().isoformat()}",
-            "",
-            f"Createurs distincts : {len(lignes)}",
-    ] + [f"  {v} : {n}" for v, n in sorted(compte.items(), key=lambda x: -x[1])]
-        + ["",
-           "Deja ecartes en amont, sans te les montrer :",
-           "  - les medias et emissions ;",
-           "  - les noms cites par plus de six commanditaires differents :",
-           "    personne ne travaille pour six marques concurrentes, donc",
-           "    c'est un mot courant. « jour » ressortait 369 fois ;",
-           "  - les pages qui se citent elles-memes."], 1):
+    provenance = [
+        f"Source : {fichiers[-1].name}",
+        f"Genere le {date.today().isoformat()}",
+        "",
+        f"Createurs proposes : {len(lignes)}, repartis par methode :",
+    ] + [f"   {n:>3d}  {v}" for v, n in sorted(compte.items(),
+                                               key=lambda x: RANG.get(x[0], 9))] + [
+        "",
+        f"Sur {len(par_createur)} createurs distincts au total dans les annonces.",
+        "L'echantillon est EQUILIBRE entre les methodes, pas proportionnel :",
+        "on veut mesurer chacune, pas refleter leur volume.",
+        "",
+        "Deja ecartes sans te les montrer :",
+        "  - les commanditaires eux-memes, via outils/createurs.py ;",
+        "  - les medias et emissions ;",
+        "  - les noms cites par plus de six annonceurs concurrents.",
+    ]
+    for i, l in enumerate(provenance, 1):
         lg.cell(row=i, column=1, value=l)
     lg.column_dimensions["A"].width = 78
 
     CIBLE.parent.mkdir(parents=True, exist_ok=True)
     wb.save(CIBLE)
     print(f"Ecrit : {CIBLE}")
-    print(f"{len(lignes)} createurs a juger")
-    for v, n in sorted(compte.items(), key=lambda x: -x[1]):
-        print(f"   {n:>4d}  {v}")
+    print(f"{len(lignes)} createurs a juger, sur {len(par_createur)} au total")
+    for v, n in sorted(compte.items(), key=lambda x: RANG.get(x[0], 9)):
+        print(f"   {n:>3d}  {v}")
     return 0
 
 

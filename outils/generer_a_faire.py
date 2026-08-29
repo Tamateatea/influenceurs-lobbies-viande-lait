@@ -120,12 +120,16 @@ TACHES = [
      "nom en commun."),
 
     ("annonces", "2 — le plus neuf",
-     "Trancher CREATEURS_DANS_LES_ANNONCES.xlsx",
-     "cartographie/CREATEURS_DANS_LES_ANNONCES.xlsx",
-     "20 min pour les 80 premieres lignes",
-     "617 createurs nommes dans des PUBLICITES PAYEES par la filiere, sorties "
-     "de la Meta Ad Library le 27/08. C'est la preuve la plus forte du projet : "
-     "l'annonceur a paye pour diffuser. Trois voies de detection a mesurer."),
+     "Trancher ANNONCES_A_JUGER.xlsx",
+     "cartographie/ANNONCES_A_JUGER.xlsx",
+     "25 min pour les 90 lignes",
+     "90 createurs, 30 par methode de detection — echantillon EQUILIBRE, pas "
+     "proportionnel : on veut mesurer chaque methode, pas refleter son volume. "
+     "Ce canal fournit la plus grosse part du jeu de donnees et c'est le SEUL "
+     "dont la precision n'a jamais ete mesuree. Corrige depuis ta lecture du "
+     "29/08 : les liens pointent vers la bibliotheque publicitaire PUBLIQUE de "
+     "Meta (plus de jeton, plus de liens morts), et les pseudos de marque comme "
+     "@regilaitfr sont ecartes."),
 
     ("laitflix", "3",
      "Verifier les createurs nommes sur les sites des lobbies",
@@ -442,7 +446,7 @@ def main():
     for nom, quoi in [
             ("CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx",
              "Createurs nommes par les chaines des lobbies"),
-            ("CREATEURS_DANS_LES_ANNONCES.xlsx",
+            ("ANNONCES_A_JUGER.xlsx",
              "Createurs nommes dans les publicites payees"),
             ("A_VERIFIER_4.xlsx", "Candidats issus de la moisson YouTube"),
             ("CREATEURS_SUR_LES_SITES.xlsx", "Createurs nommes sur les sites et dans les pubs des lobbies")]:
