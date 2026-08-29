@@ -71,6 +71,26 @@ CHAMPS = ",".join([
 ])
 
 
+def sans_jeton(url):
+    """Retire le jeton d'acces d'une URL avant de l'ecrire sur le disque.
+
+    DEFAUT CORRIGE LE 29/08. `ad_snapshot_url` renvoye par l'API contient le
+    jeton d'acces complet en clair. Ces URL ont ete ecrites dans sept CSV, tous
+    versionnes et **pousses sur GitHub**.
+
+    Le jeton avait expire depuis (une a deux heures de duree de vie), donc
+    aucune consequence — mais c'est un identifiant publie, et ce n'est pas au
+    hasard de l'expiration de nous proteger.
+
+    Consequence secondaire, signalee par Vincent : les liens etaient **tous
+    morts** dans son classeur, puisqu'ils portaient un jeton expire. Une URL
+    d'apercu Meta n'est de toute facon consultable que par le detenteur du
+    jeton — elle ne sert donc a rien dans un classeur destine a un humain.
+    """
+    import re as _re
+    return _re.sub(r"access_token=[^&]*", "access_token=JETON_RETIRE", url or "")
+
+
 def lire_jeton():
     m = re.search(r"META_AD_LIBRARY_TOKEN\s*=\s*(\S+)",
                   SECRETS.read_text(encoding="utf-8", errors="replace"))
@@ -192,7 +212,7 @@ def moissonner_pages(jeton, plafond=500):
                     "plateformes": " | ".join(a.get("publisher_platforms", [])),
                     "texte": " ⏎ ".join(a.get("ad_creative_bodies", []) or [])[:1200],
                     "titres": " | ".join(a.get("ad_creative_link_titles", []) or [])[:300],
-                    "url_apercu": a.get("ad_snapshot_url", ""),
+                    "url_apercu": sans_jeton(a.get("ad_snapshot_url", "")),
                 })
             apres = d.get("paging", {}).get("cursors", {}).get("after")
             if not apres or not d.get("data"):

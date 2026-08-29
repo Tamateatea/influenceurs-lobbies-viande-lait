@@ -50,6 +50,33 @@ from medias import est_media
 # Un @pseudo credible : au moins 4 caracteres, pas seulement des chiffres.
 PSEUDO = re.compile(r"@([A-Za-z][A-Za-z0-9_.]{3,29})")
 
+# Suffixes que les marques ajoutent a leur propre pseudo. Sans eux, le test
+# d'auto-mention echoue : « @regilaitfr » n'est pas contenu dans « Regilait »,
+# alors que c'est bien la marque qui se cite elle-meme.
+SUFFIXES = ("fr", "france", "officiel", "official", "off", "cuisine", "pro",
+            "professionnel", "shop", "store", "paris")
+
+
+def est_l_annonceur(pseudo, page):
+    """Le pseudo designe-t-il l'annonceur lui-meme, plutot qu'un createur ?
+
+    DEFAUT CORRIGE LE 29/08, signale par Vincent : « il y a des pseudos comme
+    @justinbridou_fr et @legaulois_officiel ou @regilaitfr qui sont clairement
+    des marques et pas des createurs ».
+
+    Le test d'origine etait `aplatir(pseudo) in aplatir(page)` — une seule
+    direction. « regilaitfr » n'est pas dans « regilait », donc le pseudo
+    passait. Il fallait tester les DEUX sens, et retirer les suffixes que les
+    marques ajoutent a leur nom.
+    """
+    p, g = aplatir(pseudo), aplatir(page)
+    if not p or not g:
+        return False
+    for forme in (p, *(p[:-len(s)] for s in SUFFIXES if p.endswith(s) and len(p) > len(s) + 3)):
+        if forme and (forme in g or g in forme):
+            return True
+    return False
+
 COLLABORATION = [
     r"en partenariat avec\s+([A-ZÉÈÀÇ][\wÀ-ÿ'’\-]{2,28})",
     r"avec\s+@?([A-ZÉÈÀÇ][\wÀ-ÿ'’\-]{2,28})",
@@ -139,7 +166,7 @@ def main():
             if aplatir(p) in {aplatir(b) for b in BRUIT} or est_media(p):
                 continue
             # une page ne se cite pas elle-meme comme createur
-            if aplatir(p) and aplatir(p) in aplatir(page):
+            if est_l_annonceur(p, page):
                 continue
             noms.setdefault(aplatir(p), ("@" + p, "pseudo ecrit tel quel"))
 
@@ -148,7 +175,7 @@ def main():
                 n = m.group(1).strip(" -–—:|")
                 if len(n) < 4 or aplatir(n) in {aplatir(b) for b in BRUIT}:
                     continue
-                if est_media(n) or (aplatir(n) and aplatir(n) in aplatir(page)):
+                if est_media(n) or est_l_annonceur(n, page):
                     continue
                 noms.setdefault(aplatir(n), (n, "vocabulaire de collaboration"))
 
@@ -164,7 +191,12 @@ def main():
                 "plateformes": a.get("plateformes", ""),
                 "ad_id": a.get("ad_id", ""),
                 "extrait": texte.replace("\n", " ")[:300],
-                "url_apercu": a.get("url_apercu", ""),
+                # L'URL d'apercu Meta n'est consultable que par le detenteur du
+                # jeton, et le jeton expire en deux heures : dans un classeur
+                # destine a un humain, elle est toujours morte. On donne plutot
+                # la page annonceuse, qui elle est publique.
+                "page_facebook": f"https://www.facebook.com/{a.get('page_id','')}"
+                                 if a.get("page_id") else "",
             })
 
     aujourdhui = date.today().isoformat()
