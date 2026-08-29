@@ -4574,3 +4574,102 @@ dispositif de mesure qu'il faut verifier en premier, pas la connaissance.**
 
 J'ai fait l'inverse : j'ai conclu que le canal ne valait rien, et j'ai ecrit
 une entree de journal pour l'enterrer.
+
+---
+
+## 73. Journal de methode — 29 aout 2026, fin de semaine : ce qui n'a pas marche
+
+### 73.1 Le verdict de Vincent
+
+> « C'est assez decevant. Il va falloir qu'on revoit serieusement notre methode
+> lundi. Je suis assez mecontent qu'apres une semaine de travail on en soit la.
+> Mais tout ca n'etait pas pour rien. Je sais mieux ce que je veux maintenant. »
+
+Il travaillera seul demain, a la main, pour definir ce qu'il attend.
+
+### 73.2 La cause qu'il a identifiee, et qu'il a raison d'identifier
+
+Il releve des erreurs dans le jeu « valide » :
+
+- **LES JONES** est un groupe fictif invente par Mister V et des amis pour une
+  video du CNIEL. Ce n'est pas un createur.
+- **Mister V diffuse le vendredi** et **Mister V Vous nous l'aviez de** sont des
+  fragments de titre, pas des noms.
+- Des rappeurs qu'il ne considere pas comme des influenceurs.
+
+Et son diagnostic : « tu dis que c'est valide, alors le probleme doit venir de
+l'etape de validation qui est mauvaise. Je crois qu'il y a un malentendu entre
+ce que je te dis et comment tu traites l'information. »
+
+**Il a raison, et la verification le confirme :**
+
+    Mister V                        -> « c'est un createur »
+    LES JONES                       -> « c'est un createur »
+    Mister V diffuse le vendredi    -> « c'est un createur »
+    Mister V Vous nous l'aviez de   -> « c'est un createur »
+
+Il a repondu sur **la personne qu'il reconnaissait dans la chaine de
+caracteres**, pas sur la chaine elle-meme. Devant « Mister V diffuse le
+vendredi », un humain voit Mister V et repond oui.
+
+**La question etait mal posee.** Je lui ai fait valider des fragments de texte
+extraits automatiquement, en demandant « est-ce un createur ? ». La reponse
+honnete a cette question est toujours oui des qu'un nom connu apparait dedans.
+
+Ce n'est donc pas l'etape de validation qui est mauvaise : c'est ce qu'on lui
+soumet. On ne fait pas valider une extraction, on fait valider une **entite**.
+
+### 73.3 Ce que ca implique pour la reprise
+
+Un humain ne doit jamais avoir a juger une chaine de caracteres brute. Ce qu'on
+lui soumet doit etre une entite deja formee : un nom propre, un compte, une
+plateforme, une audience. Si l'outil ne sait pas produire ca, il ne doit pas
+demander.
+
+Corollaire : **la deduplication et la normalisation des noms doivent preceder
+la validation**, pas la suivre. « Mister V », « MISTER V », « Mister V diffuse
+le vendredi » sont une seule entite, et c'est a l'outil de le savoir avant de
+poser la question.
+
+### 73.4 Ce que Vincent veut pour le jeu de donnees
+
+Formule le 29/08 au soir, a inscrire tel quel :
+
+> « Le dataset final devrait avoir un onglet de resume avec une ligne par
+> influenceur, le nombre de contenus identifies et les lobbys avec lesquels des
+> collabs ont ete identifiees, et ensuite une tab par influenceur avec une
+> ligne par contenu dans lequel une collaboration a ete identifiee. Le dataset
+> devrait traiter separement les restaurateurs egalement. »
+
+Trois exigences, dont deux nouvelles :
+
+1. **Un onglet de synthese** — une ligne par influenceur. Le format actuel, une
+   ligne par contenu, ne permet pas de voir qui travaille avec qui d'un coup
+   d'oeil.
+2. **Un onglet par influenceur** — le detail de ses contenus.
+3. **Les restaurateurs traites separement.** Chefs et restaurateurs ne sont pas
+   des influenceurs au meme titre : leur presence dans une campagne releve d'une
+   autre logique. Le jeu les melange aujourd'hui.
+
+### 73.5 Ce que la semaine a produit, sans complaisance
+
+**Ce qui tient :**
+
+- 56 createurs confirmes, dont 50 jamais documentes par la presse
+- quatre canaux de detection, dont on connait le rendement compare
+- une routine automatique a onze etapes, qui tourne seule deux fois par jour
+- l'acces a la Meta Ad Library, debloque par Vincent
+- 332 000 videos YouTube et 150 000 contenus TikTok moissonnes
+
+**Ce qui ne tient pas :**
+
+- le jeu de donnees contient encore des non-entites (« LES JONES », fragments
+  de titre)
+- le canal des publicites payees n'est toujours pas mesure — la seule mesure
+  tentee etait invalide (entree 72)
+- la normalisation des noms n'existe pas
+- les restaurateurs ne sont pas separes des createurs
+
+**Ce que j'ai mal fait, en une phrase :** j'ai construit des outils de collecte
+avant d'avoir un modele de donnees, et j'ai fait valider a Vincent les sorties
+brutes de ces outils plutot que des entites constituees.

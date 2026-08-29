@@ -4,7 +4,7 @@
 toute action.** Il est fait pour ca. Il est mis a jour a la fin de chaque
 session de travail.
 
-Derniere mise a jour : **27 aout 2026, fin de journee**.
+Derniere mise a jour : **29 aout 2026, fin de semaine**.
 
 ---
 
@@ -222,70 +222,65 @@ fichier `.md`.
 
 ---
 
-## 6. Prochaine session — a faire en premier
+## 6. Prochaine session — LIRE CECI EN ENTIER
 
-**La source la plus directe du projet, trouvee le 27/08 :** les
-interprofessions ont **leurs propres chaines YouTube**, ou elles publient des
-videos nommant les createurs invites. Ici le commanditaire annonce lui-meme la
-collaboration : plus aucune inference.
+**Le projet est en pause de methode.** Vincent, le 29 aout au soir :
 
-**218 noms** apres correction du rapprochement (JOURNAL 55 et 58), dont **42
-par la voie fiable** — Pierre Chomet (31 videos, CIFOG et CNIEL), Morgan VS
-(12, CNIEL), L'Amour Boeuf (10, INTERBEV), **Mister V** (CNIEL), Brigitte
-Lecordier (CNIEL). Les 176 autres viennent d'une voie non mesuree et sont
-peut-etre des noms de series : `CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx` attend
-le jugement de Vincent.
+> « C'est assez decevant. Il va falloir qu'on revoit serieusement notre methode
+> lundi. Je suis assez mecontent qu'apres une semaine de travail on en soit la.
+> Mais tout ca n'etait pas pour rien. Je sais mieux ce que je veux maintenant.
+> Je vais reflechir plus serieusement a comment repartir sur de bonnes bases. »
 
-> Une version anterieure de cette section annoncait **Norman (11,2 M)** et
-> **Inoxtag** en tete. **C'etait faux** : « Norman » etait « e-Boucherie
-> normande », reconnu sur six caracteres. Voir JOURNAL 58. Mister V, lui, est
-> confirme.
+Il travaille seul le 30 aout, a la main, et **construira lui-meme un jeu de
+donnees de depart** pour montrer ce qu'il attend. **Ne rien reconstruire avant
+d'avoir vu ce fichier.**
 
-**Etat du registre au 27/08 : 6 875 comptes** — 2 620 YouTube, 2 187 TikTok,
-2 039 Instagram. 39 % avec audience connue. La population de surveillance est
-passee de 27 chaines nommees a la main a 2 620 derivees des sources.
+### Ce qu'il faut avoir compris avant de reprendre
 
-**Ancien etat au 24/08 au soir :** `cartographie/COMPTES.xlsx` —
-**766 comptes** (552 Instagram, 185 YouTube, 29 indetermines), dont 26 % avec
-audience connue. La liste de surveillance YouTube est passee de 27 chaines
-nommees a la main a **185 derivees des sources**.
+**1. On ne fait pas valider une extraction, on fait valider une entite.**
 
-**Pour Vincent : tout est dans `cartographie/A_FAIRE.xlsx`.** Trois feuilles —
-ce qu'il a a faire trie par ce que ca debloque, les decisions qu'il est seul a
-pouvoir prendre, et ce qui avance sans lui. Il ne lit pas les `.md` : ne pas
-l'y renvoyer.
+Le jeu « valide » contenait encore `LES JONES` (un groupe fictif invente pour
+une video), `Mister V diffuse le vendredi` et `Mister V Vous nous l'aviez de` —
+des fragments de titre. Vincent les avait tous marques « c'est un createur ».
 
-En un mot : **trancher `CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx`** (218 noms,
-20 minutes pour les 60 premieres lignes) est la seule tache dont depend une
-mesure qu'on ne peut pas faire sans lui.
+Il n'avait pas tort : devant « Mister V diffuse le vendredi », un humain voit
+Mister V et repond oui. **La question etait mal posee.** Voir JOURNAL 73.2.
 
-**Pour Claude, par ordre de valeur :**
+Consequence : la **normalisation et la deduplication des noms doivent preceder
+la validation**. Si l'outil ne sait pas produire une entite propre — un nom, un
+compte, une plateforme, une audience — il ne doit pas poser la question.
 
-1. **Le tirage aleatoire** (METHODOLOGIE 9.2). C'est la derniere mesure
-   importante qui manque. Les 255 cas annotes viennent tous du canal
-   « description » : ils ne disent rien de ce que le projet **rate
-   entierement**. Toutes les mesures de rappel actuelles sont des plafonds.
-2. **Reprendre la moisson TikTok** — 42 mois sur 47, environ deux mois de
-   quota par jour, donc trois semaines. Elle reprend toute seule.
-3. **Etendre le second rideau** aux chaines a preuve forte, pas seulement aux
-   11 confirmees. La technique a rapporte 4 liens reels sur 232 transcriptions.
-4. **Partager `charger_alias`**, recopiee dans six outils. C'est cette
-   duplication qui a laisse `moissonner_chaines_lobbies.py` a six caracteres
-   quand les autres etaient passes a huit — et de la est venue l'attribution
-   a la mauvaise personne (JOURNAL 55).
-5. **Resoudre Seb la Frite et Zack Nani**, dont aucune chaine verifiee ne
-   remonte sous ce nom.
-6. **Verifier les chaines de LeBouseuh et Gastronogeek** pour retrouver les
-   lives INAPORC — un cas documente par le commanditaire, donc un excellent
-   test de bout en bout.
+**2. Le format cible a change**, formule par Vincent le 29/08 :
 
-**Si les taches de fond sont tuees des leur lancement** — c'est arrive quatre
-fois le 27/08 — lancer au **premier plan par tranches** de moins de dix
-minutes. Tous les outils longs reprennent ou ils s'arretent, il suffit de
-relancer la meme commande.
+- un **onglet de synthese** : une ligne par influenceur, le nombre de contenus,
+  les lobbies concernes ;
+- **un onglet par influenceur** : une ligne par contenu ;
+- les **restaurateurs traites separement** des createurs de contenu.
 
-**Ne pas oublier :** un createur a plusieurs chaines, et la collaboration
-CNIEL trouvee etait sur une chaine secondaire.
+**3. Le rendement compare des canaux**, mesure le 29/08 (JOURNAL 71.3) :
 
-Vincent doit, de son cote : terminer la verification d'identite Meta, et
-arbitrer les nouveaux cas que le test elargi fera remonter.
+    sites des lobbies      42 createurs   5 pages web, une heure
+    description YouTube    13 createurs   332 119 videos, six jours
+    chaines des lobbies     7 createurs   9 chaines, 40 unites
+    publicites payees       ?             jamais mesure valablement
+
+**4. Le canal des publicites n'est PAS invalide.** J'avais conclu 0 % de
+precision le 29/08 ; cette mesure etait fausse, l'extrait montre a Vincent ne
+contenant pas le pseudo detecte. Voir JOURNAL 72. La question reste ouverte.
+
+### Ce qui tourne tout seul, sans rien faire
+
+La tache planifiee Windows « Veille filiere - tour de nuit » passe a 3h et
+9h30, onze etapes. TikTok avance de deux mois par nuit — 9 mois sur 47 au
+29/08, le reste vers la mi-septembre.
+
+### Etat au 29 aout 2026
+
+| | |
+|---|---|
+| YouTube | 2 897 chaines, 332 119 videos |
+| TikTok | 9 mois sur 47, 149 711 contenus |
+| Meta Ad Library | 7 148 annonces, 69 pages de commanditaires |
+| Createurs confirmes par Vincent | **56**, dont 50 jamais documentes ailleurs |
+| Jeu de donnees | `cartographie/DATASET.xlsx`, 177 lignes |
+

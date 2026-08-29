@@ -119,6 +119,36 @@ ce vide ne le disqualifie pas.
 Consequence de conception : le champ existe, il est facultatif, et son absence
 ne doit jamais empecher la publication d'une ligne par ailleurs documentee.
 
+## 1ter. On ne fait pas valider une extraction, on fait valider une entite
+
+Regle posee le 29 aout 2026, apres une semaine dont Vincent a juge le resultat
+decevant.
+
+Le jeu de donnees dit « valide » contenait encore `LES JONES` — un groupe
+fictif invente par Mister V pour une video — ainsi que `Mister V diffuse le
+vendredi` et `Mister V Vous nous l'aviez de`, qui sont des fragments de titre.
+
+Ces trois lignes portaient le verdict « c'est un createur », donne par Vincent
+lui-meme. Il n'avait pas tort : **devant « Mister V diffuse le vendredi », un
+humain voit Mister V et repond oui.**
+
+La faute est dans la question. On lui soumettait des **chaines de caracteres
+extraites automatiquement** en demandant « est-ce un createur ? ». A cette
+question, la reponse honnete est toujours oui des qu'un nom connu apparait
+quelque part dans la chaine.
+
+**Ce qu'on soumet a un humain doit etre une entite deja formee** : un nom
+propre, un compte, une plateforme, une audience. Si l'outil ne sait pas
+produire cela, il ne doit pas poser la question — il doit d'abord apprendre a
+normaliser et dedupliquer.
+
+Corollaire, qui a ete viole toute la semaine : **la normalisation des noms
+precede la validation, elle ne la suit pas.** « Mister V », « MISTER V » et
+« Mister V diffuse le vendredi » sont une seule entite, et c'est a l'outil de
+le savoir avant de demander quoi que ce soit.
+
+Voir JOURNAL 73.
+
 ## 2. L'idee centrale : la table d'alias
 
 C'est le seul element de methode qui nous distingue reellement de l'existant,

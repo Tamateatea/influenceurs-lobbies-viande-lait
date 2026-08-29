@@ -79,6 +79,7 @@ REPONSES_CONNUES = {
     "arpp": ("en cours", "Pas sur de l'aspect officiel, ca ressemble a un "
              "potentiel meta-lobby. Je demande l'avis a un collegue."),
     "onedrive": ("pas encore", ""),
+    "modele": ("pas encore", "Prevu pour le 30/08."),
     "twitch": ("", ""),
     "annonces": ("pas encore", ""),
     "laitflix": ("pas encore", "produits-laitiers.com/laitflix/divertissement "
@@ -108,6 +109,17 @@ STATUTS = ["pas encore", "en cours", "fait", "abandonne", "je ne sais pas"]
 # (cle, priorite, tache, ou, duree, pourquoi)
 # La cle sert a retrouver la reponse de Vincent d'une generation a l'autre.
 TACHES = [
+    ("modele", "0 — AVANT TOUT LE RESTE",
+     "Construire toi-meme un jeu de donnees de depart",
+     "A la main, dans le format que tu veux",
+     "le temps qu'il faut",
+     "Tu l'as decide le 29/08 : « je vais faire le travail moi-meme, avec mon "
+     "bon vieux cerveau d'humain, et expliquer mieux ce que je peux attendre de "
+     "toi apres ». C'est la bonne decision — la semaine a montre que je "
+     "construisais des outils sans modele de donnees, et que je te faisais "
+     "valider des sorties brutes plutot que des entites. Rien ne sera "
+     "reconstruit avant d'avoir vu ton fichier."),
+
     ("lobbies", "1 — le plus utile",
      "Trancher CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx",
      "cartographie/CREATEURS_NOMMES_PAR_LES_LOBBIES.xlsx",
