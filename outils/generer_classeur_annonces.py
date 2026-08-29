@@ -95,15 +95,32 @@ def main():
                                               "ad_id": "", "date": ""})
             d["n"] += 1
             d["pages"].add(l["page_annonceuse"])
-            # on garde l'annonce dont l'extrait est le plus long : c'est celle
-            # qui donne le plus de contexte pour juger
-            if (RANG.get(l["voie"], 9) < RANG.get(d["voie"], 9)
-                    or len(l.get("extrait", "")) > len(d["extrait"])):
-                if RANG.get(l["voie"], 9) <= RANG.get(d["voie"], 9):
-                    d["voie"] = l["voie"]
-                    d["extrait"] = l.get("extrait", "")
-                    d["ad_id"] = l.get("ad_id", "")
-                    d["date"] = l.get("debut_diffusion", "")
+            # ON GARDE L'ANNONCE OU LE NOM EST VISIBLE DANS L'EXTRAIT.
+            #
+            # La version precedente gardait l'extrait le plus LONG, ce qui
+            # revenait a montrer n'importe laquelle des annonces du createur —
+            # souvent une ou son nom n'apparait pas. Vincent a juge 60 lignes
+            # ainsi, sans jamais voir de nom, et a repondu « c'est la marque ».
+            # Sa reponse etait la seule possible.
+            #
+            # Un extrait qui ne montre pas ce qui a declenche la detection ne
+            # permet pas de juger. C'est la quatrieme fois que ce defaut
+            # apparait dans le projet.
+            extrait = l.get("extrait", "")
+            nom_visible = nom.lower().lstrip("@") in extrait.lower()
+            deja_visible = nom.lower().lstrip("@") in d["extrait"].lower()
+            meilleur = (
+                RANG.get(l["voie"], 9) < RANG.get(d["voie"], 9)
+                or (RANG.get(l["voie"], 9) == RANG.get(d["voie"], 9)
+                    and (nom_visible > deja_visible
+                         or (nom_visible == deja_visible
+                             and len(extrait) > len(d["extrait"]))))
+                or not d["extrait"])
+            if meilleur:
+                d["voie"] = l["voie"]
+                d["extrait"] = extrait
+                d["ad_id"] = l.get("ad_id", "")
+                d["date"] = l.get("debut_diffusion", "")
 
     # echantillon equilibre : les trois voies doivent etre mesurables
     par_voie = defaultdict(list)
@@ -144,6 +161,17 @@ def main():
         "",
         "Une question par ligne. Les lignes sont groupees par METHODE de "
         "detection, de la plus sure a la plus douteuse.",
+        "",
+        "IMPORTANT — CE QUI A CHANGE DEPUIS TES 60 PREMIERS JUGEMENTS",
+        "",
+        "L'extrait montrait les 300 premiers caracteres de l'annonce. Le pseudo "
+        "du createur, lui, apparait plus loin — souvent en fin de texte, dans "
+        "une ligne de credit du type « recette et photo @xxx ».",
+        "Tu as donc juge 60 lignes en voyant du texte publicitaire SANS AUCUN "
+        "nom visible, et tu as repondu « c'est la marque ». C'etait la seule "
+        "reponse possible.",
+        "L'extrait est desormais CENTRE sur le nom detecte. Ces 60 jugements "
+        "sont a refaire, et j'en suis desole.",
         "Juger les 30 premieres de chaque groupe suffit a mesurer les trois.",
         "Le fond gris signale la methode la plus douteuse.",
         "",

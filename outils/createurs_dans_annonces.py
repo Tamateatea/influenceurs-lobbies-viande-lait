@@ -184,13 +184,46 @@ def main():
             if forme in plat and not est_media(nom):
                 noms.setdefault(forme, (nom, "compte connu du registre"))
 
+        def extrait_autour_du_nom(nom_trouve):
+            """La fenetre de texte AUTOUR du nom, pas le debut de l'annonce.
+
+            DEFAUT CORRIGE LE 29/08, ET C'EST LE PLUS COUTEUX DU PROJET.
+
+            L'extrait montre a Vincent etait les 300 premiers caracteres de
+            l'annonce. Le pseudo du createur, lui, apparait plus loin. Il a donc
+            juge 60 lignes en voyant du texte publicitaire de marque SANS AUCUN
+            nom de createur visible — et a repondu, logiquement, « c'est la
+            marque ».
+
+            J'en ai conclu que le canal avait 0 % de precision et qu'il fallait
+            le retirer. **La mesure ne mesurait que ma presentation.**
+
+            @rougemadamestudio est Rouge Madame, alias Alice Bertho, creditee
+            par Regilait sur son propre site. @sophiecuisine est dans le
+            registre et Vincent l'avait lui-meme arbitree. Ce sont de vraies
+            creatrices, jugees « marque » parce qu'on ne les voyait pas.
+
+            C'est la quatrieme fois que ce defaut apparait — extrait qui ne
+            contient pas ce qui a declenche la detection. Corrige trois fois
+            ailleurs, jamais ici, et ici il a fausse la seule mesure qui
+            comptait.
+            """
+            i = texte.find(nom_trouve)
+            if i < 0:
+                i = texte.lower().find(nom_trouve.lower().lstrip("@"))
+            if i < 0:
+                return texte.replace(chr(10), " ")[:400]
+            debut = max(0, i - 220)
+            return (("..." if debut > 0 else "")
+                    + texte[debut:i + 320].replace(chr(10), " ").strip())
+
         for _cle, (nom, voie) in noms.items():
             trouves.append({
                 "createur": nom, "voie": voie, "commanditaire": entite,
                 "page_annonceuse": page, "debut_diffusion": a.get("debut", ""),
                 "plateformes": a.get("plateformes", ""),
                 "ad_id": a.get("ad_id", ""),
-                "extrait": texte.replace("\n", " ")[:300],
+                "extrait": extrait_autour_du_nom(nom),
                 # L'URL d'apercu Meta n'est consultable que par le detenteur du
                 # jeton, et le jeton expire en deux heures : dans un classeur
                 # destine a un humain, elle est toujours morte. On donne plutot

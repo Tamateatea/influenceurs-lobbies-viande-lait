@@ -4491,3 +4491,86 @@ Le classement des canaux par rendement reel :
 Il reste des sites non lus : les regionaux d'INTERBEV, les marques (Charal,
 Fleury Michon, Herta, Le Gaulois ont toutes un site), et les vitrines d'ANVOL.
 C'est la que sont les prochains createurs.
+
+---
+
+## 72. Journal de methode — 29 aout 2026 : le diagnostic de l'entree 71 etait faux
+
+### 72.1 Ce que j'avais conclu
+
+Entree 71, quelques heures plus tot : « le canal des publicites payees a une
+precision mesuree de **zero**. Ce n'est pas un reglage a corriger, c'est un
+canal a retirer. »
+
+Fonde sur 60 jugements de Vincent, tous negatifs.
+
+### 72.2 Ce qui l'a mis en doute
+
+En lisant les sites des marques — la piste que ce meme diagnostic
+recommandait — regilait.com credite une recette a **Rouge Madame (Alice
+Bertho)**.
+
+Or `@rougemadamestudio` etait dans les 60 lignes jugees, et Vincent avait
+repondu « non, c'est la marque ». De meme `@sophiecuisine`, qu'il avait
+pourtant lui-meme arbitree comme creatrice pour l'INAPORC quelques jours plus
+tot.
+
+Deux jugements incompatibles sur la meme personne appellent une verification
+du dispositif, pas du juge.
+
+### 72.3 MESURE — ce que Vincent voyait reellement
+
+L'extrait montre dans le classeur etait **les 300 premiers caracteres du texte
+de l'annonce**. Le pseudo du createur apparait ailleurs : en fin de texte, dans
+une ligne de credit du type « 📸 recette et photo @rougemadamestudio ».
+
+Verification sur le cas precis : `@rougemadamestudio` **n'apparaissait pas une
+seule fois** dans l'extrait presente.
+
+Vincent a donc juge soixante lignes en voyant du texte publicitaire de marque,
+sans aucun nom de createur visible, avec pour question « est-ce un createur ? ».
+
+**« C'est la marque » etait la seule reponse possible.** Son jugement etait
+correct ; c'est la question qui etait impossible.
+
+### 72.4 Consequence
+
+**Les 0 % de l'entree 71 ne mesurent rien**, et la conclusion « canal a
+retirer » est retiree. Le canal n'est ni valide ni invalide : il n'a toujours
+pas ete mesure.
+
+Ce qui reste vrai de l'entree 71 : le rendement compare des canaux — 42
+createurs pour cinq pages web contre 13 pour 332 000 videos — ne dependait pas
+de cette mesure.
+
+### 72.5 Le defaut, et son historique
+
+« L'extrait ne contient pas ce qui a declenche la detection. » C'est la
+**quatrieme** occurrence :
+
+    27/08  experience_transcription    corrige
+    27/08  moissonner_videos           corrige
+    27/08  generer_classeur_verif      corrige, avec un avertissement explicite
+    29/08  createurs_dans_annonces     **non corrige — et c'est ici que ca comptait**
+
+Les trois premieres fois, le defaut m'a fait afficher un mauvais extrait a
+moi-meme. La quatrieme, il a fait juger soixante lignes a Vincent et m'a fait
+condamner un canal entier.
+
+Deux corrections : l'extrait est **centre sur le nom detecte**, et le classeur
+choisit desormais, parmi les annonces d'un createur, **celle ou son nom est
+visible** — pas la plus longue. 28 des 30 pseudos sont maintenant lisibles dans
+leur extrait.
+
+### 72.6 Ce que ca coute, et ce que ca apprend
+
+Soixante jugements de Vincent sont a refaire. C'est du temps qu'il a donne pour
+rien, et il l'avait donne apres avoir dit qu'il doutait de la direction du
+projet.
+
+La lecon n'est pas « mieux tester ». C'est : **quand une mesure contredit une
+connaissance anterieure — Vincent avait deja arbitre @sophiecuisine — c'est le
+dispositif de mesure qu'il faut verifier en premier, pas la connaissance.**
+
+J'ai fait l'inverse : j'ai conclu que le canal ne valait rien, et j'ai ecrit
+une entree de journal pour l'enterrer.
