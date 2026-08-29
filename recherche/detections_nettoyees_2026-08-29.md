@@ -12,13 +12,13 @@ Source : `moisson_videos_2026-08-29.csv`.
 
 ## Resultat
 
-- Detections lues : **25464**
-- **Preuves fortes (alias d'interprofession) : 254**
-- Preuves faibles (marque + indice) : 109
-- **Ecartees comme bruit : 6902**
-  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **244**
+- Detections lues : **27353**
+- **Preuves fortes (alias d'interprofession) : 255**
+- Preuves faibles (marque + indice) : 115
+- **Ecartees comme bruit : 7192**
+  - dont artefacts d'aplatissement (« viande, frites » -> `viandefr`) : **251**
 
-Le bruit representait **27 %** des detections brutes.
+Le bruit representait **26 %** des detections brutes.
 
 ## PREUVES FORTES — par chaine, audience decroissante
 
@@ -68,6 +68,12 @@ Le bruit representait **27 %** des detections brutes.
 | Date | Entite | Titre | URL |
 |---|---|---|---|
 | 2026-06-27 | **CNIEL** | Dégustation dans le plus grand buffet d’Europe et je | https://www.youtube.com/watch?v=XgW3Nnskq8Q |
+
+### Redha Jr — 2 020 000 abonnes — 1 video(s)
+
+| Date | Entite | Titre | URL |
+|---|---|---|---|
+| 2022-02-25 | **CNIEL** | Redha Jr - Quand ça nous arrive 🥺💔🥛 | https://www.youtube.com/watch?v=D9z92qOEvxU |
 
 ### LORIS GIULIANO — 1 920 000 abonnes — 35 video(s)
 
@@ -409,6 +415,7 @@ Le bruit representait **27 %** des detections brutes.
 | Ben Névert | 618 000 | President (Lactalis) | ENTRE MECS - HYPERSENSIBILITÉ - ARGENT ( | https://www.youtube.com/watch?v=VJc1HcDfckc |
 | Iconoclaste | 591 000 | President (Lactalis) | La Face Sombre de Habbo Hotel (crimes  v | https://www.youtube.com/watch?v=6nxg4OssocU |
 | Kameto | 496 000 | President (Lactalis) | KOTEI OUBLIE DE RÉPONDRE À MACRON ... -  | https://www.youtube.com/watch?v=WCpcbfEUocc |
+| Leslie Lawson | 330 000 | La Laitiere (Lactalis (licence Nes | VLOG : Mes secrets pour prendre mes phot | https://www.youtube.com/watch?v=XFLFBN-n2lM |
 | Kevin Bukkart | 301 000 | President (Lactalis) | THUNDERBOLTS* - Le Guide Ultime de Tout  | https://www.youtube.com/watch?v=WhTVp8RumOo |
 | Le Guide Ultime | 294 000 | Fleury Michon (Fleury Michon) | Une DJ party dans une boulangerie à 11h  | https://www.youtube.com/watch?v=74FUuv_zaqo |
 | Meltingcurlz | 290 000 | La Laitiere (Lactalis (licence Nes | JE RETESTE ZAFUL À FOND ET SANS FILTRE ! | https://www.youtube.com/watch?v=S3ZP7HcRxgk |
@@ -419,5 +426,4 @@ Le bruit representait **27 %** des detections brutes.
 | MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 4 - "Le camping de  | https://www.youtube.com/watch?v=eCL-XF1H0xQ |
 | MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 3 - "Boulot  boulot | https://www.youtube.com/watch?v=OW_fC5MNQk4 |
 | MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 2 - "J'ai pas peur  | https://www.youtube.com/watch?v=I1iEtzMmguQ |
-| MOSIMANN | 251 000 | Marie (LDC) | President (Lactalis) | DREAM TOUR - Episode 1 - "La main qui s' | https://www.youtube.com/watch?v=6_qccxPFOOc |
 

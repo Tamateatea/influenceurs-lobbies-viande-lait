@@ -3,10 +3,10 @@
 Produit par `outils/exporter_moisson.py`, depuis le fichier de
 reprise. Aucun quota consomme : c'est une relecture.
 
-- Chaines moissonnees : **2714**
-- Videos examinees : **311 106**
-- Videos portant un signal commercial : **25464**
-- **Videos citant la filiere viande/lait : 7265**
+- Chaines moissonnees : **2897**
+- Videos examinees : **332 119**
+- Videos portant un signal commercial : **27353**
+- **Videos citant la filiere viande/lait : 7562**
 
 Une citation n'est pas une collaboration : ces lignes passent par
 `nettoyer_detections.py` puis par une verification humaine.
@@ -31,6 +31,7 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | Marie andMood | 16 600 | 87 | Marie (LDC)  President (Lactalis) |
 | LES AUDACES D' ÉLI | 28 300 | 76 | CNIEL  Herta (Nestle / Casa Tarradellas)  Lactel (Lactalis)  Soignon ( |
 | Aimez la viande | 79 500 | 75 | CNIEL  INTERBEV  La Laitiere (Lactalis (licence Nestle))  Marie (LDC)  |
+| GQ France | 611 000 | 74 | CNIEL  Lactel (Lactalis)  Marie (LDC)  President (Lactalis)  Societe ( |
 | Produits Laitiers | 101 000 | 72 | CNIEL  Candia (Sodiaal)  Intercereales  La Laitiere (Lactalis (licence |
 | Hey Basilou | 12 500 | 71 | Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
 | Studio Bagel | 3 860 000 | 70 | Intercereales  Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
@@ -38,6 +39,7 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | Poisson Fécond | 3 840 000 | 66 | CNIEL  Charal (Bigard)  Marie (LDC)  President (Lactalis)  Societe (La |
 | C'est meilleur quand c'est | 233 000 | 64 | CIFOG  CNIEL  Gervais (Danone)  INTERBEV  Marie (LDC)  President (Lact |
 | Parents | 27 600 | 64 | Lactel (Lactalis)  Marie (LDC)  President (Lactalis)  Societe (Lactali |
+| Matmut | 11 500 | 62 | CNIEL  Marie (LDC)  President (Lactalis)  Societe (Lactalis) |
 | Fleury Michon | 3 410 | 58 | Fleury Michon (Fleury Michon)  Marie (LDC)  Veloute (Danone) |
 | Hervé Cuisine | 1 600 000 | 52 | CNIEL  Danette (Danone)  FNPSMS  Intercereales  La Laitiere (Lactalis  |
 | 20 Minutes France | 237 000 | 51 | Lactel (Lactalis)  Marie (LDC)  President (Lactalis)  Societe (Lactali |
@@ -73,5 +75,3 @@ Une citation n'est pas une collaboration : ces lignes passent par
 | BATZAIR | 3 930 000 | 30 | Gervais (Danone)  Marie (LDC)  Societe (Lactalis) |
 | Marché de Rungis | 1 320 | 28 | CIFOG  CNIEL  Marie (LDC)  President (Lactalis)  Societe (Lactalis)  T |
 | EMMA FITNESSGOAL | 36 200 | 28 | CIFOG  Intercereales  Saint Moret (Savencia)  Soignon (Eurial / Agrial |
-| Le Paris d'Alexis | 71 100 | 27 | CIFOG  CNIEL  Elivia (Terrena)  Herta (Nestle / Casa Tarradellas)  INT |
-| Benoit Chevalier | 2 910 000 | 27 | CLIPP  Marie (LDC)  President (Lactalis) |
